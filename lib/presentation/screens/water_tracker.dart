@@ -6,6 +6,6 @@ class WaterTracker extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(body: MainScreen());
+    return const Scaffold(body: LoginScreen());
   }
 }
