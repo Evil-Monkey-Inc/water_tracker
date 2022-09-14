@@ -12,6 +12,7 @@ class _WaterAppState extends State<WaterApp> {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: SafeArea(child: LoginScreen()),
     );
   }
