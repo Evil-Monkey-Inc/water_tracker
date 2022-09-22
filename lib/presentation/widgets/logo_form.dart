@@ -18,9 +18,9 @@ class _MyLogFormWidgetState extends State<LogoForm> {
         children: [
           const Text(
             'Welcome back, Tony!',
-            style: TextStyle(fontSize: 30, color: Colors.green),
+            style: TextStyle(fontSize: 28, color: Colors.green),
           ),
-          const SizedBox(height: 30),
+          const SizedBox(height: 28),
           TextFormField(
             decoration: const InputDecoration(
               labelText: 'Enter your email',
@@ -36,7 +36,7 @@ class _MyLogFormWidgetState extends State<LogoForm> {
               }
             },
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 24),
           TextFormField(
             decoration: const InputDecoration(
               labelText: 'Enter password',
@@ -51,8 +51,9 @@ class _MyLogFormWidgetState extends State<LogoForm> {
               }
             },
           ),
-          const SizedBox(height: 30),
+          const SizedBox(height: 28),
           LoginButtonWidget(onPressed: () {
+            // TODO: call something on validation
             if (formKey.currentState!.validate()) {}
           }),
         ],

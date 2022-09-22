@@ -11,7 +11,7 @@ class LoginLayout extends StatefulWidget {
 }
 
 class _LoginLayoutState extends State<LoginLayout> {
-  static const paddingHorizontal = 20.0;
+  static const paddingHorizontal = 24.0;
 
   @override
   Widget build(BuildContext context) {
@@ -22,9 +22,9 @@ class _LoginLayoutState extends State<LoginLayout> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: const [
-              SizedBox(height: 30),
+              SizedBox(height: 32),
               LogoWidget(),
-              SizedBox(height: 20),
+              SizedBox(height: 24),
               ManWidget(),
               LogoForm(),
             ],

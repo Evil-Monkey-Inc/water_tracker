@@ -23,7 +23,7 @@ class LoginButtonWidget extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: 12.0),
         child: Text(
           'Sing in',
-          style: TextStyle(fontSize: 22),
+          style: TextStyle(fontSize: 24),
         ),
       ),
     );

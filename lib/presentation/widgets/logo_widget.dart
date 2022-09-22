@@ -4,12 +4,13 @@ import 'package:flutter_svg/flutter_svg.dart';
 class LogoWidget extends StatelessWidget {
   const LogoWidget({Key? key}) : super(key: key);
 
+  // TODO: Add localization
   static const logoText = 'WaterApp';
   static const logoImagePath = "assets/images/logo.svg";
-  static const logoHeight = 18.75;
-  static const logoWidth = 15.0;
+  static const logoHeight = 20.0;
+  static const logoWidth = 16.0;
   static const padding = 8.0;
-  static const textSize = 18.0;
+  static const textSize = 20.0;
 
   @override
   Widget build(BuildContext context) {
