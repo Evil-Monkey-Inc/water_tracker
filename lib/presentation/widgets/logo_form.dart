@@ -10,6 +10,16 @@ class LogoForm extends StatefulWidget {
 
 class _MyLogFormWidgetState extends State<LogoForm> {
   final formKey = GlobalKey<FormState>();
+
+  final emailNode = FocusNode();
+
+  @override
+  void initState() {
+    emailNode.addListener(() => setState(() {}));
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -18,14 +28,13 @@ class _MyLogFormWidgetState extends State<LogoForm> {
         children: [
           const Text(
             'Welcome back, Tony!',
-            style: TextStyle(fontSize: 28, color: Colors.green),
+            style: TextStyle(fontSize: 28, color: Color(0xFF292D32)),
           ),
           const SizedBox(height: 28),
           TextFormField(
-            decoration: const InputDecoration(
+            focusNode: emailNode,
+            decoration: InputDecoration(
               labelText: 'Enter your email',
-              filled: true,
-              fillColor: Colors.white,
             ),
             validator: (value) {
               if (value!.isEmpty ||
@@ -38,10 +47,12 @@ class _MyLogFormWidgetState extends State<LogoForm> {
           ),
           const SizedBox(height: 24),
           TextFormField(
-            decoration: const InputDecoration(
+            decoration: InputDecoration(
+              border:
+                  OutlineInputBorder(borderRadius: BorderRadius.circular(10.0)),
               labelText: 'Enter password',
               filled: true,
-              fillColor: Colors.white,
+              fillColor: const Color(0xFFF2F4F8),
             ),
             validator: (value) {
               if (value!.isEmpty || !RegExp(r'^[a-z A-Z]+$').hasMatch(value)) {

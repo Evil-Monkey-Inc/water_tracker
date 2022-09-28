@@ -11,19 +11,19 @@ class LoginButtonWidget extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        minimumSize: const Size.fromHeight(50),
-        padding: const EdgeInsets.all(12.0),
+        minimumSize: const Size.fromHeight(12),
+        padding: const EdgeInsets.all(8.0),
         primary: const Color(0xFF292D32),
         shape: RoundedRectangleBorder(
           //todo set accurate radius
-          borderRadius: BorderRadius.circular(80),
+          borderRadius: BorderRadius.circular(40),
         ),
       ),
       child: const Padding(
-        padding: EdgeInsets.symmetric(vertical: 12.0),
+        padding: EdgeInsets.symmetric(vertical: 10.0),
         child: Text(
-          'Sing in',
-          style: TextStyle(fontSize: 24),
+          'Sing In',
+          style: TextStyle(fontSize: 16),
         ),
       ),
     );

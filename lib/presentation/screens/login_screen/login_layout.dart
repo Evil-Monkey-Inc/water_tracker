@@ -19,6 +19,7 @@ class _LoginLayoutState extends State<LoginLayout> {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: paddingHorizontal),
         child: SingleChildScrollView(
+          // todo (andreyK): add animatedCrossFade here
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: const [
