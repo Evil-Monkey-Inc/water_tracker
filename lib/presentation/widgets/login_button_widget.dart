@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
-class LoginButtonWidget extends StatelessWidget {
-  const LoginButtonWidget({Key? key, required this.onPressed})
+class CustomButton extends StatelessWidget {
+  const CustomButton({Key? key, required this.onPressed, required this.text})
       : super(key: key);
 
   final VoidCallback onPressed;
+  final String text;
 
   @override
   Widget build(BuildContext context) {
@@ -19,11 +20,11 @@ class LoginButtonWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(40),
         ),
       ),
-      child: const Padding(
-        padding: EdgeInsets.symmetric(vertical: 10.0),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 10.0),
         child: Text(
-          'Sing In',
-          style: TextStyle(fontSize: 16),
+          text,
+          style: const TextStyle(fontSize: 16),
         ),
       ),
     );

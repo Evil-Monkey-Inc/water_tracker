@@ -63,10 +63,13 @@ class _MyLogFormWidgetState extends State<LogoForm> {
             },
           ),
           const SizedBox(height: 28),
-          LoginButtonWidget(onPressed: () {
-            // TODO: call something on validation
-            if (formKey.currentState!.validate()) {}
-          }),
+          CustomButton(
+            onPressed: () {
+              // TODO: call something on validation
+              if (formKey.currentState!.validate()) {}
+            },
+            text: 'Sing In',
+          ),
         ],
       ),
     );
