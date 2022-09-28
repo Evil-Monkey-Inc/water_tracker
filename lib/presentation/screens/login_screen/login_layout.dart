@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:water_tracker/presentation/widgets/logo_form.dart';
 import 'package:water_tracker/presentation/widgets/logo_widget.dart';
 import 'package:water_tracker/presentation/widgets/man_widget.dart';
+import 'package:water_tracker/presentation/widgets/not_have_account_widget.dart';
+import 'package:water_tracker/presentation/widgets/privacy_policy_and_terms_widget.dart';
 
 class LoginLayout extends StatefulWidget {
   const LoginLayout({Key? key}) : super(key: key);
@@ -22,12 +24,15 @@ class _LoginLayoutState extends State<LoginLayout> {
           // todo (andreyK): add animatedCrossFade here
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: const [
-              SizedBox(height: 32),
-              LogoWidget(),
-              SizedBox(height: 24),
-              ManWidget(),
-              LogoForm(),
+            children: [
+              const SizedBox(height: 32),
+              const LogoWidget(),
+              const SizedBox(height: 24),
+              const ManWidget(),
+              const LogoForm(),
+              PrivacyPolicyAndTermsWidget(),
+              const SizedBox(height: 8),
+              NotHaveAccount(),
             ],
           ),
         ),
