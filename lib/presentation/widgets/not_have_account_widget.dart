@@ -1,5 +1,5 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:water_tracker/presentation/screens/login_screen/registration_screen.dart';
 
 class NotHaveAccount extends StatelessWidget {
   const NotHaveAccount({Key? key}) : super(key: key);
@@ -10,27 +10,29 @@ class NotHaveAccount extends StatelessWidget {
       padding: const EdgeInsets.all(16.0),
       child: Column(
         children: [
-          Text.rich(
-            TextSpan(
-              text: 'Don`t have an account yet?',
-              style: const TextStyle(
-                fontSize: 16,
-                color: Color(0xFF8F9AA9),
-              ),
-              children: <TextSpan>[
-                TextSpan(
-                  text: ' Sing Up',
-                  style: const TextStyle(
-                    fontSize: 16,
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  recognizer: TapGestureRecognizer()..onTap = () {},
-                  // TODO:  code to open / launch terms of service link here
+          InkWell(
+            child: const Text.rich(
+              TextSpan(
+                text: 'Don`t have an account yet?',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Color(0xFF8F9AA9),
                 ),
-              ],
+                children: [
+                  TextSpan(
+                    text: '                                     Sing Up', // TODO: refactored
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+              textAlign: TextAlign.center,
             ),
-            textAlign: TextAlign.center,
+            onTap: () =>
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => const RegistrationScreen())),
           ),
         ],
       ),
