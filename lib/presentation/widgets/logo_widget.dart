@@ -5,9 +5,10 @@ class LogoWidget extends StatelessWidget {
   const LogoWidget({Key? key}) : super(key: key);
 
   // TODO: Add localization
-  static const logoText = 'WaterApp';
+  static const logoTextImage = "assets/images/logo_name.svg";
   static const logoImagePath = "assets/images/logo.svg";
   static const logoWidth = 16.0;
+  static const logoTextWidth = 87.5;
   static const padding = 8.0;
   static const textSize = 20.0;
 
@@ -21,9 +22,9 @@ class LogoWidget extends StatelessWidget {
           width: logoWidth,
         ),
         const SizedBox(width: padding),
-        const Text(
-          logoText,
-          style: TextStyle(fontSize: textSize),
+        SvgPicture.asset(
+          logoTextImage,
+          width: logoTextWidth,
         ),
       ],
     );
