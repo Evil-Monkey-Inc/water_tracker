@@ -25,12 +25,10 @@ class _WaterAppState extends State<WaterApp> {
     borderSide: BorderSide.none,
   );
 
-  final disabledBorder = OutlineInputBorder(
-      borderRadius: BorderRadius.circular(10.0), borderSide: BorderSide.none);
+  final disabledBorder = OutlineInputBorder(borderRadius: BorderRadius.circular(10.0), borderSide: BorderSide.none);
 
-  final errorBorder = OutlineInputBorder(
-      borderRadius: BorderRadius.circular(10.0),
-      borderSide: const BorderSide(color: Colors.red));
+  final errorBorder =
+      OutlineInputBorder(borderRadius: BorderRadius.circular(10.0), borderSide: const BorderSide(color: Colors.red));
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +45,7 @@ class _WaterAppState extends State<WaterApp> {
           border: focusedBorder,
           errorBorder: errorBorder,
           filled: true,
-          fillColor: const Color(0xFFF2F4F8),
+          fillColor: const Color(0xFFA6ABB5),
           labelStyle: const TextStyle(
             color: Color(0xFF292D32),
           ),
