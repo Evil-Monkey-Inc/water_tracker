@@ -24,15 +24,16 @@ class _LoginLayoutState extends State<LoginLayout> {
           // todo (andreyK): add animatedCrossFade here
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const SizedBox(height: 32),
-              const LogoWidget(),
-              const SizedBox(height: 24),
-              const ManWidget(),
-              const LogoForm(),
+            children: const [
+              SizedBox(height: 32),
+              LogoWidget(),
+              SizedBox(height: 24),
+              ManWidget(),
+              LogoForm(),
               PrivacyPolicyAndTermsWidget(),
-              const SizedBox(height: 8),
+              SizedBox(height: 8),
               NotHaveAccount(),
+              SizedBox(height: 8),
             ],
           ),
         ),
