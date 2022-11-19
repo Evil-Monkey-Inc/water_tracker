@@ -20,7 +20,7 @@ class NotHaveAccount extends StatelessWidget {
                 ),
                 children: [
                   TextSpan(
-                    text: '                                     Sing Up', // TODO: refactored
+                    text: 'Sing Up', // TODO: refactored
                     style: TextStyle(
                       fontSize: 16,
                       color: Colors.black,
