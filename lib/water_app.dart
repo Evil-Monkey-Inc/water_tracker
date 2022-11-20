@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:water_tracker/presentation/screens/login_screen/login_screen.dart';
@@ -10,6 +11,8 @@ class WaterApp extends StatefulWidget {
 }
 
 class _WaterAppState extends State<WaterApp> {
+  // todo: move all borders to a separate class
+
   final focusedBorder = OutlineInputBorder(
     borderRadius: BorderRadius.circular(10.0),
     borderSide: const BorderSide(),
@@ -33,6 +36,9 @@ class _WaterAppState extends State<WaterApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
       scrollBehavior: const CupertinoScrollBehavior(),
       theme: ThemeData(
         primaryColor: const Color(0xFF292D32),
