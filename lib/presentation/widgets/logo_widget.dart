@@ -4,9 +4,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 class LogoWidget extends StatelessWidget {
   const LogoWidget({Key? key}) : super(key: key);
 
+  // TODO: Add assets path to classes static fields (how with colors)
   // TODO: Add localization
-  static const logoTextImage = "assets/images/logo_name.svg";
-  static const logoImagePath = "assets/images/logo.svg";
+  static const assetsFolder = "assets/";
+  static const imagesFolder = "$assetsFolder/images";
+  static const logoTextImage = "$imagesFolder/logo_name.svg";
+  static const logoImagePath = "$imagesFolder/logo.svg";
   static const logoWidth = 16.0;
   static const logoTextWidth = 87.5;
   static const padding = 8.0;
