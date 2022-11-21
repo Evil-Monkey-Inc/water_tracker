@@ -9,7 +9,7 @@ class PrivacyPolicyAndTermsWidget extends StatelessWidget {
   static const terms = 'Terms';
   static const and = '\tand\t';
   static const privacyPolicy = 'Privacy Policy.';
-
+  // Todo: refactored widget and add to localization
   @override
   Widget build(BuildContext context) {
     return Padding(
