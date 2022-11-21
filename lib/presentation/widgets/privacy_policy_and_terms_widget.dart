@@ -5,7 +5,7 @@ import 'package:water_tracker/custom_theme.dart';
 class PrivacyPolicyAndTermsWidget extends StatelessWidget {
   const PrivacyPolicyAndTermsWidget({Key? key}) : super(key: key);
 
-  static const privacyPolicyText = 'By signing in, you agree to our ';
+  static const privacyPolicyText = 'By signing in, you agree to our\t';
   static const terms = 'Terms';
   static const and = '\tand\t';
   static const privacyPolicy = 'Privacy Policy.';
@@ -17,7 +17,7 @@ class PrivacyPolicyAndTermsWidget extends StatelessWidget {
       child: Text.rich(
         TextSpan(
           text: privacyPolicyText,
-          style: CustomTheme.privacyPolicyTextProperty,
+          style: CustomTheme.restText,
           children: <TextSpan>[
             TextSpan(
               text: terms,
