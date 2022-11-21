@@ -18,13 +18,17 @@ class CodegenLoader extends AssetLoader{
   "enter_your_email": "Enter your email",
   "enter_password": "Enter password",
   "sing_in": "Увійти",
-  "welcome_back_tony": "Welcome back, Tony"
+  "welcome_back_tony": "Welcome back, Tony!",
+  "dont_have_an_account_yet": "Don`t have an account yet?",
+  "sing_up": "Sing Up"
 };
 static const Map<String,dynamic> uk = {
   "enter_your_email": "Вкажіть вашу пошту",
   "enter_password": "Вкажіть пароль",
   "sing_in": "Увійти",
-  "welcome_back_tony": "Ласкаво просимо, Тоні"
+  "welcome_back_tony": "Ласкаво просимо, Тоні!",
+  "dont_have_an_account_yet": "Ще не маєте облікового запису?",
+  "sing_up": "Реєстрація"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "uk": uk};
 }
