@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:water_tracker/custom_theme.dart';
 import 'package:water_tracker/presentation/screens/login_screen/login_screen.dart';
 
 class WaterApp extends StatefulWidget {
@@ -11,28 +12,6 @@ class WaterApp extends StatefulWidget {
 }
 
 class _WaterAppState extends State<WaterApp> {
-  // todo: move all borders to a separate class
-
-  final focusedBorder = OutlineInputBorder(
-    borderRadius: BorderRadius.circular(10.0),
-    borderSide: const BorderSide(),
-  );
-
-  final focusedErrorBorder = OutlineInputBorder(
-    borderRadius: BorderRadius.circular(10.0),
-    borderSide: const BorderSide(color: Colors.red),
-  );
-
-  final unFocusedBorder = OutlineInputBorder(
-    borderRadius: BorderRadius.circular(10.0),
-    borderSide: BorderSide.none,
-  );
-
-  final disabledBorder = OutlineInputBorder(borderRadius: BorderRadius.circular(10.0), borderSide: BorderSide.none);
-
-  final errorBorder =
-      OutlineInputBorder(borderRadius: BorderRadius.circular(10.0), borderSide: const BorderSide(color: Colors.red));
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -41,24 +20,20 @@ class _WaterAppState extends State<WaterApp> {
       locale: context.locale,
       scrollBehavior: const CupertinoScrollBehavior(),
       theme: ThemeData(
-        primaryColor: const Color(0xFF292D32),
+        primaryColor: CustomTheme.themeDataColor,
         focusColor: const Color(0xFF292D32),
-        inputDecorationTheme: InputDecorationTheme(
-          focusedBorder: focusedBorder,
-          focusedErrorBorder: focusedErrorBorder,
-          enabledBorder: unFocusedBorder,
-          disabledBorder: disabledBorder,
-          border: focusedBorder,
-          errorBorder: errorBorder,
+        inputDecorationTheme: const InputDecorationTheme(
+          focusedBorder: CustomTheme.focusedBorder,
+          focusedErrorBorder: CustomTheme.focusedErrorBorder,
+          enabledBorder: CustomTheme.unFocusedBorder,
+          disabledBorder: CustomTheme.disabledBorder,
+          border: CustomTheme.focusedBorder,
+          errorBorder: CustomTheme.errorBorder,
           filled: true,
-          fillColor: const Color(0xFFA6ABB5),
-          labelStyle: const TextStyle(
-            color: Color(0xFF292D32),
-          ),
+          fillColor: CustomTheme.borderFillColor,
+          labelStyle: CustomTheme.borderLabelStyle,
         ),
-        textSelectionTheme: const TextSelectionThemeData(
-          cursorColor: Color(0xFF292D32),
-        ),
+        textSelectionTheme: CustomTheme.cursorColor,
       ),
       home: const SafeArea(child: LoginScreen()),
     );

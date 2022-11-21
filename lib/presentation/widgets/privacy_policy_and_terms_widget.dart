@@ -1,44 +1,37 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:water_tracker/custom_theme.dart';
 
 class PrivacyPolicyAndTermsWidget extends StatelessWidget {
   const PrivacyPolicyAndTermsWidget({Key? key}) : super(key: key);
 
+  static const privacyPolicyText = 'By signing in, you agree to our ';
+  static const terms = 'Terms';
+  static const and = '\tand\t';
+  static const privacyPolicy = 'Privacy Policy.';
+
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: CustomTheme.paddingPrivacyPolicyTermsWidget,
       child: Text.rich(
         TextSpan(
-          text: 'By signing in, you agree to our ',
-          style: const TextStyle(
-            fontSize: 16,
-            color: Colors.black,
-          ),
+          text: privacyPolicyText,
+          style: CustomTheme.privacyPolicyTextProperty,
           children: <TextSpan>[
             TextSpan(
-              text: 'Terms',
-              style: const TextStyle(
-                fontSize: 16,
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-                decoration: TextDecoration.underline,
-              ),
+              text: terms,
+              style: CustomTheme.termsProperty,
               recognizer: TapGestureRecognizer()..onTap = () {},
               // TODO:  code to open / launch terms of service link here
             ),
             TextSpan(
-              text: ' and ',
+              text: and,
               style: const TextStyle(fontSize: 16, color: Colors.black),
               children: <TextSpan>[
                 TextSpan(
-                  text: 'Privacy Policy.',
-                  style: const TextStyle(
-                    fontSize: 16,
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    decoration: TextDecoration.underline,
-                  ),
+                  text: privacyPolicy,
+                  style: CustomTheme.privacyPolicyTextProperty,
                   recognizer: TapGestureRecognizer()
                     ..onTap = () {
                       // TODO:  code to open / launch terms of service link here

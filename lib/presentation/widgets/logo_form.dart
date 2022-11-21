@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:water_tracker/custom_theme.dart';
 import 'package:water_tracker/form_validators.dart';
 import 'package:water_tracker/presentation/widgets/input_field_widget.dart';
 import 'package:water_tracker/presentation/widgets/login_button_widget.dart';
@@ -11,6 +12,10 @@ class LogoForm extends StatefulWidget {
 }
 
 class _MyLogFormWidgetState extends State<LogoForm> {
+  static const greetings = 'Welcome back, Tony!';
+  static const emailLabelText = 'Enter your email';
+  static const passwordLabelText = 'Enter password';
+  static const singIn = 'Sing In';
   final formKey = GlobalKey<FormState>();
   final emailNode = FocusNode();
 
@@ -27,17 +32,17 @@ class _MyLogFormWidgetState extends State<LogoForm> {
       child: Column(
         children: [
           const Text(
-            'Welcome back, Tony!',
-            style: TextStyle(fontSize: 28, color: Color(0xFF292D32)),
+            greetings,
+            style: CustomTheme.greetingsProperty,
           ),
           const SizedBox(height: 28),
           InputFieldWidget(
-            labelText: 'Enter your email',
+            labelText: emailLabelText,
             validator: FormValidators.emailValidator,
           ),
           const SizedBox(height: 28),
           InputFieldWidget(
-            labelText: 'Enter password',
+            labelText: passwordLabelText,
             validator: FormValidators.passwordValidator,
           ),
           const SizedBox(height: 28),
@@ -46,7 +51,7 @@ class _MyLogFormWidgetState extends State<LogoForm> {
               // TODO: call something on validation
               if (formKey.currentState!.validate()) {}
             },
-            text: 'Sing In',
+            text: singIn,
           ),
         ],
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:water_tracker/custom_theme.dart';
 import 'package:water_tracker/form_validators.dart';
 
 class InputFieldWidget extends StatelessWidget {
@@ -16,7 +17,7 @@ class InputFieldWidget extends StatelessWidget {
     return TextFormField(
       decoration: InputDecoration(
         filled: true,
-        fillColor: const Color(0xFFF2F4F8),
+        fillColor: CustomTheme.backgroundFieldColor,
         labelText: labelText,
       ),
       validator: validator,
