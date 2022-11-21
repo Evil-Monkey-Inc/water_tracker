@@ -15,6 +15,11 @@ class CustomTheme {
     decoration: TextDecoration.underline,
   );
 
+  static const restText = TextStyle(
+    fontSize: 16,
+    color: Colors.black,
+  );
+
   static const focusedBorder = OutlineInputBorder(
     borderRadius: BorderRadius.all(Radius.circular(10)),
     borderSide: BorderSide(color: Colors.black),
@@ -38,6 +43,13 @@ class CustomTheme {
   static const errorBorder = OutlineInputBorder(
     borderRadius: BorderRadius.all(Radius.circular(10)),
     borderSide: BorderSide(color: Colors.red),
+  );
+
+  static const privacyPolicyTextProperty = TextStyle(
+    fontSize: 16,
+    color: Colors.black,
+    decoration: TextDecoration.underline,
+    fontWeight: FontWeight.bold,
   );
 
   static const cursorColor = TextSelectionThemeData(cursorColor: Color(0xFF292D32));
@@ -85,8 +97,6 @@ class CustomTheme {
   static const singUpProperty = TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.bold);
 
   static const notHaveAccountPadding = EdgeInsets.all(8.0);
-
-  static const privacyPolicyTextProperty = TextStyle(fontSize: 16, color: Colors.black);
 
   static const paddingPrivacyPolicyTermsWidget = EdgeInsets.all(16.0);
 

@@ -15,10 +15,16 @@ class CodegenLoader extends AssetLoader{
   }
 
   static const Map<String,dynamic> en = {
-  "enter_your_email": "Enter your email"
+  "enter_your_email": "Enter your email",
+  "enter_password": "Enter password",
+  "sing_in": "Увійти",
+  "welcome_back_tony": "Welcome back, Tony"
 };
 static const Map<String,dynamic> uk = {
-  "enter_your_email": "Вкажіть вашу пошту"
+  "enter_your_email": "Вкажіть вашу пошту",
+  "enter_password": "Вкажіть пароль",
+  "sing_in": "Увійти",
+  "welcome_back_tony": "Ласкаво просимо, Тоні"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "uk": uk};
 }

@@ -1,4 +1,8 @@
 {
-  "enter_your_email" : "Enter your email"
+  "enter_your_email" : "Enter your email",
+  "enter_password" : "Enter password",
+  "sing_in" : "Увійти",
+  "welcome_back_tony" : "Welcome back, Tony"
+
 }
 
