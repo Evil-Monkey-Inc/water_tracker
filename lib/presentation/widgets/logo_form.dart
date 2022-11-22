@@ -12,6 +12,7 @@ class LogoForm extends StatefulWidget {
 }
 
 class _MyLogFormWidgetState extends State<LogoForm> {
+  static const spacer = SizedBox(height: 28);
   static const greetings = 'Welcome back, Tony!';
   static const emailLabelText = 'Enter your email';
   static const passwordLabelText = 'Enter password';
@@ -35,17 +36,17 @@ class _MyLogFormWidgetState extends State<LogoForm> {
             greetings,
             style: CustomTheme.greetingsProperty,
           ),
-          const SizedBox(height: 28),
+          spacer,
           InputFieldWidget(
             labelText: emailLabelText,
             validator: FormValidators.emailValidator,
           ),
-          const SizedBox(height: 28),
+          spacer,
           InputFieldWidget(
             labelText: passwordLabelText,
             validator: FormValidators.passwordValidator,
           ),
-          const SizedBox(height: 28),
+          spacer,
           CustomButton(
             onPressed: () {
               // TODO: call something on validation

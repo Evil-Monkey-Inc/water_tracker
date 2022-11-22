@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:water_tracker/assets..dart';
 import 'package:water_tracker/custom_theme.dart';
 
 class ManWidget extends StatelessWidget {
@@ -7,7 +8,7 @@ class ManWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Image.asset(
-      CustomTheme.manImagePath,
+      Assets.manImagePath,
       height: CustomTheme.manHeight,
       fit: BoxFit.fitHeight,
     );

@@ -21,7 +21,7 @@ class _WaterAppState extends State<WaterApp> {
       scrollBehavior: const CupertinoScrollBehavior(),
       theme: ThemeData(
         primaryColor: CustomTheme.themeDataColor,
-        focusColor: const Color(0xFF292D32),
+        focusColor: CustomTheme.focusColor,
         inputDecorationTheme: const InputDecorationTheme(
           focusedBorder: CustomTheme.focusedBorder,
           focusedErrorBorder: CustomTheme.focusedErrorBorder,
@@ -30,7 +30,7 @@ class _WaterAppState extends State<WaterApp> {
           border: CustomTheme.focusedBorder,
           errorBorder: CustomTheme.errorBorder,
           filled: true,
-          fillColor: CustomTheme.borderFillColor,
+          fillColor: CustomTheme.backgroundFieldColor,
           labelStyle: CustomTheme.borderLabelStyle,
         ),
         textSelectionTheme: CustomTheme.cursorColor,

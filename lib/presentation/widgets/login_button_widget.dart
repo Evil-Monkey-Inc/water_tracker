@@ -6,6 +6,8 @@ class CustomButton extends StatelessWidget {
 
   final VoidCallback onPressed;
   final String text;
+  static const paddingInsideButton = EdgeInsets.all(8.0);
+  static const paddingAroundButton = EdgeInsets.symmetric(vertical: 12.0);
 
   @override
   Widget build(BuildContext context) {
@@ -13,12 +15,12 @@ class CustomButton extends StatelessWidget {
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
         primary: CustomTheme.buttonColor,
-        padding: CustomTheme.paddingInsideButton,
+        padding: paddingInsideButton,
         minimumSize: CustomTheme.minimumSizeButton,
         shape: const RoundedRectangleBorder(borderRadius: CustomTheme.roundingButton),
       ),
       child: Padding(
-        padding: CustomTheme.paddingAroundButton,
+        padding: paddingAroundButton,
         child: Text(
           text,
           style: CustomTheme.buttonSize,

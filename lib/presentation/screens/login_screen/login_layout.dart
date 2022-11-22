@@ -13,6 +13,7 @@ class LoginLayout extends StatefulWidget {
 }
 
 class _LoginLayoutState extends State<LoginLayout> {
+  static const spaces = SizedBox(height: 32);
   static const paddingHorizontal = 24.0;
 
   @override
@@ -21,19 +22,18 @@ class _LoginLayoutState extends State<LoginLayout> {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: paddingHorizontal),
         child: SingleChildScrollView(
-          // todo (andreyK): add animatedCrossFade here
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: const [
-              SizedBox(height: 32),
+              spaces,
               LogoWidget(),
-              SizedBox(height: 24),
+              spaces,
               ManWidget(),
               LogoForm(),
               PrivacyPolicyAndTermsWidget(),
-              SizedBox(height: 8),
+              spaces,
               NotHaveAccount(),
-              SizedBox(height: 8),
+              spaces,
             ],
           ),
         ),

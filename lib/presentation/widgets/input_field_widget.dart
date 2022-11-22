@@ -16,8 +16,6 @@ class InputFieldWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       decoration: InputDecoration(
-        filled: true,
-        fillColor: CustomTheme.backgroundFieldColor,
         labelText: labelText,
       ),
       validator: validator,
