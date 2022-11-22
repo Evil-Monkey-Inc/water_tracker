@@ -4,6 +4,10 @@
   "sing_in" : "Увійти",
   "welcome_back_tony" : "Welcome back, Tony!",
   "dont_have_an_account_yet" : "Don`t have an account yet?",
-  "sing_up" : "Sing Up"
+  "sing_up" : "Sing Up",
+  "by_signing_in_you_agree_to_our" : "By signing in, you agree to our",
+  "terms" : "Terms",
+  "and" : "end",
+  "privacy_policy" : "Privacy Policy."
 }
 

@@ -7,5 +7,9 @@ abstract class  LocaleKeys {
   static const welcome_back_tony = 'welcome_back_tony';
   static const dont_have_an_account_yet = 'dont_have_an_account_yet';
   static const sing_up = 'sing_up';
+  static const by_signing_in_you_agree_to_our = 'by_signing_in_you_agree_to_our';
+  static const terms = 'terms';
+  static const and = 'and';
+  static const privacy_policy = 'privacy_policy';
 
 }

@@ -20,7 +20,11 @@ class CodegenLoader extends AssetLoader{
   "sing_in": "Увійти",
   "welcome_back_tony": "Welcome back, Tony!",
   "dont_have_an_account_yet": "Don`t have an account yet?",
-  "sing_up": "Sing Up"
+  "sing_up": "Sing Up",
+  "by_signing_in_you_agree_to_our": "By signing in, you agree to our",
+  "terms": "Terms",
+  "and": "end",
+  "privacy_policy": "Privacy Policy."
 };
 static const Map<String,dynamic> uk = {
   "enter_your_email": "Вкажіть вашу пошту",
@@ -28,7 +32,11 @@ static const Map<String,dynamic> uk = {
   "sing_in": "Увійти",
   "welcome_back_tony": "Ласкаво просимо, Тоні!",
   "dont_have_an_account_yet": "Ще не маєте облікового запису?",
-  "sing_up": "Реєстрація"
+  "sing_up": "Реєстрація",
+  "by_signing_in_you_agree_to_our": "Увійшовши, ви погоджуєтеся з нашими",
+  "terms": "умовами",
+  "and": "та",
+  "privacy_policy": "політикою конфіденційності."
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "uk": uk};
 }
