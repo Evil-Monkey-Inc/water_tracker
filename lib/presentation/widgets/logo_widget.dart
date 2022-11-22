@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:water_tracker/assets..dart';
+import 'package:water_tracker/assets.dart';
 import 'package:water_tracker/custom_theme.dart';
 
 class LogoWidget extends StatelessWidget {

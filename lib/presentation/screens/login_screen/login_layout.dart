@@ -13,7 +13,7 @@ class LoginLayout extends StatefulWidget {
 }
 
 class _LoginLayoutState extends State<LoginLayout> {
-  static const spaces = SizedBox(height: 32);
+  static const spaces = SizedBox(height: 24);
   static const paddingHorizontal = 24.0;
 
   @override
