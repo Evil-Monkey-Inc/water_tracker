@@ -5,13 +5,15 @@ import 'package:water_tracker/presentation/screens/login_screen/registration_scr
 class NotHaveAccount extends StatelessWidget {
   const NotHaveAccount({Key? key}) : super(key: key);
 
+  static const spaceTextSpan = TextSpan(text: ' ', style: TextStyle(fontSize: 16, color: Colors.black));
+  static const notHaveAccountPadding = EdgeInsets.all(8.0);
   static const notHaveAccount = 'Don`t have an account yet?';
   static const singUp = '\nSing Up';
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: CustomTheme.notHaveAccountPadding,
+      padding: notHaveAccountPadding,
       child: Column(
         children: [
           InkWell(
@@ -20,6 +22,7 @@ class NotHaveAccount extends StatelessWidget {
                 text: notHaveAccount,
                 style: CustomTheme.notHaveAccountProperty,
                 children: [
+                  spaceTextSpan,
                   TextSpan(
                     text: singUp, // TODO: refactored
                     style: CustomTheme.singUpProperty,
