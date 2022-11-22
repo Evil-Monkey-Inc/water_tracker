@@ -66,21 +66,7 @@ class CustomTheme {
 
   static const minimumSizeButton = Size.fromHeight(12);
 
-  static const paddingInsideButton = EdgeInsets.all(8.0);
-
-  static const paddingAroundButton = EdgeInsets.symmetric(vertical: 12.0);
-
   static const greetingsProperty = TextStyle(fontSize: 28, color: Color(0xFF292D32));
-
-  static const assetsFolder = "assets";
-
-  static const manImagePath = "$assetsFolder/images/man_login.png";
-
-  static const imagesFolder = "$assetsFolder/images";
-
-  static const logoTextImage = "$imagesFolder/logo_name.svg";
-
-  static const logoImagePath = "$imagesFolder/logo.svg";
 
   static const manHeight = 241.0;
 
@@ -88,17 +74,13 @@ class CustomTheme {
 
   static const logoTextWidth = 87.5;
 
-  static const padding = 8.0;
-
   static const textSize = 20.0;
 
   static const notHaveAccountProperty = TextStyle(fontSize: 16, color: Color(0xFF8F9AA9));
 
   static const singUpProperty = TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.bold);
 
-  static const notHaveAccountPadding = EdgeInsets.all(8.0);
-
-  static const paddingPrivacyPolicyTermsWidget = EdgeInsets.all(16.0);
+  static const focusColor = Color(0xFF292D32);
 
   static const themeDataColor = Color(0xFF292D32);
 
