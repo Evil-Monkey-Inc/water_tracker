@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:water_tracker/custom_theme.dart';
 import 'package:water_tracker/form_validators.dart';
 
 class InputFieldWidget extends StatelessWidget {
