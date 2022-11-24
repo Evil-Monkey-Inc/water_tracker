@@ -34,9 +34,9 @@ static const Map<String,dynamic> uk = {
   "dont_have_an_account_yet": "Ще не маєте облікового запису?",
   "sing_up": "Реєстрація",
   "by_signing_in_you_agree_to_our": "Увійшовши, ви погоджуєтеся з нашими",
-  "terms": "умовами",
+  "terms": "Умовами",
   "and": "та",
-  "privacy_policy": "політикою конфіденційності."
+  "privacy_policy": "Політикою конфіденційності."
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "uk": uk};
 }
