@@ -1,6 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:water_tracker/custom_theme.dart';
 import 'package:water_tracker/form_validators.dart';
+import 'package:water_tracker/generated/locale_keys.g.dart';
 import 'package:water_tracker/presentation/widgets/input_field_widget.dart';
 import 'package:water_tracker/presentation/widgets/login_button_widget.dart';
 
@@ -13,10 +15,6 @@ class LogoForm extends StatefulWidget {
 
 class _MyLogFormWidgetState extends State<LogoForm> {
   static const spacer = SizedBox(height: 28);
-  static const greetings = 'Welcome back, Tony!';
-  static const emailLabelText = 'Enter your email';
-  static const passwordLabelText = 'Enter password';
-  static const singIn = 'Sing In';
   final formKey = GlobalKey<FormState>();
   final emailNode = FocusNode();
 
@@ -32,18 +30,18 @@ class _MyLogFormWidgetState extends State<LogoForm> {
       key: formKey,
       child: Column(
         children: [
-          const Text(
-            greetings,
+          Text(
+            LocaleKeys.welcome_back_tony.tr(),
             style: CustomTheme.greetingsProperty,
           ),
           spacer,
           InputFieldWidget(
-            labelText: emailLabelText,
+            labelText: LocaleKeys.enter_your_email.tr(),
             validator: FormValidators.emailValidator,
           ),
           spacer,
           InputFieldWidget(
-            labelText: passwordLabelText,
+            labelText: LocaleKeys.enter_password.tr(),
             validator: FormValidators.passwordValidator,
           ),
           spacer,
@@ -52,7 +50,7 @@ class _MyLogFormWidgetState extends State<LogoForm> {
               // TODO: call something on validation
               if (formKey.currentState!.validate()) {}
             },
-            text: singIn,
+            text: LocaleKeys.sing_in.tr(),
           ),
         ],
       ),
