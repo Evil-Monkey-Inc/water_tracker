@@ -8,7 +8,11 @@
   "by_signing_in_you_agree_to_our" : "Увійшовши, ви погоджуєтеся з нашими",
   "terms" : "Умовами",
   "and" : "та",
-  "privacy_policy" : "Політикою конфіденційності."
+  "privacy_policy" : "Політикою конфіденційності.",
+  "please_enter_email" : "Будь ласка, введіть адресу електронної пошти",
+  "please_enter_correct_email" : "Будь ласка, введіть правильний email",
+  "please_enter_password" : "Будь ласка, введіть пароль",
+  "invalid_password" : "Недійсний пароль"
 
 }
 

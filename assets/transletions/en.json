@@ -8,6 +8,10 @@
   "by_signing_in_you_agree_to_our" : "By signing in, you agree to our",
   "terms" : "Terms",
   "and" : "end",
-  "privacy_policy" : "Privacy Policy."
+  "privacy_policy" : "Privacy Policy.",
+  "please_enter_email" : "Please, enter email",
+  "please_enter_correct_email" : "Please, enter correct email",
+  "please_enter_password" : "Please, enter password",
+  "invalid_password" : "Invalid password"
 }
 
