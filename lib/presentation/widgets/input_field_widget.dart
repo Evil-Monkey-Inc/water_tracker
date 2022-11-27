@@ -6,10 +6,12 @@ class InputFieldWidget extends StatelessWidget {
     Key? key,
     required this.labelText,
     this.validator,
+    this.controller,
   }) : super(key: key);
 
   final String labelText;
-  final ValidatorFunction? validator;
+  final SingleValidatorFunction? validator;
+  final TextEditingController? controller;
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +20,7 @@ class InputFieldWidget extends StatelessWidget {
         labelText: labelText,
       ),
       validator: validator,
+      controller: controller,
     );
   }
 }
