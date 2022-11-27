@@ -18,5 +18,6 @@ abstract class  LocaleKeys {
   static const start_your_journey = 'start_your_journey';
   static const re_enter_your_password = 're_enter_your_password';
   static const passwords_do_not_match_try_again = 'passwords_do_not_match_try_again';
+  static const already_have_an_account = 'already_have_an_account';
 
 }

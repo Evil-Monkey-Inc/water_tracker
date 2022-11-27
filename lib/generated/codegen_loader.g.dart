@@ -31,7 +31,8 @@ class CodegenLoader extends AssetLoader{
   "invalid_password": "Invalid password",
   "start_your_journey": "Start your journey.",
   "re_enter_your_password": "Re-enter your password",
-  "passwords_do_not_match_try_again": "Passwords do not match. Try again"
+  "passwords_do_not_match_try_again": "Passwords do not match. Try again",
+  "already_have_an_account": "Already have an account?"
 };
 static const Map<String,dynamic> uk = {
   "enter_your_email": "Вкажіть вашу пошту",
