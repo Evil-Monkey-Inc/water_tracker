@@ -54,6 +54,10 @@ class CustomTheme {
 
   static const cursorColor = TextSelectionThemeData(cursorColor: Color(0xFF292D32));
 
+  static const spaceTextSpan = TextSpan(text: ' ', style: TextStyle(fontSize: 16, color: Colors.black));
+
+  static const privacyProperty = TextStyle(fontSize: 16, color: Colors.black);
+
   static const borderFillColor = Color(0xFFA6ABB5);
 
   static const borderLabelStyle = TextStyle(color: Color(0xFF292D32));
@@ -69,6 +73,8 @@ class CustomTheme {
   static const greetingsProperty = TextStyle(fontSize: 28, color: Color(0xFF292D32));
 
   static const manHeight = 241.0;
+
+  static const womanHeight = 241.0;
 
   static const logoWidth = 16.0;
 
