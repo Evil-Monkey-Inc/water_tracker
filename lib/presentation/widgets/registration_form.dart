@@ -1,7 +1,7 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:water_tracker/custom_theme.dart';
 import 'package:water_tracker/form_validators.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
 import 'package:water_tracker/presentation/widgets/input_field_widget.dart';
 import 'package:water_tracker/presentation/widgets/login_button_widget.dart';
@@ -15,6 +15,7 @@ class RegisterForm extends StatefulWidget {
 
 class _MyLogFormWidgetState extends State<RegisterForm> {
   static const spacer = SizedBox(height: 28);
+  final _pass = TextEditingController();
   final formKey = GlobalKey<FormState>();
   final emailNode = FocusNode();
 
@@ -31,7 +32,7 @@ class _MyLogFormWidgetState extends State<RegisterForm> {
       child: Column(
         children: [
           const Text(
-            'Start your journey.',
+            'Start your journey.', // todo :remove and add localization
             style: CustomTheme.greetingsProperty,
           ),
           spacer,
@@ -43,12 +44,12 @@ class _MyLogFormWidgetState extends State<RegisterForm> {
           InputFieldWidget(
             labelText: LocaleKeys.enter_password.tr(),
             validator: FormValidators.passwordValidator,
+            controller: _pass,
           ),
           spacer,
           InputFieldWidget(
-            // controller:  ,
             labelText: 'Re-enter your password',
-            validator: FormValidators.repeatPasswordValidator, // todo: change validator
+            validator: (value) => FormValidators.repeatPasswordValidator(value, _pass.text),
           ),
           spacer,
           CustomButton(
