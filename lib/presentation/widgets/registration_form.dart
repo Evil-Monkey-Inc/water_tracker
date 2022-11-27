@@ -31,8 +31,8 @@ class _MyLogFormWidgetState extends State<RegisterForm> {
       key: formKey,
       child: Column(
         children: [
-          const Text(
-            'Start your journey.', // todo :remove and add localization
+          Text(
+            LocaleKeys.start_your_journey.tr(), // todo :remove and add localization
             style: CustomTheme.greetingsProperty,
           ),
           spacer,
@@ -48,7 +48,7 @@ class _MyLogFormWidgetState extends State<RegisterForm> {
           ),
           spacer,
           InputFieldWidget(
-            labelText: 'Re-enter your password',
+            labelText: LocaleKeys.re_enter_your_password.tr(),
             validator: (value) => FormValidators.repeatPasswordValidator(value, _pass.text),
           ),
           spacer,
@@ -57,7 +57,7 @@ class _MyLogFormWidgetState extends State<RegisterForm> {
               // TODO: call something on validation
               if (formKey.currentState!.validate()) {}
             },
-            text: 'Sing Up',
+            text: LocaleKeys.sing_up.tr(),
           ),
         ],
       ),

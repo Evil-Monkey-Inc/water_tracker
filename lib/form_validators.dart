@@ -25,6 +25,6 @@ class FormValidators {
 
   static DoubleValidatorFunction repeatPasswordValidator = (value1, value2) {
     if (value1 == null || value1.isEmpty) return LocaleKeys.please_enter_password.tr();
-    return value1 == value2 ? null : "Passwords do not match";
+    return value1 == value2 ? null : LocaleKeys.re_enter_your_password.tr();
   };
 }
