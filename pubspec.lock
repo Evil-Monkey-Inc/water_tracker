@@ -147,13 +147,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.0"
-  localized_rich_text:
-    dependency: "direct main"
-    description:
-      name: localized_rich_text
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.0.5"
   matcher:
     dependency: transitive
     description:
