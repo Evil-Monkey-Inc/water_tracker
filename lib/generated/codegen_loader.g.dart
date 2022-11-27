@@ -17,7 +17,7 @@ class CodegenLoader extends AssetLoader{
   static const Map<String,dynamic> en = {
   "enter_your_email": "Enter your email",
   "enter_password": "Enter password",
-  "sing_in": "Увійти",
+  "sing_in": "Sing In",
   "welcome_back_tony": "Welcome back, Tony!",
   "dont_have_an_account_yet": "Don`t have an account yet?",
   "sing_up": "Sing Up",
