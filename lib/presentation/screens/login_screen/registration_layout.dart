@@ -27,7 +27,7 @@ class RegistrationLayout extends StatelessWidget {
               RegisterForm(),
               PrivacyPolicyAndTermsWidget(),
               spaces,
-              NotHaveAccount(), // TODO: CHANGE WIDGET FOR LODIN MESSEGE
+              NotHaveAccount(), // TODO: CHANGE WIDGET FOR LOGIN MESSAGE
               spaces,
             ],
           ),
