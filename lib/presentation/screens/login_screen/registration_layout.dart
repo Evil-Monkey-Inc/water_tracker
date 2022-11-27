@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:water_tracker/presentation/widgets/already_have_an_account.widget.dart';
 import 'package:water_tracker/presentation/widgets/logo_widget.dart';
-import 'package:water_tracker/presentation/widgets/not_have_account_widget.dart';
 import 'package:water_tracker/presentation/widgets/privacy_policy_and_terms_widget.dart';
 import 'package:water_tracker/presentation/widgets/registration_form.dart';
 import 'package:water_tracker/presentation/widgets/woman_widget.dart';
@@ -27,7 +27,7 @@ class RegistrationLayout extends StatelessWidget {
               RegisterForm(),
               PrivacyPolicyAndTermsWidget(),
               spaces,
-              NotHaveAccount(), // TODO: CHANGE WIDGET FOR LOGIN MESSAGE
+              AlreadyHaveAnAccountWidget(), // TODO: CHANGE WIDGET FOR LOGIN MESSAGE
               spaces,
             ],
           ),
