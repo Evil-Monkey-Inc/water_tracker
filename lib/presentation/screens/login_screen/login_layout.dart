@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:water_tracker/presentation/widgets/logo_form.dart';
 import 'package:water_tracker/presentation/widgets/logo_widget.dart';
