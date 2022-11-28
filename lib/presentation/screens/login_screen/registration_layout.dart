@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:water_tracker/presentation/widgets/already_have_an_account.widget.dart';
 import 'package:water_tracker/presentation/widgets/logo_widget.dart';
+import 'package:water_tracker/presentation/widgets/personal_image_widget.dart';
 import 'package:water_tracker/presentation/widgets/privacy_policy_and_terms_widget.dart';
 import 'package:water_tracker/presentation/widgets/registration_form.dart';
-import 'package:water_tracker/presentation/widgets/woman_widget.dart';
 
 class RegistrationLayout extends StatelessWidget {
   const RegistrationLayout({Key? key}) : super(key: key);
@@ -19,15 +19,15 @@ class RegistrationLayout extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: const [
+            children: [
               spaces,
-              LogoWidget(),
+              const LogoWidget(),
               spaces,
-              WomanWidget(),
-              RegisterForm(),
-              PrivacyPolicyAndTermsWidget(),
+              PersonImageWidget.womanWay(),
+              const RegisterForm(),
+              const PrivacyPolicyAndTermsWidget(),
               spaces,
-              AlreadyHaveAnAccountWidget(),
+              const AlreadyHaveAnAccountWidget(),
               spaces,
             ],
           ),

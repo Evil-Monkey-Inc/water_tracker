@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:water_tracker/presentation/widgets/logo_form.dart';
 import 'package:water_tracker/presentation/widgets/logo_widget.dart';
-import 'package:water_tracker/presentation/widgets/man_widget.dart';
 import 'package:water_tracker/presentation/widgets/not_have_account_widget.dart';
+import 'package:water_tracker/presentation/widgets/personal_image_widget.dart';
 import 'package:water_tracker/presentation/widgets/privacy_policy_and_terms_widget.dart';
 
 class LoginLayout extends StatefulWidget {
@@ -24,15 +24,15 @@ class _LoginLayoutState extends State<LoginLayout> {
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: const [
+            children: [
               spaces,
-              LogoWidget(),
+              const LogoWidget(),
               spaces,
-              ManWidget(),
-              LogoForm(),
-              PrivacyPolicyAndTermsWidget(),
+              PersonImageWidget.manWay(),
+              const LogoForm(),
+              const PrivacyPolicyAndTermsWidget(),
               spaces,
-              NotHaveAccount(),
+              const NotHaveAccount(),
               spaces,
             ],
           ),
