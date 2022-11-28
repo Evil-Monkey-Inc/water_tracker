@@ -32,7 +32,7 @@ class CodegenLoader extends AssetLoader{
   "start_your_journey": "Start your journey.",
   "re_enter_your_password": "Re-enter your password",
   "passwords_do_not_match_try_again": "Passwords do not match. Try again",
-  "already_have_an_account": "Already have an account?"
+  "already_have_an_account": "Вже є аккаунт?"
 };
 static const Map<String,dynamic> uk = {
   "enter_your_email": "Вкажіть вашу пошту",
@@ -51,7 +51,8 @@ static const Map<String,dynamic> uk = {
   "invalid_password": "Недійсний пароль",
   "start_your_journey": "Реєстрація",
   "re_enter_your_password": "Повторно введіть пароль",
-  "passwords_do_not_match_try_again": "Паролі не співпадають. Спробуйте знову"
+  "passwords_do_not_match_try_again": "Паролі не співпадають. Спробуйте знову",
+  "already_have_an_account": "Already have an account?"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "uk": uk};
 }

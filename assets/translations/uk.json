@@ -15,5 +15,6 @@
   "invalid_password" : "Недійсний пароль",
   "start_your_journey" :  "Реєстрація",
   "re_enter_your_password" : "Повторно введіть пароль",
-  "passwords_do_not_match_try_again" : "Паролі не співпадають. Спробуйте знову"
+  "passwords_do_not_match_try_again" : "Паролі не співпадають. Спробуйте знову",
+  "already_have_an_account" : "Already have an account?"
 }
