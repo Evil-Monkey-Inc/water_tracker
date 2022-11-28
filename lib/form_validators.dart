@@ -16,12 +16,11 @@ class FormValidators {
 
   static SingleValidatorFunction passwordValidator = (value) {
     if (value == null || value.isEmpty) return LocaleKeys.please_enter_password.tr();
-    if (!_passwordRegexp.hasMatch(value)) {
-      return LocaleKeys.invalid_password.tr();
-    } else {
-      return null;
-    }
+    if (!_passwordRegexp.hasMatch(value)) return LocaleKeys.invalid_password.tr();
+    return null;
   };
+
+  // TODO: create SingleValidatorRegistrationFunction for show user password requirements
 
   static DoubleValidatorFunction repeatPasswordValidator = (value1, value2) {
     if (value1 == null || value1.isEmpty) return LocaleKeys.please_enter_password.tr();
