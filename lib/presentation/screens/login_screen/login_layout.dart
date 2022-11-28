@@ -14,13 +14,13 @@ class LoginLayout extends StatefulWidget {
 
 class _LoginLayoutState extends State<LoginLayout> {
   static const spaces = SizedBox(height: 24);
-  static const paddingHorizontal = 24.0;
+  static const paddingHorizontal = EdgeInsets.symmetric(horizontal: 24.0);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: paddingHorizontal),
+        padding: paddingHorizontal,
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,

@@ -9,13 +9,13 @@ class RegistrationLayout extends StatelessWidget {
   const RegistrationLayout({Key? key}) : super(key: key);
 
   static const spaces = SizedBox(height: 24);
-  static const paddingHorizontal = 24.0;
+  static const paddingHorizontal = EdgeInsets.symmetric(horizontal: 24.0);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: paddingHorizontal),
+        padding: paddingHorizontal,
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -27,7 +27,7 @@ class RegistrationLayout extends StatelessWidget {
               RegisterForm(),
               PrivacyPolicyAndTermsWidget(),
               spaces,
-              AlreadyHaveAnAccountWidget(), // TODO: CHANGE WIDGET FOR LOGIN MESSAGE
+              AlreadyHaveAnAccountWidget(),
               spaces,
             ],
           ),
