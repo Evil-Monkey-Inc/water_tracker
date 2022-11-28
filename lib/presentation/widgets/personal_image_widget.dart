@@ -6,7 +6,7 @@ class PersonImageWidget extends StatelessWidget {
     this.imagePath, {
     Key? key,
   }) : super(key: key);
-  static const womanHeight = 241.0;
+  static const imageHeight = 241.0;
   final String imagePath;
 
   factory PersonImageWidget.womanWay() => const PersonImageWidget(Assets.womanImagePath);
@@ -16,7 +16,7 @@ class PersonImageWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Image.asset(
       imagePath,
-      height: womanHeight,
+      height: imageHeight,
       fit: BoxFit.fitHeight,
     );
   }
