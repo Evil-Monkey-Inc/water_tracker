@@ -32,7 +32,7 @@ class _MyLogFormWidgetState extends State<RegisterForm> {
       child: Column(
         children: [
           Text(
-            LocaleKeys.start_your_journey.tr(), // todo :remove and add localization
+            LocaleKeys.start_your_journey.tr(),
             style: CustomTheme.greetingsProperty,
           ),
           spacer,
