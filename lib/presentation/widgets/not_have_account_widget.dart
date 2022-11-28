@@ -39,15 +39,3 @@ class NotHaveAccount extends StatelessWidget {
     );
   }
 }
-
-//TextSpan(
-//                 text: LocaleKeys.dont_have_an_account_yet.tr(),
-//                 style: CustomTheme.notHaveAccountProperty,
-//                 children: [
-//                   spaceTextSpan,
-//                   TextSpan(
-//                     text: LocaleKeys.sing_in.tr(), // TODO: refactored
-//                     style: CustomTheme.singUpProperty,
-//                   ),
-//                 ],
-//               ),
