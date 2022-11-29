@@ -13,26 +13,22 @@ class AlreadyHaveAnAccountWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: notHaveAccountPadding,
-      child: Column(
-        children: [
-          InkWell(
-            child: Text.rich(
+      child: InkWell(
+        child: Text.rich(
+          TextSpan(
+            text: LocaleKeys.already_have_an_account.tr(),
+            style: CustomTheme.notHaveAccountProperty,
+            children: [
+              CustomTheme.spaceTextSpan,
               TextSpan(
-                text: LocaleKeys.already_have_an_account.tr(),
-                style: CustomTheme.notHaveAccountProperty,
-                children: [
-                  CustomTheme.spaceTextSpan,
-                  TextSpan(
-                    text: LocaleKeys.sing_in.tr(),
-                    style: CustomTheme.singUpProperty,
-                  ),
-                ],
+                text: LocaleKeys.sing_in.tr(),
+                style: CustomTheme.singUpProperty,
               ),
-              textAlign: TextAlign.center,
-            ),
-            onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const LoginScreen())),
+            ],
           ),
-        ],
+          textAlign: TextAlign.center,
+        ),
+        onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const LoginScreen())),
       ),
     );
   }
