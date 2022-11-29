@@ -73,7 +73,9 @@ class CustomTheme {
 
   static const greetingsProperty = TextStyle(fontSize: 28, color: mainColor);
 
-  static const notHaveAccountProperty = TextStyle(fontSize: 16, color: Color(0xFF8F9AA9));
+  static const themeColor = Color(0xFF8F9AA9);
+
+  static const notHaveAccountProperty = TextStyle(fontSize: 16, color: themeColor);
 
   static const singUpProperty = TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.bold);
 
