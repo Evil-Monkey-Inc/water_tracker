@@ -7,7 +7,6 @@ import 'package:water_tracker/presentation/screens/login_screen/login_screen.dar
 class AlreadyHaveAnAccountWidget extends StatelessWidget {
   const AlreadyHaveAnAccountWidget({Key? key}) : super(key: key);
 
-  static const spaceTextSpan = TextSpan(text: ' ', style: TextStyle(fontSize: 16, color: Colors.black));
   static const notHaveAccountPadding = EdgeInsets.all(8.0);
 
   @override
@@ -22,7 +21,7 @@ class AlreadyHaveAnAccountWidget extends StatelessWidget {
                 text: LocaleKeys.already_have_an_account.tr(),
                 style: CustomTheme.notHaveAccountProperty,
                 children: [
-                  spaceTextSpan,
+                  CustomTheme.spaceTextSpan,
                   TextSpan(
                     text: LocaleKeys.sing_in.tr(),
                     style: CustomTheme.singUpProperty,
