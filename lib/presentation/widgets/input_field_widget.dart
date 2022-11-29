@@ -10,7 +10,7 @@ class InputFieldWidget extends StatelessWidget {
   }) : super(key: key);
 
   final String labelText;
-  final SingleValidatorFunction? validator;
+  final SingleRegistrationValidatorFunction? validator;
   final TextEditingController? controller;
 
   @override
