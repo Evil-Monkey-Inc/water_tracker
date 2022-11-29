@@ -43,7 +43,7 @@ class _MyLogFormWidgetState extends State<RegisterForm> {
           spacer,
           InputFieldWidget(
             labelText: LocaleKeys.enter_password.tr(),
-            validator: FormValidators.passwordValidator,
+            validator: FormValidators.passwordRegValidator,
             controller: _pass,
           ),
           spacer,
