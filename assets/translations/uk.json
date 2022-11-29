@@ -16,5 +16,7 @@
   "start_your_journey" :  "Реєстрація",
   "re_enter_your_password" : "Повторно введіть пароль",
   "passwords_do_not_match_try_again" : "Паролі не співпадають. Спробуйте знову",
-  "already_have_an_account" : "Already have an account?"
+  "already_have_an_account" : "Вже є аккаунт?",
+  "password_must_contain_at_least_8_characters" : "Пароль має містити не менше 8 символів"
+
 }
