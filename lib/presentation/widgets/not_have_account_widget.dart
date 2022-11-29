@@ -18,6 +18,7 @@ class NotHaveAccount extends StatelessWidget {
         children: [
           InkWell(
             child: Text.rich(
+              textAlign: TextAlign.center,
               TextSpan(
                 text: LocaleKeys.dont_have_an_account_yet.tr(),
                 style: CustomTheme.notHaveAccountProperty,
@@ -29,7 +30,6 @@ class NotHaveAccount extends StatelessWidget {
                   ),
                 ],
               ),
-              textAlign: TextAlign.center,
             ),
             onTap: () =>
                 Navigator.of(context).push(MaterialPageRoute(builder: (context) => const RegistrationScreen())),
@@ -39,15 +39,3 @@ class NotHaveAccount extends StatelessWidget {
     );
   }
 }
-
-//TextSpan(
-//                 text: LocaleKeys.dont_have_an_account_yet.tr(),
-//                 style: CustomTheme.notHaveAccountProperty,
-//                 children: [
-//                   spaceTextSpan,
-//                   TextSpan(
-//                     text: LocaleKeys.sing_in.tr(), // TODO: refactored
-//                     style: CustomTheme.singUpProperty,
-//                   ),
-//                 ],
-//               ),

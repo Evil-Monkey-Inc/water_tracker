@@ -51,8 +51,9 @@ class CustomTheme {
     decoration: TextDecoration.underline,
     fontWeight: FontWeight.bold,
   );
+  static const mainColor = Color(0xFF292D32);
 
-  static const cursorColor = TextSelectionThemeData(cursorColor: Color(0xFF292D32));
+  static const cursorColor = TextSelectionThemeData(cursorColor: mainColor);
 
   static const spaceTextSpan = TextSpan(text: ' ', style: TextStyle(fontSize: 16, color: Colors.black));
 
@@ -60,35 +61,27 @@ class CustomTheme {
 
   static const borderFillColor = Color(0xFFA6ABB5);
 
-  static const borderLabelStyle = TextStyle(color: Color(0xFF292D32));
+  static const borderLabelStyle = TextStyle(color: mainColor);
 
   static const backgroundFieldColor = Color(0xFFF2F4F8);
 
-  static const buttonColor = Color(0xFF292D32);
+  static const buttonColor = mainColor;
 
   static const buttonSize = TextStyle(fontSize: 16);
 
   static const minimumSizeButton = Size.fromHeight(12);
 
-  static const greetingsProperty = TextStyle(fontSize: 28, color: Color(0xFF292D32));
+  static const greetingsProperty = TextStyle(fontSize: 28, color: mainColor);
 
-  static const manHeight = 241.0;
+  static const themeColor = Color(0xFF8F9AA9);
 
-  static const womanHeight = 241.0;
-
-  static const logoWidth = 16.0;
-
-  static const logoTextWidth = 87.5;
-
-  static const textSize = 20.0;
-
-  static const notHaveAccountProperty = TextStyle(fontSize: 16, color: Color(0xFF8F9AA9));
+  static const notHaveAccountProperty = TextStyle(fontSize: 16, color: themeColor);
 
   static const singUpProperty = TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.bold);
 
-  static const focusColor = Color(0xFF292D32);
+  static const focusColor = mainColor;
 
-  static const themeDataColor = Color(0xFF292D32);
+  static const themeDataColor = mainColor;
 
   static const roundingButton = BorderRadius.all(Radius.circular(40));
 }

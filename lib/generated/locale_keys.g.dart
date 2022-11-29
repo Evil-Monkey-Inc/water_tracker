@@ -15,5 +15,11 @@ abstract class  LocaleKeys {
   static const please_enter_correct_email = 'please_enter_correct_email';
   static const please_enter_password = 'please_enter_password';
   static const invalid_password = 'invalid_password';
+  static const start_your_journey = 'start_your_journey';
+  static const re_enter_your_password = 're_enter_your_password';
+  static const passwords_do_not_match_try_again = 'passwords_do_not_match_try_again';
+  static const already_have_an_account = 'already_have_an_account';
+  static const password_must_contain_at_least_8_characters = 'password_must_contain_at_least_8_characters';
+  static const password_must_contain_one_uppercase_letter = 'password_must_contain_one_uppercase_letter';
 
 }

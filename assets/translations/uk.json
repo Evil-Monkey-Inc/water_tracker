@@ -12,7 +12,11 @@
   "please_enter_email" : "Будь ласка, введіть адресу електронної пошти",
   "please_enter_correct_email" : "Будь ласка, введіть правильний email",
   "please_enter_password" : "Будь ласка, введіть пароль",
-  "invalid_password" : "Недійсний пароль"
+  "invalid_password" : "Недійсний пароль",
+  "start_your_journey" :  "Реєстрація",
+  "re_enter_your_password" : "Повторно введіть пароль",
+  "passwords_do_not_match_try_again" : "Паролі не співпадають. Спробуйте знову",
+  "already_have_an_account" : "Вже є аккаунт?",
+  "password_must_contain_at_least_8_characters" : "Пароль має містити не менше 8 символів"
 
 }
-
