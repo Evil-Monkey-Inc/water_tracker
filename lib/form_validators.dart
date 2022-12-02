@@ -23,7 +23,7 @@ class FormValidators {
 
   static SingleRegistrationValidatorFunction passwordRegValidator = (value) {
     if (value == null || value.isEmpty) return LocaleKeys.please_enter_password.tr();
-    if (value.length < 8) return LocaleKeys.password_must_contain_at_least_8_characters;
+    if (value.length < 8) return LocaleKeys.password_must_contain_at_least_8_characters.tr();
     if (!_passwordRegexp.hasMatch(value)) return LocaleKeys.password_must_contain_one_uppercase_letter;
   };
 

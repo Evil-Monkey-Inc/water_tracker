@@ -5,6 +5,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
 import 'package:water_tracker/presentation/widgets/input_field_widget.dart';
 import 'package:water_tracker/presentation/widgets/login_button_widget.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class RegisterForm extends StatefulWidget {
   const RegisterForm({Key? key}) : super(key: key);
@@ -16,6 +17,7 @@ class RegisterForm extends StatefulWidget {
 class _MyLogFormWidgetState extends State<RegisterForm> {
   static const spacer = SizedBox(height: 28);
   final _pass = TextEditingController();
+  final _email = TextEditingController();
   final formKey = GlobalKey<FormState>();
   final emailNode = FocusNode();
 
@@ -39,6 +41,7 @@ class _MyLogFormWidgetState extends State<RegisterForm> {
           InputFieldWidget(
             labelText: LocaleKeys.enter_your_email.tr(),
             validator: FormValidators.emailValidator,
+            controller: _email,
           ),
           spacer,
           InputFieldWidget(
@@ -53,7 +56,22 @@ class _MyLogFormWidgetState extends State<RegisterForm> {
           ),
           spacer,
           CustomButton(
-            onPressed: () {
+            onPressed: () async {
+              try {
+                final credential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
+                  email: _email.text,
+                  password: _pass.text,
+                );
+                print('New creation User');
+              } on FirebaseAuthException catch (e) {
+                if (e.code == 'weak-password') {
+                  print('The password provided is too weak.');
+                } else if (e.code == 'email-already-in-use') {
+                  print('The account already exists for that email.');
+                }
+              } catch (e) {
+                print(e);
+              }
               // TODO: call something on validation
               if (formKey.currentState!.validate()) {}
             },
