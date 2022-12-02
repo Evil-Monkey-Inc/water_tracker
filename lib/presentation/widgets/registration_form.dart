@@ -5,7 +5,7 @@ import 'package:water_tracker/form_validators.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
 import 'package:water_tracker/presentation/screens/registration_screen/bloc/registration_bloc.dart';
-import 'package:water_tracker/presentation/screens/registration_screen/bloc/registration_events..dart';
+import 'package:water_tracker/presentation/screens/registration_screen/bloc/registration_events.dart';
 import 'package:water_tracker/presentation/widgets/input_field_widget.dart';
 import 'package:water_tracker/presentation/widgets/login_button_widget.dart';
 
@@ -59,7 +59,7 @@ class _MyLogFormWidgetState extends State<RegisterForm> {
           spacer,
           CustomButton(
             onPressed: () async {
-              context.read<RegistrationBloc>().add(RegistrationUserEvent(_pass.text, _email.text));
+              context.read<RegistrationBloc>().add(CreateUserEvent(_pass.text, _email.text));
               print('New creation User');
 
               // TODO: call something on validation
@@ -72,13 +72,3 @@ class _MyLogFormWidgetState extends State<RegisterForm> {
     );
   }
 }
-
-//  } on FirebaseAuthException catch (e) {
-//                 if (e.code == 'weak-password') {
-//                   print('The password provided is too weak.');
-//                 } else if (e.code == 'email-already-in-use') {
-//                   print('The account already exists for that email.');
-//                 }
-//               } catch (e) {
-//                 print(e);
-//               }
