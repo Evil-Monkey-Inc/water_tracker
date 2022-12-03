@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:water_tracker/custom_theme.dart';
 import 'package:water_tracker/form_validators.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
+import 'package:water_tracker/presentation/widgets/custom_button.dart';
 import 'package:water_tracker/presentation/widgets/input_field_widget.dart';
-import 'package:water_tracker/presentation/widgets/login_button_widget.dart';
 
 class LogoForm extends StatefulWidget {
   const LogoForm({Key? key}) : super(key: key);

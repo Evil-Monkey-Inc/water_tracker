@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:water_tracker/custom_theme.dart';
@@ -6,8 +7,8 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
 import 'package:water_tracker/presentation/screens/registration_screen/bloc/registration_bloc.dart';
 import 'package:water_tracker/presentation/screens/registration_screen/bloc/registration_events.dart';
+import 'package:water_tracker/presentation/widgets/custom_button.dart';
 import 'package:water_tracker/presentation/widgets/input_field_widget.dart';
-import 'package:water_tracker/presentation/widgets/login_button_widget.dart';
 
 class RegisterForm extends StatefulWidget {
   const RegisterForm({Key? key}) : super(key: key);
@@ -17,6 +18,7 @@ class RegisterForm extends StatefulWidget {
 }
 
 class _MyLogFormWidgetState extends State<RegisterForm> {
+  Timer? deploy;
   static const spacer = SizedBox(height: 28);
   final _pass = TextEditingController();
   final _email = TextEditingController();
@@ -58,10 +60,9 @@ class _MyLogFormWidgetState extends State<RegisterForm> {
           ),
           spacer,
           CustomButton(
-            onPressed: () {
+            onPressed: () async {
               if (formKey.currentState!.validate()) {
                 context.read<RegistrationBloc>().add(CreateUserEvent(_email.text, _pass.text));
-                print('New creation User');
               }
             },
             text: LocaleKeys.sing_up.tr(),

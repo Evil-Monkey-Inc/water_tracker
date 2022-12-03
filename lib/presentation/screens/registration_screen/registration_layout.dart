@@ -33,15 +33,9 @@ class _RegistrationLayoutState extends State<RegistrationLayout> {
         padding: RegistrationLayout.paddingHorizontal,
         child: BlocBuilder<RegistrationBloc, RegistrationState>(
           builder: (BuildContext context, state) {
-            if (state is InitialRegistrationState) {
-              return const Text('expectation');
-            }
-            if (state is LoadingRegistrationState) {
-              return const Center(child: CircularProgressIndicator());
-            }
-            if (state is ErrorRegistrationState) {
-              return Text('unhandled exception in Registration Layout ${state.exception}');
-            }
+            if (state is InitialRegistrationState) return const Text('expectation');
+            if (state is LoadingRegistrationState) return const Center(child: CircularProgressIndicator());
+            if (state is ErrorRegistrationState) return Text('exception in Registration Layout ${state.exception}');
             if (state is LoadedRegistrationState) {
               return SingleChildScrollView(
                 child: Column(
