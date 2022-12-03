@@ -58,12 +58,11 @@ class _MyLogFormWidgetState extends State<RegisterForm> {
           ),
           spacer,
           CustomButton(
-            onPressed: () async {
-              context.read<RegistrationBloc>().add(CreateUserEvent(_pass.text, _email.text));
-              print('New creation User');
-
-              // TODO: call something on validation
-              if (formKey.currentState!.validate()) {}
+            onPressed: () {
+              if (formKey.currentState!.validate()) {
+                context.read<RegistrationBloc>().add(CreateUserEvent(_email.text, _pass.text));
+                print('New creation User');
+              }
             },
             text: LocaleKeys.sing_up.tr(),
           ),
