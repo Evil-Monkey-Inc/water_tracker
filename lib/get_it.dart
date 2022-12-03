@@ -7,7 +7,7 @@ import 'package:water_tracker/data/services/registration_service_impl.dart';
 final getIt = GetIt.instance;
 
 void setupServicesLocator() {
-  final registrationService = RegistrationServiceImpl();
+  final registrationService = RegistrationServiceFirebaseImpl();
 
   getIt.registerSingleton<RegistrationService>(registrationService);
 
