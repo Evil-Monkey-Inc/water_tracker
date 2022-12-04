@@ -6,5 +6,5 @@ class RepositoryImpl extends Repository {
   final RegistrationService registrationService;
 
   @override
-  Future<void> registerUser(String password, String email) => registrationService.registerUser(password, email);
+  Future<void> registerUser(String email, String password) => registrationService.registerUser(password, email);
 }
