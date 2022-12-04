@@ -3,13 +3,8 @@ import 'package:water_tracker/data/services/registration_service.dart';
 
 class RepositoryImpl extends Repository {
   RepositoryImpl(this.registrationService);
-
   final RegistrationService registrationService;
 
   @override
-  Future<bool> registerUser(String email, String password) async {
-    final result = await registrationService.registerUser(email, password);
-    final isSuccessful = result.error == null;
-    return isSuccessful;
-  }
+  Future<void> registerUser(String email, String password) => registrationService.registerUser(password, email);
 }
