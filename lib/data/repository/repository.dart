@@ -1,3 +1,6 @@
 abstract class Repository {
-  Future<void> registerUser(String password, String email);
+  Future<void> registerUser(
+    String email,
+    String password,
+  );
 }
