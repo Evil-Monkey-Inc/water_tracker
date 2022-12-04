@@ -33,10 +33,7 @@ class _RegistrationLayoutState extends State<RegistrationLayout> {
         padding: RegistrationLayout.paddingHorizontal,
         child: BlocBuilder<RegistrationBloc, RegistrationState>(
           builder: (BuildContext context, state) {
-            if (state is InitialRegistrationState) return const Text('expectation');
-            if (state is LoadingRegistrationState) return const Center(child: CircularProgressIndicator());
-            if (state is ErrorRegistrationState) return Text('exception in Registration Layout ${state.exception}');
-            if (state is LoadedRegistrationState) {
+            if (state is InitialRegistrationState) {
               return SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -53,9 +50,8 @@ class _RegistrationLayoutState extends State<RegistrationLayout> {
                   ],
                 ),
               );
-            } else {
-              throw Exception('unhandled exception in Registration Layout');
             }
+            throw Exception('unhandled exception in Registration Layout');
           },
         ),
       ),
