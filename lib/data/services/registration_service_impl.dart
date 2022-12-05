@@ -21,4 +21,8 @@ class RegistrationServiceImpl extends RegistrationService {
     final result = SignUpResult(user, error);
     return result;
   }
+
+  @override
+  Future<void> loginUser(String email, String password) async =>
+      await firebaseAuth.signInWithEmailAndPassword(email: email, password: password);
 }
