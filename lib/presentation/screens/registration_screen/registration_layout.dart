@@ -21,37 +21,33 @@ class RegistrationLayout extends StatefulWidget {
 
 class _RegistrationLayoutState extends State<RegistrationLayout> {
   @override
-  void initState() {
-    context.read<RegistrationBloc>().add(LoadedRegistrationScreenEvent());
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
         padding: RegistrationLayout.paddingHorizontal,
-        child: BlocBuilder<RegistrationBloc, RegistrationState>(
-          builder: (BuildContext context, state) {
-            if (state is InitialRegistrationState) {
-              return SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    RegistrationLayout.spaces,
-                    const LogoWidget(),
-                    RegistrationLayout.spaces,
-                    PersonImageWidget.womanWay(),
-                    const RegisterForm(),
-                    const PrivacyPolicyAndTermsWidget(),
-                    RegistrationLayout.spaces,
-                    const AlreadyHaveAnAccountWidget(),
-                    RegistrationLayout.spaces,
-                  ],
-                ),
-              );
+        child: BlocConsumer<RegistrationBloc, RegistrationState>(
+          listener: (context, state) {
+            if (state is ErrorRegistrationState) {
+              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Error')));
             }
-            throw Exception('unhandled exception in Registration Layout');
+          },
+          builder: (BuildContext context, state) {
+            return SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  RegistrationLayout.spaces,
+                  const LogoWidget(),
+                  RegistrationLayout.spaces,
+                  PersonImageWidget.womanWay(),
+                  RegisterForm(isButtonEnabled: state is! LoadingRegistrationState),
+                  const PrivacyPolicyAndTermsWidget(),
+                  RegistrationLayout.spaces,
+                  const AlreadyHaveAnAccountWidget(),
+                  RegistrationLayout.spaces,
+                ],
+              ),
+            );
           },
         ),
       ),
