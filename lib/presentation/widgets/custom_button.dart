@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:water_tracker/custom_theme.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({Key? key, required this.onPressed, required this.text}) : super(key: key);
+  const CustomButton({Key? key, required this.text, required this.onPressed}) : super(key: key);
 
-  final VoidCallback? onPressed;
   final String text;
+  final VoidCallback? onPressed;
   static const paddingInsideButton = EdgeInsets.all(8.0);
   static const paddingAroundButton = EdgeInsets.symmetric(vertical: 12.0);
 
