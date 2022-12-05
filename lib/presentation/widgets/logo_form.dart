@@ -46,7 +46,7 @@ class _MyLogFormWidgetState extends State<LogoForm> {
           ),
           spacer,
           CustomButton(
-            onPressed: () async {
+            onPressed: () {
               // TODO: call something on validation
               if (formKey.currentState!.validate()) {}
             },
