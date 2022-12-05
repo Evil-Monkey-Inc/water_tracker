@@ -22,7 +22,7 @@ class RegistrationLayout extends StatefulWidget {
 class _RegistrationLayoutState extends State<RegistrationLayout> {
   @override
   void initState() {
-    context.read<RegistrationBloc>().add(LoadedRegistrationEvent());
+    context.read<RegistrationBloc>().add(LoadedRegistrationScreenEvent());
     super.initState();
   }
 

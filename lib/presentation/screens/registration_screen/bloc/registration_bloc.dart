@@ -14,10 +14,9 @@ class RegistrationBloc extends Bloc<RegistrationEvent, RegistrationState> {
         emit(ErrorRegistrationState(e));
       }
     });
-    on<LoadedRegistrationEvent>((event, emit) async {
+    on<LoadedRegistrationScreenEvent>((event, emit) async {
       try {
-        emit(LoadingRegistrationState());
-        emit(LoadedRegistrationState());
+        emit(InitialRegistrationState());
       } catch (e) {
         emit(ErrorRegistrationState(e));
       }
