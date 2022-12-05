@@ -29,6 +29,17 @@ class _MyLogFormWidgetState extends State<RegisterForm> {
     super.initState();
   }
 
+  var _isButtonDisabled = false;
+
+  void doRegister() {
+    if (formKey.currentState!.validate()) {
+      setState(() {
+        _isButtonDisabled = true;
+      });
+      context.read<RegistrationBloc>().add(CreateUserEvent(_email.text, _pass.text));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -58,15 +69,12 @@ class _MyLogFormWidgetState extends State<RegisterForm> {
           ),
           spacer,
           CustomButton(
-            onPressed: () async {
-              if (formKey.currentState!.validate()) {
-                context.read<RegistrationBloc>().add(CreateUserEvent(_email.text, _pass.text));
-              }
-            },
+            onPressed: _isButtonDisabled ? null : doRegister,
             text: LocaleKeys.sing_up.tr(),
           ),
         ],
       ),
     );
   }
+  //
 }
