@@ -12,4 +12,7 @@ class RepositoryImpl extends Repository {
     final isSuccessful = result.error == null;
     return isSuccessful;
   }
+
+  @override
+  Future<void> loginUser(String email, String password) async => await registrationService.loginUser(email, password);
 }
