@@ -51,6 +51,7 @@ class _MyLogFormWidgetState extends State<LogoForm> {
               if (formKey.currentState!.validate()) {}
             },
             text: LocaleKeys.sing_in.tr(),
+            isEnabled: true,
           ),
         ],
       ),

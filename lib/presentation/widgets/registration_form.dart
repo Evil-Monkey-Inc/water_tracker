@@ -29,8 +29,6 @@ class _MyLogFormWidgetState extends State<RegisterForm> {
     super.initState();
   }
 
-  var _isButtonDisabled = false;
-
   void doRegister() {
     if (formKey.currentState!.validate()) {
       setState(() {
@@ -39,6 +37,8 @@ class _MyLogFormWidgetState extends State<RegisterForm> {
       context.read<RegistrationBloc>().add(CreateUserEvent(_email.text, _pass.text));
     }
   }
+
+  var _isButtonDisabled = false;
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +69,17 @@ class _MyLogFormWidgetState extends State<RegisterForm> {
           ),
           spacer,
           CustomButton(
-            onPressed: _isButtonDisabled ? null : doRegister,
+            isEnabled: _isButtonDisabled = !_isButtonDisabled,
+            onPressed: () {
+              setState(() {
+                if (formKey.currentState!.validate()) {
+                  setState(() {
+                    _isButtonDisabled = true;
+                  });
+                  context.read<RegistrationBloc>().add(CreateUserEvent(_email.text, _pass.text));
+                }
+              });
+            },
             text: LocaleKeys.sing_up.tr(),
           ),
         ],
