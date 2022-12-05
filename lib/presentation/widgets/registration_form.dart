@@ -10,7 +10,9 @@ import 'package:water_tracker/presentation/widgets/custom_button.dart';
 import 'package:water_tracker/presentation/widgets/input_field_widget.dart';
 
 class RegisterForm extends StatefulWidget {
-  const RegisterForm({Key? key}) : super(key: key);
+  const RegisterForm({Key? key, required this.isButtonEnabled}) : super(key: key);
+
+  final bool isButtonEnabled;
 
   @override
   State<RegisterForm> createState() => _MyLogFormWidgetState();
@@ -29,16 +31,12 @@ class _MyLogFormWidgetState extends State<RegisterForm> {
     super.initState();
   }
 
-  void doRegister() {
-    if (formKey.currentState!.validate()) {
-      setState(() {
-        _isButtonDisabled = true;
-      });
-      context.read<RegistrationBloc>().add(CreateUserEvent(_email.text, _pass.text));
-    }
+  @override
+  void dispose() {
+    _pass.dispose();
+    _email.dispose();
+    super.dispose();
   }
-
-  var _isButtonDisabled = false;
 
   @override
   Widget build(BuildContext context) {
@@ -69,16 +67,11 @@ class _MyLogFormWidgetState extends State<RegisterForm> {
           ),
           spacer,
           CustomButton(
-            isEnabled: _isButtonDisabled = !_isButtonDisabled,
+            isEnabled: widget.isButtonEnabled,
             onPressed: () {
-              setState(() {
-                if (formKey.currentState!.validate()) {
-                  setState(() {
-                    _isButtonDisabled = true;
-                  });
-                  context.read<RegistrationBloc>().add(CreateUserEvent(_email.text, _pass.text));
-                }
-              });
+              if (formKey.currentState!.validate()) {
+                context.read<RegistrationBloc>().add(CreateUserEvent(_email.text, _pass.text));
+              }
             },
             text: LocaleKeys.sing_up.tr(),
           ),
