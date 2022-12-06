@@ -11,9 +11,10 @@ class RegistrationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-        child: BlocProvider<RegistrationBloc>(
-      create: (context) => RegistrationBloc(getIt<Repository>()),
-      child: const RegistrationLayout(),
-    ));
+      child: BlocProvider<RegistrationBloc>(
+        create: (context) => RegistrationBloc(getIt<Repository>()),
+        child: const RegistrationLayout(),
+      ),
+    );
   }
 }
