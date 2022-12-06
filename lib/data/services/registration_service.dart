@@ -1,3 +1,4 @@
+import 'package:water_tracker/data/models/responses/sign_in_result.dart';
 import 'package:water_tracker/data/models/responses/sign_up_result.dart';
 
 abstract class RegistrationService {
@@ -6,7 +7,7 @@ abstract class RegistrationService {
     String password,
   );
 
-  Future<void> loginUser(
+  Future<SingInResult> loginUser(
     String email,
     String password,
   );
