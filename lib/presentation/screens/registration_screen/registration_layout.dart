@@ -6,7 +6,7 @@ import 'package:water_tracker/presentation/screens/registration_screen/bloc/regi
 import 'package:water_tracker/presentation/screens/registration_screen/bloc/registration_state.dart';
 import 'package:water_tracker/presentation/widgets/already_have_an_account.widget.dart';
 import 'package:water_tracker/presentation/widgets/logo_widget.dart';
-import 'package:water_tracker/presentation/widgets/personal_image_widget.dart';
+import 'package:water_tracker/presentation/widgets/person_image_widget.dart';
 import 'package:water_tracker/presentation/widgets/privacy_policy_and_terms_widget.dart';
 import 'package:water_tracker/presentation/widgets/registration_form.dart';
 
