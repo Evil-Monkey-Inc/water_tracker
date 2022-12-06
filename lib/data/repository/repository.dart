@@ -1,5 +1,5 @@
 abstract class Repository {
-  Future<void> registerUser(
+  Future<bool> registerUser(
     String email,
     String password,
   );
