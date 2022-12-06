@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:water_tracker/custom_theme.dart';
 import 'package:water_tracker/form_validators.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
-import 'package:water_tracker/presentation/screens/registration_screen/bloc/registration_bloc.dart';
-import 'package:water_tracker/presentation/screens/registration_screen/bloc/registration_events.dart';
 import 'package:water_tracker/presentation/widgets/custom_button.dart';
 import 'package:water_tracker/presentation/widgets/input_field_widget.dart';
 
 class RegisterForm extends StatefulWidget {
-  const RegisterForm({Key? key, required this.isButtonEnabled}) : super(key: key);
+  const RegisterForm({Key? key, required this.isButtonEnabled, required this.onSignUpButtonPressed}) : super(key: key);
 
+  final void Function(String email, String password) onSignUpButtonPressed;
   final bool isButtonEnabled;
 
   @override
@@ -69,9 +67,7 @@ class _MyLogFormWidgetState extends State<RegisterForm> {
           CustomButton(
             isEnabled: widget.isButtonEnabled,
             onPressed: () {
-              if (formKey.currentState!.validate()) {
-                context.read<RegistrationBloc>().add(CreateUserEvent(_email.text, _pass.text));
-              }
+              if (formKey.currentState!.validate()) widget.onSignUpButtonPressed(_email.text, _pass.text);
             },
             text: LocaleKeys.sing_up.tr(),
           ),
