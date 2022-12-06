@@ -10,8 +10,8 @@ class RegistrationBloc extends Bloc<RegistrationEvent, RegistrationState> {
     on<CreateUserEvent>((event, emit) async {
       try {
         emit(LoadingRegistrationState());
-        await repository.registerUser(event.password, event.email);
-        emit(SuccessfullyRegistrationState());
+        final isSuccess = await repository.registerUser(event.password, event.email);
+        emit(isSuccess ? SuccessfullyRegistrationState() : ErrorRegistrationState(Exception()));
       } catch (e) {
         emit(ErrorRegistrationState(e));
       }
