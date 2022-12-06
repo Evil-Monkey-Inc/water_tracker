@@ -7,7 +7,9 @@ import 'package:water_tracker/presentation/widgets/custom_button.dart';
 import 'package:water_tracker/presentation/widgets/input_field_widget.dart';
 
 class SignInForm extends StatefulWidget {
-  const SignInForm({Key? key}) : super(key: key);
+  const SignInForm({Key? key, required this.onSignInButtonPressed, required this.isButtonEnabled}) : super(key: key);
+  final void Function(String email, String password) onSignInButtonPressed;
+  final bool isButtonEnabled;
 
   @override
   State<SignInForm> createState() => _MyLogFormWidgetState();
@@ -47,8 +49,10 @@ class _MyLogFormWidgetState extends State<SignInForm> {
           spacer,
           CustomButton(
             onPressed: () {
-              // TODO: call something on validation
-              if (formKey.currentState!.validate()) {}
+              if (formKey.currentState!.validate()) {
+                // TODO: call something on validation
+                //  widget.onSignInButtonPressed();
+              }
             },
             text: LocaleKeys.sing_in.tr(),
             isEnabled: true,
