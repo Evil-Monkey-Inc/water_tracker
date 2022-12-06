@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
-import 'package:water_tracker/presentation/screens/registration_screen/bloc/registration_bloc.dart';
-import 'package:water_tracker/presentation/screens/registration_screen/bloc/registration_events.dart';
-import 'package:water_tracker/presentation/screens/registration_screen/bloc/registration_state.dart';
+import 'package:water_tracker/presentation/screens/sign_up_screen/bloc/sign_up_bloc.dart';
+import 'package:water_tracker/presentation/screens/sign_up_screen/bloc/sign_up_event.dart';
+import 'package:water_tracker/presentation/screens/sign_up_screen/bloc/sign_up_state.dart';
 import 'package:water_tracker/presentation/widgets/already_have_an_account.widget.dart';
 import 'package:water_tracker/presentation/widgets/logo_widget.dart';
 import 'package:water_tracker/presentation/widgets/person_image_widget.dart';
 import 'package:water_tracker/presentation/widgets/privacy_policy_and_terms_widget.dart';
-import 'package:water_tracker/presentation/widgets/registration_form.dart';
+import 'package:water_tracker/presentation/widgets/sign_up_form.dart';
 
-class RegistrationLayout extends StatefulWidget {
-  const RegistrationLayout({Key? key}) : super(key: key);
+class SignUpLayout extends StatefulWidget {
+  const SignUpLayout({Key? key}) : super(key: key);
 
   @override
-  State<RegistrationLayout> createState() => _RegistrationLayoutState();
+  State<SignUpLayout> createState() => _SignUpLayoutState();
 }
 
-class _RegistrationLayoutState extends State<RegistrationLayout> {
+class _SignUpLayoutState extends State<SignUpLayout> {
   static const spaces = SizedBox(height: 24);
   static const paddingHorizontal = EdgeInsets.symmetric(horizontal: 24.0);
 
@@ -26,7 +26,7 @@ class _RegistrationLayoutState extends State<RegistrationLayout> {
     return Scaffold(
       body: Padding(
         padding: paddingHorizontal,
-        child: BlocConsumer<RegistrationBloc, RegistrationState>(
+        child: BlocConsumer<SignUpBloc, SignUpState>(
           listener: (context, state) {
             if (state is ErrorRegistrationState) {
               ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text(LocaleKeys.error_try_again)));
@@ -41,10 +41,10 @@ class _RegistrationLayoutState extends State<RegistrationLayout> {
                   const LogoWidget(),
                   spaces,
                   PersonImageWidget.womanWay(),
-                  RegisterForm(
-                    isButtonEnabled: state is! LoadingRegistrationState,
+                  SignUpForm(
+                    isButtonEnabled: state is! LoadingSignUpState,
                     onSignUpButtonPressed: (email, pass) =>
-                        context.read<RegistrationBloc>().add(CreateUserEvent(email, pass)),
+                        context.read<SignUpBloc>().add(CreateUserEvent(email, pass)),
                   ),
                   const PrivacyPolicyAndTermsWidget(),
                   spaces,

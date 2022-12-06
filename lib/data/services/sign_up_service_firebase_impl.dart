@@ -1,10 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:water_tracker/data/models/errors/sign_up_exception.dart';
+import 'package:water_tracker/data/models/responses/sign_in_result.dart';
 import 'package:water_tracker/data/models/responses/sign_up_result.dart';
 import 'package:water_tracker/data/models/user.dart';
-import 'package:water_tracker/data/services/registration_service.dart';
+import 'package:water_tracker/data/services/sign_up_service.dart';
 
-class RegistrationServiceFirebaseImpl extends RegistrationService {
+class SingUpServiceFirebaseImpl extends SingUpService {
   final firebaseAuth = auth.FirebaseAuth.instance;
 
   @override
@@ -19,6 +20,21 @@ class RegistrationServiceFirebaseImpl extends RegistrationService {
     User? user;
     if (credential != null) user = User(email);
     final result = SignUpResult(user, error);
+    return result;
+  }
+
+  @override
+  Future<SignInResult> loginUser(String email, String password) async {
+    auth.UserCredential? credential;
+    SignUpException? error;
+    try {
+      credential = await firebaseAuth.signInWithEmailAndPassword(email: email, password: password);
+    } on auth.FirebaseAuthException catch (e) {
+      error = SignUpException.fromFirebaseAuth(e);
+    }
+    User? user;
+    if (credential != null) user = User(email);
+    final result = SignInResult(user, error);
     return result;
   }
 }

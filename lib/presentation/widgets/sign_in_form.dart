@@ -1,25 +1,20 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:water_tracker/custom_theme.dart';
 import 'package:water_tracker/form_validators.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
 import 'package:water_tracker/presentation/widgets/custom_button.dart';
 import 'package:water_tracker/presentation/widgets/input_field_widget.dart';
 
-class RegisterForm extends StatefulWidget {
-  const RegisterForm({Key? key, required this.isButtonEnabled, required this.onSignUpButtonPressed}) : super(key: key);
-
-  final void Function(String email, String password) onSignUpButtonPressed;
-  final bool isButtonEnabled;
+class SignInForm extends StatefulWidget {
+  const SignInForm({Key? key}) : super(key: key);
 
   @override
-  State<RegisterForm> createState() => _MyLogFormWidgetState();
+  State<SignInForm> createState() => _MyLogFormWidgetState();
 }
 
-class _MyLogFormWidgetState extends State<RegisterForm> {
+class _MyLogFormWidgetState extends State<SignInForm> {
   static const spacer = SizedBox(height: 28);
-  final _pass = TextEditingController();
-  final _email = TextEditingController();
   final formKey = GlobalKey<FormState>();
   final emailNode = FocusNode();
 
@@ -30,50 +25,36 @@ class _MyLogFormWidgetState extends State<RegisterForm> {
   }
 
   @override
-  void dispose() {
-    _pass.dispose();
-    _email.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Form(
       key: formKey,
       child: Column(
         children: [
           Text(
-            LocaleKeys.start_your_journey.tr(),
+            LocaleKeys.welcome_back_tony.tr(),
             style: CustomTheme.greetingsProperty,
           ),
           spacer,
           InputFieldWidget(
             labelText: LocaleKeys.enter_your_email.tr(),
             validator: FormValidators.emailValidator,
-            controller: _email,
           ),
           spacer,
           InputFieldWidget(
             labelText: LocaleKeys.enter_password.tr(),
             validator: FormValidators.passwordRegValidator,
-            controller: _pass,
-          ),
-          spacer,
-          InputFieldWidget(
-            labelText: LocaleKeys.re_enter_your_password.tr(),
-            validator: (value) => FormValidators.repeatPasswordValidator(value, _pass.text),
           ),
           spacer,
           CustomButton(
-            isEnabled: widget.isButtonEnabled,
             onPressed: () {
-              if (formKey.currentState!.validate()) widget.onSignUpButtonPressed(_email.text, _pass.text);
+              // TODO: call something on validation
+              if (formKey.currentState!.validate()) {}
             },
-            text: LocaleKeys.sing_up.tr(),
+            text: LocaleKeys.sing_in.tr(),
+            isEnabled: true,
           ),
         ],
       ),
     );
   }
-  //
 }

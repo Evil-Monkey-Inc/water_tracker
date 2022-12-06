@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:water_tracker/presentation/widgets/logo_form.dart';
 import 'package:water_tracker/presentation/widgets/logo_widget.dart';
 import 'package:water_tracker/presentation/widgets/not_have_account_widget.dart';
 import 'package:water_tracker/presentation/widgets/person_image_widget.dart';
 import 'package:water_tracker/presentation/widgets/privacy_policy_and_terms_widget.dart';
+import 'package:water_tracker/presentation/widgets/sign_in_form.dart';
 
-class LoginLayout extends StatefulWidget {
-  const LoginLayout({Key? key}) : super(key: key);
+class SignInLayout extends StatefulWidget {
+  const SignInLayout({Key? key}) : super(key: key);
 
   @override
-  State<LoginLayout> createState() => _LoginLayoutState();
+  State<SignInLayout> createState() => _SignInLayoutState();
 }
 
-class _LoginLayoutState extends State<LoginLayout> {
+class _SignInLayoutState extends State<SignInLayout> {
   static const spaces = SizedBox(height: 24);
   static const paddingHorizontal = EdgeInsets.symmetric(horizontal: 24.0);
 
@@ -29,7 +29,7 @@ class _LoginLayoutState extends State<LoginLayout> {
               const LogoWidget(),
               spaces,
               PersonImageWidget.manWay(),
-              const LogoForm(),
+              const SignInForm(),
               const PrivacyPolicyAndTermsWidget(),
               spaces,
               const NotHaveAccount(),
