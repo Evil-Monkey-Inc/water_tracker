@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:water_tracker/generated/locale_keys.g.dart';
+import 'package:water_tracker/presentation/screens/sing_in_screen/bloc/sign_in_state.dart';
 import 'package:water_tracker/presentation/widgets/logo_widget.dart';
 import 'package:water_tracker/presentation/widgets/not_have_account_widget.dart';
 import 'package:water_tracker/presentation/widgets/person_image_widget.dart';
@@ -21,21 +24,33 @@ class _SignInLayoutState extends State<SignInLayout> {
     return Scaffold(
       body: Padding(
         padding: paddingHorizontal,
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              spaces,
-              const LogoWidget(),
-              spaces,
-              PersonImageWidget.manWay(),
-              const SignInForm(),
-              const PrivacyPolicyAndTermsWidget(),
-              spaces,
-              const NotHaveAccount(),
-              spaces,
-            ],
-          ),
+        child: BlocConsumer(
+          listener: (BuildContext context, state) {
+            if (state is ErrorSignInState) {
+              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text(LocaleKeys.error_try_again)));
+            }
+          },
+          builder: (BuildContext context, state) {
+            return SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  spaces,
+                  const LogoWidget(),
+                  spaces,
+                  PersonImageWidget.manWay(),
+                  SignInForm(
+                    isButtonEnabled: state is! LoadingSignInState,
+                    onSignInButtonPressed: (String email, String password) {},
+                  ),
+                  const PrivacyPolicyAndTermsWidget(),
+                  spaces,
+                  const NotHaveAccount(),
+                  spaces,
+                ],
+              ),
+            );
+          },
         ),
       ),
     );
