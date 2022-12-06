@@ -21,5 +21,6 @@ abstract class  LocaleKeys {
   static const already_have_an_account = 'already_have_an_account';
   static const password_must_contain_at_least_8_characters = 'password_must_contain_at_least_8_characters';
   static const password_must_contain_one_uppercase_letter = 'password_must_contain_one_uppercase_letter';
+  static const error_try_again = 'error_try_again';
 
 }

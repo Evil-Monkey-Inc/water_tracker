@@ -17,6 +17,7 @@
   "re_enter_your_password" : "Повторно введіть пароль",
   "passwords_do_not_match_try_again" : "Паролі не співпадають. Спробуйте знову",
   "already_have_an_account" : "Вже є аккаунт?",
-  "password_must_contain_at_least_8_characters" : "Пароль має містити не менше 8 символів"
+  "password_must_contain_at_least_8_characters" : "Пароль має містити не менше 8 символів",
+  "error_try_again" : "Помилка. Спробуйте знову"
 
 }
