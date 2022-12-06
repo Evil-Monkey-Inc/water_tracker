@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
@@ -29,7 +30,7 @@ class _SignUpLayoutState extends State<SignUpLayout> {
         child: BlocConsumer<SignUpBloc, SignUpState>(
           listener: (context, state) {
             if (state is ErrorRegistrationState) {
-              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text(LocaleKeys.error_try_again)));
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(LocaleKeys.error_try_again.tr())));
             }
           },
           builder: (BuildContext context, state) {
