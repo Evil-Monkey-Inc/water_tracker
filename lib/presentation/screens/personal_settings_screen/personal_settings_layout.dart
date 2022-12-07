@@ -9,7 +9,6 @@ class PersonalSettingsLayout extends StatelessWidget {
 
   static const spaces = SizedBox(height: 24);
   static const paddingHorizontal = EdgeInsets.symmetric(horizontal: 24.0);
-  static const personalSettingTitleScreen = 'Tell a bit more \ngeneral info';
 
   @override
   Widget build(BuildContext context) {
