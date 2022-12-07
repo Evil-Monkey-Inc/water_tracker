@@ -1,7 +1,7 @@
 import 'package:water_tracker/data/models/responses/sign_in_result.dart';
 import 'package:water_tracker/data/models/responses/sign_up_result.dart';
 
-abstract class SingUpService {
+abstract class AuthenticationService {
   Future<SignUpResult> registerUser(
     String email,
     String password,
