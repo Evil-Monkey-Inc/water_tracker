@@ -16,6 +16,8 @@ class SignInForm extends StatefulWidget {
 }
 
 class _MyLogFormWidgetState extends State<SignInForm> {
+  final _pass = TextEditingController();
+  final _email = TextEditingController();
   static const spacer = SizedBox(height: 28);
   final formKey = GlobalKey<FormState>();
   final emailNode = FocusNode();
@@ -40,19 +42,18 @@ class _MyLogFormWidgetState extends State<SignInForm> {
           InputFieldWidget(
             labelText: LocaleKeys.enter_your_email.tr(),
             validator: FormValidators.emailValidator,
+            controller: _email,
           ),
           spacer,
           InputFieldWidget(
             labelText: LocaleKeys.enter_password.tr(),
             validator: FormValidators.passwordRegValidator,
+            controller: _pass,
           ),
           spacer,
           CustomButton(
             onPressed: () {
-              if (formKey.currentState!.validate()) {
-                // TODO: call something on validation
-                //  widget.onSignInButtonPressed();
-              }
+              if (formKey.currentState!.validate()) widget.onSignInButtonPressed(_email.text, _pass.text);
             },
             text: LocaleKeys.sing_in.tr(),
             isEnabled: true,
