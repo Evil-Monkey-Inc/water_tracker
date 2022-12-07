@@ -4,14 +4,14 @@ import 'package:water_tracker/presentation/screens/sing_in_screen/bloc/sign_in_e
 import 'package:water_tracker/presentation/screens/sing_in_screen/bloc/sign_in_state.dart';
 
 class SignInBloc extends Bloc<SignInEvent, SignInState> {
-  Repository repository;
+  final Repository repository;
 
   SignInBloc(this.repository) : super(InitialSignInState()) {
     on<SignInUserEvent>((event, emit) async {
       try {
         emit(LoadingSignInState());
-        await repository.loginUser(event.email, event.password);
-        emit(SuccessfullySingInState());
+        final isSuccess = await repository.loginUser(event.email, event.password);
+        emit(isSuccess ? SuccessfullySingInState() : ErrorSignInState(Exception()));
       } catch (e) {
         emit(ErrorSignInState(e));
       }

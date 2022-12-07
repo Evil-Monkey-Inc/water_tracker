@@ -4,7 +4,7 @@ import 'package:water_tracker/presentation/screens/sign_up_screen/bloc/sign_up_e
 import 'package:water_tracker/presentation/screens/sign_up_screen/bloc/sign_up_state.dart';
 
 class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
-  Repository repository;
+  final Repository repository;
 
   SignUpBloc(this.repository) : super(InitialSignUpState()) {
     on<CreateUserEvent>((event, emit) async {
