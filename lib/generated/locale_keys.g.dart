@@ -22,5 +22,8 @@ abstract class  LocaleKeys {
   static const password_must_contain_at_least_8_characters = 'password_must_contain_at_least_8_characters';
   static const password_must_contain_one_uppercase_letter = 'password_must_contain_one_uppercase_letter';
   static const error_try_again = 'error_try_again';
+  static const skip = 'skip';
+  static const tell_more_general_info = 'tell_more_general_info';
+  static const setup_profile = 'setup_profile';
 
 }

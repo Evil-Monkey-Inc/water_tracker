@@ -35,7 +35,10 @@ class CodegenLoader extends AssetLoader{
   "already_have_an_account": "Already have an account?",
   "password_must_contain_at_least_8_characters": "Password must contain at least 8 characters",
   "password_must_contain_one_uppercase_letter": "Password must contain one uppercase letter",
-  "error_try_again": "Error. Try again"
+  "error_try_again": "Error. Try again",
+  "skip": "Skip",
+  "tell_more_general_info": "Tell a bit more \ngeneral info",
+  "setup_profile": "Setup profile"
 };
 static const Map<String,dynamic> uk = {
   "enter_your_email": "Вкажіть вашу пошту",
@@ -57,7 +60,10 @@ static const Map<String,dynamic> uk = {
   "passwords_do_not_match_try_again": "Паролі не співпадають. Спробуйте знову",
   "already_have_an_account": "Вже є аккаунт?",
   "password_must_contain_at_least_8_characters": "Пароль має містити не менше 8 символів",
-  "error_try_again": "Помилка. Спробуйте знову"
+  "error_try_again": "Помилка. Спробуйте знову",
+  "skip": "Пропустити",
+  "tell_more_general_info": "Розкажіть трохи більше\nзагальної інформації",
+  "setup_profile": "Налаштувати профіль"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "uk": uk};
 }

@@ -1,24 +1,24 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:water_tracker/custom_theme.dart';
+import 'package:water_tracker/generated/locale_keys.g.dart';
 
 class NameAndSkipWidget extends StatelessWidget {
   const NameAndSkipWidget({Key? key, required this.onPressed}) : super(key: key);
 
   final VoidCallback? onPressed;
-  static const skipButtonText = 'Skip';
-  static const screenName = 'Setup profile';
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        const Align(
+        Align(
           alignment: Alignment.center,
           child: TextButton(
             onLongPress: null,
             onPressed: null,
             child: Text(
-              screenName,
+              LocaleKeys.setup_profile.tr(),
               style: CustomTheme.setupScreenProperty,
             ),
           ),
@@ -27,8 +27,8 @@ class NameAndSkipWidget extends StatelessWidget {
           alignment: Alignment.bottomRight,
           child: TextButton(
             onPressed: onPressed,
-            child: const Text(
-              skipButtonText,
+            child: Text(
+              LocaleKeys.skip.tr(),
               style: CustomTheme.skipButtonsStyle,
             ),
           ),
