@@ -59,6 +59,8 @@ class CustomTheme {
 
   static const privacyProperty = TextStyle(fontSize: 16, color: Colors.black);
 
+  static const skipButtonsStyle = TextStyle(fontSize: 22, color: Colors.blue);
+
   static const borderFillColor = Color(0xFFA6ABB5);
 
   static const borderLabelStyle = TextStyle(color: mainColor);
@@ -70,6 +72,8 @@ class CustomTheme {
   static const buttonSize = TextStyle(fontSize: 16);
 
   static const minimumSizeButton = Size.fromHeight(12);
+
+  static const setupScreenProperty = TextStyle(fontSize: 24, color: mainColor, fontWeight: FontWeight.bold);
 
   static const greetingsProperty = TextStyle(fontSize: 28, color: mainColor);
 
