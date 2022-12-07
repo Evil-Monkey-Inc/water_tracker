@@ -61,6 +61,8 @@ class CustomTheme {
 
   static const skipButtonsStyle = TextStyle(fontSize: 22, color: Colors.blue);
 
+  static const titleSettingsProperty = TextStyle(fontSize: 34, color: mainColor);
+
   static const borderFillColor = Color(0xFFA6ABB5);
 
   static const borderLabelStyle = TextStyle(color: mainColor);
