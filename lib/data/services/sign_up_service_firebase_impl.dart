@@ -5,6 +5,7 @@ import 'package:water_tracker/data/models/responses/sign_up_result.dart';
 import 'package:water_tracker/data/models/user.dart';
 import 'package:water_tracker/data/services/sign_up_service.dart';
 
+// todo: renamed to auth firebase service
 class SingUpServiceFirebaseImpl extends SingUpService {
   final firebaseAuth = auth.FirebaseAuth.instance;
 
@@ -24,7 +25,7 @@ class SingUpServiceFirebaseImpl extends SingUpService {
   }
 
   @override
-  Future<SignInResult> loginUser(String email, String password) async {
+  Future<SingInResult> loginUser(String email, String password) async {
     auth.UserCredential? credential;
     SignUpException? error;
     try {
@@ -34,7 +35,7 @@ class SingUpServiceFirebaseImpl extends SingUpService {
     }
     User? user;
     if (credential != null) user = User(email);
-    final result = SignInResult(user, error);
+    final result = SingInResult(user, error);
     return result;
   }
 }
