@@ -1,10 +1,10 @@
 import 'package:water_tracker/data/repository/repository.dart';
-import 'package:water_tracker/data/services/registration_service.dart';
+import 'package:water_tracker/data/services/sign_up_service.dart';
 
 class RepositoryImpl extends Repository {
   RepositoryImpl(this.registrationService);
 
-  final RegistrationService registrationService;
+  final SingUpService registrationService;
 
   @override
   Future<bool> registerUser(String email, String password) async {

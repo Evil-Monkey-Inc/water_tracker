@@ -1,6 +1,6 @@
-abstract class RegistrationEvent {}
+abstract class SignUpEvent {}
 
-class CreateUserEvent extends RegistrationEvent {
+class CreateUserEvent extends SignUpEvent {
   CreateUserEvent(this.password, this.email);
   final String email;
   final String password;
