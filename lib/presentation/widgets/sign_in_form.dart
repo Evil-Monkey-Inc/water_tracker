@@ -55,7 +55,7 @@ class _MyLogFormWidgetState extends State<SignInForm> {
             onPressed: () {
               if (formKey.currentState!.validate()) widget.onSignInButtonPressed(_email.text, _pass.text);
             },
-            text: LocaleKeys.sing_in.tr(),
+            text: LocaleKeys.sign_in.tr(),
             isEnabled: true,
           ),
         ],

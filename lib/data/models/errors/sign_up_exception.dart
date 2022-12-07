@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 
-enum SingUpExceptionType {
+enum SignUpExceptionType {
   emailTaken,
   invalidEmail,
   noPermission,
@@ -8,15 +8,15 @@ enum SingUpExceptionType {
 }
 
 class SignUpException {
-  final SingUpExceptionType exception;
+  final SignUpExceptionType exception;
   final dynamic details;
 
   SignUpException(this.exception, this.details);
 
-  factory SignUpException.emailTaken([details]) => SignUpException(SingUpExceptionType.emailTaken, details);
-  factory SignUpException.invalidEmail([details]) => SignUpException(SingUpExceptionType.invalidEmail, details);
-  factory SignUpException.noPermission([details]) => SignUpException(SingUpExceptionType.noPermission, details);
-  factory SignUpException.weakPassword([details]) => SignUpException(SingUpExceptionType.weakPassword, details);
+  factory SignUpException.emailTaken([details]) => SignUpException(SignUpExceptionType.emailTaken, details);
+  factory SignUpException.invalidEmail([details]) => SignUpException(SignUpExceptionType.invalidEmail, details);
+  factory SignUpException.noPermission([details]) => SignUpException(SignUpExceptionType.noPermission, details);
+  factory SignUpException.weakPassword([details]) => SignUpException(SignUpExceptionType.weakPassword, details);
 
   static const _emailAlreadyInUseCode = 'email-already-in-use';
   static const _invalidEmailCode = 'invalid-email';
