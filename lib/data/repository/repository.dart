@@ -3,4 +3,9 @@ abstract class Repository {
     String email,
     String password,
   );
+
+  Future<bool> loginUser(
+    String email,
+    String password,
+  );
 }
