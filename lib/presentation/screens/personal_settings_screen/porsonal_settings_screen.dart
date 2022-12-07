@@ -6,6 +6,6 @@ class PersonalSettingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const PersonalSettingsLayout();
+    return const SafeArea(child: PersonalSettingsLayout());
   }
 }
