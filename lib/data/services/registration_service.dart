@@ -7,7 +7,7 @@ abstract class RegistrationService {
     String password,
   );
 
-  Future<SingInResult> loginUser(
+  Future<SignInResult> loginUser(
     String email,
     String password,
   );

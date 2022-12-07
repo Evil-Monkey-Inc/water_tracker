@@ -25,7 +25,7 @@ class SingUpServiceFirebaseImpl extends SingUpService {
   }
 
   @override
-  Future<SingInResult> loginUser(String email, String password) async {
+  Future<SignInResult> loginUser(String email, String password) async {
     auth.UserCredential? credential;
     SignUpException? error;
     try {
@@ -35,7 +35,7 @@ class SingUpServiceFirebaseImpl extends SingUpService {
     }
     User? user;
     if (credential != null) user = User(email);
-    final result = SingInResult(user, error);
+    final result = SignInResult(user, error);
     return result;
   }
 }
