@@ -24,12 +24,6 @@ class _MyLogFormWidgetState extends State<SignUpForm> {
   final emailNode = FocusNode();
 
   @override
-  void initState() {
-    emailNode.addListener(() => setState(() {}));
-    super.initState();
-  }
-
-  @override
   void dispose() {
     _pass.dispose();
     _email.dispose();
