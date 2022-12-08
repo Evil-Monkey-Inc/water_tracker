@@ -37,8 +37,7 @@ class CodegenLoader extends AssetLoader{
   "password_must_contain_one_uppercase_letter": "Password must contain one uppercase letter",
   "error_try_again": "Error. Try again",
   "skip": "Skip",
-  "tell_more": "Tell a bit more",
-  "general_info": "general info",
+  "tell_more_general_info": "Tell a bit more general info",
   "setup_profile": "Setup profile"
 };
 static const Map<String,dynamic> uk = {
