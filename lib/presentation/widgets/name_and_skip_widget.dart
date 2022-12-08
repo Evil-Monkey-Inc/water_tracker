@@ -6,12 +6,15 @@ import 'package:water_tracker/generated/locale_keys.g.dart';
 class NameAndSkipWidget extends StatelessWidget {
   const NameAndSkipWidget({Key? key, required this.onPressed}) : super(key: key);
 
+  final emptySpace = const SizedBox();
   final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
+    return Row(
       children: [
+        emptySpace,
+        const Spacer(flex: 2),
         Align(
           alignment: Alignment.center,
           child: TextButton(
@@ -23,6 +26,7 @@ class NameAndSkipWidget extends StatelessWidget {
             ),
           ),
         ),
+        const Spacer(flex: 1),
         Align(
           alignment: Alignment.bottomRight,
           child: TextButton(
