@@ -8,22 +8,16 @@ class TitleSettingWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Row(
       children: [
-        Align(
-          alignment: Alignment.bottomLeft,
+        Flexible(
+          flex: 2,
           child: Text(
-            firstTitleText,
+            '$firstTitleText $secondTitleText',
             style: CustomTheme.titleSettingsProperty,
           ),
         ),
-        Align(
-          alignment: Alignment.bottomLeft,
-          child: Text(
-            secondTitleText,
-            style: CustomTheme.titleSettingsProperty,
-          ),
-        ),
+        const Spacer(),
       ],
     );
   }
