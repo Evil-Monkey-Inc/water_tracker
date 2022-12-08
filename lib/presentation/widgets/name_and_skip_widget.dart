@@ -11,24 +11,36 @@ class NameAndSkipWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        emptySpace,
-        const Spacer(flex: 2),
-        Align(
-          alignment: Alignment.center,
-          child: TextButton(
-            onLongPress: null,
-            onPressed: null,
-            child: Text(
-              LocaleKeys.setup_profile.tr(),
-              style: CustomTheme.setupScreenProperty,
-            ),
+    return AppBar(
+      automaticallyImplyLeading: false,
+      backgroundColor: Colors.transparent,
+      elevation: 0,
+      centerTitle: true,
+      title: Text(
+        LocaleKeys.setup_profile.tr(),
+        style: CustomTheme.setupScreenProperty,
+      ),
+      actions: [
+        TextButton(
+          onPressed: onPressed,
+          child: Text(
+            LocaleKeys.skip.tr(),
+            style: CustomTheme.skipButtonsStyle,
           ),
         ),
-        const Spacer(flex: 1),
-        Align(
-          alignment: Alignment.bottomRight,
+      ],
+    );
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Expanded(child: emptySpace),
+        Expanded(
+          child: Text(
+            LocaleKeys.setup_profile.tr(),
+            style: CustomTheme.setupScreenProperty,
+          ),
+        ),
+        Expanded(
           child: TextButton(
             onPressed: onPressed,
             child: Text(
