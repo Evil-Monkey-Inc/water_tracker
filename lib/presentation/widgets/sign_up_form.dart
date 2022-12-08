@@ -70,7 +70,6 @@ class _MyLogFormWidgetState extends State<SignUpForm> {
             onPressed: () {
               if (formKey.currentState!.validate()) {
                 widget.onSignUpButtonPressed(_email.text, _pass.text);
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => const PersonalSettingScreen()));
               }
             },
             text: LocaleKeys.sing_up.tr(),
