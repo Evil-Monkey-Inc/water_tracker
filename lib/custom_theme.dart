@@ -55,9 +55,15 @@ class CustomTheme {
 
   static const cursorColor = TextSelectionThemeData(cursorColor: mainColor);
 
-  static const spaceTextSpan = TextSpan(text: ' ', style: TextStyle(fontSize: 16, color: Colors.black));
+  static const spaceTextSpan = TextSpan(text: ' ', style: TextStyle(fontSize: 16, color: mainColor));
 
-  static const privacyProperty = TextStyle(fontSize: 16, color: Colors.black);
+  static const skipButtonColor = Color(0xFF1D82F9);
+
+  static const privacyProperty = TextStyle(fontSize: 16, color: mainColor);
+
+  static const skipButtonsStyle = TextStyle(fontSize: 22, color: skipButtonColor);
+
+  static const titleSettingsProperty = TextStyle(fontSize: 34, color: mainColor, fontWeight: FontWeight.bold);
 
   static const borderFillColor = Color(0xFFA6ABB5);
 
@@ -70,6 +76,8 @@ class CustomTheme {
   static const buttonSize = TextStyle(fontSize: 16);
 
   static const minimumSizeButton = Size.fromHeight(12);
+
+  static const setupScreenProperty = TextStyle(fontSize: 24, color: mainColor, fontWeight: FontWeight.bold);
 
   static const greetingsProperty = TextStyle(fontSize: 28, color: mainColor);
 
