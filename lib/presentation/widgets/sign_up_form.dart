@@ -24,12 +24,6 @@ class _MyLogFormWidgetState extends State<SignUpForm> {
   final emailNode = FocusNode();
 
   @override
-  void initState() {
-    emailNode.addListener(() => setState(() {}));
-    super.initState();
-  }
-
-  @override
   void dispose() {
     _pass.dispose();
     _email.dispose();
@@ -69,7 +63,7 @@ class _MyLogFormWidgetState extends State<SignUpForm> {
             onPressed: () {
               if (formKey.currentState!.validate()) widget.onSignUpButtonPressed(_email.text, _pass.text);
             },
-            text: LocaleKeys.sing_up.tr(),
+            text: LocaleKeys.sign_up.tr(),
           ),
         ],
       ),

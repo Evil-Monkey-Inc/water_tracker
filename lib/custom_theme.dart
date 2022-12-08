@@ -77,7 +77,7 @@ class CustomTheme {
 
   static const notHaveAccountProperty = TextStyle(fontSize: 16, color: themeColor);
 
-  static const singUpProperty = TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.bold);
+  static const signUpProperty = TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.bold);
 
   static const focusColor = mainColor;
 

@@ -23,12 +23,6 @@ class _MyLogFormWidgetState extends State<SignInForm> {
   final emailNode = FocusNode();
 
   @override
-  void initState() {
-    emailNode.addListener(() => setState(() {}));
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Form(
       key: formKey,
@@ -55,7 +49,7 @@ class _MyLogFormWidgetState extends State<SignInForm> {
             onPressed: () {
               if (formKey.currentState!.validate()) widget.onSignInButtonPressed(_email.text, _pass.text);
             },
-            text: LocaleKeys.sing_in.tr(),
+            text: LocaleKeys.sign_in.tr(),
             isEnabled: true,
           ),
         ],

@@ -21,8 +21,8 @@ class AlreadyHaveAnAccountWidget extends StatelessWidget {
             children: [
               CustomTheme.spaceTextSpan,
               TextSpan(
-                text: LocaleKeys.sing_in.tr(),
-                style: CustomTheme.singUpProperty,
+                text: LocaleKeys.sign_in.tr(),
+                style: CustomTheme.signUpProperty,
               ),
             ],
           ),
