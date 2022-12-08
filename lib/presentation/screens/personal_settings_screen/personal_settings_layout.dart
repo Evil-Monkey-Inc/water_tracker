@@ -21,7 +21,9 @@ class PersonalSettingsLayout extends StatelessWidget {
               spaces,
               NameAndSkipWidget(onPressed: () {}),
               spaces,
-              TitleSettingWidget(titleText: LocaleKeys.tell_more_general_info.tr()),
+              TitleSettingWidget(
+                titleText: LocaleKeys.tell_more_general_info.tr(),
+              ),
             ],
           ),
         ),
