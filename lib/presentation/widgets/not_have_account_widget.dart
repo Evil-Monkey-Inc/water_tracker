@@ -25,8 +25,8 @@ class NotHaveAccount extends StatelessWidget {
                 children: [
                   spaceTextSpan,
                   TextSpan(
-                    text: LocaleKeys.sing_up.tr(),
-                    style: CustomTheme.singUpProperty,
+                    text: LocaleKeys.sign_up.tr(),
+                    style: CustomTheme.signUpProperty,
                   ),
                 ],
               ),
