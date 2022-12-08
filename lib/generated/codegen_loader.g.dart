@@ -37,7 +37,8 @@ class CodegenLoader extends AssetLoader{
   "password_must_contain_one_uppercase_letter": "Password must contain one uppercase letter",
   "error_try_again": "Error. Try again",
   "skip": "Skip",
-  "tell_more_general_info": "Tell a bit more \ngeneral info",
+  "tell_more": "Tell a bit more",
+  "general_info": "general info",
   "setup_profile": "Setup profile"
 };
 static const Map<String,dynamic> uk = {
@@ -62,7 +63,8 @@ static const Map<String,dynamic> uk = {
   "password_must_contain_at_least_8_characters": "Пароль має містити не менше 8 символів",
   "error_try_again": "Помилка. Спробуйте знову",
   "skip": "Пропустити",
-  "tell_more_general_info": "Розкажіть трохи більше\nзагальної інформації",
+  "tell_more": "Розкажіть трохи більше",
+  "general_info": "загальної інформації",
   "setup_profile": "Налаштувати профіль"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "uk": uk};
