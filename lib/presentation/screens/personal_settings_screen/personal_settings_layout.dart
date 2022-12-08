@@ -24,6 +24,8 @@ class PersonalSettingsLayout extends StatelessWidget {
               spaces,
               TitleSettingWidget(LocaleKeys.tell_more_general_info.tr()),
               spaces,
+              //     sexTextPromo,
+              spaces,
               const SelectSexButton(),
             ],
           ),
