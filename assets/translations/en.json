@@ -26,6 +26,7 @@
   "sex" : "Sex:",
   "man" : "Male",
   "woman" : "Female",
-  "age" : "Age:"
+  "age" : "Age:",
+  "weight" : "Weight"
 }
 
