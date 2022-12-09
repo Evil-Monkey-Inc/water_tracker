@@ -13,6 +13,7 @@ class AgeSliderWidget extends StatefulWidget {
 class _AgeSliderWidgetState extends State<AgeSliderWidget> {
   double values = 100.0;
   double thumb = 0.0;
+  double lineHeight = 1.0;
   var ageTextProperty = Text(LocaleKeys.age.tr(), style: const TextStyle(fontSize: 20));
   static const spaces = SizedBox(height: 24);
   static const ageCounterProperty = TextStyle(fontSize: 60, color: CustomTheme.mainColor);
@@ -29,14 +30,14 @@ class _AgeSliderWidgetState extends State<AgeSliderWidget> {
           style: ageCounterProperty,
         ),
         SliderTheme(
-          data: const SliderThemeData(
+          data: SliderThemeData(
             showValueIndicator: ShowValueIndicator.always,
-            trackHeight: 1,
+            trackHeight: lineHeight,
             activeTrackColor: CustomTheme.mainColor,
-            inactiveTrackColor: Color(0xFFF1F1F1),
+            inactiveTrackColor: CustomTheme.backgroundSliderLine,
             activeTickMarkColor: Colors.transparent,
             inactiveTickMarkColor: Colors.transparent,
-            thumbColor: Color(0xFFF1F1F1),
+            thumbColor: CustomTheme.backgroundSliderLine,
           ),
           child: Slider(
             thumbColor: CustomTheme.mainColor,
