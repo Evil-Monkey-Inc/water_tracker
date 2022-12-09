@@ -38,7 +38,10 @@ class CodegenLoader extends AssetLoader{
   "error_try_again": "Error. Try again",
   "skip": "Skip",
   "tell_more_general_info": "Tell a bit more general info",
-  "setup_profile": "Setup profile"
+  "setup_profile": "Setup profile",
+  "sex": "Sex:",
+  "man": "Male",
+  "woman": "Female"
 };
 static const Map<String,dynamic> uk = {
   "enter_your_email": "Вкажіть вашу пошту",
@@ -61,10 +64,9 @@ static const Map<String,dynamic> uk = {
   "already_have_an_account": "Вже є аккаунт?",
   "password_must_contain_at_least_8_characters": "Пароль має містити не менше 8 символів",
   "error_try_again": "Помилка. Спробуйте знову",
-  "skip": "Пропустити",
-  "tell_more": "Розкажіть трохи більше",
-  "general_info": "загальної інформації",
-  "setup_profile": "Налаштувати профіль"
+  "sex": "Пол:",
+  "man": "Чоловік",
+  "woman": "Жінка"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "uk": uk};
 }

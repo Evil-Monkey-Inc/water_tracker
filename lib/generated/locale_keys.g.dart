@@ -25,5 +25,8 @@ abstract class  LocaleKeys {
   static const skip = 'skip';
   static const tell_more_general_info = 'tell_more_general_info';
   static const setup_profile = 'setup_profile';
+  static const sex = 'sex';
+  static const man = 'man';
+  static const woman = 'woman';
 
 }

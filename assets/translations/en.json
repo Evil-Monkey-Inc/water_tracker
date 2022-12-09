@@ -22,11 +22,9 @@
   "error_try_again" : "Error. Try again",
   "skip" : "Skip",
   "tell_more_general_info" : "Tell a bit more general info",
-  "setup_profile" : "Setup profile"
-
-
-
-
-
+  "setup_profile" : "Setup profile",
+  "sex" : "Sex:",
+  "man" : "Male",
+  "woman" : "Female"
 }
 
