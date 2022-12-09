@@ -11,8 +11,7 @@ class AgeSliderWidget extends StatefulWidget {
 }
 
 class _AgeSliderWidgetState extends State<AgeSliderWidget> {
-  double values = 100.0;
-  double thumb = 0.0;
+  double values = 0.0;
   double lineHeight = 1.0;
   var ageTextProperty = Text(LocaleKeys.age.tr(), style: const TextStyle(fontSize: 20));
   static const spaces = SizedBox(height: 24);
