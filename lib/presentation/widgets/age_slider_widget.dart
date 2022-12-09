@@ -30,6 +30,10 @@ class _AgeSliderWidgetState extends State<AgeSliderWidget> {
         ),
         SliderTheme(
           data: SliderThemeData(
+            thumbShape: const RoundSliderThumbShape(
+              enabledThumbRadius: 12,
+              disabledThumbRadius: 5,
+            ),
             showValueIndicator: ShowValueIndicator.always,
             trackHeight: lineHeight,
             activeTrackColor: CustomTheme.mainColor,

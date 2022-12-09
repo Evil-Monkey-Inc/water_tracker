@@ -31,7 +31,10 @@ class _WeightSliderWidgetState extends State<WeightSliderWidget> {
         ),
         SliderTheme(
           data: SliderThemeData(
-            rangeThumbShape: RoundRangeSliderThumbShape(enabledThumbRadius: 60),
+            thumbShape: const RoundSliderThumbShape(
+              enabledThumbRadius: 12,
+              disabledThumbRadius: 5,
+            ),
             showValueIndicator: ShowValueIndicator.always,
             trackHeight: lineHeight,
             activeTrackColor: CustomTheme.mainColor,
