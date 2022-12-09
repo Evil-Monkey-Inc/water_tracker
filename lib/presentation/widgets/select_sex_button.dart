@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:water_tracker/custom_theme.dart';
 
 class SelectSexButton extends StatefulWidget {
   const SelectSexButton({Key? key}) : super(key: key);
@@ -8,51 +9,43 @@ class SelectSexButton extends StatefulWidget {
 }
 
 class _SelectSexButtonState extends State<SelectSexButton> with SingleTickerProviderStateMixin {
+  var indicatorWeight = 2.0;
+  static const countTabs = 2;
+  static const heightButton = 80.0;
+  static const space = SizedBox(height: 20);
+  static const spaceInsideButton = EdgeInsets.all(8);
+  static const sexTextProperty = Text('Sex:', style: TextStyle(fontSize: 20));
+  static const tabMaleTextProperty = Text('Male', style: TextStyle(fontSize: 20));
+  static const tabFemaleTextProperty = Text('Female', style: TextStyle(fontSize: 20));
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Align(
-          alignment: Alignment.bottomLeft,
-          child: Text(
-            'Sex:',
-            style: TextStyle(fontSize: 20),
-          ),
-        ),
-        const SizedBox(
-          height: 20,
-        ),
+        const Align(alignment: Alignment.bottomLeft, child: sexTextProperty),
+        space,
         Container(
-          height: 80,
+          height: heightButton,
           width: MediaQuery.of(context).size.height,
-          decoration: BoxDecoration(color: Color(0xFFF1F1F1), borderRadius: BorderRadius.circular(40)),
+          decoration:
+              BoxDecoration(color: CustomTheme.backgroundSexBottomColor, borderRadius: BorderRadius.circular(40)),
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.all(8),
-                child: Container(
+                padding: spaceInsideButton,
+                child: SizedBox(
                   height: 62,
                   child: DefaultTabController(
-                    length: 2,
+                    length: countTabs,
                     child: TabBar(
-                      unselectedLabelColor: Colors.black,
-                      labelColor: Colors.white,
-                      indicatorColor: Color(0x292D32),
-                      indicatorWeight: 2,
-                      indicator: BoxDecoration(color: Color(0xFF292D32), borderRadius: BorderRadius.circular(40)),
+                      unselectedLabelColor: CustomTheme.mainColor,
+                      labelColor: CustomTheme.sexLabelColor,
+                      indicatorColor: CustomTheme.mainColor,
+                      indicatorWeight: indicatorWeight,
+                      indicator: BoxDecoration(color: CustomTheme.mainColor, borderRadius: BorderRadius.circular(40)),
                       tabs: const [
-                        Tab(
-                          child: Text(
-                            'Male',
-                            style: TextStyle(fontSize: 20),
-                          ),
-                        ),
-                        Tab(
-                          child: Text(
-                            'Female',
-                            style: TextStyle(fontSize: 20),
-                          ),
-                        ),
+                        Tab(child: tabMaleTextProperty),
+                        Tab(child: tabFemaleTextProperty),
                       ],
                     ),
                   ),

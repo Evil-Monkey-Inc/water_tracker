@@ -53,6 +53,10 @@ class CustomTheme {
   );
   static const mainColor = Color(0xFF292D32);
 
+  static const backgroundSexBottomColor = Color(0xFFF1F1F1);
+
+  static const sexLabelColor = Color(0xFFFFFFFF);
+
   static const cursorColor = TextSelectionThemeData(cursorColor: mainColor);
 
   static const spaceTextSpan = TextSpan(text: ' ', style: TextStyle(fontSize: 16, color: mainColor));
