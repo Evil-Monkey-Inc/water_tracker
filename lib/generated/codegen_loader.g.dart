@@ -41,7 +41,8 @@ class CodegenLoader extends AssetLoader{
   "setup_profile": "Setup profile",
   "sex": "Sex:",
   "man": "Male",
-  "woman": "Female"
+  "woman": "Female",
+  "age": "Age:"
 };
 static const Map<String,dynamic> uk = {
   "enter_your_email": "Вкажіть вашу пошту",
@@ -66,7 +67,8 @@ static const Map<String,dynamic> uk = {
   "error_try_again": "Помилка. Спробуйте знову",
   "sex": "Пол:",
   "man": "Чоловік",
-  "woman": "Жінка"
+  "woman": "Жінка",
+  "age": "Вік:"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "uk": uk};
 }
