@@ -8,4 +8,10 @@ abstract class Repository {
     String email,
     String password,
   );
+
+  Future<void> saveGeneralInfo(
+    String sex,
+    int age,
+    int weight,
+  );
 }
