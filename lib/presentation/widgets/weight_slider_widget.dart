@@ -47,7 +47,7 @@ class _WeightSliderWidgetState extends State<WeightSliderWidget> {
             thumbColor: CustomTheme.mainColor,
             value: values,
             min: 0,
-            max: 80,
+            max: 150,
             divisions: 80,
             onChanged: (double value) => setState(() => values = value),
           ),
