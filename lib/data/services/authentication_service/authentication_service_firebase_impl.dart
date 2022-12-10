@@ -3,7 +3,7 @@ import 'package:water_tracker/data/models/errors/sign_up_exception.dart';
 import 'package:water_tracker/data/models/responses/sign_in_result.dart';
 import 'package:water_tracker/data/models/responses/sign_up_result.dart';
 import 'package:water_tracker/data/models/user.dart';
-import 'package:water_tracker/data/services/authentication_service.dart';
+import 'package:water_tracker/data/services/authentication_service/authentication_service.dart';
 
 class AuthenticationServiceFirebaseImpl extends AuthenticationService {
   final firebaseAuth = auth.FirebaseAuth.instance;
