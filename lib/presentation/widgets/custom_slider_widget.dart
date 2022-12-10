@@ -1,34 +1,32 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:water_tracker/custom_theme.dart';
-import 'package:water_tracker/generated/locale_keys.g.dart';
 
-class WeightSliderWidget extends StatefulWidget {
-  const WeightSliderWidget({Key? key, required this.onChanged}) : super(key: key);
+class CustomSliderWidget extends StatefulWidget {
+  const CustomSliderWidget({Key? key, required this.onChanged, required this.sliderNameAndProperty}) : super(key: key);
   final void Function(int values) onChanged;
+  final Text sliderNameAndProperty;
 
   @override
-  State<WeightSliderWidget> createState() => _WeightSliderWidgetState();
+  State<CustomSliderWidget> createState() => _CustomSliderWidgetState();
 }
 
-class _WeightSliderWidgetState extends State<WeightSliderWidget> {
+class _CustomSliderWidgetState extends State<CustomSliderWidget> {
   var weightValue = 0;
   double thumb = 0.0;
   double lineHeight = 1.0;
-  var ageTextProperty = Text(LocaleKeys.weight.tr(), style: const TextStyle(fontSize: 20));
   static const spaces = SizedBox(height: 24);
-  static const ageCounterProperty = TextStyle(fontSize: 60, color: CustomTheme.mainColor);
+  static const counterProperty = TextStyle(fontSize: 60, color: CustomTheme.mainColor);
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         spaces,
-        Align(alignment: Alignment.bottomLeft, child: ageTextProperty),
+        Align(alignment: Alignment.bottomLeft, child: widget.sliderNameAndProperty),
         spaces,
         Text(
           weightValue.round().toString(),
-          style: ageCounterProperty,
+          style: counterProperty,
         ),
         SliderTheme(
           data: SliderThemeData(
@@ -39,17 +37,17 @@ class _WeightSliderWidgetState extends State<WeightSliderWidget> {
             showValueIndicator: ShowValueIndicator.always,
             trackHeight: lineHeight,
             activeTrackColor: CustomTheme.mainColor,
-            inactiveTrackColor: Colors.blue, // TODO: CHANGE
+            inactiveTrackColor: CustomTheme.backgroundSliderLine,
             activeTickMarkColor: Colors.transparent,
             inactiveTickMarkColor: Colors.transparent,
-            thumbColor: Colors.blue, // TODO: CHANGE
+            thumbColor: CustomTheme.mainColor,
           ),
           child: Slider(
             thumbColor: CustomTheme.mainColor,
             value: weightValue.toDouble(),
             min: 0,
             max: 150,
-            divisions: 80,
+            divisions: 120,
             onChanged: (value) => setState(() {
               weightValue = value.toInt();
               widget.onChanged(weightValue);

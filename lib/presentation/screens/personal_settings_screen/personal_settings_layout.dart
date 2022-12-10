@@ -8,10 +8,10 @@ import 'package:water_tracker/presentation/screens/personal_settings_screen/bloc
 import 'package:water_tracker/presentation/screens/personal_settings_screen/bloc/personal_setting_state.dart';
 import 'package:water_tracker/presentation/screens/sing_in_screen/sign_in_screen.dart';
 import 'package:water_tracker/presentation/widgets/custom_button.dart';
+import 'package:water_tracker/presentation/widgets/custom_slider_widget.dart';
 import 'package:water_tracker/presentation/widgets/name_and_skip_widget.dart';
 import 'package:water_tracker/presentation/widgets/select_sex_button.dart';
 import 'package:water_tracker/presentation/widgets/title_settings_widget.dart';
-import 'package:water_tracker/presentation/widgets/weight_slider_widget.dart';
 
 class PersonalSettingsLayout extends StatefulWidget {
   const PersonalSettingsLayout({Key? key}) : super(key: key);
@@ -24,6 +24,9 @@ class PersonalSettingsLayout extends StatefulWidget {
 }
 
 class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
+  final sliderWeightTextProperty = Text(LocaleKeys.weight.tr(), style: const TextStyle(fontSize: 20));
+  final sliderAgeTextProperty = Text(LocaleKeys.age.tr(), style: const TextStyle(fontSize: 20));
+
   Gender? gender;
   int? weight;
   int? age;
@@ -53,9 +56,15 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
                   PersonalSettingsLayout.spaces,
                   SelectSexButton(onChanged: (value) => setState(() => gender = value)),
                   PersonalSettingsLayout.spaces,
-                  WeightSliderWidget(onChanged: (value) => setState(() => age = value)),
+                  CustomSliderWidget(
+                    onChanged: (value) => setState(() => age = value),
+                    sliderNameAndProperty: sliderAgeTextProperty,
+                  ),
                   PersonalSettingsLayout.spaces,
-                  WeightSliderWidget(onChanged: (value) => setState(() => weight = value)),
+                  CustomSliderWidget(
+                    onChanged: (value) => setState(() => weight = value),
+                    sliderNameAndProperty: sliderWeightTextProperty,
+                  ),
                   PersonalSettingsLayout.spaces,
                   CustomButton(
                     isEnabled: isButtonEnabled,

@@ -53,6 +53,8 @@ class CustomTheme {
   );
   static const mainColor = Color(0xFF292D32);
 
+  static const backgroundSliderLine = Color(0xFFF1F1F1);
+
   static const backgroundSexBottomColor = Color(0xFFF1F1F1);
 
   static const sexLabelColor = Color(0xFFFFFFFF);
