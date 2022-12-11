@@ -43,7 +43,8 @@ class CodegenLoader extends AssetLoader{
   "man": "Male",
   "woman": "Female",
   "age": "Age:",
-  "weight": "Weight:"
+  "weight": "Weight:",
+  "next": "Continue"
 };
 static const Map<String,dynamic> uk = {
   "enter_your_email": "Вкажіть вашу пошту",
@@ -70,7 +71,8 @@ static const Map<String,dynamic> uk = {
   "man": "Чоловік",
   "woman": "Жінка",
   "age": "Вік:",
-  "weight": "Вага:"
+  "weight": "Вага:",
+  "next": "Continue"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "uk": uk};
 }

@@ -23,5 +23,6 @@
   "man" : "Чоловік",
   "woman" : "Жінка",
   "age" : "Вік:",
-  "weight" : "Вага:"
+  "weight" : "Вага:",
+  "next" : "Continue"
 }
