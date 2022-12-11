@@ -7,11 +7,24 @@ import 'package:water_tracker/presentation/widgets/select_sex_button.dart';
 import 'package:water_tracker/presentation/widgets/title_settings_widget.dart';
 import 'package:water_tracker/presentation/widgets/weight_slider_widget.dart';
 
-class PersonalSettingsLayout extends StatelessWidget {
+class PersonalSettingsLayout extends StatefulWidget {
   const PersonalSettingsLayout({Key? key}) : super(key: key);
 
+  @override
+  State<PersonalSettingsLayout> createState() => _PersonalSettingsLayoutState();
+}
+
+class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
+  Gender? gender;
+  int? weight;
+  int? age;
+
+  final sliderWeightTextProperty = Text(LocaleKeys.weight.tr(), style: const TextStyle(fontSize: 20));
+  final sliderAgeTextProperty = Text(LocaleKeys.age.tr(), style: const TextStyle(fontSize: 20));
   static const spaces = SizedBox(height: 24);
   static const paddingHorizontal = EdgeInsets.symmetric(horizontal: 24.0);
+
+  bool get isButtonEnabled => weight != null && age != null;
 
   @override
   Widget build(BuildContext context) {
