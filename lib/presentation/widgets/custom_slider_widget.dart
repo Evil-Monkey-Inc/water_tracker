@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:water_tracker/custom_theme.dart';
 
 class CustomSliderWidget extends StatefulWidget {
-  const CustomSliderWidget({Key? key, required this.onChanged, required this.sliderNameAndProperty}) : super(key: key);
+  const CustomSliderWidget({Key? key, required this.onChanged, required this.sliderNameAndProperty, this.maxValue})
+      : super(key: key);
   final void Function(int values) onChanged;
   final Text sliderNameAndProperty;
+  final double? maxValue;
 
   @override
   State<CustomSliderWidget> createState() => _CustomSliderWidgetState();
@@ -12,8 +14,8 @@ class CustomSliderWidget extends StatefulWidget {
 
 class _CustomSliderWidgetState extends State<CustomSliderWidget> {
   var weightValue = 0;
-  double thumb = 0.0;
-  double lineHeight = 1.0;
+  var thumb = 0.0;
+  var lineHeight = 1.0;
   static const spaces = SizedBox(height: 24);
   static const counterProperty = TextStyle(fontSize: 60, color: CustomTheme.mainColor);
 
@@ -46,12 +48,14 @@ class _CustomSliderWidgetState extends State<CustomSliderWidget> {
             thumbColor: CustomTheme.mainColor,
             value: weightValue.toDouble(),
             min: 0,
-            max: 150,
+            max: widget.maxValue!,
             divisions: 120,
-            onChanged: (value) => setState(() {
-              weightValue = value.toInt();
-              widget.onChanged(weightValue);
-            }),
+            onChanged: (value) => setState(
+              () {
+                weightValue = value.toInt();
+                widget.onChanged(weightValue);
+              },
+            ),
           ),
         ),
       ],

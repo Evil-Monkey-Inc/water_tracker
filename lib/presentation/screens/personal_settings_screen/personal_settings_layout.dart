@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:water_tracker/data/models/gender.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
 import 'package:water_tracker/presentation/widgets/custom_button.dart';
+import 'package:water_tracker/presentation/widgets/custom_slider_widget.dart';
 import 'package:water_tracker/presentation/widgets/name_and_skip_widget.dart';
 import 'package:water_tracker/presentation/widgets/select_sex_button.dart';
 import 'package:water_tracker/presentation/widgets/title_settings_widget.dart';
-import 'package:water_tracker/presentation/widgets/weight_slider_widget.dart';
 
 class PersonalSettingsLayout extends StatefulWidget {
   const PersonalSettingsLayout({Key? key}) : super(key: key);
