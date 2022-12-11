@@ -11,8 +11,12 @@ class AgeSliderWidget extends StatefulWidget {
 }
 
 class _AgeSliderWidgetState extends State<AgeSliderWidget> {
-  double values = 0.0;
-  double lineHeight = 1.0;
+  var values = 0.0;
+  final double min = 5;
+  final double max = 100;
+  final int divisions = 80;
+
+  static const lineHeight = 1.0;
   var ageTextProperty = Text(LocaleKeys.age.tr(), style: const TextStyle(fontSize: 20));
   static const spaces = SizedBox(height: 24);
   static const ageCounterProperty = TextStyle(fontSize: 60, color: CustomTheme.mainColor);
@@ -29,8 +33,8 @@ class _AgeSliderWidgetState extends State<AgeSliderWidget> {
           style: ageCounterProperty,
         ),
         SliderTheme(
-          data: SliderThemeData(
-            thumbShape: const RoundSliderThumbShape(
+          data: const SliderThemeData(
+            thumbShape: RoundSliderThumbShape(
               enabledThumbRadius: 12,
               disabledThumbRadius: 5,
             ),
@@ -45,16 +49,10 @@ class _AgeSliderWidgetState extends State<AgeSliderWidget> {
           child: Slider(
             thumbColor: CustomTheme.mainColor,
             value: values,
-            min: 0,
-            max: 100,
-            divisions: 80,
-            onChanged: (double value) {
-              setState(
-                () {
-                  values = value;
-                },
-              );
-            },
+            min: min,
+            max: max,
+            divisions: divisions,
+            onChanged: (value) => setState(() => values = value),
           ),
         ),
       ],
