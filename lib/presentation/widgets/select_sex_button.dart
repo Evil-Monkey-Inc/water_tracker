@@ -15,13 +15,13 @@ class SelectSexButton extends StatefulWidget {
 class _SelectSexButtonState extends State<SelectSexButton> with SingleTickerProviderStateMixin {
   var indicatorWeight = 2.0;
   static const countTabs = 2;
-  var buttonWeight = 62.0;
+  final buttonWeight = 62.0;
   static const heightButton = 80.0;
   static const space = SizedBox(height: 20);
   static const spaceInsideButton = EdgeInsets.all(8);
-  var sexTextProperty = Text(LocaleKeys.sex.tr(), style: const TextStyle(fontSize: 20));
-  var tabMaleTextProperty = Text(LocaleKeys.man.tr(), style: const TextStyle(fontSize: 20));
-  var tabFemaleTextProperty = Text(LocaleKeys.woman.tr(), style: const TextStyle(fontSize: 20));
+  final sexTextProperty = Text(LocaleKeys.sex.tr(), style: const TextStyle(fontSize: 20));
+  final tabMaleTextProperty = Text(LocaleKeys.man.tr(), style: const TextStyle(fontSize: 20));
+  final tabFemaleTextProperty = Text(LocaleKeys.woman.tr(), style: const TextStyle(fontSize: 20));
 
   late final TabController controller;
 

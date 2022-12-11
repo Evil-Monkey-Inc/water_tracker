@@ -14,8 +14,8 @@ class CustomSliderWidget extends StatefulWidget {
 
 class _CustomSliderWidgetState extends State<CustomSliderWidget> {
   var weightValue = 0;
-  double thumb = 0.0;
-  double lineHeight = 1.0;
+  var thumb = 0.0;
+  var lineHeight = 1.0;
   static const spaces = SizedBox(height: 24);
   static const counterProperty = TextStyle(fontSize: 60, color: CustomTheme.mainColor);
 
