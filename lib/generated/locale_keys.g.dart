@@ -28,5 +28,8 @@ abstract class  LocaleKeys {
   static const sex = 'sex';
   static const man = 'man';
   static const woman = 'woman';
+  static const age = 'age';
+  static const weight = 'weight';
+  static const next = 'next';
 
 }

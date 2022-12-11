@@ -25,6 +25,9 @@
   "setup_profile" : "Setup profile",
   "sex" : "Sex:",
   "man" : "Male",
-  "woman" : "Female"
+  "woman" : "Female",
+  "age" : "Age:",
+  "weight" : "Weight:",
+  "next" : "Continue"
 }
 
