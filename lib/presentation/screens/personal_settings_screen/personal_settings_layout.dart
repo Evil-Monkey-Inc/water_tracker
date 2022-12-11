@@ -59,7 +59,7 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
                   spaces,
                   CustomSliderWidget(
                     onChanged: (value) => setState(() => age = value),
-                    sliderNameAndProperty: sliderWeightTextProperty,
+                    sliderNameAndProperty: sliderAgeTextProperty,
                     maxValue: 100,
                   ),
                   spaces,
