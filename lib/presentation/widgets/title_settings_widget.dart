@@ -12,7 +12,7 @@ class TitleSettingWidget extends StatelessWidget {
         Flexible(
           flex: 2,
           child: Text(
-            '$firstTitleText',
+            firstTitleText,
             style: CustomTheme.titleSettingsProperty,
           ),
         ),

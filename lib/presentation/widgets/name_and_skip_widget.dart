@@ -30,26 +30,5 @@ class NameAndSkipWidget extends StatelessWidget {
         ),
       ],
     );
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Expanded(child: emptySpace),
-        Expanded(
-          child: Text(
-            LocaleKeys.setup_profile.tr(),
-            style: CustomTheme.setupScreenProperty,
-          ),
-        ),
-        Expanded(
-          child: TextButton(
-            onPressed: onPressed,
-            child: Text(
-              LocaleKeys.skip.tr(),
-              style: CustomTheme.skipButtonsStyle,
-            ),
-          ),
-        ),
-      ],
-    );
   }
 }
