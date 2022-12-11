@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:water_tracker/data/models/gender.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
 import 'package:water_tracker/presentation/widgets/custom_button.dart';
 import 'package:water_tracker/presentation/widgets/name_and_skip_widget.dart';
@@ -43,9 +44,9 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
               const SelectSexButton(),
               spaces,
               CustomSliderWidget(
-                onChanged: (value) => setState(() => weight = value),
+                onChanged: (value) => setState(() => age = value),
                 sliderNameAndProperty: sliderWeightTextProperty,
-                maxValue: 150,
+                maxValue: 100,
               ),
               spaces,
               CustomSliderWidget(
@@ -54,7 +55,7 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
                 maxValue: 150,
               ),
               spaces,
-              CustomButton(text: 'Continue', onPressed: () {}),
+              CustomButton(text: LocaleKeys.next.tr(), onPressed: () {}),
               spaces,
             ],
           ),
