@@ -10,7 +10,7 @@ final getIt = GetIt.instance;
 
 void setupServicesLocator() {
   final authService = AuthenticationServiceFirebaseImpl();
-  final storageService = StorageServiceImpl();
+  final storageService = StorageServiceSharedPrefImpl();
   getIt.registerSingleton<AuthenticationService>(authService);
   getIt.registerSingleton<StorageService>(storageService);
   getIt.registerSingleton<Repository>(RepositoryImpl(authService, storageService));

@@ -1,7 +1,7 @@
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:water_tracker/data/services/storage_service/storage_service.dart';
 
-class StorageServiceImpl extends StorageService {
+class StorageServiceSharedPrefImpl extends StorageService {
   static const ageKey = 'userAge';
   static const weightKey = 'userWeight';
   static const sexKey = 'userSex';
