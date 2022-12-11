@@ -57,6 +57,8 @@ class CustomTheme {
 
   static const backgroundSexBottomColor = Color(0xFFF1F1F1);
 
+  static const backgroundSliderLine = Color(0xFFF1F1F1);
+
   static const sexLabelColor = Color(0xFFFFFFFF);
 
   static const cursorColor = TextSelectionThemeData(cursorColor: mainColor);
