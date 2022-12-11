@@ -41,7 +41,7 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
               TitleSettingWidget(LocaleKeys.tell_more_general_info.tr()),
               spaces,
               spaces,
-              const SelectSexButton(),
+              SelectSexButton(onChanged: (value) => setState(() => gender = value)),
               spaces,
               CustomSliderWidget(
                 onChanged: (value) => setState(() => age = value),
