@@ -30,5 +30,6 @@ abstract class  LocaleKeys {
   static const woman = 'woman';
   static const age = 'age';
   static const weight = 'weight';
+  static const next = 'next';
 
 }
