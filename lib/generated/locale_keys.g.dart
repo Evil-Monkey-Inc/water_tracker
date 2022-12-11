@@ -1,6 +1,6 @@
 // DO NOT EDIT. This is code generated via package:easy_localization/generate.dart
 
-abstract class LocaleKeys {
+abstract class  LocaleKeys {
   static const enter_your_email = 'enter_your_email';
   static const enter_password = 'enter_password';
   static const sign_in = 'sign_in';
@@ -20,6 +20,7 @@ abstract class LocaleKeys {
   static const passwords_do_not_match_try_again = 'passwords_do_not_match_try_again';
   static const already_have_an_account = 'already_have_an_account';
   static const password_must_contain_at_least_8_characters = 'password_must_contain_at_least_8_characters';
+  static const password_must_contain_one_uppercase_letter = 'password_must_contain_one_uppercase_letter';
   static const error_try_again = 'error_try_again';
   static const skip = 'skip';
   static const tell_more_general_info = 'tell_more_general_info';
@@ -30,4 +31,5 @@ abstract class LocaleKeys {
   static const age = 'age';
   static const weight = 'weight';
   static const next = 'next';
+
 }
