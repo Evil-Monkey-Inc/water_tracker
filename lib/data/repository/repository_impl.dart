@@ -1,3 +1,4 @@
+import 'package:water_tracker/data/models/gender.dart';
 import 'package:water_tracker/data/repository/repository.dart';
 import 'package:water_tracker/data/services/authentication_service/authentication_service.dart';
 import 'package:water_tracker/data/services/storage_service/storage_service.dart';
@@ -23,7 +24,7 @@ class RepositoryImpl extends Repository {
   }
 
   @override
-  Future<bool> saveGeneralInfo(String sex, int age, int weight) async {
+  Future<bool> saveGeneralInfo(Gender sex, int age, int weight) async {
     final result = await storageService.saveGeneralInfo(sex, age, weight);
     final isSuccessful = result.error == null;
     return isSuccessful;
