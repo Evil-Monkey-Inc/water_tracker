@@ -7,10 +7,10 @@ class StorageServiceSharedPrefImpl extends StorageService {
   static const sexKey = 'userSex';
 
   @override
-  Future<void> saveGeneralInfo(String sex, int age, int weight) async {
+  Future<bool> saveGeneralInfo(String sex, int age, int weight) async {
     final savedUserSettings = await SharedPreferences.getInstance();
-    await savedUserSettings.setString(sexKey, sex);
-    await savedUserSettings.setInt(ageKey, age);
-    await savedUserSettings.setInt(weightKey, weight);
+    final isSavedGender = await savedUserSettings.setString(sexKey, sex);
+    final isSavedAge = await savedUserSettings.setInt(ageKey, age);
+    final isSavedWeight = await savedUserSettings.setInt(weightKey, weight);
   }
 }

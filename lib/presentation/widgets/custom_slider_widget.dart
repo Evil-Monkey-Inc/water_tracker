@@ -15,7 +15,7 @@ class CustomSliderWidget extends StatefulWidget {
 class _CustomSliderWidgetState extends State<CustomSliderWidget> {
   var weightValue = 0;
   final int divisions = 120;
-  final double minValue = 2;
+  final minValue = 2;
   var thumb = 0.0;
   var lineHeight = 1.0;
   static const spaces = SizedBox(height: 24);
