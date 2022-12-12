@@ -9,7 +9,7 @@ abstract class Repository {
     String password,
   );
 
-  Future<void> saveGeneralInfo(
+  Future<bool> saveGeneralInfo(
     String sex,
     int age,
     int weight,
