@@ -23,7 +23,9 @@ class RepositoryImpl extends Repository {
   }
 
   @override
-  Future<void> saveGeneralInfo(String sex, int age, int weight) async {
-    await storageService.saveGeneralInfo(sex, age, weight);
+  Future<bool> saveGeneralInfo(String sex, int age, int weight) async {
+    final result = await storageService.saveGeneralInfo(sex, age, weight);
+    final isSuccessful = result.error == null;
+    return isSuccessful;
   }
 }
