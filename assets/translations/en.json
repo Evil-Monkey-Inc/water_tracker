@@ -28,6 +28,7 @@
   "woman" : "Female",
   "age" : "Age:",
   "weight" : "Weight:",
-  "next" : "Continue"
+  "next" : "Continue",
+  "please_fill_in_general_information" : "Please fill in general information"
 }
 
