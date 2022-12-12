@@ -44,7 +44,8 @@ class CodegenLoader extends AssetLoader{
   "woman": "Female",
   "age": "Age:",
   "weight": "Weight:",
-  "next": "Continue"
+  "next": "Continue",
+  "please_fill_in_general_information": "Please fill in general information"
 };
 static const Map<String,dynamic> uk = {
   "enter_your_email": "Вкажіть вашу пошту",
@@ -65,7 +66,10 @@ static const Map<String,dynamic> uk = {
   "re_enter_your_password": "Повторно введіть пароль",
   "passwords_do_not_match_try_again": "Паролі не співпадають. Спробуйте знову",
   "already_have_an_account": "Вже є аккаунт?",
+  "skip": "Пропустити",
+  "tell_more_general_info": "Розкажіть трохи більше загальної інформації",
   "password_must_contain_at_least_8_characters": "Пароль має містити не менше 8 символів",
+  "setup_profile": "Налаштувати профіль",
   "password_must_contain_one_uppercase_letter": "Пароль повинен містити одну велику літеру",
   "error_try_again": "Помилка. Спробуйте знову",
   "sex": "Стать:",
@@ -73,7 +77,8 @@ static const Map<String,dynamic> uk = {
   "woman": "Жінка",
   "age": "Вік:",
   "weight": "Вага:",
-  "next": "Продовжити"
+  "next": "Продовжити",
+  "please_fill_in_general_information": "Будь ласка, заповніть загальну інформацію"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "uk": uk};
 }
