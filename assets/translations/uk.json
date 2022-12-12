@@ -23,7 +23,7 @@
   "setup_profile" : "Налаштувати профіль",
   "password_must_contain_one_uppercase_letter" : "Пароль повинен містити одну велику літеру",
   "error_try_again" : "Помилка. Спробуйте знову",
-  "sex" : "Пол:",
+  "sex" : "Стать:",
   "man" : "Чоловік",
   "woman" : "Жінка",
   "age" : "Вік:",

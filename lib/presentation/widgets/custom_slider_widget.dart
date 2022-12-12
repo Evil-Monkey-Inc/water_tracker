@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:water_tracker/custom_theme.dart';
 
 class CustomSliderWidget extends StatefulWidget {
-  const CustomSliderWidget({Key? key, required this.onChanged, required this.sliderNameAndProperty, this.maxValue})
+  const CustomSliderWidget(
+      {Key? key, required this.onChanged, required this.sliderNameAndProperty, this.maxValue, this.minValue})
       : super(key: key);
   final void Function(int values) onChanged;
   final Text sliderNameAndProperty;
   final double? maxValue;
+  final double? minValue;
 
   @override
   State<CustomSliderWidget> createState() => _CustomSliderWidgetState();
@@ -14,10 +16,9 @@ class CustomSliderWidget extends StatefulWidget {
 
 class _CustomSliderWidgetState extends State<CustomSliderWidget> {
   var weightValue = 0;
-  final int divisions = 120;
-  final minValue = 2;
-  var thumb = 0.0;
-  var lineHeight = 1.0;
+  static const double lineHeight = 1.0;
+  static const enabledRadius = 12;
+  static const disabledThumbRadius = 5;
   static const spaces = SizedBox(height: 24);
   static const counterProperty = TextStyle(fontSize: 60, color: CustomTheme.mainColor);
 
@@ -34,9 +35,9 @@ class _CustomSliderWidgetState extends State<CustomSliderWidget> {
         ),
         SliderTheme(
           data: SliderThemeData(
-            thumbShape: const RoundSliderThumbShape(
-              enabledThumbRadius: 12,
-              disabledThumbRadius: 5,
+            thumbShape: RoundSliderThumbShape(
+              enabledThumbRadius: enabledRadius.toDouble(),
+              disabledThumbRadius: disabledThumbRadius.toDouble(),
             ),
             showValueIndicator: ShowValueIndicator.always,
             trackHeight: lineHeight,
@@ -49,7 +50,7 @@ class _CustomSliderWidgetState extends State<CustomSliderWidget> {
           child: Slider(
             thumbColor: CustomTheme.mainColor,
             value: weightValue.toDouble(),
-            min: minValue,
+            min: widget.minValue!,
             max: widget.maxValue!,
             divisions: divisions,
             onChanged: (value) => setState(

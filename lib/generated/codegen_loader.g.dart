@@ -68,7 +68,7 @@ static const Map<String,dynamic> uk = {
   "password_must_contain_at_least_8_characters": "Пароль має містити не менше 8 символів",
   "password_must_contain_one_uppercase_letter": "Пароль повинен містити одну велику літеру",
   "error_try_again": "Помилка. Спробуйте знову",
-  "sex": "Пол:",
+  "sex": "Стать:",
   "man": "Чоловік",
   "woman": "Жінка",
   "age": "Вік:",

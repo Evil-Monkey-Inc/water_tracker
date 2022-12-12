@@ -53,11 +53,13 @@ class CustomTheme {
   );
   static const mainColor = Color(0xFF292D32);
 
-  static const backgroundSliderLine = Color(0xFFF1F1F1);
+  static const mainButtonBackgroundColor = Color(0xFFF1F1F1);
 
-  static const backgroundSexBottomColor = Color(0xFFF1F1F1);
+  static const backgroundSexBottomColor = mainButtonBackgroundColor;
 
-  static const sexLabelColor = Color(0xFFFFFFFF);
+  static const backgroundSliderLine = mainButtonBackgroundColor;
+
+  static const sexLabelColor = Colors.white;
 
   static const cursorColor = TextSelectionThemeData(cursorColor: mainColor);
 
