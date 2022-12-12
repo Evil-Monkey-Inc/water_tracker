@@ -36,7 +36,7 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
   static const maxValueWeight = 150.0;
   static const minValueWeight = 24.0;
 
-  bool get isButtonEnabled => weight != null && age != null;
+  bool get isButtonEnabled => weight != null && age != null && gender != null;
 
   @override
   Widget build(BuildContext context) {
@@ -48,6 +48,11 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
             if (state is SuccessfullyPersonalSettingState) {
               // TODO: CHANGE THE SCREEN
               Navigator.of(context).push(MaterialPageRoute(builder: (context) => const SignInScreen()));
+            }
+
+            if (state is ErrorPersonalSettingState) {
+              ScaffoldMessenger.of(context)
+                  .showSnackBar(SnackBar(content: Text(LocaleKeys.please_fill_in_general_information.tr())));
             }
           },
           builder: (BuildContext context, state) {
@@ -77,12 +82,10 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
                   ),
                   spaces,
                   CustomButton(
+                    isEnabled: isButtonEnabled,
                     text: LocaleKeys.next.tr(),
-                    onPressed: () {
-                      context
-                          .read<PersonalSettingBloc>()
-                          .add(SaveGeneralSettingEvent(gender.toString(), age!, weight!));
-                    },
+                    onPressed: () =>
+                        context.read<PersonalSettingBloc>().add(SaveGeneralSettingEvent(gender!, age!, weight!)),
                   ),
                   spaces,
                 ],
