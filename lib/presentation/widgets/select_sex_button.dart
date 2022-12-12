@@ -11,9 +11,9 @@ class SelectSexButton extends StatefulWidget {
 }
 
 class _SelectSexButtonState extends State<SelectSexButton> with SingleTickerProviderStateMixin {
-  var indicatorWeight = 2.0;
+  static const indicatorWeight = 2.0;
   static const countTabs = 2;
-  var buttonWeight = 62.0;
+  static const buttonWeight = 62.0;
   static const heightButton = 80.0;
   static const space = SizedBox(height: 20);
   static const spaceInsideButton = EdgeInsets.all(8);
