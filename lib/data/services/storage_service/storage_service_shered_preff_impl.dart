@@ -1,4 +1,5 @@
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:water_tracker/data/models/gender.dart';
 import 'package:water_tracker/data/services/storage_service/storage_service.dart';
 
 class StorageServiceSharedPrefImplements extends StorageService {
@@ -7,10 +8,13 @@ class StorageServiceSharedPrefImplements extends StorageService {
   static const sexKey = 'userSex';
 
   @override
-  Future<bool> saveGeneralInfo(String sex, int age, int weight) async {
+  Future<bool> saveGeneralInfo(Gender sex, int age, int weight) async {
     final savedUserSettings = await SharedPreferences.getInstance();
-    final isSavedGender = await savedUserSettings.setString(sexKey, sex);
+
+    final isSavedGender = await savedUserSettings.setString(sexKey, sex.toString());
     final isSavedAge = await savedUserSettings.setInt(ageKey, age);
     final isSavedWeight = await savedUserSettings.setInt(weightKey, weight);
+
+    return isSavedGender && isSavedAge && isSavedWeight;
   }
 }
