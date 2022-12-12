@@ -10,8 +10,8 @@ class PersonalSettingBloc extends Bloc<PersonalSettingEvent, PersonalSettingStat
     on<SaveGeneralSettingEvent>((event, emit) async {
       try {
         emit(SavingPersonalSettingState());
-        await repository.saveGeneralInfo(event.sex, event.age, event.weight);
-        emit(SuccessfullyPersonalSettingState());
+        final isSuccess = await repository.saveGeneralInfo(event.sex, event.age, event.weight);
+        emit(isSuccess ? SuccessfullyPersonalSettingState() : ErrorPersonalSettingState(Exception()));
       } catch (e) {
         emit(ErrorPersonalSettingState(e));
       }
