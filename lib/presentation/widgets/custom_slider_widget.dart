@@ -16,12 +16,12 @@ class CustomSliderWidget extends StatefulWidget {
 
 class _CustomSliderWidgetState extends State<CustomSliderWidget> {
   var weightValue = 0;
+  static const divisions = 180;
   static const double lineHeight = 1.0;
   static const enabledRadius = 12;
   static const disabledThumbRadius = 5;
   static const spaces = SizedBox(height: 24);
   static const counterProperty = TextStyle(fontSize: 60, color: CustomTheme.mainColor);
-  final double minValue = 2;
 
   @override
   Widget build(BuildContext context) {

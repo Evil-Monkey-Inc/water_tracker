@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:water_tracker/custom_theme.dart';
 import 'package:water_tracker/data/models/gender.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
 import 'package:water_tracker/presentation/screens/sing_in_screen/sign_in_screen.dart';
@@ -26,10 +27,14 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
   int? weight;
   int? age;
 
-  final sliderWeightTextProperty = Text(LocaleKeys.weight.tr(), style: const TextStyle(fontSize: 20));
-  final sliderAgeTextProperty = Text(LocaleKeys.age.tr(), style: const TextStyle(fontSize: 20));
+  final sliderWeightTextProperty = Text(LocaleKeys.weight.tr(), style: CustomTheme.header);
+  final sliderAgeTextProperty = Text(LocaleKeys.age.tr(), style: CustomTheme.header);
   static const spaces = SizedBox(height: 24);
   static const paddingHorizontal = EdgeInsets.symmetric(horizontal: 24.0);
+  static const maxValueAge = 100.0;
+  static const minValueAge = 5.0;
+  static const maxValueWeight = 150.0;
+  static const minValueWeight = 24.0;
 
   bool get isButtonEnabled => weight != null && age != null;
 
@@ -60,15 +65,15 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
                   CustomSliderWidget(
                     onChanged: (value) => setState(() => age = value),
                     sliderNameAndProperty: sliderAgeTextProperty,
-                    maxValue: 100,
-                    minValue: 5,
+                    maxValue: maxValueAge,
+                    minValue: minValueAge,
                   ),
                   spaces,
                   CustomSliderWidget(
                     onChanged: (value) => setState(() => weight = value),
                     sliderNameAndProperty: sliderWeightTextProperty,
-                    maxValue: 150,
-                    minValue: 24,
+                    maxValue: maxValueWeight,
+                    minValue: minValueWeight,
                   ),
                   spaces,
                   CustomButton(
