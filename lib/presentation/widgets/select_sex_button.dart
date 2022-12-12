@@ -1,7 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:water_tracker/custom_theme.dart';
-import 'package:water_tracker/data/models/gender.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
 
 class SelectSexButton extends StatefulWidget {
@@ -52,7 +51,6 @@ class _SelectSexButtonState extends State<SelectSexButton> with SingleTickerProv
                   child: DefaultTabController(
                     length: countTabs,
                     child: TabBar(
-                      controller: controller,
                       unselectedLabelColor: CustomTheme.mainColor,
                       labelColor: CustomTheme.sexLabelColor,
                       indicatorColor: CustomTheme.mainColor,

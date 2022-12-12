@@ -51,6 +51,9 @@ class CustomTheme {
     decoration: TextDecoration.underline,
     fontWeight: FontWeight.bold,
   );
+
+  static const header = TextStyle(fontSize: 20);
+
   static const mainColor = Color(0xFF292D32);
 
   static const mainButtonBackgroundColor = Color(0xFFF1F1F1);
