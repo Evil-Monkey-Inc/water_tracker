@@ -17,9 +17,9 @@ class _SelectSexButtonState extends State<SelectSexButton> with SingleTickerProv
   static const heightButton = 80.0;
   static const space = SizedBox(height: 20);
   static const spaceInsideButton = EdgeInsets.all(8);
-  var sexTextProperty = Text(LocaleKeys.sex.tr(), style: const TextStyle(fontSize: 20));
-  var tabMaleTextProperty = Text(LocaleKeys.man.tr(), style: const TextStyle(fontSize: 20));
-  var tabFemaleTextProperty = Text(LocaleKeys.woman.tr(), style: const TextStyle(fontSize: 20));
+  final sexTextProperty = Text(LocaleKeys.sex.tr(), style: const TextStyle(fontSize: 20));
+  final tabMaleTextProperty = Text(LocaleKeys.man.tr(), style: const TextStyle(fontSize: 20));
+  final tabFemaleTextProperty = Text(LocaleKeys.woman.tr(), style: const TextStyle(fontSize: 20));
 
   @override
   Widget build(BuildContext context) {
