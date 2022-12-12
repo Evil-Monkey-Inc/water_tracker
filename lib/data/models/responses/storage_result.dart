@@ -1,8 +1,8 @@
 import 'package:water_tracker/data/models/user.dart';
 
-class StorageResult {
+class GeneralInfoSavingResult {
   final User? user;
   final Object? error;
 
-  StorageResult(this.user, this.error);
+  GeneralInfoSavingResult(this.user, this.error);
 }

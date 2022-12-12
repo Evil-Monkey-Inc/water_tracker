@@ -7,7 +7,7 @@ class RepositoryImpl extends Repository {
   RepositoryImpl(this.registrationService, this.storageService);
 
   final AuthenticationService registrationService;
-  final GeneralInfoSavingResult storageService;
+  final StorageService storageService;
 
   @override
   Future<bool> registerUser(String email, String password) async {

@@ -12,6 +12,6 @@ void setupServicesLocator() {
   final authService = AuthenticationServiceFirebaseImpl();
   final storageService = StorageServiceSharedPrefImplements();
   getIt.registerSingleton<AuthenticationService>(authService);
-  getIt.registerSingleton<GeneralInfoSavingResult>(storageService);
+  getIt.registerSingleton<StorageService>(storageService);
   getIt.registerSingleton<Repository>(RepositoryImpl(authService, storageService));
 }
