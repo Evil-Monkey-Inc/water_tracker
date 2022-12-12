@@ -14,6 +14,7 @@ class CustomSliderWidget extends StatefulWidget {
 
 class _CustomSliderWidgetState extends State<CustomSliderWidget> {
   var weightValue = 0;
+  double min = 0;
   double thumb = 0.0;
   double lineHeight = 1.0;
   static const spaces = SizedBox(height: 24);
@@ -47,7 +48,7 @@ class _CustomSliderWidgetState extends State<CustomSliderWidget> {
           child: Slider(
             thumbColor: CustomTheme.mainColor,
             value: weightValue.toDouble(),
-            min: 0,
+            min: min,
             max: widget.maxValue!,
             divisions: 120,
             onChanged: (value) => setState(
