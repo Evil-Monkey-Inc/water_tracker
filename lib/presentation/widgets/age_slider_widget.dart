@@ -18,7 +18,7 @@ class _AgeSliderWidgetState extends State<AgeSliderWidget> {
   final double maxValue = 100;
   double values = 0.0;
   double lineHeight = 1.0;
-  var ageTextProperty = Text(LocaleKeys.age.tr(), style: const TextStyle(fontSize: 20));
+  var ageTextProperty = Text(LocaleKeys.age.tr(), style: CustomTheme.header);
   static const spaces = SizedBox(height: 24);
   static const ageCounterProperty = TextStyle(fontSize: 60, color: CustomTheme.mainColor);
 

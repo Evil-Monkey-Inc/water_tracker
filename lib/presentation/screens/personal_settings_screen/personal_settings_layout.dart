@@ -20,7 +20,7 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
   int? weight;
   int? age;
 
-  final sliderWeightTextProperty = Text(LocaleKeys.weight.tr(), style: const TextStyle(fontSize: 20));
+  final sliderWeightTextProperty = Text(LocaleKeys.weight.tr(), style: TextStyle(fontSize: 20));
   final sliderAgeTextProperty = Text(LocaleKeys.age.tr(), style: const TextStyle(fontSize: 20));
   static const spaces = SizedBox(height: 24);
   static const paddingHorizontal = EdgeInsets.symmetric(horizontal: 24.0);
