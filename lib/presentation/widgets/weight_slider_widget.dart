@@ -16,9 +16,9 @@ class CustomSliderWidget extends StatefulWidget {
 
 class _CustomSliderWidgetState extends State<CustomSliderWidget> {
   var weightValue = 0;
-  double min = 0;
-  double thumb = 0.0;
-  double lineHeight = 1.0;
+  static const double lineHeight = 1.0;
+  static const enabledRadius = 12;
+  static const disabledThumbRadius = 5;
   static const spaces = SizedBox(height: 24);
   static const counterProperty = TextStyle(fontSize: 60, color: CustomTheme.mainColor);
 
@@ -35,9 +35,9 @@ class _CustomSliderWidgetState extends State<CustomSliderWidget> {
         ),
         SliderTheme(
           data: SliderThemeData(
-            thumbShape: const RoundSliderThumbShape(
-              enabledThumbRadius: 12,
-              disabledThumbRadius: 5,
+            thumbShape: RoundSliderThumbShape(
+              enabledThumbRadius: enabledRadius.toDouble(),
+              disabledThumbRadius: disabledThumbRadius.toDouble(),
             ),
             showValueIndicator: ShowValueIndicator.always,
             trackHeight: lineHeight,
