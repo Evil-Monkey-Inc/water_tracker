@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:water_tracker/custom_theme.dart';
 
 class CustomSliderWidget extends StatefulWidget {
-  const CustomSliderWidget({Key? key, required this.onChanged, required this.sliderNameAndProperty, this.maxValue})
+  const CustomSliderWidget(
+      {Key? key, required this.onChanged, required this.sliderNameAndProperty, this.maxValue, this.minValue})
       : super(key: key);
   final void Function(int values) onChanged;
   final Text sliderNameAndProperty;
   final double? maxValue;
+  final double? minValue;
 
   @override
   State<CustomSliderWidget> createState() => _CustomSliderWidgetState();
@@ -20,6 +22,7 @@ class _CustomSliderWidgetState extends State<CustomSliderWidget> {
   static const disabledThumbRadius = 5;
   static const spaces = SizedBox(height: 24);
   static const counterProperty = TextStyle(fontSize: 60, color: CustomTheme.mainColor);
+  final double minValue = 2;
 
   @override
   Widget build(BuildContext context) {

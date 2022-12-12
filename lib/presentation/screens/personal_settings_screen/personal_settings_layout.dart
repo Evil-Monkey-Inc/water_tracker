@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:water_tracker/data/models/gender.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
 import 'package:water_tracker/presentation/screens/sing_in_screen/sign_in_screen.dart';
@@ -60,12 +61,14 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
                     onChanged: (value) => setState(() => age = value),
                     sliderNameAndProperty: sliderAgeTextProperty,
                     maxValue: 100,
+                    minValue: 5,
                   ),
                   spaces,
                   CustomSliderWidget(
                     onChanged: (value) => setState(() => weight = value),
                     sliderNameAndProperty: sliderWeightTextProperty,
                     maxValue: 150,
+                    minValue: 24,
                   ),
                   spaces,
                   CustomButton(
