@@ -52,6 +52,7 @@ class _SelectSexButtonState extends State<SelectSexButton> with SingleTickerProv
                   child: DefaultTabController(
                     length: countTabs,
                     child: TabBar(
+                      controller: controller,
                       unselectedLabelColor: CustomTheme.mainColor,
                       labelColor: CustomTheme.sexLabelColor,
                       indicatorColor: CustomTheme.mainColor,
