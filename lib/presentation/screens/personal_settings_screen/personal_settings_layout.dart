@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:water_tracker/custom_theme.dart';
 import 'package:water_tracker/data/models/gender.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
-import 'package:water_tracker/presentation/screens/sing_in_screen/sign_in_screen.dart';
+import 'package:water_tracker/presentation/screens/goal_screen/goal_screen.dart';
 import 'package:water_tracker/presentation/widgets/custom_button.dart';
 import 'package:water_tracker/presentation/widgets/custom_slider_widget.dart';
 import 'package:water_tracker/presentation/widgets/name_and_skip_widget.dart';
@@ -46,8 +46,7 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
         child: BlocConsumer<PersonalSettingBloc, PersonalSettingState>(
           listener: (BuildContext context, state) {
             if (state is SuccessfullyPersonalSettingState) {
-              // TODO: CHANGE THE SCREEN
-              Navigator.of(context).push(MaterialPageRoute(builder: (context) => const SignInScreen()));
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => const GoalScreen()));
             }
 
             if (state is ErrorPersonalSettingState) {
@@ -84,8 +83,10 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
                   CustomButton(
                     isEnabled: isButtonEnabled,
                     text: LocaleKeys.next.tr(),
-                    onPressed: () =>
-                        context.read<PersonalSettingBloc>().add(SaveGeneralSettingEvent(gender!, age!, weight!)),
+                    onPressed: () {
+                      context.read<PersonalSettingBloc>().add(SaveGeneralSettingEvent(gender!, age!, weight!));
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => const GoalScreen()));
+                    },
                   ),
                   spaces,
                 ],
