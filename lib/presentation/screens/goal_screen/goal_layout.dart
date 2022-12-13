@@ -10,7 +10,7 @@ class GoalLayout extends StatelessWidget {
   static const spaces = SizedBox(height: 24);
   static const paddingHorizontal = EdgeInsets.symmetric(horizontal: 24.0);
   static const upperFlex = 2;
-  static const downFlex = 3;
+  static const downFlex = 2;
 
   @override
   Widget build(BuildContext context) {
