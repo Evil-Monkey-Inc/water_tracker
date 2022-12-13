@@ -13,7 +13,7 @@ class GoalLayout extends StatelessWidget {
   static const spaces = SizedBox(height: 24);
   static const paddingHorizontal = EdgeInsets.symmetric(horizontal: 24.0);
   static const spacesBetweenGoal = SizedBox(width: 16);
-  static const paddingTop = EdgeInsets.symmetric(vertical: 8);
+  static const paddingTop = EdgeInsets.only(top: 16);
   static const upperFlex = 2;
   static const downFlex = 2;
 
@@ -37,20 +37,14 @@ class GoalLayout extends StatelessWidget {
             spaces,
             Wrap(
               children: [
-                Padding(
-                  padding: paddingTop,
-                  child: GoalWidget(
-                    titleGoal: 'Drink more Water',
-                    iconImageWidget: IconImageWidget.bottleIconWay(),
-                  ),
+                GoalWidget(
+                  titleGoal: 'Drink more Water',
+                  iconImageWidget: IconImageWidget.bottleIconWay(),
                 ),
                 spacesBetweenGoal,
-                Padding(
-                  padding: paddingTop,
-                  child: GoalWidget(
-                    titleGoal: 'Lose weight',
-                    iconImageWidget: IconImageWidget.weightIconWay(),
-                  ),
+                GoalWidget(
+                  titleGoal: 'Lose weight',
+                  iconImageWidget: IconImageWidget.weightIconWay(),
                 ),
                 spacesBetweenGoal,
                 Padding(
