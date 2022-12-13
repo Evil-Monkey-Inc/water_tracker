@@ -32,9 +32,9 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
   static const spaces = SizedBox(height: 24);
   static const paddingHorizontal = EdgeInsets.symmetric(horizontal: 24.0);
   static const maxValueAge = 100.0;
-  static const minValueAge = 5.0;
+  static const minValueAge = 0.0;
   static const maxValueWeight = 150.0;
-  static const minValueWeight = 24.0;
+  static const minValueWeight = 0.0;
 
   bool get isButtonEnabled => weight != null && age != null && gender != null;
 
