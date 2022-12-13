@@ -25,11 +25,7 @@ class _GoalWidgetState extends State<GoalWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        setState(() {
-          chooseGoal = !chooseGoal;
-        });
-      },
+      onTap: () => setState(() => chooseGoal = !chooseGoal),
       child: Container(
         height: widgetHeight.toDouble(),
         width: widgetWidth.toDouble(),
