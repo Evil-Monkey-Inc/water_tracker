@@ -32,5 +32,6 @@ abstract class  LocaleKeys {
   static const weight = 'weight';
   static const next = 'next';
   static const please_fill_in_general_information = 'please_fill_in_general_information';
+  static const what_is_your_goal = 'what_is_your_goal';
 
 }

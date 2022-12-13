@@ -29,6 +29,7 @@
   "age" : "Age:",
   "weight" : "Weight:",
   "next" : "Continue",
-  "please_fill_in_general_information" : "Please fill in general information"
+  "please_fill_in_general_information" : "Please fill in general information",
+  "what_is_your_goal" : "What is your goal?"
 }
 

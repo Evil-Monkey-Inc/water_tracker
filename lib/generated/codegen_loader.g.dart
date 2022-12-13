@@ -45,7 +45,8 @@ class CodegenLoader extends AssetLoader{
   "age": "Age:",
   "weight": "Weight:",
   "next": "Continue",
-  "please_fill_in_general_information": "Please fill in general information"
+  "please_fill_in_general_information": "Please fill in general information",
+  "what_is_your_goal": "What is your goal?"
 };
 static const Map<String,dynamic> uk = {
   "enter_your_email": "Вкажіть вашу пошту",
@@ -78,7 +79,8 @@ static const Map<String,dynamic> uk = {
   "age": "Вік:",
   "weight": "Вага:",
   "next": "Продовжити",
-  "please_fill_in_general_information": "Будь ласка, заповніть загальну інформацію"
+  "please_fill_in_general_information": "Будь ласка, заповніть загальну інформацію",
+  "what_is_your_goal": "Яка у вас мета"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "uk": uk};
 }
