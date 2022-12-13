@@ -6,27 +6,33 @@ class CustomSliderWidget extends StatefulWidget {
     Key? key,
     required this.onChanged,
     required this.sliderNameAndProperty,
-    this.maxValue,
-    this.minValue,
+    this.maxValue = 0,
+    this.minValue = 0,
   }) : super(key: key);
 
   final void Function(int values) onChanged;
   final Text sliderNameAndProperty;
-  final double? maxValue;
-  final double? minValue;
+  final int maxValue;
+  final int minValue;
 
   @override
   State<CustomSliderWidget> createState() => _CustomSliderWidgetState();
 }
 
 class _CustomSliderWidgetState extends State<CustomSliderWidget> {
-  var weightValue = 0;
   static const divisions = 180;
   static const double lineHeight = 1.0;
   static const enabledRadius = 12;
   static const disabledThumbRadius = 5;
   static const spaces = SizedBox(height: 24);
   static const counterProperty = TextStyle(fontSize: 60, color: CustomTheme.mainColor);
+  late int generalInfValue;
+
+  @override
+  void initState() {
+    generalInfValue = widget.minValue.toInt();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +42,7 @@ class _CustomSliderWidgetState extends State<CustomSliderWidget> {
         Align(alignment: Alignment.bottomLeft, child: widget.sliderNameAndProperty),
         spaces,
         Text(
-          weightValue.round().toString(),
+          generalInfValue.round().toString(),
           style: counterProperty,
         ),
         SliderTheme(
@@ -55,14 +61,14 @@ class _CustomSliderWidgetState extends State<CustomSliderWidget> {
           ),
           child: Slider(
             thumbColor: CustomTheme.mainColor,
-            value: weightValue.toDouble(),
-            min: widget.minValue!,
-            max: widget.maxValue!,
+            value: generalInfValue.toDouble(),
+            min: widget.minValue.toDouble(),
+            max: widget.maxValue.toDouble(),
             divisions: divisions,
             onChanged: (value) => setState(
               () {
-                weightValue = value.toInt();
-                widget.onChanged(weightValue);
+                generalInfValue = value.toInt();
+                widget.onChanged(generalInfValue);
               },
             ),
           ),
