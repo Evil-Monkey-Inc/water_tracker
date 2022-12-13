@@ -18,7 +18,8 @@ class _GoalWidgetState extends State<GoalWidget> {
   static const upperSpace = SizedBox(height: 12);
   static const betweenSpace = SizedBox(height: 14);
   static const widgetHeight = 150;
-  static const widgetWidth = 163;
+  static const widgetWidth = 165;
+  static const iconTitleSize = 16;
   var chooseGoal = true;
 
   @override
@@ -39,16 +40,13 @@ class _GoalWidgetState extends State<GoalWidget> {
         child: Column(
           children: [
             upperSpace,
-            Container(
-              alignment: Alignment.topCenter,
-              child: widget.iconImageWidget,
-            ),
+            Container(child: widget.iconImageWidget),
             betweenSpace,
-            Container(
-              alignment: Alignment.topCenter,
-              child: Text(
-                widget.titleGoal,
-                style: TextStyle(fontSize: 16, color: chooseGoal ? CustomTheme.mainColor : Colors.white),
+            Text(
+              widget.titleGoal,
+              style: TextStyle(
+                fontSize: iconTitleSize.toDouble(),
+                color: chooseGoal ? CustomTheme.mainColor : Colors.white,
               ),
             ),
           ],
