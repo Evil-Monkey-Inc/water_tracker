@@ -35,6 +35,8 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
   static const minValueAge = 0.0;
   static const maxValueWeight = 150.0;
   static const minValueWeight = 0.0;
+  static const upperFlex = 3;
+  static const downFlex = 1;
 
   bool get isButtonEnabled => weight != null && age != null && gender != null;
 
@@ -59,9 +61,17 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
               child: Column(
                 children: [
                   spaces,
-                  NameAndSkipWidget(onPressed: () {}),
+                  NameAndSkipWidget(
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => const GoalScreen()));
+                    },
+                  ),
                   spaces,
-                  TitleSettingWidget(LocaleKeys.tell_more_general_info.tr()),
+                  TitleSettingWidget(
+                    LocaleKeys.tell_more_general_info.tr(),
+                    upperFlex: upperFlex,
+                    downFlex: downFlex,
+                  ),
                   spaces,
                   spaces,
                   SelectSexButton(onChanged: (value) => setState(() => gender = value)),
@@ -85,7 +95,6 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
                     text: LocaleKeys.next.tr(),
                     onPressed: () {
                       context.read<PersonalSettingBloc>().add(SaveGeneralSettingEvent(gender!, age!, weight!));
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => const GoalScreen()));
                     },
                   ),
                   spaces,

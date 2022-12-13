@@ -9,6 +9,8 @@ class GoalLayout extends StatelessWidget {
 
   static const spaces = SizedBox(height: 24);
   static const paddingHorizontal = EdgeInsets.symmetric(horizontal: 24.0);
+  static const upperFlex = 2;
+  static const downFlex = 3;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +23,12 @@ class GoalLayout extends StatelessWidget {
             NameAndSkipWidget(
               onPressed: () {},
             ),
-            TitleSettingWidget(LocaleKeys.what_is_your_goal.tr()),
+            spaces,
+            TitleSettingWidget(
+              LocaleKeys.what_is_your_goal.tr(),
+              upperFlex: upperFlex,
+              downFlex: downFlex,
+            ),
           ],
         ),
       ),
