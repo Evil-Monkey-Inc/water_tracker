@@ -48,7 +48,7 @@ class _MyLogFormWidgetState extends State<SignInForm> {
           spacer,
           CustomButton(
             onPressed: () {
-              if (EnvVariables.enableValidation && formKey.currentState!.validate()) {
+              if (EnvVariables.disableValidation || formKey.currentState!.validate()) {
                 widget.onSignInButtonPressed(_email.text, _pass.text);
               }
             },

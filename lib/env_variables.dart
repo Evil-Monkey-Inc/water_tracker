@@ -1,5 +1,5 @@
 abstract class EnvVariables {
-  static const _enableValidationKey = 'enableValidation';
+  static const _disableValidationKey = 'disableValidation';
 
-  static const enableValidation = bool.fromEnvironment(_enableValidationKey, defaultValue: true);
+  static const disableValidation = bool.fromEnvironment(_disableValidationKey, defaultValue: false);
 }

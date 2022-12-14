@@ -62,7 +62,7 @@ class _MyLogFormWidgetState extends State<SignUpForm> {
           CustomButton(
             isEnabled: widget.isButtonEnabled,
             onPressed: () {
-              if (EnvVariables.enableValidation && formKey.currentState!.validate()) {
+              if (EnvVariables.disableValidation || formKey.currentState!.validate()) {
                 widget.onSignUpButtonPressed(_email.text, _pass.text);
               }
             },
