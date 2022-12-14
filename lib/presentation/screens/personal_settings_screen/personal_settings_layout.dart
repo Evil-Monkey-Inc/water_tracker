@@ -23,22 +23,21 @@ class PersonalSettingsLayout extends StatefulWidget {
 }
 
 class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
-  Gender? gender;
-  int? weight;
-  int? age;
+  var gender = Gender.male;
+  int weight = minValueWeight;
+  int age = minValueAge;
 
   final sliderWeightTextProperty = Text(LocaleKeys.weight.tr(), style: CustomTheme.header);
   final sliderAgeTextProperty = Text(LocaleKeys.age.tr(), style: CustomTheme.header);
   static const spaces = SizedBox(height: 24);
   static const paddingHorizontal = EdgeInsets.symmetric(horizontal: 24.0);
-  static const maxValueAge = 100.0;
-  static const minValueAge = 0.0;
-  static const maxValueWeight = 150.0;
-  static const minValueWeight = 0.0;
+  static const maxValueAge = 100;
+  static const minValueAge = 5;
+  static const maxValueWeight = 150;
+  static const minValueWeight = 24;
+
   static const upperFlex = 3;
   static const downFlex = 1;
-
-  bool get isButtonEnabled => weight != null && age != null && gender != null;
 
   @override
   Widget build(BuildContext context) {
@@ -91,11 +90,9 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
                   ),
                   spaces,
                   CustomButton(
-                    isEnabled: isButtonEnabled,
                     text: LocaleKeys.next.tr(),
-                    onPressed: () {
-                      context.read<PersonalSettingBloc>().add(SaveGeneralSettingEvent(gender!, age!, weight!));
-                    },
+                    onPressed: () =>
+                        context.read<PersonalSettingBloc>().add(SaveGeneralSettingEvent(gender, age, weight)),
                   ),
                   spaces,
                 ],

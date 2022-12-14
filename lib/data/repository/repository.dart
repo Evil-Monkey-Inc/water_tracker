@@ -1,4 +1,4 @@
-import 'package:water_tracker/data/models/gender.dart';
+import 'package:water_tracker/data/models/user_settings.dart';
 
 abstract class Repository {
   Future<bool> registerUser(
@@ -11,9 +11,5 @@ abstract class Repository {
     String password,
   );
 
-  Future<bool> saveGeneralInfo(
-    Gender sex,
-    int age,
-    int weight,
-  );
+  Future<bool> saveGeneralInfo(UserSettings userSettings);
 }
