@@ -33,5 +33,11 @@ abstract class  LocaleKeys {
   static const next = 'next';
   static const please_fill_in_general_information = 'please_fill_in_general_information';
   static const what_is_your_goal = 'what_is_your_goal';
+  static const drink_more_water = 'drink_more_water';
+  static const lose_weight = 'lose_weight';
+  static const shine_skin = 'shine_skin';
+  static const lead_a_healthy_lifestyle = 'lead_a_healthy_lifestyle';
+  static const improve_digestion = 'improve_digestion';
+  static const another = 'another';
 
 }

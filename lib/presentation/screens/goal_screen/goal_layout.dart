@@ -44,7 +44,7 @@ class GoalLayout extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     GoalWidget(
-                      titleGoal: 'Drink more Water',
+                      titleGoal: LocaleKeys.drink_more_water.tr(),
                       iconImageWidget: IconImageWidget.bottleIconWay(),
                       onChanged: (goal) {
                         print(goal);
@@ -52,7 +52,7 @@ class GoalLayout extends StatelessWidget {
                     ),
                     spacesBetweenGoal,
                     GoalWidget(
-                      titleGoal: 'Lose weight',
+                      titleGoal: LocaleKeys.lose_weight.tr(),
                       iconImageWidget: IconImageWidget.weightIconWay(),
                       onChanged: (goal) {
                         print(goal);
@@ -65,7 +65,7 @@ class GoalLayout extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     GoalWidget(
-                      titleGoal: 'Shine skin',
+                      titleGoal: LocaleKeys.shine_skin.tr(),
                       iconImageWidget: IconImageWidget.shineSkinIconWay(),
                       onChanged: (goal) {
                         print(goal);
@@ -73,7 +73,7 @@ class GoalLayout extends StatelessWidget {
                     ),
                     spacesBetweenGoal,
                     GoalWidget(
-                      titleGoal: 'Lead a healthy lifestyle',
+                      titleGoal: LocaleKeys.lead_a_healthy_lifestyle.tr(),
                       iconImageWidget: IconImageWidget.lifeStyleIconWay(),
                       onChanged: (goal) {
                         print(goal);
@@ -86,7 +86,7 @@ class GoalLayout extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     GoalWidget(
-                      titleGoal: 'Improve digestion',
+                      titleGoal: LocaleKeys.improve_digestion.tr(),
                       iconImageWidget: IconImageWidget.digestionIconWay(),
                       onChanged: (goal) {
                         print(goal);
@@ -94,7 +94,7 @@ class GoalLayout extends StatelessWidget {
                     ),
                     spacesBetweenGoal,
                     GoalWidget(
-                      titleGoal: 'Other',
+                      titleGoal: LocaleKeys.another.tr(),
                       iconImageWidget: IconImageWidget.otherIconWay(),
                       onChanged: (goal) {
                         print(goal);
