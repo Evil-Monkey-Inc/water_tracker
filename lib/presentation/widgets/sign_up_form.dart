@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:water_tracker/custom_theme.dart';
+import 'package:water_tracker/env_variables.dart';
 import 'package:water_tracker/form_validators.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
@@ -61,7 +62,7 @@ class _MyLogFormWidgetState extends State<SignUpForm> {
           CustomButton(
             isEnabled: widget.isButtonEnabled,
             onPressed: () {
-              if (formKey.currentState!.validate()) {
+              if (EnvVariables.enableValidation && formKey.currentState!.validate()) {
                 widget.onSignUpButtonPressed(_email.text, _pass.text);
               }
             },
@@ -71,5 +72,4 @@ class _MyLogFormWidgetState extends State<SignUpForm> {
       ),
     );
   }
-  //
 }
