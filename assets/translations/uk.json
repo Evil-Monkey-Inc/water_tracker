@@ -29,5 +29,12 @@
   "age" : "Вік:",
   "weight" : "Вага:",
   "next" : "Продовжити",
-  "please_fill_in_general_information" : "Будь ласка, заповніть загальну інформацію"
+  "please_fill_in_general_information" : "Будь ласка, заповніть загальну інформацію",
+  "what_is_your_goal" : "Яка у вас мета?",
+  "drink_more_water" : "Пити більше води",
+  "lose_weight" : "Втратити вагу",
+  "shine_skin" : "Суха шкіра",
+  "lead_a_healthy_lifestyle" : "Вести здоровий спосіб життя",
+  "improve_digestion" : "Покращити травлення",
+  "another" : "Інше"
 }

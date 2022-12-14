@@ -75,6 +75,12 @@ flutter:
     - assets/images/man_login.png
     - assets/images/logo_name.svg
     - assets/images/woman_login.png
+    - assets/images/bottle.png
+    - assets/images/weight.png
+    - assets/images/carrot.png
+    - assets/images/dumbbells.png
+    - assets/images/hike.png
+    - assets/images/stars.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

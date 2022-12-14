@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:water_tracker/custom_theme.dart';
 import 'package:water_tracker/data/models/gender.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
-import 'package:water_tracker/presentation/screens/sing_in_screen/sign_in_screen.dart';
+import 'package:water_tracker/presentation/screens/goal_screen/goal_screen.dart';
 import 'package:water_tracker/presentation/widgets/custom_button.dart';
 import 'package:water_tracker/presentation/widgets/custom_slider_widget.dart';
 import 'package:water_tracker/presentation/widgets/name_and_skip_widget.dart';
@@ -36,6 +36,9 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
   static const maxValueWeight = 150;
   static const minValueWeight = 24;
 
+  static const upperFlex = 3;
+  static const downFlex = 1;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,8 +47,7 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
         child: BlocConsumer<PersonalSettingBloc, PersonalSettingState>(
           listener: (BuildContext context, state) {
             if (state is SuccessfullyPersonalSettingState) {
-              // TODO: CHANGE THE SCREEN
-              Navigator.of(context).push(MaterialPageRoute(builder: (context) => const SignInScreen()));
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => const GoalScreen()));
             }
 
             if (state is ErrorPersonalSettingState) {
@@ -58,9 +60,17 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
               child: Column(
                 children: [
                   spaces,
-                  NameAndSkipWidget(onPressed: () {}),
+                  NameAndSkipWidget(
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => const GoalScreen()));
+                    },
+                  ),
                   spaces,
-                  TitleSettingWidget(LocaleKeys.tell_more_general_info.tr()),
+                  TitleSettingWidget(
+                    LocaleKeys.tell_more_general_info.tr(),
+                    upperFlex: upperFlex,
+                    downFlex: downFlex,
+                  ),
                   spaces,
                   spaces,
                   SelectSexButton(onChanged: (value) => setState(() => gender = value)),
