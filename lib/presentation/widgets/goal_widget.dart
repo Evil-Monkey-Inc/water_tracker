@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:water_tracker/custom_theme.dart';
-import 'package:water_tracker/data/models/goals.dart';
 
 class GoalWidget extends StatefulWidget {
   const GoalWidget({
@@ -41,11 +40,13 @@ class _GoalWidgetState extends State<GoalWidget> {
           borderRadius: const BorderRadius.all(Radius.circular(16)),
         ),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             upperSpace,
             Container(child: widget.iconImageWidget),
             betweenSpace,
-            Expanded(
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16),
               child: Text(
                 widget.titleGoal,
                 textAlign: TextAlign.center,

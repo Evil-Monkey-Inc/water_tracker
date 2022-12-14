@@ -11,6 +11,7 @@ class GoalLayout extends StatelessWidget {
   const GoalLayout({Key? key}) : super(key: key);
 
   static const spaces = SizedBox(height: 24);
+  static const spacesBetween = SizedBox(height: 16);
   static const paddingHorizontal = EdgeInsets.symmetric(horizontal: 24.0);
   static const spacesBetweenGoal = SizedBox(width: 16);
   static const paddingTop = EdgeInsets.only(top: 16);
@@ -23,6 +24,7 @@ class GoalLayout extends StatelessWidget {
       body: Padding(
         padding: paddingHorizontal,
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             spaces,
             NameAndSkipWidget(
@@ -35,70 +37,74 @@ class GoalLayout extends StatelessWidget {
               downFlex: downFlex,
             ),
             spaces,
-            Wrap(
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                GoalWidget(
-                  titleGoal: 'Drink more Water',
-                  iconImageWidget: IconImageWidget.bottleIconWay(),
-                  onChanged: (goal) {
-                    print(goal);
-                  },
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    GoalWidget(
+                      titleGoal: 'Drink more Water',
+                      iconImageWidget: IconImageWidget.bottleIconWay(),
+                      onChanged: (goal) {
+                        print(goal);
+                      },
+                    ),
+                    spacesBetweenGoal,
+                    GoalWidget(
+                      titleGoal: 'Lose weight',
+                      iconImageWidget: IconImageWidget.weightIconWay(),
+                      onChanged: (goal) {
+                        print(goal);
+                      },
+                    ),
+                  ],
                 ),
-                spacesBetweenGoal,
-                GoalWidget(
-                  titleGoal: 'Lose weight',
-                  iconImageWidget: IconImageWidget.weightIconWay(),
-                  onChanged: (goal) {
-                    print(goal);
-                  },
+                spacesBetween,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    GoalWidget(
+                      titleGoal: 'Shine skin',
+                      iconImageWidget: IconImageWidget.shineSkinIconWay(),
+                      onChanged: (goal) {
+                        print(goal);
+                      },
+                    ),
+                    spacesBetweenGoal,
+                    GoalWidget(
+                      titleGoal: 'Lead a healthy lifestyle',
+                      iconImageWidget: IconImageWidget.lifeStyleIconWay(),
+                      onChanged: (goal) {
+                        print(goal);
+                      },
+                    ),
+                  ],
                 ),
-                spacesBetweenGoal,
-                Padding(
-                  padding: paddingTop,
-                  child: GoalWidget(
-                    titleGoal: 'Shine skin',
-                    iconImageWidget: IconImageWidget.shineSkinIconWay(),
-                    onChanged: (goal) {
-                      print(goal);
-                    },
-                  ),
-                ),
-                spacesBetweenGoal,
-                Padding(
-                  padding: paddingTop,
-                  child: GoalWidget(
-                    titleGoal: 'Lead a healthy lifestyle',
-                    iconImageWidget: IconImageWidget.lifeStyleIconWay(),
-                    onChanged: (goal) {
-                      print(goal);
-                    },
-                  ),
-                ),
-                spacesBetweenGoal,
-                Padding(
-                  padding: paddingTop,
-                  child: GoalWidget(
-                    titleGoal: 'Improve digestion',
-                    iconImageWidget: IconImageWidget.digestionIconWay(),
-                    onChanged: (goal) {
-                      print(goal);
-                    },
-                  ),
-                ),
-                spacesBetweenGoal,
-                Padding(
-                  padding: paddingTop,
-                  child: GoalWidget(
-                    titleGoal: 'Other',
-                    iconImageWidget: IconImageWidget.otherIconWay(),
-                    onChanged: (goal) {
-                      print(goal);
-                    },
-                  ),
+                spacesBetween,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    GoalWidget(
+                      titleGoal: 'Improve digestion',
+                      iconImageWidget: IconImageWidget.digestionIconWay(),
+                      onChanged: (goal) {
+                        print(goal);
+                      },
+                    ),
+                    spacesBetweenGoal,
+                    GoalWidget(
+                      titleGoal: 'Other',
+                      iconImageWidget: IconImageWidget.otherIconWay(),
+                      onChanged: (goal) {
+                        print(goal);
+                      },
+                    ),
+                  ],
                 ),
               ],
             ),
-            spaces,
+            spacesBetween,
             CustomButton(onPressed: () {}, text: LocaleKeys.next.tr()),
           ],
         ),
