@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:water_tracker/assets.dart';
+import 'package:water_tracker/generated/assets/assets.gen.dart';
 
 class LogoWidget extends StatelessWidget {
   const LogoWidget({Key? key}) : super(key: key);
@@ -15,12 +15,12 @@ class LogoWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         SvgPicture.asset(
-          Assets.logoImagePath,
+          Assets.images.logo,
           width: logoWidth,
         ),
         const SizedBox(width: padding),
         SvgPicture.asset(
-          Assets.logoTextImage,
+          Assets.images.logoName,
           width: logoTextWidth,
         ),
       ],
