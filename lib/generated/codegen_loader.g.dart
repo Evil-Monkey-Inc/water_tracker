@@ -80,7 +80,7 @@ static const Map<String,dynamic> uk = {
   "weight": "Вага:",
   "next": "Продовжити",
   "please_fill_in_general_information": "Будь ласка, заповніть загальну інформацію",
-  "what_is_your_goal": "Яка у вас мета"
+  "what_is_your_goal": "Яка у вас мета?"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "uk": uk};
 }
