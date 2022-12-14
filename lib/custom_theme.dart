@@ -25,7 +25,7 @@ class CustomTheme {
     borderSide: BorderSide(color: Colors.black),
   );
 
-  static const goalCirculars = BorderRadius.all(Radius.circular(16);
+  static const goalCirculars = BorderRadius.all(Radius.circular(16));
 
   static const focusedErrorBorder = OutlineInputBorder(
     borderRadius: BorderRadius.all(Radius.circular(10)),
