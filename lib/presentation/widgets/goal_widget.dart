@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:water_tracker/custom_theme.dart';
+import 'package:water_tracker/data/models/goals.dart';
 
 class GoalWidget extends StatefulWidget {
   const GoalWidget({
     Key? key,
     required this.titleGoal,
     required this.iconImageWidget,
+    required this.onChanged,
   }) : super(key: key);
+
   final String titleGoal;
   final Widget iconImageWidget;
+  final void Function(String value) onChanged;
 
   @override
   State<GoalWidget> createState() => _GoalWidgetState();
@@ -25,7 +29,10 @@ class _GoalWidgetState extends State<GoalWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => setState(() => chooseGoal = !chooseGoal),
+      onTap: () {
+        widget.onChanged(widget.titleGoal);
+        setState(() => chooseGoal = !chooseGoal);
+      },
       child: Container(
         height: widgetHeight.toDouble(),
         width: widgetWidth.toDouble(),
@@ -38,11 +45,14 @@ class _GoalWidgetState extends State<GoalWidget> {
             upperSpace,
             Container(child: widget.iconImageWidget),
             betweenSpace,
-            Text(
-              widget.titleGoal,
-              style: TextStyle(
-                fontSize: iconTitleSize.toDouble(),
-                color: chooseGoal ? CustomTheme.mainColor : Colors.white,
+            Expanded(
+              child: Text(
+                widget.titleGoal,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: iconTitleSize.toDouble(),
+                  color: chooseGoal ? CustomTheme.mainColor : Colors.white,
+                ),
               ),
             ),
           ],

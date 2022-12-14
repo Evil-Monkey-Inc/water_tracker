@@ -40,11 +40,17 @@ class GoalLayout extends StatelessWidget {
                 GoalWidget(
                   titleGoal: 'Drink more Water',
                   iconImageWidget: IconImageWidget.bottleIconWay(),
+                  onChanged: (goal) {
+                    print(goal);
+                  },
                 ),
                 spacesBetweenGoal,
                 GoalWidget(
                   titleGoal: 'Lose weight',
                   iconImageWidget: IconImageWidget.weightIconWay(),
+                  onChanged: (goal) {
+                    print(goal);
+                  },
                 ),
                 spacesBetweenGoal,
                 Padding(
@@ -52,6 +58,9 @@ class GoalLayout extends StatelessWidget {
                   child: GoalWidget(
                     titleGoal: 'Shine skin',
                     iconImageWidget: IconImageWidget.shineSkinIconWay(),
+                    onChanged: (goal) {
+                      print(goal);
+                    },
                   ),
                 ),
                 spacesBetweenGoal,
@@ -60,6 +69,9 @@ class GoalLayout extends StatelessWidget {
                   child: GoalWidget(
                     titleGoal: 'Lead a healthy lifestyle',
                     iconImageWidget: IconImageWidget.lifeStyleIconWay(),
+                    onChanged: (goal) {
+                      print(goal);
+                    },
                   ),
                 ),
                 spacesBetweenGoal,
@@ -68,6 +80,9 @@ class GoalLayout extends StatelessWidget {
                   child: GoalWidget(
                     titleGoal: 'Improve digestion',
                     iconImageWidget: IconImageWidget.digestionIconWay(),
+                    onChanged: (goal) {
+                      print(goal);
+                    },
                   ),
                 ),
                 spacesBetweenGoal,
@@ -76,6 +91,9 @@ class GoalLayout extends StatelessWidget {
                   child: GoalWidget(
                     titleGoal: 'Other',
                     iconImageWidget: IconImageWidget.otherIconWay(),
+                    onChanged: (goal) {
+                      print(goal);
+                    },
                   ),
                 ),
               ],
