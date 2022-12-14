@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:water_tracker/custom_theme.dart';
+import 'package:water_tracker/data/models/goals.dart';
 
 class GoalWidget extends StatefulWidget {
   const GoalWidget({
@@ -11,7 +12,7 @@ class GoalWidget extends StatefulWidget {
 
   final String titleGoal;
   final Widget iconImageWidget;
-  final void Function(String value) onChanged;
+  final void Function(Goals goals) onChanged;
 
   @override
   State<GoalWidget> createState() => _GoalWidgetState();
@@ -29,7 +30,7 @@ class _GoalWidgetState extends State<GoalWidget> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        widget.onChanged(widget.titleGoal);
+        widget.onChanged(Goals.drinkWater);
         setState(() => chooseGoal = !chooseGoal);
       },
       child: Container(
