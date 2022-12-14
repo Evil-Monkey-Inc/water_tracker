@@ -23,9 +23,11 @@ class GoalWidget extends StatefulWidget {
 class _GoalWidgetState extends State<GoalWidget> with SingleTickerProviderStateMixin {
   static const upperSpace = SizedBox(height: 12);
   static const betweenSpace = SizedBox(height: 14);
+  static const paddingBetweenGoals = EdgeInsets.symmetric(horizontal: 16);
   static const widgetHeight = 150;
   static const widgetWidth = 165;
   static const iconTitleSize = 16;
+  static const animationTime = 150;
 
   static const colorAnimationDuration = Duration(milliseconds: 200);
   late final colorAnimationController = AnimationController(
@@ -55,7 +57,7 @@ class _GoalWidgetState extends State<GoalWidget> with SingleTickerProviderStateM
           setState(() => chooseGoal = !chooseGoal);
         },
         onTapDown: (dp) => sizeAnimationController.reverse(),
-        onTapUp: (dp) => Timer(const Duration(milliseconds: 150), () => sizeAnimationController.fling()),
+        onTapUp: (dp) => Timer(const Duration(milliseconds: animationTime), () => sizeAnimationController.fling()),
         onTapCancel: () => sizeAnimationController.fling(),
         child: AnimatedContainer(
           height: widgetHeight.toDouble(),
@@ -63,7 +65,7 @@ class _GoalWidgetState extends State<GoalWidget> with SingleTickerProviderStateM
           duration: colorAnimationDuration,
           decoration: BoxDecoration(
             color: chooseGoal ? CustomTheme.backgroundSexBottomColor : CustomTheme.mainColor,
-            borderRadius: const BorderRadius.all(Radius.circular(16)),
+            borderRadius: CustomTheme.goalCirculars,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -72,7 +74,7 @@ class _GoalWidgetState extends State<GoalWidget> with SingleTickerProviderStateM
               IconImageWidget(widget.model.imagePath),
               betweenSpace,
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
+                padding: paddingBetweenGoals,
                 child: Text(
                   widget.model.title,
                   textAlign: TextAlign.center,
