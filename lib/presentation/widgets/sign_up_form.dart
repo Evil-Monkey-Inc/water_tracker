@@ -66,6 +66,7 @@ class _MyLogFormWidgetState extends State<SignUpForm> {
                 widget.onSignUpButtonPressed(_email.text, _pass.text);
               }
             },
+
             text: LocaleKeys.sign_up.tr(),
           ),
         ],
