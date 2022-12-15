@@ -11,8 +11,10 @@ class GoalBloc extends Bloc<GoalEvent, GoalState> {
     on<SaveGoalEvent>((event, emit) async {
       try {
         emit(SavingGoalState());
-        final goals = GoalsList(goals: event.goals);
+        final goals = GoalList(goals: event.goals);
         final isSuccess = await repository.saveGoal(goals);
+        final isSaved = await repository.getGoal();
+        print(isSaved);
         emit(isSuccess ? SuccessfullyGoalState() : ErrorGoalState(Exception()));
       } catch (e) {
         emit(ErrorGoalState(e));
