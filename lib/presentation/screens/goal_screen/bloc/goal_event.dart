@@ -1,8 +1,8 @@
-import 'package:water_tracker/data/models/goal_list.dart';
+import 'package:water_tracker/data/models/goals.dart';
 
 abstract class GoalEvent {}
 
 class SaveGoalEvent extends GoalEvent {
-  SaveGoalEvent(this.goalsList);
-  final GoalsList goalsList;
+  SaveGoalEvent(this.goals);
+  final Goals goals;
 }
