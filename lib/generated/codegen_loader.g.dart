@@ -6,11 +6,11 @@ import 'dart:ui';
 
 import 'package:easy_localization/easy_localization.dart' show AssetLoader;
 
-class CodegenLoader extends AssetLoader {
+class CodegenLoader extends AssetLoader{
   const CodegenLoader();
 
   @override
-  Future<Map<String, dynamic>> load(String fullPath, Locale locale) {
+  Future<Map<String, dynamic>> load(String fullPath, Locale locale ) {
     return Future.value(mapLocales[locale.toString()]);
   }
 
@@ -18,7 +18,7 @@ class CodegenLoader extends AssetLoader {
   "enter_your_email": "Enter your email",
   "enter_password": "Enter password",
   "sign_in": "Sign In",
-  "welcome_back_tony": "Welcome back, Tony!",
+  "welcome_back_tony": "Welcome back!",
   "dont_have_an_account_yet": "Don`t have an account yet?",
   "sign_up": "Sign Up",
   "by_signing_in_you_agree_to_our": "By signing in, you agree to our",
@@ -35,7 +35,7 @@ class CodegenLoader extends AssetLoader {
   "already_have_an_account": "Already have an account?",
   "password_must_contain_at_least_8_characters": "Password must contain at least 8 characters",
   "password_must_contain_one_uppercase_letter": "Password must contain one uppercase letter",
-  "error_try_again": "Error. Try again",
+  "error_try_again": "Error. Mail is busy",
   "skip": "Skip",
   "tell_more_general_info": "Tell a bit more general info",
   "setup_profile": "Setup profile",
@@ -52,13 +52,14 @@ class CodegenLoader extends AssetLoader {
   "shine_skin": "Shine skin",
   "lead_a_healthy_lifestyle": "Lead a healthy lifestyle",
   "improve_digestion": "Improve digestion",
-  "another": "Other"
+  "another": "Other",
+  "failed_store": "Failed to connect data, please check your internet connection"
 };
 static const Map<String,dynamic> uk = {
   "enter_your_email": "Вкажіть вашу пошту",
   "enter_password": "Вкажіть пароль",
   "sign_in": "Увійти",
-  "welcome_back_tony": "Ласкаво просимо, Тоні!",
+  "welcome_back_tony": "Ласкаво просимо!",
   "dont_have_an_account_yet": "Ще не маєте облікового запису?",
   "sign_up": "Реєстрація",
   "by_signing_in_you_agree_to_our": "Увійшовши, ви погоджуєтеся з нашими",
@@ -92,7 +93,8 @@ static const Map<String,dynamic> uk = {
   "shine_skin": "Суха шкіра",
   "lead_a_healthy_lifestyle": "Вести здоровий спосіб життя",
   "improve_digestion": "Покращити травлення",
-  "another": "Інше"
+  "another": "Інше",
+  "failed_store": "Не вдалося підключити дані, перевірте підключення до Інтернету"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "uk": uk};
 }

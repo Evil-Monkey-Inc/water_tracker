@@ -36,7 +36,8 @@
   "shine_skin" : "Shine skin",
   "lead_a_healthy_lifestyle" : "Lead a healthy lifestyle",
   "improve_digestion" : "Improve digestion",
-  "another" : "Other"
+  "another" : "Other",
+  "failed_store" : "Failed to connect data, please check your internet connection"
 
 
 }
