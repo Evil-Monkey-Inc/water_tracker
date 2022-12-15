@@ -54,6 +54,8 @@ class _MyLogFormWidgetState extends State<SignInForm> {
             },
             text: LocaleKeys.sign_in.tr(),
             isEnabled: true,
+            buttonColor: CustomTheme.buttonDarkColor,
+            textButtonColor: Colors.white,
           ),
         ],
       ),
