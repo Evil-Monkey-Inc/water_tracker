@@ -56,6 +56,8 @@ class CustomTheme {
 
   static const header = TextStyle(fontSize: 20);
 
+  static const notificationTextSize = TextStyle(fontSize: 24);
+
   static const mainColor = Color(0xFF292D32);
 
   static const mainButtonBackgroundColor = Color(0xFFF1F1F1);
@@ -84,9 +86,11 @@ class CustomTheme {
 
   static const backgroundFieldColor = Color(0xFFF2F4F8);
 
-  static const buttonColor = mainColor;
+  static const buttonDarkColor = mainColor;
 
   static const buttonSize = TextStyle(fontSize: 16);
+
+  static const buttonLightColor = Color(0xFFF1F1F1);
 
   static const minimumSizeButton = Size.fromHeight(12);
 
