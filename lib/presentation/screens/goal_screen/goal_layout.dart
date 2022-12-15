@@ -1,8 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:water_tracker/data/models/goal.dart';
 import 'package:water_tracker/data/models/goal_widget_model.dart';
-import 'package:water_tracker/data/models/goals.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
 import 'package:water_tracker/presentation/screens/goal_screen/bloc/goal_bloc.dart';
 import 'package:water_tracker/presentation/screens/goal_screen/bloc/goal_event.dart';
@@ -32,7 +32,8 @@ class GoalLayout extends StatefulWidget {
 }
 
 class _GoalLayoutState extends State<GoalLayout> {
-  var goals = Goals.drinkWater;
+  var goals = Goal.drinkWater;
+  List<Goal> goalsList = [];
 
   @override
   Widget build(BuildContext context) {
@@ -69,12 +70,13 @@ class _GoalLayoutState extends State<GoalLayout> {
                     mainAxisSpacing: GoalLayout.mainAxisSpacing.toDouble(),
                     crossAxisSpacing: GoalLayout.crossAxisSpacing.toDouble(),
                     crossAxisCount: GoalLayout.crossAxisCount,
-                    children: Goals.values
+                    children: Goal.values
                         .map(
                           (goal) => GoalWidget(
                             onChanged: (_) {
                               setState(() {
                                 goals = goal;
+                                goalsList.add(goals);
                                 print(goals);
                               });
                             },
@@ -90,7 +92,7 @@ class _GoalLayoutState extends State<GoalLayout> {
                 ),
                 GoalLayout.spacesBetween,
                 CustomButton(
-                  onPressed: () => context.read<GoalBloc>().add(SaveGoalEvent(goals)),
+                  onPressed: () => context.read<GoalBloc>().add(SaveGoalEvent(goalsList)),
                   text: LocaleKeys.next.tr(),
                 ),
               ],
