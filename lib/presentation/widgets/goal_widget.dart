@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:water_tracker/custom_theme.dart';
+import 'package:water_tracker/data/models/goal.dart';
 import 'package:water_tracker/data/models/goal_widget_model.dart';
-import 'package:water_tracker/data/models/goals.dart';
 import 'package:water_tracker/presentation/widgets/icon_image_widget.dart';
 
 class GoalWidget extends StatefulWidget {
@@ -14,7 +14,7 @@ class GoalWidget extends StatefulWidget {
   }) : super(key: key);
 
   final GoalWidgetModel model;
-  final void Function(Goals goals) onChanged;
+  final void Function(Goal goals) onChanged;
 
   @override
   State<GoalWidget> createState() => _GoalWidgetState();

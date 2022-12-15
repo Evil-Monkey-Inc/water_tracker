@@ -1,8 +1,8 @@
-import 'package:water_tracker/data/models/goals.dart';
+import 'package:water_tracker/data/models/goal.dart';
 
 class GoalWidgetModel {
   final String title;
-  final Goals goal;
+  final Goal goal;
   final String imagePath;
 
   GoalWidgetModel({
