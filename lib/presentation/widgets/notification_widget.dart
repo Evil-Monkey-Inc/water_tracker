@@ -22,6 +22,7 @@ class NotificationWidget extends StatelessWidget {
   static const spaceBetweenButtons = SizedBox(height: 16);
   static const opacity = 0.1;
   static const offSet = Offset(-4, 2);
+  static const paddingInsideButton = EdgeInsets.symmetric(horizontal: 24);
 
   @override
   Widget build(BuildContext context) {
@@ -67,9 +68,9 @@ class NotificationWidget extends StatelessWidget {
           ),
           downFlex,
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24),
+            padding: paddingInsideButton,
             child: CustomButton(
-              text: 'Every hour',
+              text: LocaleKeys.every_hour.tr(),
               onPressed: () {},
               buttonColor: CustomTheme.buttonLightColor,
               textButtonColor: Colors.black,
@@ -77,9 +78,9 @@ class NotificationWidget extends StatelessWidget {
           ),
           spaceBetweenButtons,
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24),
+            padding: paddingInsideButton,
             child: CustomButton(
-              text: 'Every two hour',
+              text: LocaleKeys.every_two_hours.tr(),
               onPressed: () {},
               buttonColor: CustomTheme.buttonDarkColor,
               textButtonColor: Colors.white,

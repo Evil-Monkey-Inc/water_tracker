@@ -38,7 +38,9 @@
   "improve_digestion" : "Improve digestion",
   "another" : "Other",
   "failed_store" : "Failed to connect data, please check your internet connection",
-  "notification_text" : "How often do you want to receive water reminders?"
+  "notification_text" : "How often do you want to receive water reminders?",
+  "every_hour" : "Every hour",
+  "every_two_hours" : "Every two hours"
 
 
 }
