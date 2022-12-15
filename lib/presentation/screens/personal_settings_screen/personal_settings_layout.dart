@@ -10,7 +10,6 @@ import 'package:water_tracker/presentation/widgets/custom_slider_widget.dart';
 import 'package:water_tracker/presentation/widgets/name_and_skip_widget.dart';
 import 'package:water_tracker/presentation/widgets/select_sex_button.dart';
 import 'package:water_tracker/presentation/widgets/title_settings_widget.dart';
-
 import 'bloc/personal_setting_bloc.dart';
 import 'bloc/personal_setting_event.dart';
 import 'bloc/personal_setting_state.dart';

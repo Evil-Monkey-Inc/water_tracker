@@ -1,5 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:water_tracker/assets.dart';
+import 'package:water_tracker/generated/assets/assets.gen.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
 
 enum Goals {
@@ -32,17 +32,17 @@ extension GoalsWidgetParams on Goals {
   String get assetPath {
     switch (this) {
       case Goals.drinkWater:
-        return Assets.bottleIconImage;
+        return Assets.images.bottle.path;
       case Goals.loseWeight:
-        return Assets.weightIconImage;
+        return Assets.images.weight.path;
       case Goals.shineSkin:
-        return Assets.starsIconImage;
+        return Assets.images.stars.path;
       case Goals.healthyLifeStyle:
-        return Assets.hikeIconImage;
+        return Assets.images.hike.path;
       case Goals.improveDigestion:
-        return Assets.carrotIconImage;
+        return Assets.images.carrot.path;
       case Goals.other:
-        return Assets.dumbbellsIconImage;
+        return Assets.images.dumbbells.path;
     }
   }
 }

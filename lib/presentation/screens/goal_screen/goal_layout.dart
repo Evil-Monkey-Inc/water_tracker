@@ -18,6 +18,9 @@ class GoalLayout extends StatelessWidget {
   static const paddingTop = EdgeInsets.only(top: 16);
   static const upperFlex = 3;
   static const downFlex = 1;
+  static const mainAxisSpacing = 16;
+  static const crossAxisSpacing = 16;
+  static const crossAxisCount = 2;
 
   @override
   Widget build(BuildContext context) {
@@ -40,9 +43,9 @@ class GoalLayout extends StatelessWidget {
             spaces,
             Expanded(
               child: GridView.count(
-                mainAxisSpacing: 12,
-                crossAxisSpacing: 12,
-                crossAxisCount: 2,
+                mainAxisSpacing: mainAxisSpacing.toDouble(),
+                crossAxisSpacing: crossAxisSpacing.toDouble(),
+                crossAxisCount: crossAxisCount,
                 children: Goals.values
                     .map(
                       (goal) => GoalWidget(
