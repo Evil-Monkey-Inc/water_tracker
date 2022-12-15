@@ -17,9 +17,15 @@ class StorageServiceSharedPrefImplements extends StorageService {
   }
 
   @override
-  Future<bool> saveGoal(GoalsList goalsList) async {
+  Future<bool> saveGoal(GoalList goalsList) async {
     final prefs = await SharedPreferences.getInstance();
     final result = await prefs.setString(goalsListKey, jsonEncode(goalsList.toJson()));
     return result;
+  }
+
+  @override
+  Future<String?> getGoal() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getString(goalsListKey);
   }
 }

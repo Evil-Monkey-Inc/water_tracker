@@ -14,5 +14,7 @@ abstract class Repository {
 
   Future<bool> saveGeneralInfo(UserSettings userSettings);
 
-  Future<bool> saveGoal(GoalsList goalsList);
+  Future<bool> saveGoal(GoalList goalsList);
+
+  Future<String?> getGoal();
 }

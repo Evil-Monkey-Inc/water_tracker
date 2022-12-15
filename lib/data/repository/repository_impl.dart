@@ -31,8 +31,11 @@ class RepositoryImpl extends Repository {
   }
 
   @override
-  Future<bool> saveGoal(GoalsList goalsList) async {
+  Future<bool> saveGoal(GoalList goalsList) async {
     final result = await storageService.saveGoal(goalsList);
     return result;
   }
+
+  @override
+  Future<String?> getGoal() async => await storageService.getGoal();
 }
