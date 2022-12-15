@@ -1,3 +1,4 @@
+import 'package:water_tracker/data/models/goal_list.dart';
 import 'package:water_tracker/data/models/user_settings.dart';
 import 'package:water_tracker/data/repository/repository.dart';
 import 'package:water_tracker/data/services/authentication_service/authentication_service.dart';
@@ -26,6 +27,12 @@ class RepositoryImpl extends Repository {
   @override
   Future<bool> saveGeneralInfo(UserSettings userSettings) async {
     final result = await storageService.saveGeneralInfo(userSettings);
+    return result;
+  }
+
+  @override
+  Future<bool> saveGoal(GoalsList goalsList) async {
+    final result = await storageService.saveGoal(goalsList);
     return result;
   }
 }
