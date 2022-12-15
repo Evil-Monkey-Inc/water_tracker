@@ -40,5 +40,6 @@ abstract class  LocaleKeys {
   static const improve_digestion = 'improve_digestion';
   static const another = 'another';
   static const failed_store = 'failed_store';
+  static const notification_text = 'notification_text';
 
 }

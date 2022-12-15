@@ -35,6 +35,10 @@ class $AssetsImagesGen {
   AssetGenImage get manLogin =>
       const AssetGenImage('assets/images/man_login.png');
 
+  /// File path: assets/images/notification.png
+  AssetGenImage get notification =>
+      const AssetGenImage('assets/images/notification.png');
+
   /// File path: assets/images/stars.png
   AssetGenImage get stars => const AssetGenImage('assets/images/stars.png');
 
@@ -54,6 +58,7 @@ class $AssetsImagesGen {
         logo,
         logoName,
         manLogin,
+        notification,
         stars,
         weight,
         womanLogin

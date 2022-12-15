@@ -53,7 +53,8 @@ class CodegenLoader extends AssetLoader{
   "lead_a_healthy_lifestyle": "Lead a healthy lifestyle",
   "improve_digestion": "Improve digestion",
   "another": "Other",
-  "failed_store": "Failed to connect data, please check your internet connection"
+  "failed_store": "Failed to connect data, please check your internet connection",
+  "notification_text": "How often do you want to receive water reminders?"
 };
 static const Map<String,dynamic> uk = {
   "enter_your_email": "Вкажіть вашу пошту",
@@ -94,7 +95,8 @@ static const Map<String,dynamic> uk = {
   "lead_a_healthy_lifestyle": "Вести здоровий спосіб життя",
   "improve_digestion": "Покращити травлення",
   "another": "Інше",
-  "failed_store": "Не вдалося підключити дані, перевірте підключення до Інтернету"
+  "failed_store": "Не вдалося підключити дані, перевірте підключення до Інтернету",
+  "notification_text": "Як часто ви хочете отримувати нагадування?"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "uk": uk};
 }
