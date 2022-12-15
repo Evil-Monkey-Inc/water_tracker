@@ -2,7 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:water_tracker/generated/assets/assets.gen.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
 
-enum Goals {
+enum Goal {
   drinkWater,
   loseWeight,
   shineSkin,
@@ -11,37 +11,37 @@ enum Goals {
   other,
 }
 
-extension GoalsWidgetParams on Goals {
+extension GoalsWidgetParams on Goal {
   String get title {
     switch (this) {
-      case Goals.drinkWater:
+      case Goal.drinkWater:
         return LocaleKeys.drink_more_water.tr();
-      case Goals.loseWeight:
+      case Goal.loseWeight:
         return LocaleKeys.lose_weight.tr();
-      case Goals.shineSkin:
+      case Goal.shineSkin:
         return LocaleKeys.shine_skin.tr();
-      case Goals.healthyLifeStyle:
+      case Goal.healthyLifeStyle:
         return LocaleKeys.lead_a_healthy_lifestyle.tr();
-      case Goals.improveDigestion:
+      case Goal.improveDigestion:
         return LocaleKeys.improve_digestion.tr();
-      case Goals.other:
+      case Goal.other:
         return LocaleKeys.another.tr();
     }
   }
 
   String get assetPath {
     switch (this) {
-      case Goals.drinkWater:
+      case Goal.drinkWater:
         return Assets.images.bottle.path;
-      case Goals.loseWeight:
+      case Goal.loseWeight:
         return Assets.images.weight.path;
-      case Goals.shineSkin:
+      case Goal.shineSkin:
         return Assets.images.stars.path;
-      case Goals.healthyLifeStyle:
+      case Goal.healthyLifeStyle:
         return Assets.images.hike.path;
-      case Goals.improveDigestion:
+      case Goal.improveDigestion:
         return Assets.images.carrot.path;
-      case Goals.other:
+      case Goal.other:
         return Assets.images.dumbbells.path;
     }
   }
