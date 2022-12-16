@@ -5,6 +5,7 @@ class GreetingLayout extends StatelessWidget {
   const GreetingLayout({Key? key}) : super(key: key);
 
   static const paddingHorizontal = EdgeInsets.symmetric(horizontal: 28.0);
+  static const largeSpace = SizedBox(height: 209);
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +13,10 @@ class GreetingLayout extends StatelessWidget {
       body: Padding(
         padding: paddingHorizontal,
         child: Column(
-          children: const [GreetingWidget()],
+          children: const [
+            largeSpace,
+            GreetingWidget(),
+          ],
         ),
       ),
     );
