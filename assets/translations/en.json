@@ -37,7 +37,9 @@
   "lead_a_healthy_lifestyle" : "Lead a healthy lifestyle",
   "improve_digestion" : "Improve digestion",
   "another" : "Other",
-  "failed_store" : "Failed to connect data, please check your internet connection"
+  "failed_store" : "Failed to connect data, please check your internet connection",
+  "manage_water_title" : "Manage your water balance",
+  "description" : "Our application will helps you to drink more water and lead a healthy lifestyle on a daily base."
 
 
 }
