@@ -7,7 +7,7 @@ import 'package:water_tracker/generated/locale_keys.g.dart';
 import 'package:water_tracker/presentation/screens/goal_screen/bloc/goal_bloc.dart';
 import 'package:water_tracker/presentation/screens/goal_screen/bloc/goal_event.dart';
 import 'package:water_tracker/presentation/screens/goal_screen/bloc/goal_state.dart';
-import 'package:water_tracker/presentation/screens/sing_in_screen/sign_in_screen.dart';
+import 'package:water_tracker/presentation/screens/greeting_screen/greeting_screen.dart';
 import 'package:water_tracker/presentation/widgets/custom_button.dart';
 import 'package:water_tracker/presentation/widgets/goal_widget.dart';
 import 'package:water_tracker/presentation/widgets/name_and_skip_widget.dart';
@@ -43,8 +43,7 @@ class _GoalLayoutState extends State<GoalLayout> {
         child: BlocConsumer<GoalBloc, GoalState>(
           listener: (context, state) {
             if (state is SuccessfullyGoalState) {
-              // TODO: CHANGE TO NAVIGATE SCREEN
-              Navigator.of(context).push(MaterialPageRoute(builder: (context) => const SignInScreen()));
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => const GreetingScreen()));
             }
             if (state is ErrorGoalState) {
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(LocaleKeys.failed_store.tr())));
