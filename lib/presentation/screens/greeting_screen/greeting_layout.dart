@@ -12,7 +12,7 @@ class GreetingLayout extends StatelessWidget {
       body: Padding(
         padding: paddingHorizontal,
         child: Column(
-          children: [GreetingWidget()],
+          children: const [GreetingWidget()],
         ),
       ),
     );
