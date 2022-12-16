@@ -56,6 +56,8 @@ class CustomTheme {
 
   static const header = TextStyle(fontSize: 20);
 
+  static const largeText = TextStyle(fontSize: 34);
+
   static const mainColor = Color(0xFF292D32);
 
   static const mainButtonBackgroundColor = Color(0xFFF1F1F1);
