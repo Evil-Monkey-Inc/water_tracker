@@ -30,7 +30,7 @@ class _GoalLayoutState extends State<GoalLayout> {
   static const paddingHorizontal = EdgeInsets.symmetric(horizontal: 24.0);
   static const upperFlex = 3;
   static const downFlex = 1;
-  static const axisSpacing = 16;
+  static const axisSpacing = 16.0;
   static const crossAxisCount = 2;
 
   @override
@@ -66,8 +66,8 @@ class _GoalLayoutState extends State<GoalLayout> {
                 spaces,
                 Expanded(
                   child: GridView.count(
-                    mainAxisSpacing: axisSpacing.toDouble(),
-                    crossAxisSpacing: axisSpacing.toDouble(),
+                    mainAxisSpacing: axisSpacing,
+                    crossAxisSpacing: axisSpacing,
                     crossAxisCount: crossAxisCount,
                     children: Goal.values
                         .map(
