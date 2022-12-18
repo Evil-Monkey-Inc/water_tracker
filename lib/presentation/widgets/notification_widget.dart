@@ -33,7 +33,7 @@ class NotificationWidget extends StatelessWidget {
         borderRadius: const BorderRadius.all(widgetRadius),
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(-1),
+            color: Colors.grey.withOpacity(0.1),
             spreadRadius: spreadRadius,
             blurRadius: blurRadius,
             offset: offset,

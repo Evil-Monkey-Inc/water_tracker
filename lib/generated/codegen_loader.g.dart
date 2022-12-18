@@ -58,7 +58,7 @@ class CodegenLoader extends AssetLoader{
   "description": "Our application will helps you to drink more water and lead a healthy lifestyle on a daily base.",
   "every_hour": "Every hour",
   "every_two_hours": "Every two hours",
-  "notification_text": "How ofter do you want to receive water reminders"
+  "notification_text": "How ofter do you want to receive water reminders?"
 };
 static const Map<String,dynamic> uk = {
   "enter_your_email": "Вкажіть вашу пошту",
