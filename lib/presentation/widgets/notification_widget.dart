@@ -26,7 +26,7 @@ class NotificationWidget extends StatelessWidget {
       height: heightWidget,
       width: widthWidget,
       decoration: const BoxDecoration(
-        color: Colors.white,
+        color: CustomTheme.decorationColor,
         borderRadius: BorderRadius.all(widgetRadius),
         boxShadow: [CustomTheme.boxShadowTheme],
       ),
@@ -67,7 +67,7 @@ class NotificationWidget extends StatelessWidget {
               text: LocaleKeys.every_two_hours.tr(),
               onPressed: () {},
               buttonColor: CustomTheme.buttonDarkColor,
-              textButtonColor: Colors.white,
+              textButtonColor: CustomTheme.decorationColor,
             ),
           ),
           downFlex

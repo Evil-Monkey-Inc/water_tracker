@@ -68,7 +68,7 @@ class _MyLogFormWidgetState extends State<SignUpForm> {
             },
             text: LocaleKeys.sign_up.tr(),
             buttonColor: CustomTheme.buttonDarkColor,
-            textButtonColor: Colors.white,
+            textButtonColor: CustomTheme.decorationColor,
           ),
         ],
       ),

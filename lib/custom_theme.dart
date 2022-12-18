@@ -54,6 +54,8 @@ class CustomTheme {
     fontWeight: FontWeight.bold,
   );
 
+  static const decorationColor = Colors.white;
+
   static const boxShadowTheme = BoxShadow(
     color: Colors.grey,
     spreadRadius: 3.0,

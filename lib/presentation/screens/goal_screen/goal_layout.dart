@@ -97,7 +97,7 @@ class _GoalLayoutState extends State<GoalLayout> {
                   },
                   text: LocaleKeys.next.tr(),
                   buttonColor: CustomTheme.buttonDarkColor,
-                  textButtonColor: Colors.white,
+                  textButtonColor: CustomTheme.decorationColor,
                 ),
                 spaces,
               ],
