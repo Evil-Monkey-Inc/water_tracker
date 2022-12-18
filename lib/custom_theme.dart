@@ -8,6 +8,8 @@ class CustomTheme {
     decoration: TextDecoration.underline,
   );
 
+  static const largeText = TextStyle(fontSize: 34);
+
   static const termsProperty = TextStyle(
     fontSize: 16,
     color: Colors.black,
