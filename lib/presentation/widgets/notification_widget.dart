@@ -12,16 +12,12 @@ class NotificationWidget extends StatelessWidget {
   static const spaces = SizedBox(height: 20);
   static const radiusCircular = 16;
   static const widgetRadius = Radius.circular(16);
-  static const spreadRadius = 3.0;
-  static const blurRadius = 12.0;
   static const heightWidget = 362.0;
   static const widthWidget = 375.0;
   static const textPadding = EdgeInsets.symmetric(horizontal: 34);
   static const upperFlex = 1;
   static const downFlex = Spacer(flex: 1);
   static const spaceBetweenButtons = SizedBox(height: 16);
-  static const opacity = 0.1;
-  static const offSet = Offset(-4, 2);
   static const paddingInsideButton = EdgeInsets.symmetric(horizontal: 24);
 
   @override
@@ -29,22 +25,10 @@ class NotificationWidget extends StatelessWidget {
     return Container(
       height: heightWidget,
       width: widthWidget,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Colors.white,
-        borderRadius: const BorderRadius.only(
-          topLeft: widgetRadius,
-          topRight: widgetRadius,
-          bottomLeft: widgetRadius,
-          bottomRight: widgetRadius,
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withOpacity(opacity),
-            spreadRadius: spreadRadius,
-            blurRadius: blurRadius,
-            offset: offSet, // changes position of shadow
-          ),
-        ],
+        borderRadius: BorderRadius.all(widgetRadius),
+        boxShadow: [CustomTheme.boxShadowTheme],
       ),
       child: Column(
         children: [

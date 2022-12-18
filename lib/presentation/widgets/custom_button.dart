@@ -8,7 +8,7 @@ class CustomButton extends StatelessWidget {
       required this.onPressed,
       this.isEnabled = true,
       required this.buttonColor,
-      required this.textButtonColor})
+      required this.textButtonColor},)
       : super(key: key);
 
   final bool isEnabled;
@@ -35,7 +35,7 @@ class CustomButton extends StatelessWidget {
         padding: paddingAroundButton,
         child: Text(
           text,
-          style: TextStyle(fontSize: 16, color: textButtonColor),
+          style: TextStyle(fontSize: CustomTheme.fontSizeButton, color: textButtonColor),
         ),
       ),
     );
