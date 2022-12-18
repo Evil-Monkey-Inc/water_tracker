@@ -17,31 +17,33 @@ class GreetingWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: heightWidget,
-      width: 400,
-      child: Column(
-        children: [
-          SvgPicture.asset(Assets.images.logo, width: logoWidth),
-          space,
-          Padding(
-            padding: titlePadding,
-            child: Text(
-              LocaleKeys.manage_water_title.tr(),
-              textAlign: TextAlign.center,
-              style: CustomTheme.largeText,
+    return Center(
+      child: SizedBox(
+        height: heightWidget,
+        width: 400,
+        child: Column(
+          children: [
+            SvgPicture.asset(Assets.images.logo, width: logoWidth),
+            space,
+            Padding(
+              padding: titlePadding,
+              child: Text(
+                LocaleKeys.manage_water_title.tr(),
+                textAlign: TextAlign.center,
+                style: CustomTheme.largeText,
+              ),
             ),
-          ),
-          space,
-          Padding(
-            padding: titleDescription,
-            child: Text(
-              LocaleKeys.description.tr(),
-              textAlign: TextAlign.center,
-              style: CustomTheme.header,
+            space,
+            Padding(
+              padding: titleDescription,
+              child: Text(
+                LocaleKeys.description.tr(),
+                textAlign: TextAlign.center,
+                style: CustomTheme.header,
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
