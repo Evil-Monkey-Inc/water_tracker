@@ -8,7 +8,7 @@ class CustomButton extends StatelessWidget {
       required this.onPressed,
       this.isEnabled = true,
       required this.buttonColor,
-      required this.textButtonColor},)
+      required this.textButtonColor})
       : super(key: key);
 
   final bool isEnabled;
