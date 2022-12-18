@@ -93,7 +93,7 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
                     onPressed: () =>
                         context.read<PersonalSettingBloc>().add(SaveGeneralSettingEvent(gender, age, weight)),
                     buttonColor: CustomTheme.buttonDarkColor,
-                    textButtonColor: Colors.white,
+                    textButtonColor: CustomTheme.decorationColor,
                   ),
                   spaces,
                 ],
