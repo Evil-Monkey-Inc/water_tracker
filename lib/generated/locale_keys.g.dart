@@ -40,7 +40,8 @@ abstract class  LocaleKeys {
   static const improve_digestion = 'improve_digestion';
   static const another = 'another';
   static const failed_store = 'failed_store';
-  static const manage_water_title = 'manage_water_title';
-  static const description = 'description';
+  static const notification_text = 'notification_text';
+  static const every_hour = 'every_hour';
+  static const every_two_hours = 'every_two_hours';
 
 }

@@ -14,7 +14,7 @@ class GoalWidget extends StatefulWidget {
   }) : super(key: key);
 
   final GoalWidgetModel model;
-  final void Function(Goal goals) onChanged;
+  final void Function(Goal goal, bool isSelected) onChanged;
 
   @override
   State<GoalWidget> createState() => _GoalWidgetState();
@@ -44,18 +44,18 @@ class _GoalWidgetState extends State<GoalWidget> with SingleTickerProviderStateM
     value: 1,
   )..addListener(() => setState(() {}));
 
-  var chooseGoal = true;
+  var isSelected = false;
 
   @override
   Widget build(BuildContext context) {
     return Transform.scale(
       scale: sizeAnimationController.value,
       child: GestureDetector(
-        onTap: () {
-          widget.onChanged(widget.model.goal);
+        onTap: () => setState(() {
+          isSelected = !isSelected;
+          widget.onChanged(widget.model.goal, isSelected);
           sizeAnimationController.reverse();
-          setState(() => chooseGoal = !chooseGoal);
-        },
+        }),
         onTapDown: (dp) => sizeAnimationController.reverse(),
         onTapUp: (dp) => Timer(const Duration(milliseconds: animationTime), () => sizeAnimationController.fling()),
         onTapCancel: () => sizeAnimationController.fling(),
@@ -64,7 +64,7 @@ class _GoalWidgetState extends State<GoalWidget> with SingleTickerProviderStateM
           width: widgetWidth.toDouble(),
           duration: colorAnimationDuration,
           decoration: BoxDecoration(
-            color: chooseGoal ? CustomTheme.backgroundSexBottomColor : CustomTheme.mainColor,
+            color: isSelected ? CustomTheme.backgroundSexBottomColor : CustomTheme.mainColor,
             borderRadius: CustomTheme.goalCirculars,
           ),
           child: Column(
@@ -80,7 +80,7 @@ class _GoalWidgetState extends State<GoalWidget> with SingleTickerProviderStateM
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: iconTitleSize.toDouble(),
-                    color: chooseGoal ? CustomTheme.mainColor : Colors.white,
+                    color: isSelected ? CustomTheme.mainColor : Colors.white,
                   ),
                 ),
               ),

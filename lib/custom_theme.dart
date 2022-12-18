@@ -54,9 +54,22 @@ class CustomTheme {
     fontWeight: FontWeight.bold,
   );
 
+  static const decorationColor = Colors.white;
+
+  static const boxShadowTheme = BoxShadow(
+    color: Colors.grey,
+    spreadRadius: 3.0,
+    blurRadius: 12.0,
+    offset: Offset(-4, 2),
+  );
+
   static const header = TextStyle(fontSize: 20);
 
-  static const largeText = TextStyle(fontSize: 34);
+  static const notificationTextSize = TextStyle(fontSize: 24);
+
+  static const sizeOfButton = TextStyle(fontSize: 16);
+
+  static const fontSizeButton = 16.0;
 
   static const mainColor = Color(0xFF292D32);
 
@@ -86,9 +99,11 @@ class CustomTheme {
 
   static const backgroundFieldColor = Color(0xFFF2F4F8);
 
-  static const buttonColor = mainColor;
+  static const buttonDarkColor = mainColor;
 
   static const buttonSize = TextStyle(fontSize: 16);
+
+  static const buttonLightColor = Color(0xFFF1F1F1);
 
   static const minimumSizeButton = Size.fromHeight(12);
 
