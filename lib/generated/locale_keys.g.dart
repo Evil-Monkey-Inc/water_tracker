@@ -45,5 +45,6 @@ abstract class  LocaleKeys {
   static const every_hour = 'every_hour';
   static const every_two_hours = 'every_two_hours';
   static const notification_text = 'notification_text';
+  static const get_started = 'get_started';
 
 }
