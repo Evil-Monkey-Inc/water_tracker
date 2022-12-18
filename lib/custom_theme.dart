@@ -58,13 +58,6 @@ class CustomTheme {
 
   static const decorationColor = Colors.white;
 
-  static const boxShadowTheme = BoxShadow(
-    color: Colors.grey,
-    spreadRadius: 3.0,
-    blurRadius: 12.0,
-    offset: Offset(-4, 2),
-  );
-
   static const header = TextStyle(fontSize: 20);
 
   static const notificationTextSize = TextStyle(fontSize: 24);

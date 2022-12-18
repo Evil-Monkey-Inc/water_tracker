@@ -64,7 +64,7 @@ class _GoalWidgetState extends State<GoalWidget> with SingleTickerProviderStateM
           width: widgetWidth.toDouble(),
           duration: colorAnimationDuration,
           decoration: BoxDecoration(
-            color: isSelected ? CustomTheme.backgroundSexBottomColor : CustomTheme.mainColor,
+            color: isSelected ? CustomTheme.mainColor : CustomTheme.backgroundSexBottomColor,
             borderRadius: CustomTheme.goalCirculars,
           ),
           child: Column(
@@ -80,7 +80,7 @@ class _GoalWidgetState extends State<GoalWidget> with SingleTickerProviderStateM
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: iconTitleSize.toDouble(),
-                    color: isSelected ? CustomTheme.mainColor : Colors.white,
+                    color: isSelected ? CustomTheme.decorationColor : CustomTheme.mainColor,
                   ),
                 ),
               ),

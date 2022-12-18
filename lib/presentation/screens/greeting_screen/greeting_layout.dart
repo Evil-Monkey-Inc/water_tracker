@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:water_tracker/custom_theme.dart';
+import 'package:water_tracker/presentation/widgets/custom_button.dart';
 import 'package:water_tracker/presentation/widgets/greeting_widget..dart';
 
 class GreetingLayout extends StatelessWidget {
@@ -11,10 +13,22 @@ class GreetingLayout extends StatelessWidget {
     return Scaffold(
       body: Padding(
         padding: paddingHorizontal,
-        child: Column(
-          children: [
-            Center(child: GreetingWidget()),
-          ],
+        child: Center(
+          child: Center(
+            child: Column(
+              children: [
+                const GreetingWidget(),
+                Expanded(
+                  child: CustomButton(
+                    buttonColor: CustomTheme.buttonDarkColor,
+                    textButtonColor: CustomTheme.decorationColor,
+                    onPressed: () {},
+                    text: 'Get started',
+                  ),
+                ),
+              ],
+            ),
+          ),
         ),
       ),
     );
