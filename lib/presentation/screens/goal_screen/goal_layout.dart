@@ -22,8 +22,7 @@ class GoalLayout extends StatefulWidget {
 }
 
 class _GoalLayoutState extends State<GoalLayout> {
-  var goals = Goal.drinkWater;
-  List<Goal> goalsList = [];
+  Set<Goal> selectedGoals = {};
 
   static const spaces = SizedBox(height: 24);
   static const spacesBetween = SizedBox(height: 16);
@@ -72,13 +71,9 @@ class _GoalLayoutState extends State<GoalLayout> {
                     children: Goal.values
                         .map(
                           (goal) => GoalWidget(
-                            onChanged: (_) {
-                              setState(() {
-                                goals = goal;
-                                goalsList.add(goals);
-                                print(goals);
-                              });
-                            },
+                            onChanged: (_, isSelected) => setState(
+                              () => isSelected ? selectedGoals.add(goal) : selectedGoals.remove(goal),
+                            ),
                             model: GoalWidgetModel(
                               goal: goal,
                               title: goal.title,
@@ -92,7 +87,7 @@ class _GoalLayoutState extends State<GoalLayout> {
                 spacesBetween,
                 CustomButton(
                   onPressed: () {
-                    context.read<GoalBloc>().add(SaveGoalEvent(goalsList));
+                    context.read<GoalBloc>().add(SaveGoalEvent(selectedGoals.toList()));
                     Navigator.of(context).push(MaterialPageRoute(builder: (context) => const NotificationScreen()));
                   },
                   text: LocaleKeys.next.tr(),
