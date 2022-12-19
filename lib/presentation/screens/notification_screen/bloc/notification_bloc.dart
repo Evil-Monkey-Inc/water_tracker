@@ -9,11 +9,11 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   NotificationBloc(this.repository) : super(InitialNotificationState()) {
     on<ShowNotificationEvent>((event, emit) async {
       try {
-        await repository.showScheduledNotification(
+        await repository.showNotificationWithPayload(
           id: event.id,
           title: event.title,
           body: event.body,
-          seconds: event.second,
+          payload: '',
         );
       } catch (e) {
         emit(ErrorNotificationState(e));
