@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:water_tracker/presentation/screens/greeting_screen/greeting_layout.dart';
+import 'package:water_tracker/presentation/screens/notification_screen/bloc/notification_bloc.dart';
+import 'package:water_tracker/presentation/screens/notification_screen/bloc/notification_state.dart';
 import 'package:water_tracker/presentation/widgets/name_and_skip_widget.dart';
 import 'package:water_tracker/presentation/widgets/notification_widget.dart';
 
