@@ -29,14 +29,7 @@ class NotificationWidget extends StatefulWidget {
 }
 
 class _NotificationWidgetState extends State<NotificationWidget> {
-  late final LocalNotificationService service;
-
-  @override
-  void initState() {
-    service = LocalNotificationService();
-    service.intialize();
-    super.initState();
-  }
+  final LocalNotificationService service = LocalNotificationService();
 
   @override
   Widget build(BuildContext context) {
@@ -80,9 +73,12 @@ class _NotificationWidgetState extends State<NotificationWidget> {
             padding: NotificationWidget.paddingInsideButton,
             child: CustomButton(
               text: LocaleKeys.every_hour.tr(),
-              onPressed: () async {
-                await service.showNotification(id: 0, title: 'Notification Title', body: 'Some body');
-              },
+              onPressed: () => service.showNotificationWithPayload(
+                id: 0,
+                title: 'Notification Title',
+                body: 'Some body',
+                payload: '',
+              ),
               buttonColor: CustomTheme.buttonLightColor,
               textButtonColor: Colors.black,
             ),

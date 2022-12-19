@@ -1,45 +1,45 @@
+import 'dart:async';
+
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'package:rxdart/subjects.dart';
 import 'package:timezone/timezone.dart' as tz;
-import 'package:timezone/data/latest.dart' as tz;
 
 class LocalNotificationService {
-  LocalNotificationService();
+  LocalNotificationService() {
+    _initialize();
+  }
+
+  static const _androidInitializationSettings = AndroidInitializationSettings('mipmap/ic_launcher');
+  static const _initializationSettings = InitializationSettings(android: _androidInitializationSettings);
+
+  static const _androidNotificationDetails = AndroidNotificationDetails(
+    'channel_id',
+    'channel_name',
+    channelDescription: 'description',
+    importance: Importance.max,
+    priority: Priority.max,
+    playSound: true,
+  );
+  static const _notificationDetails = NotificationDetails(android: _androidNotificationDetails);
 
   final _localNotificationService = FlutterLocalNotificationsPlugin();
 
-  final BehaviorSubject<String?> onNotificationClick = BehaviorSubject();
+  final _initializationCompleter = Completer();
 
-  Future<void> intialize() async {
-    tz.initializeTimeZones();
-    const AndroidInitializationSettings androidInitializationSettings =
-        AndroidInitializationSettings('mipmap/ic_launcher');
-
-    final InitializationSettings settings = InitializationSettings(android: androidInitializationSettings);
-
-    await _localNotificationService.initialize(settings);
+  Future<void> _initialize() async {
+    await _localNotificationService.initialize(_initializationSettings);
+    _initializationCompleter.complete();
   }
 
-  Future<NotificationDetails> _notificationDetails() async {
-    const AndroidNotificationDetails androidNotificationDetails = AndroidNotificationDetails(
-        'channel_id', 'channel_name',
-        channelDescription: 'description', importance: Importance.max, priority: Priority.max, playSound: true);
-
-    return const NotificationDetails(android: androidNotificationDetails);
+  Future<void> _ensureInitialized() async {
+    if (!_initializationCompleter.isCompleted) await _initializationCompleter.future;
   }
 
-  Future<void> showNotification({
+  Future<void> showScheduledNotification({
     required int id,
     required String title,
     required String body,
+    required int seconds,
   }) async {
-    final details = await _notificationDetails();
-    await _localNotificationService.show(id, title, body, details);
-  }
-
-  Future<void> showScheduledNotification(
-      {required int id, required String title, required String body, required int seconds}) async {
-    final details = await _notificationDetails();
     await _localNotificationService.zonedSchedule(
       id,
       title,
@@ -48,19 +48,19 @@ class LocalNotificationService {
         DateTime.now().add(Duration(seconds: seconds)),
         tz.local,
       ),
-      details,
+      _notificationDetails,
       androidAllowWhileIdle: true,
       uiLocalNotificationDateInterpretation: UILocalNotificationDateInterpretation.absoluteTime,
     );
   }
 
-  Future<void> showNotificationWithPayload(
-      {required int id, required String title, required String body, required String payload}) async {
-    final details = await _notificationDetails();
-    await _localNotificationService.show(id, title, body, details, payload: payload);
-  }
-
-  void onDidReceiveLocalNotification(int id, String? title, String? body, String? payload) {
-    print('id $id');
+  Future<void> showNotificationWithPayload({
+    required int id,
+    required String title,
+    required String body,
+    required String payload,
+  }) async {
+    await _ensureInitialized();
+    return _localNotificationService.show(id, title, body, _notificationDetails, payload: payload);
   }
 }
