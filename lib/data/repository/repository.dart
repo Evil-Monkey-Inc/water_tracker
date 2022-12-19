@@ -12,6 +12,20 @@ abstract class Repository {
     String password,
   );
 
+  Future<void> showScheduledNotification({
+    required int id,
+    required String title,
+    required String body,
+    required int seconds,
+  });
+
+  Future<void> showNotificationWithPayload({
+    required int id,
+    required String title,
+    required String body,
+    required String payload,
+  });
+
   Future<bool> saveGeneralInfo(UserSettings userSettings);
 
   Future<bool> saveGoal(GoalList goalsList);
