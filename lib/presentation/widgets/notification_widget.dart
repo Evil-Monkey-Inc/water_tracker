@@ -1,7 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:water_tracker/custom_theme.dart';
-import 'package:water_tracker/data/services/notification_serice/notification_service.dart';
+import 'package:water_tracker/data/services/notification_service/local_notification_service.dart';
+import 'package:water_tracker/data/services/notification_service/local_notification_service_impl.dart';
 import 'package:water_tracker/generated/assets/assets.gen.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
 import 'package:water_tracker/presentation/widgets/custom_button.dart';
@@ -29,7 +30,7 @@ class NotificationWidget extends StatefulWidget {
 }
 
 class _NotificationWidgetState extends State<NotificationWidget> {
-  final LocalNotificationService service = LocalNotificationService();
+  final LocalNotificationService service = LocalNotificationServiceImpl();
 
   @override
   Widget build(BuildContext context) {
@@ -75,8 +76,8 @@ class _NotificationWidgetState extends State<NotificationWidget> {
               text: LocaleKeys.every_hour.tr(),
               onPressed: () => service.showNotificationWithPayload(
                 id: 0,
-                title: 'Notification Title',
-                body: 'Some body',
+                title: 'Water tracker',
+                body: 'Time to drink some water',
                 payload: '',
               ),
               buttonColor: CustomTheme.buttonLightColor,
@@ -88,7 +89,7 @@ class _NotificationWidgetState extends State<NotificationWidget> {
             padding: NotificationWidget.paddingInsideButton,
             child: CustomButton(
               text: LocaleKeys.every_two_hours.tr(),
-              onPressed: () async {},
+              onPressed: () {},
               buttonColor: CustomTheme.buttonDarkColor,
               textButtonColor: CustomTheme.decorationColor,
             ),
