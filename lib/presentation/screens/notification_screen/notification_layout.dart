@@ -33,7 +33,7 @@ class NotificationLayout extends StatelessWidget {
                 spaces,
                 NameAndSkipWidget(
                   onPressed: () {
-                    context.read<NotificationBloc>().add(ShowNotificationEvent(1, 'title', 'body', 'ad'));
+                    context.read<NotificationBloc>().add(ShowNotificationEvent(1, 'title', 'body', 5));
                   },
                 ),
                 largeSpace,

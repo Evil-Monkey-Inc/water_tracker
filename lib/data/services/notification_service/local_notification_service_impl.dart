@@ -57,7 +57,8 @@ class LocalNotificationServiceImpl extends LocalNotificationService {
     required String body,
     required int seconds,
   }) async {
-    await _localNotificationService.zonedSchedule(
+    await _ensureInitialized();
+    return _localNotificationService.zonedSchedule(
       id,
       title,
       body,

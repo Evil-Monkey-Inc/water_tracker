@@ -85,7 +85,7 @@ class _NotificationWidgetState extends State<NotificationWidget> {
                 child: CustomButton(
                   text: LocaleKeys.every_hour.tr(),
                   onPressed: () {
-                    context.read<NotificationBloc>().add(ShowNotificationEvent(1, 'title', 'body', ''));
+                    context.read<NotificationBloc>().add(ShowNotificationEvent(1, 'title', 'body', 3));
                   },
                   buttonColor: CustomTheme.buttonLightColor,
                   textButtonColor: Colors.black,
