@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:water_tracker/data/services/notification_service/local_notification_service_impl.dart';
 
 import 'package:water_tracker/presentation/screens/notification_screen/bloc/notification_bloc.dart';
-import 'package:water_tracker/presentation/screens/notification_screen/bloc/notification_event.dart';
 import 'package:water_tracker/presentation/screens/notification_screen/bloc/notification_state.dart';
 import 'package:water_tracker/presentation/widgets/name_and_skip_widget.dart';
 import 'package:water_tracker/presentation/widgets/notification_widget.dart';
 
 class NotificationLayout extends StatelessWidget {
-  NotificationLayout({Key? key}) : super(key: key);
+  const NotificationLayout({Key? key}) : super(key: key);
 
   static const paddingHorizontal = EdgeInsets.symmetric(horizontal: 24.0);
   static const largeSpace = SizedBox(height: 140);
@@ -33,10 +31,7 @@ class NotificationLayout extends StatelessWidget {
               children: [
                 spaces,
                 NameAndSkipWidget(
-                  onPressed: () {
-                    context.read<NotificationBloc>().add(ShowNotificationEvent(
-                        1, 'title', 'body', 'adadad', DateTime.now().add(const Duration(seconds: 5))));
-                  },
+                  onPressed: () {},
                 ),
                 largeSpace,
                 const NotificationWidget(),

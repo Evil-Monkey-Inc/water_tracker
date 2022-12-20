@@ -12,15 +12,15 @@ abstract class Repository {
     String password,
   );
 
-  Future<void> showScheduledLocalNotification({
+  Future<void> showNotificationWithPayload({
     required int id,
     required String title,
     required String body,
     required String payload,
-    required DateTime scheduledDate,
   });
 
-  Future<void> showNotificationWithPayload({
+  void setupScheduleNotifications({
+    required int durationInHours,
     required int id,
     required String title,
     required String body,

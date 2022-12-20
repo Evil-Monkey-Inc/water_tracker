@@ -1,16 +1,20 @@
+import 'package:cron/cron.dart';
 import 'package:water_tracker/data/models/goal_list.dart';
 import 'package:water_tracker/data/models/user_settings.dart';
 import 'package:water_tracker/data/repository/repository.dart';
 import 'package:water_tracker/data/services/authentication_service/authentication_service.dart';
 import 'package:water_tracker/data/services/notification_service/local_notification_service.dart';
 import 'package:water_tracker/data/services/storage_service/storage_service.dart';
+import 'package:water_tracker/utils/cron_util.dart';
 
 class RepositoryImpl extends Repository {
-  RepositoryImpl(this.registrationService, this.storageService, this.localNotificationService);
+  RepositoryImpl(this.registrationService, this.storageService, this.localNotificationService, this.cronUtil);
 
   final AuthenticationService registrationService;
   final StorageService storageService;
   final LocalNotificationService localNotificationService;
+
+  final CronUtil cronUtil;
 
   @override
   Future<bool> registerUser(String email, String password) async {
@@ -52,19 +56,20 @@ class RepositoryImpl extends Repository {
   }
 
   @override
-  Future<void> showScheduledLocalNotification({
+  void setupScheduleNotifications({
+    required int durationInHours,
     required int id,
     required String title,
     required String body,
     required String payload,
-    required DateTime scheduledDate,
-  }) async {
-    await localNotificationService.showScheduledLocalNotification(
-      id: id,
-      title: title,
-      body: body,
-      payload: payload,
-      scheduledDate: scheduledDate,
-    );
-  }
+  }) =>
+      cronUtil.schedule(
+        Schedule(hours: durationInHours),
+        () => localNotificationService.showNotificationWithPayload(
+          id: id,
+          title: title,
+          body: body,
+          payload: payload,
+        ),
+      );
 }

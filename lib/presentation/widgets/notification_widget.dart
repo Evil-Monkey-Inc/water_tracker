@@ -6,7 +6,6 @@ import 'package:water_tracker/data/services/notification_service/local_notificat
 import 'package:water_tracker/data/services/notification_service/local_notification_service_impl.dart';
 import 'package:water_tracker/generated/assets/assets.gen.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
-import 'package:water_tracker/presentation/screens/greeting_screen/greeting_layout.dart';
 import 'package:water_tracker/presentation/screens/notification_screen/bloc/notification_bloc.dart';
 import 'package:water_tracker/presentation/screens/notification_screen/bloc/notification_event.dart';
 import 'package:water_tracker/presentation/screens/notification_screen/bloc/notification_state.dart';
@@ -85,8 +84,15 @@ class _NotificationWidgetState extends State<NotificationWidget> {
                 child: CustomButton(
                   text: LocaleKeys.every_hour.tr(),
                   onPressed: () {
-                    context.read<NotificationBloc>().add(ShowNotificationEvent(
-                        1, 'title', 'body', 'adad', DateTime.now().add(const Duration(seconds: 1))));
+                    context.read<NotificationBloc>().add(
+                          ShowNotificationEvent(
+                            1,
+                            'title',
+                            'body',
+                            'adad',
+                            DateTime.now().add(const Duration(seconds: 1)),
+                          ),
+                        );
                   },
                   buttonColor: CustomTheme.buttonLightColor,
                   textButtonColor: Colors.black,

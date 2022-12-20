@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'package:timezone/timezone.dart' as tz;
 
 import 'local_notification_service.dart';
 
@@ -26,12 +25,12 @@ class LocalNotificationServiceImpl extends LocalNotificationService {
   );
   static const _notificationDetails = NotificationDetails(android: _androidNotificationDetails);
 
-  final _localNotificationService = FlutterLocalNotificationsPlugin();
+  final _plugin = FlutterLocalNotificationsPlugin();
 
   final _initializationCompleter = Completer();
 
   Future<void> _initialize() async {
-    await _localNotificationService.initialize(_initializationSettings);
+    await _plugin.initialize(_initializationSettings);
     _initializationCompleter.complete();
   }
 
@@ -47,33 +46,12 @@ class LocalNotificationServiceImpl extends LocalNotificationService {
     required String payload,
   }) async {
     await _ensureInitialized();
-    return _localNotificationService.periodicallyShow(
+    return _plugin.show(
       id,
       title,
       body,
+      _notificationDetails,
       payload: payload,
-      RepeatInterval.hourly,
-      _notificationDetails,
-      androidAllowWhileIdle: true,
-    );
-  }
-
-  @override
-  Future<void> showScheduledLocalNotification({
-    required int id,
-    required String title,
-    required String body,
-    required String payload,
-    required DateTime scheduledDate,
-  }) async {
-    return _localNotificationService.zonedSchedule(
-      id,
-      title,
-      body,
-      tz.TZDateTime.from(scheduledDate, tz.local),
-      _notificationDetails,
-      uiLocalNotificationDateInterpretation: UILocalNotificationDateInterpretation.absoluteTime,
-      androidAllowWhileIdle: true,
     );
   }
 }
