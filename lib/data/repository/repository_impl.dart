@@ -52,7 +52,7 @@ class RepositoryImpl extends Repository {
     required String body,
     required String payload,
   }) async {
-    await localNotificationService.showNotificationWithPayload(id: id, title: title, body: body, payload: payload);
+    await localNotificationService.showNotificationWithEveryHour(id: id, title: title, body: body, payload: payload);
   }
 
   @override
@@ -65,7 +65,7 @@ class RepositoryImpl extends Repository {
   }) =>
       cronUtil.schedule(
         Schedule(hours: durationInHours),
-        () => localNotificationService.showNotificationWithPayload(
+        () => localNotificationService.showNotificationWithEveryHour(
           id: id,
           title: title,
           body: body,

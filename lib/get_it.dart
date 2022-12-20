@@ -13,7 +13,7 @@ import 'data/services/notification_service/local_notification_service.dart';
 final getIt = GetIt.instance;
 
 void setupServicesLocator() {
-  getIt.registerSingleton<LocalNotificationService>(AwesomeNotificationImpl());
+  getIt.registerSingleton<LocalNotificationService>(LocalNotificationServiceImpl());
   getIt.registerSingleton<CronUtil>(CronUtil());
   getIt.registerSingleton<AuthenticationService>(AuthenticationServiceFirebaseImpl());
   getIt.registerSingleton<StorageService>(StorageServiceSharedPrefImplements());

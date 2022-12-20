@@ -1,57 +1,67 @@
 import 'dart:async';
-import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-
+import 'package:awesome_notifications/awesome_notifications.dart';
 import 'local_notification_service.dart';
 
 class LocalNotificationServiceImpl extends LocalNotificationService {
   LocalNotificationServiceImpl() {
-    _initialize();
+    init();
   }
 
-  static const waterTrackerNotification = 'water_tracker_notifications';
-  static const drinkMoreWater = 'water_tracker_notifications';
-  static const channelDescriptionText = 'manage_your_water_balance';
+  final notifications = AwesomeNotifications();
 
-  static const _androidInitializationSettings = AndroidInitializationSettings('mipmap/notification_logo');
-  static const _initializationSettings = InitializationSettings(android: _androidInitializationSettings);
-
-  static const _androidNotificationDetails = AndroidNotificationDetails(
-    drinkMoreWater,
-    waterTrackerNotification,
-    channelDescription: channelDescriptionText,
-    importance: Importance.max,
-    priority: Priority.max,
-    playSound: true,
-  );
-  static const _notificationDetails = NotificationDetails(android: _androidNotificationDetails);
-
-  final _plugin = FlutterLocalNotificationsPlugin();
-
-  final _initializationCompleter = Completer();
-
-  Future<void> _initialize() async {
-    await _plugin.initialize(_initializationSettings);
-    _initializationCompleter.complete();
-  }
-
-  Future<void> _ensureInitialized() async {
-    if (!_initializationCompleter.isCompleted) await _initializationCompleter.future;
-  }
+  final completer = Completer();
 
   @override
-  Future<void> showNotificationWithPayload({
+  Future<void> showNotificationWithEveryHour({
     required int id,
     required String title,
     required String body,
     required String payload,
   }) async {
-    await _ensureInitialized();
-    return _plugin.show(
-      id,
-      title,
-      body,
-      _notificationDetails,
-      payload: payload,
+    await completer.future;
+    final content = NotificationContent(title: title, id: id, body: body, channelKey: 'basic_channel');
+    final tz = await notifications.getLocalTimeZoneIdentifier();
+
+    final intervalInSeconds = 60;
+
+    final schedule = NotificationCalendar(
+      timeZone: tz,
+      repeats: true,
+      allowWhileIdle: true,
+      second: 10,
     );
+
+    final scheduled = await notifications.listScheduledNotifications();
+
+    for (var element in scheduled) {
+      print(element);
+    }
+    await notifications.cancelAllSchedules();
+    final result = await notifications.createNotification(
+      content: content,
+      schedule: schedule,
+    );
+
+    print(result);
+  }
+
+  void init() async {
+    final isInitialized = await notifications.initialize(
+      'resource://drawable/app_logo',
+      [
+        NotificationChannel(
+          channelGroupKey: 'basic_channel_group',
+          channelKey: 'basic_channel',
+          channelName: 'Basic notifications',
+          channelDescription: 'Notification channel for basic tests',
+        )
+      ],
+      channelGroups: [
+        NotificationChannelGroup(channelGroupKey: 'basic_channel_group', channelGroupName: 'Basic group')
+      ],
+      debug: true,
+    );
+
+    completer.complete();
   }
 }
