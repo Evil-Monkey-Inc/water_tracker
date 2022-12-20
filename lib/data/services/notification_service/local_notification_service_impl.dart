@@ -11,6 +11,14 @@ class LocalNotificationServiceImpl extends LocalNotificationService {
 
   final completer = Completer();
 
+  static const basicChannel = 'basic_channel';
+  static const iconPath = 'resource://drawable/app_logo';
+  static const channelGroupKey = 'basic_channel_group';
+  static const channelKey = 'basic_channel';
+  static const channelName = 'Basic notifications';
+  static const channelDescription = 'Notification channel for basic tests';
+  static const channelGroupName = 'Basic group';
+
   @override
   Future<void> showNotificationWithEveryHour({
     required int id,
@@ -19,7 +27,7 @@ class LocalNotificationServiceImpl extends LocalNotificationService {
     required String payload,
   }) async {
     await completer.future;
-    final content = NotificationContent(title: title, id: id, body: body, channelKey: 'basic_channel');
+    final content = NotificationContent(title: title, id: id, body: body, channelKey: basicChannel);
     final tz = await notifications.getLocalTimeZoneIdentifier();
 
     final intervalInSeconds = 60;
@@ -30,38 +38,23 @@ class LocalNotificationServiceImpl extends LocalNotificationService {
       allowWhileIdle: true,
       second: 10,
     );
-
-    final scheduled = await notifications.listScheduledNotifications();
-
-    for (var element in scheduled) {
-      print(element);
-    }
     await notifications.cancelAllSchedules();
-    final result = await notifications.createNotification(
-      content: content,
-      schedule: schedule,
-    );
-
-    print(result);
   }
 
   void init() async {
-    final isInitialized = await notifications.initialize(
-      'resource://drawable/app_logo',
+    await notifications.initialize(
+      iconPath,
       [
         NotificationChannel(
-          channelGroupKey: 'basic_channel_group',
-          channelKey: 'basic_channel',
-          channelName: 'Basic notifications',
-          channelDescription: 'Notification channel for basic tests',
+          channelGroupKey: channelGroupKey,
+          channelKey: channelKey,
+          channelName: channelName,
+          channelDescription: channelDescription,
         )
       ],
-      channelGroups: [
-        NotificationChannelGroup(channelGroupKey: 'basic_channel_group', channelGroupName: 'Basic group')
-      ],
+      channelGroups: [NotificationChannelGroup(channelGroupKey: channelGroupKey, channelGroupName: channelGroupName)],
       debug: true,
     );
-
     completer.complete();
   }
 }
