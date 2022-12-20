@@ -19,16 +19,26 @@ class NotificationWidget extends StatelessWidget {
   static const downFlex = Spacer(flex: 1);
   static const spaceBetweenButtons = SizedBox(height: 16);
   static const paddingInsideButton = EdgeInsets.symmetric(horizontal: 24);
+  static const spreadRadius = 3.0;
+  static const blurRadius = 12.0;
+  static const offset = Offset(-4, 2);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: heightWidget,
       width: widthWidget,
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         color: CustomTheme.decorationColor,
-        borderRadius: BorderRadius.all(widgetRadius),
-        boxShadow: [CustomTheme.boxShadowTheme],
+        borderRadius: const BorderRadius.all(widgetRadius),
+        boxShadow: [
+          BoxShadow(
+            color: CustomTheme.shadowColor.withOpacity(0.1),
+            spreadRadius: spreadRadius,
+            blurRadius: blurRadius,
+            offset: offset,
+          )
+        ],
       ),
       child: Column(
         children: [

@@ -8,6 +8,8 @@ class CustomTheme {
     decoration: TextDecoration.underline,
   );
 
+  static const largeText = TextStyle(fontSize: 34);
+
   static const termsProperty = TextStyle(
     fontSize: 16,
     color: Colors.black,
@@ -56,12 +58,7 @@ class CustomTheme {
 
   static const decorationColor = Colors.white;
 
-  static const boxShadowTheme = BoxShadow(
-    color: Colors.grey,
-    spreadRadius: 3.0,
-    blurRadius: 12.0,
-    offset: Offset(-4, 2),
-  );
+  static const shadowColor = Color(0xFFFAFAFA);
 
   static const header = TextStyle(fontSize: 20);
 
