@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:awesome_notifications/awesome_notifications.dart';
 
 abstract class LocalNotificationService {
@@ -31,22 +30,8 @@ class AwesomeNotificationImpl implements LocalNotificationService {
     final content = NotificationContent(title: title, id: id, body: body, channelKey: 'basic_channel');
     final tz = await notifications.getLocalTimeZoneIdentifier();
 
-    // const intervalInSeconds = 60 * 60 * 2;
     final intervalInSeconds = 60;
-    // final schedule = NotificationInterval(
-    //   timeZone: tz,
-    //   repeats: true,
-    //   allowWhileIdle: true,
-    //   interval: intervalInSeconds,
-    // );
 
-    // final schedule = NotificationAndroidCrontab(
-    //   timeZone: tz,
-    //   repeats: true,
-    //   allowWhileIdle: true,
-    //   crontabExpression: '0 12 * * ?',
-    //
-    // );
     final schedule = NotificationCalendar(
       timeZone: tz,
       repeats: true,
@@ -70,7 +55,6 @@ class AwesomeNotificationImpl implements LocalNotificationService {
 
   void init() async {
     final isInitialized = await notifications.initialize(
-      // set the icon to null if you want to use the default app icon
       null,
       [
         NotificationChannel(
@@ -80,7 +64,6 @@ class AwesomeNotificationImpl implements LocalNotificationService {
           channelDescription: 'Notification channel for basic tests',
         )
       ],
-      // Channel groups are only visual and are not required
       channelGroups: [
         NotificationChannelGroup(channelGroupKey: 'basic_channel_group', channelGroupName: 'Basic group')
       ],
