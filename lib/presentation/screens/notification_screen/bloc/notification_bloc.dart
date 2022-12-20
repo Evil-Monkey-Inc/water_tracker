@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:water_tracker/data/repository/repository.dart';
 import 'package:water_tracker/presentation/screens/notification_screen/bloc/notification_event.dart';
@@ -9,13 +11,12 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   NotificationBloc(this.repository) : super(InitialNotificationState()) {
     on<ShowNotificationEvent>((event, emit) async {
       try {
-        repository.setupScheduleNotifications(
-          durationInHours: 1,
+        unawaited(repository.showNotificationWithPayload(
           id: event.id,
           payload: event.payload,
           title: event.title,
           body: event.body,
-        );
+        ));
       } catch (e) {
         emit(ErrorNotificationState(e));
       }
