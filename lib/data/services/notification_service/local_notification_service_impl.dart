@@ -8,7 +8,6 @@ class LocalNotificationServiceImpl extends LocalNotificationService {
   }
 
   final notifications = AwesomeNotifications();
-
   final completer = Completer();
 
   static const basicChannel = 'basic_channel';
@@ -27,17 +26,6 @@ class LocalNotificationServiceImpl extends LocalNotificationService {
     required String payload,
   }) async {
     await completer.future;
-    final content = NotificationContent(title: title, id: id, body: body, channelKey: basicChannel);
-    final tz = await notifications.getLocalTimeZoneIdentifier();
-
-    final intervalInSeconds = 60;
-
-    final schedule = NotificationCalendar(
-      timeZone: tz,
-      repeats: true,
-      allowWhileIdle: true,
-      second: 10,
-    );
     await notifications.cancelAllSchedules();
   }
 
