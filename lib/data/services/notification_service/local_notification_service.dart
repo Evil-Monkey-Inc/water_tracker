@@ -55,7 +55,7 @@ class AwesomeNotificationImpl implements LocalNotificationService {
 
   void init() async {
     final isInitialized = await notifications.initialize(
-      null,
+      'resource://drawable/app_logo',
       [
         NotificationChannel(
           channelGroupKey: 'basic_channel_group',
