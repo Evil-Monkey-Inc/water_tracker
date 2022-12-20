@@ -11,7 +11,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   NotificationBloc(this.repository) : super(InitialNotificationState()) {
     on<ShowNotificationEvent>((event, emit) async {
       try {
-        unawaited(repository.showNotificationWithPayload(
+        unawaited(repository.setupScheduleNotifications(
           id: event.id,
           payload: event.payload,
           title: event.title,

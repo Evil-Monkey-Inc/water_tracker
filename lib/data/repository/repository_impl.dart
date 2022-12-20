@@ -1,4 +1,3 @@
-import 'package:cron/cron.dart';
 import 'package:water_tracker/data/models/goal_list.dart';
 import 'package:water_tracker/data/models/user_settings.dart';
 import 'package:water_tracker/data/repository/repository.dart';
@@ -43,18 +42,7 @@ class RepositoryImpl extends Repository {
   Future<String?> getGoal() async => await storageService.getGoal();
 
   @override
-  Future<void> showNotificationWithPayload({
-    required int id,
-    required String title,
-    required String body,
-    required String payload,
-  }) async {
-    await localNotificationService.showNotificationWithEveryHour(id: id, title: title, body: body, payload: payload);
-  }
-
-  @override
-  void setupScheduleNotifications({
-    required int durationInHours,
+  Future<void> setupScheduleNotifications({
     required int id,
     required String title,
     required String body,

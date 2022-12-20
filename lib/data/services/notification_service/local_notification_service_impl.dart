@@ -8,6 +8,7 @@ class LocalNotificationServiceImpl extends LocalNotificationService {
   }
 
   final notifications = AwesomeNotifications();
+
   final completer = Completer();
 
   static const basicChannel = 'basic_channel';
