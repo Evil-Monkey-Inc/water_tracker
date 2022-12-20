@@ -47,28 +47,33 @@ class LocalNotificationServiceImpl extends LocalNotificationService {
     required String payload,
   }) async {
     await _ensureInitialized();
-    return _localNotificationService.show(id, title, body, _notificationDetails, payload: payload);
+    return _localNotificationService.periodicallyShow(
+      id,
+      title,
+      body,
+      payload: payload,
+      RepeatInterval.hourly,
+      _notificationDetails,
+      androidAllowWhileIdle: true,
+    );
   }
 
   @override
-  Future<void> showScheduledNotification({
+  Future<void> showScheduledLocalNotification({
     required int id,
     required String title,
     required String body,
-    required int seconds,
+    required String payload,
+    required DateTime scheduledDate,
   }) async {
-    await _ensureInitialized();
     return _localNotificationService.zonedSchedule(
       id,
       title,
       body,
-      tz.TZDateTime.from(
-        DateTime.now().add(Duration(seconds: seconds)),
-        tz.local,
-      ),
+      tz.TZDateTime.from(scheduledDate, tz.local),
       _notificationDetails,
-      androidAllowWhileIdle: true,
       uiLocalNotificationDateInterpretation: UILocalNotificationDateInterpretation.absoluteTime,
+      androidAllowWhileIdle: true,
     );
   }
 }

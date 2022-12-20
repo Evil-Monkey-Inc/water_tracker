@@ -13,7 +13,7 @@ class NotificationScreen extends StatelessWidget {
     return SafeArea(
       child: BlocProvider<NotificationBloc>(
         create: (context) => NotificationBloc(getIt<Repository>()),
-        child: const NotificationLayout(),
+        child: NotificationLayout(),
       ),
     );
   }

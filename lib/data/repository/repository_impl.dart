@@ -52,12 +52,19 @@ class RepositoryImpl extends Repository {
   }
 
   @override
-  Future<void> showScheduledNotification({
+  Future<void> showScheduledLocalNotification({
     required int id,
     required String title,
     required String body,
-    required int seconds,
+    required String payload,
+    required DateTime scheduledDate,
   }) async {
-    await localNotificationService.showScheduledNotification(id: id, title: title, body: body, seconds: seconds);
+    await localNotificationService.showScheduledLocalNotification(
+      id: id,
+      title: title,
+      body: body,
+      payload: payload,
+      scheduledDate: scheduledDate,
+    );
   }
 }
