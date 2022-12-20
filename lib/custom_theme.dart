@@ -58,6 +58,8 @@ class CustomTheme {
 
   static const decorationColor = Colors.white;
 
+  static const shadowColor = Color(0xFFFAFAFA);
+
   static const header = TextStyle(fontSize: 20);
 
   static const notificationTextSize = TextStyle(fontSize: 24);
