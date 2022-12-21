@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:water_tracker/presentation/screens/greeting_screen/greeting_layout.dart';
+import 'package:water_tracker/presentation/screens/greeting_screen/greeting_screen.dart';
 import 'package:water_tracker/presentation/widgets/name_and_skip_widget.dart';
 import 'package:water_tracker/presentation/widgets/notification_widget.dart';
 
@@ -24,7 +25,7 @@ class NotificationLayout extends StatelessWidget {
             spaces,
             NameAndSkipWidget(
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => const GreetingLayout()));
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => const GreetingScreen()));
               },
             ),
             largeSpace,
