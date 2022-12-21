@@ -62,9 +62,19 @@ class CustomTheme {
 
   static const header = TextStyle(fontSize: 20);
 
+  static const counterMl = TextStyle(fontSize: 18, color: mainColor);
+
   static const notificationTextSize = TextStyle(fontSize: 24);
 
   static const sizeOfButton = TextStyle(fontSize: 16);
+
+  static const sizeOfDataWidget = TextStyle(fontSize: 20);
+
+  static const gotCupsTextProperty = TextStyle(fontSize: 36, color: Color(0xFF292D32));
+
+  static const countTextProperty = TextStyle(fontSize: 36, color: Color(0xFF7E32CB));
+
+  static const partOfCountTextProperty = TextStyle(fontSize: 36, color: Color(0xFFBA68C8));
 
   static const fontSizeButton = 16.0;
 
