@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:water_tracker/custom_theme.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton(
-      {Key? key,
-      required this.text,
-      required this.onPressed,
-      this.isEnabled = true,
-      required this.buttonColor,
-      required this.textButtonColor})
-      : super(key: key);
+  const CustomButton({
+    Key? key,
+    required this.text,
+    required this.onPressed,
+    this.isEnabled = true,
+    required this.buttonColor,
+    required this.textButtonColor,
+  }) : super(key: key);
 
   final bool isEnabled;
   final String text;
@@ -24,7 +24,7 @@ class CustomButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: isEnabled ? onPressed : null,
       style: ElevatedButton.styleFrom(
-        primary: buttonColor,
+        backgroundColor: buttonColor,
         elevation: 0.0,
         shadowColor: Colors.transparent,
         padding: paddingInsideButton,

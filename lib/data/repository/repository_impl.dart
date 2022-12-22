@@ -38,4 +38,13 @@ class RepositoryImpl extends Repository {
 
   @override
   Future<String?> getGoal() async => await storageService.getGoal();
+
+  @override
+  Future<bool> saveCupCount(int counterCups) async {
+    final result = await storageService.saveCupCount(counterCups);
+    return result;
+  }
+
+  @override
+  Future<int?> getCupCount() async => storageService.getCupCount();
 }

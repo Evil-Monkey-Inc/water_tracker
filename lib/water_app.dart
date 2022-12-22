@@ -2,8 +2,6 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:water_tracker/custom_theme.dart';
-import 'package:water_tracker/presentation/screens/sing_in_screen/sign_in_screen.dart';
-
 import 'presentation/screens/greeting_screen/greeting_screen.dart';
 
 class WaterApp extends StatefulWidget {
@@ -37,7 +35,7 @@ class _WaterAppState extends State<WaterApp> {
         ),
         textSelectionTheme: CustomTheme.cursorColor,
       ),
-      home: SafeArea(child: GreetingScreen()), // todo: don`t forget to change
+      home: const SafeArea(child: GreetingScreen()), // todo: don`t forget to change
     );
   }
 }
