@@ -24,8 +24,6 @@ class _MainLayoutState extends State<MainLayout> {
   static const spaceBetween = SizedBox(height: 44);
   static const spaceBetweenManAndMl = SizedBox(height: 42);
 
-  final _counterMl = 0;
-
   @override
   void initState() {
     context.read<MainScreenBloc>().add(AppLaunchEvent());
@@ -58,7 +56,7 @@ class _MainLayoutState extends State<MainLayout> {
                 Align(
                   alignment: Alignment.topLeft,
                   child: Text(
-                    '$_counterMl${LocaleKeys.ml.tr()}',
+                    '${state.counter * 250}${LocaleKeys.ml.tr()}',
                     style: CustomTheme.counterMl,
                   ),
                 ),
@@ -71,7 +69,6 @@ class _MainLayoutState extends State<MainLayout> {
                 CustomButton(
                   text: 'ad',
                   onPressed: () {
-                    print(state.counter);
                     context.read<MainScreenBloc>().add(SaveCounterEvent(state.counter));
                     context.read<MainScreenBloc>().add(AppLaunchEvent());
                   },
