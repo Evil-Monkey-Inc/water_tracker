@@ -1,9 +1,15 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:water_tracker/custom_theme.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
+import 'package:water_tracker/presentation/screens/main_screen/bloc/main_screen_bloc.dart';
 import 'package:water_tracker/presentation/widgets/assistant_widget.dart';
+import 'package:water_tracker/presentation/widgets/custom_button.dart';
 import 'package:water_tracker/presentation/widgets/person_image_widget.dart';
+
+import 'bloc/main_screen_event.dart';
+import 'bloc/main_screen_state.dart';
 
 class MainLayout extends StatefulWidget {
   const MainLayout({Key? key}) : super(key: key);
@@ -43,7 +49,7 @@ class _MainLayoutState extends State<MainLayout> {
                     children: <TextSpan>[
                       TextSpan(text: LocaleKeys.you_already_got.tr(), style: CustomTheme.gotCupsTextProperty),
                       TextSpan(text: ' ${state.counter}', style: CustomTheme.countTextProperty),
-                      const TextSpan(text: '/8 ', style: CustomTheme.partOfCountTextProperty),
+                      const TextSpan(text: '/$cupsMaxCount ', style: CustomTheme.partOfCountTextProperty),
                       TextSpan(text: LocaleKeys.cups.tr(), style: CustomTheme.gotCupsTextProperty),
                     ],
                   ),
