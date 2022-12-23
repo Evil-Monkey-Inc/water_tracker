@@ -28,4 +28,17 @@ class StorageServiceSharedPrefImplements extends StorageService {
     final prefs = await SharedPreferences.getInstance();
     return prefs.getString(goalsListKey);
   }
+
+  @override
+  Future<bool> saveCupCount(String dateKey, int counterCups) async {
+    final prefs = await SharedPreferences.getInstance();
+    final result = await prefs.setInt(dateKey, counterCups);
+    return result;
+  }
+
+  @override
+  Future<int?> getCupCount(String dateKey) async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getInt(dateKey) ?? 0;
+  }
 }
