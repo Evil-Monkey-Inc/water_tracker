@@ -70,11 +70,15 @@ class CustomTheme {
 
   static const sizeOfDataWidget = TextStyle(fontSize: 20);
 
-  static const gotCupsTextProperty = TextStyle(fontSize: 36, color: Color(0xFF292D32));
+  static const gotCupsTextProperty = TextStyle(fontSize: 36, color: mainColor);
 
-  static const countTextProperty = TextStyle(fontSize: 36, color: Color(0xFF7E32CB));
+  static const countTextColor = Color(0xFF7E32CB);
 
-  static const partOfCountTextProperty = TextStyle(fontSize: 36, color: Color(0xFFBA68C8));
+  static const countTextProperty = TextStyle(fontSize: 36, color: countTextColor);
+
+  static const textPurple = Color(0xFFBA68C8);
+
+  static const partOfCountTextProperty = TextStyle(fontSize: 36, color: textPurple);
 
   static const fontSizeButton = 16.0;
 

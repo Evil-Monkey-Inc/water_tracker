@@ -63,7 +63,7 @@ class _MainLayoutState extends State<MainLayout> {
               child: PersonImageWidget.mainWay(),
             ),
             spaceBetween,
-            ElevatedButton(onPressed: _counterCups < 8 ? _incrementCounterCups : null, child: Text('press')),
+            ElevatedButton(onPressed: _counterCups < 8 ? _incrementCounterCups : null, child: const Text('press')),
           ],
         ),
       ),
