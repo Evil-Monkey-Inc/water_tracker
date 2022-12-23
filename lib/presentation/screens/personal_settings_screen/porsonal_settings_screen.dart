@@ -10,11 +10,9 @@ class PersonalSettingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: BlocProvider<PersonalSettingBloc>(
-        create: (context) => PersonalSettingBloc(getIt<Repository>()),
-        child: const PersonalSettingsLayout(),
-      ),
+    return BlocProvider<PersonalSettingBloc>(
+      create: (context) => PersonalSettingBloc(getIt<Repository>()),
+      child: const PersonalSettingsLayout(),
     );
   }
 }

@@ -10,11 +10,9 @@ class GoalScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: BlocProvider<GoalBloc>(
-        create: (context) => GoalBloc(getIt<Repository>()),
-        child: const GoalLayout(),
-      ),
+    return BlocProvider<GoalBloc>(
+      create: (context) => GoalBloc(getIt<Repository>()),
+      child: const GoalLayout(),
     );
   }
 }

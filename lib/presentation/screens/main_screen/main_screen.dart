@@ -10,11 +10,9 @@ class MainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: BlocProvider<MainScreenBloc>(
-        create: (context) => MainScreenBloc(getIt<Repository>()),
-        child: const MainLayout(),
-      ),
+    return BlocProvider<MainScreenBloc>(
+      create: (context) => MainScreenBloc(getIt<Repository>()),
+      child: const MainLayout(),
     );
   }
 }
