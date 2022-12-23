@@ -41,7 +41,10 @@
   "notification_text" : "Як часто ви хочете отримувати нагадування?",
   "every_hour" : "Щогодини",
   "every_two_hours" : "Кожні дві години",
-  "get_started" : "Розпочати"
+  "get_started" : "Розпочати",
+  "you_already_got" : "Ви вже випили",
+  "cups" : "чашки",
+  "ml" : "/2000 мл"
 
 
 }

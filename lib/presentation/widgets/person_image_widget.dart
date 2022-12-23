@@ -13,6 +13,8 @@ class PersonImageWidget extends StatelessWidget {
 
   factory PersonImageWidget.manWay() => PersonImageWidget(Assets.images.manLogin.path);
 
+  factory PersonImageWidget.mainWay() => PersonImageWidget(Assets.images.mainScreenPerson.path);
+
   @override
   Widget build(BuildContext context) {
     return Image.asset(

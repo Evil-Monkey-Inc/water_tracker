@@ -43,7 +43,10 @@
   "every_hour" : "Every hour",
   "every_two_hours" : "Every two hours",
   "notification_text" : "How ofter do you want to receive water reminders?",
-  "get_started" : "Get started"
+  "get_started" : "Get started",
+  "you_already_got" : "You've already got",
+  "cups" : "cups",
+  "ml" : "/2000 ml"
 
 }
 

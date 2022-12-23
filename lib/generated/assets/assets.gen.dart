@@ -12,14 +12,15 @@ import 'package:flutter/widgets.dart';
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
-  /// File path: assets/images/big_logo.svg
-  String get bigLogo => 'assets/images/big_logo.svg';
-
   /// File path: assets/images/bottle.png
   AssetGenImage get bottle => const AssetGenImage('assets/images/bottle.png');
 
   /// File path: assets/images/carrot.png
   AssetGenImage get carrot => const AssetGenImage('assets/images/carrot.png');
+
+  /// File path: assets/images/custom_close_icon.png
+  AssetGenImage get customCloseIcon =>
+      const AssetGenImage('assets/images/custom_close_icon.png');
 
   /// File path: assets/images/dumbbells.png
   AssetGenImage get dumbbells =>
@@ -34,6 +35,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/logo_name.svg
   String get logoName => 'assets/images/logo_name.svg';
 
+  /// File path: assets/images/main_screen_person.png
+  AssetGenImage get mainScreenPerson =>
+      const AssetGenImage('assets/images/main_screen_person.png');
+
   /// File path: assets/images/man_login.png
   AssetGenImage get manLogin =>
       const AssetGenImage('assets/images/man_login.png');
@@ -41,6 +46,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/notification.png
   AssetGenImage get notification =>
       const AssetGenImage('assets/images/notification.png');
+
+  /// File path: assets/images/setting_icon.png
+  AssetGenImage get settingIcon =>
+      const AssetGenImage('assets/images/setting_icon.png');
 
   /// File path: assets/images/stars.png
   AssetGenImage get stars => const AssetGenImage('assets/images/stars.png');
@@ -54,15 +63,17 @@ class $AssetsImagesGen {
 
   /// List of all assets
   List<dynamic> get values => [
-        bigLogo,
         bottle,
         carrot,
+        customCloseIcon,
         dumbbells,
         hike,
         logo,
         logoName,
+        mainScreenPerson,
         manLogin,
         notification,
+        settingIcon,
         stars,
         weight,
         womanLogin
