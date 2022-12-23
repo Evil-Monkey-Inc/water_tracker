@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:water_tracker/custom_theme.dart';
+
 import 'presentation/screens/greeting_screen/greeting_screen.dart';
 
 class WaterApp extends StatefulWidget {
