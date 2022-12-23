@@ -7,7 +7,6 @@ import 'package:water_tracker/data/services/storage_service/storage_service.dart
 class StorageServiceSharedPrefImplements extends StorageService {
   static const userSettingsKey = 'userSettings';
   static const goalsListKey = 'goalsListKey';
-  static const counterCupsKey = 'counterCupsKey';
 
   @override
   Future<bool> saveGeneralInfo(UserSettings userSettings) async {
@@ -31,15 +30,15 @@ class StorageServiceSharedPrefImplements extends StorageService {
   }
 
   @override
-  Future<bool> saveCupCount(int counterCups) async {
+  Future<bool> saveCupCount(String dateKey, int counterCups) async {
     final prefs = await SharedPreferences.getInstance();
-    final result = await prefs.setInt(counterCupsKey, counterCups);
+    final result = await prefs.setInt(dateKey, counterCups);
     return result;
   }
 
   @override
-  Future<int?> getCupCount() async {
+  Future<int?> getCupCount(String dateKey) async {
     final prefs = await SharedPreferences.getInstance();
-    return prefs.getInt(counterCupsKey) ?? 0;
+    return prefs.getInt(dateKey) ?? 0;
   }
 }

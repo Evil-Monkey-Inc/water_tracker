@@ -20,5 +20,5 @@ abstract class Repository {
 
   Future<bool> saveCupCount(int counterCups);
 
-  Future<int?> getCupCount();
+  Future<int?> getCupCount(DateTime time);
 }

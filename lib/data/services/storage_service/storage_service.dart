@@ -8,7 +8,7 @@ abstract class StorageService {
 
   Future<String?> getGoal();
 
-  Future<bool> saveCupCount(int counterCups);
+  Future<bool> saveCupCount(String dateKey, int counterCups);
 
-  Future<int?> getCupCount();
+  Future<int?> getCupCount(String dateKey);
 }
