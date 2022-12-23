@@ -13,6 +13,7 @@ class MainLayout extends StatefulWidget {
 }
 
 class _MainLayoutState extends State<MainLayout> {
+  static const cupsMaxCount = 8;
   static const paddingHorizontal = EdgeInsets.symmetric(horizontal: 28.0);
   static const spaces = SizedBox(height: 24);
   static const betweenCounters = SizedBox(height: 16);
@@ -44,7 +45,7 @@ class _MainLayoutState extends State<MainLayout> {
                 children: <TextSpan>[
                   TextSpan(text: LocaleKeys.you_already_got.tr(), style: CustomTheme.gotCupsTextProperty),
                   TextSpan(text: ' $_counterCups', style: CustomTheme.countTextProperty),
-                  const TextSpan(text: '/8 ', style: CustomTheme.partOfCountTextProperty),
+                  const TextSpan(text: '/$cupsMaxCount ', style: CustomTheme.partOfCountTextProperty),
                   TextSpan(text: LocaleKeys.cups.tr(), style: CustomTheme.gotCupsTextProperty),
                 ],
               ),
