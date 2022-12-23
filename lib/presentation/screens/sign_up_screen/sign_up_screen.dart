@@ -10,11 +10,9 @@ class SignUpScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: BlocProvider<SignUpBloc>(
-        create: (context) => SignUpBloc(getIt<Repository>()),
-        child: const SignUpLayout(),
-      ),
+    return BlocProvider<SignUpBloc>(
+      create: (context) => SignUpBloc(getIt<Repository>()),
+      child: const SignUpLayout(),
     );
   }
 }
