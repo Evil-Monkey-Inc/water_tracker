@@ -22,6 +22,17 @@ class _MyLogFormWidgetState extends State<SignInForm> {
   static const spacer = SizedBox(height: 28);
   final formKey = GlobalKey<FormState>();
   final emailNode = FocusNode();
+  bool secureController = true;
+
+  static const visibilityOff = Icon(
+    Icons.visibility_off,
+    color: CustomTheme.mainColor,
+  );
+
+  static const visibility = Icon(
+    Icons.visibility,
+    color: CustomTheme.mainColor,
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -38,13 +49,21 @@ class _MyLogFormWidgetState extends State<SignInForm> {
             labelText: LocaleKeys.enter_your_email.tr(),
             validator: FormValidators.emailValidator,
             controller: _email,
+            obscureText: false,
           ),
           spacer,
           InputFieldWidget(
-            labelText: LocaleKeys.enter_password.tr(),
-            validator: FormValidators.passwordRegValidator,
-            controller: _pass,
-          ),
+              labelText: LocaleKeys.enter_password.tr(),
+              validator: FormValidators.passwordRegValidator,
+              controller: _pass,
+              obscureText: secureController = !secureController,
+              suffixIcon: GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      secureController != secureController;
+                    });
+                  },
+                  child: secureController ? visibilityOff : visibility)),
           spacer,
           CustomButton(
             onPressed: () {
