@@ -122,6 +122,8 @@ class CustomTheme {
 
   static const greetingsProperty = TextStyle(fontSize: 28, color: mainColor);
 
+  static const privacyPolicyBackground = Colors.white;
+
   static const themeColor = Color(0xFF8F9AA9);
 
   static const notHaveAccountProperty = TextStyle(fontSize: 16, color: themeColor);
