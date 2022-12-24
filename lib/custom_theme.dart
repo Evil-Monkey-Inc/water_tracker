@@ -9,21 +9,21 @@ class CustomTheme {
     color: Colors.black,
     fontWeight: FontWeight.w500,
     decoration: TextDecoration.underline,
-    fontFamily: Assets.fonts.montserratVariableFontWght,
+    fontFamily: Assets.fonts.senRegular,
   );
 
   final counterProperty = TextStyle(
     fontSize: 56,
     color: CustomTheme.mainColor,
     fontWeight: FontWeight.w300,
-    fontFamily: Assets.fonts.montserratVariableFontWght,
+    fontFamily: Assets.fonts.senRegular,
   );
 
   final tabFemaleTextProperty = Text(
     LocaleKeys.woman.tr(),
     style: TextStyle(
       fontSize: 16,
-      fontFamily: Assets.fonts.montserratVariableFontWght,
+      fontFamily: Assets.fonts.senRegular,
       fontWeight: FontWeight.w500,
     ),
   );
@@ -31,19 +31,19 @@ class CustomTheme {
   final tabMaleTextProperty = Text(LocaleKeys.man.tr(),
       style: TextStyle(
         fontSize: 16,
-        fontFamily: Assets.fonts.montserratVariableFontWght,
+        fontFamily: Assets.fonts.senRegular,
         fontWeight: FontWeight.w500,
       ));
 
   final selectSexButtonProp = TextStyle(
     fontSize: 16,
-    fontFamily: Assets.fonts.montserratVariableFontWght,
+    fontFamily: Assets.fonts.senRegular,
     fontWeight: FontWeight.w500,
   );
 
   final largeText = TextStyle(
     fontSize: 34,
-    fontFamily: Assets.fonts.montserratVariableFontWght,
+    fontFamily: Assets.fonts.senRegular,
     fontWeight: FontWeight.w500,
   );
 
@@ -52,13 +52,13 @@ class CustomTheme {
     color: Colors.black,
     fontWeight: FontWeight.bold,
     decoration: TextDecoration.underline,
-    fontFamily: Assets.fonts.montserratItalicVariableFontWght,
+    fontFamily: Assets.fonts.senRegular,
   );
 
   final restText = TextStyle(
     fontSize: 16,
     color: Colors.black,
-    fontFamily: Assets.fonts.montserratItalicVariableFontWght,
+    fontFamily: Assets.fonts.senRegular,
   );
 
   static const focusedBorder = OutlineInputBorder(
@@ -93,7 +93,7 @@ class CustomTheme {
     color: Colors.black,
     decoration: TextDecoration.underline,
     fontWeight: FontWeight.w500,
-    fontFamily: Assets.fonts.montserratVariableFontWght,
+    fontFamily: Assets.fonts.senRegular,
   );
 
   static const decorationColor = Colors.white;
@@ -102,19 +102,18 @@ class CustomTheme {
 
   final header = TextStyle(
     fontSize: 16,
-    fontFamily: Assets.fonts.montserratVariableFontWght,
-    fontWeight: FontWeight.w500,
+    fontFamily: Assets.fonts.senBold,
   );
 
   final counterMl = TextStyle(
     fontSize: 18,
     color: mainColor,
-    fontFamily: Assets.fonts.montserratVariableFontWght,
+    fontFamily: Assets.fonts.senRegular,
   );
 
   final notificationTextSize = TextStyle(
     fontSize: 24,
-    fontFamily: Assets.fonts.montserratVariableFontWght,
+    fontFamily: Assets.fonts.senRegular,
     fontWeight: FontWeight.w500,
   );
 
@@ -122,14 +121,14 @@ class CustomTheme {
 
   final sizeOfDataWidget = TextStyle(
     fontSize: 20,
-    fontFamily: Assets.fonts.montserratVariableFontWght,
+    fontFamily: Assets.fonts.senRegular,
     fontWeight: FontWeight.w500,
   );
 
   final gotCupsTextProperty = TextStyle(
     fontSize: 36,
     color: mainColor,
-    fontFamily: Assets.fonts.montserratVariableFontWght,
+    fontFamily: Assets.fonts.senRegular,
     fontWeight: FontWeight.w500,
   );
 
@@ -138,7 +137,7 @@ class CustomTheme {
   final countTextProperty = TextStyle(
     fontSize: 36,
     color: countTextColor,
-    fontFamily: Assets.fonts.montserratVariableFontWght,
+    fontFamily: Assets.fonts.senRegular,
     fontWeight: FontWeight.w500,
   );
 
@@ -147,7 +146,7 @@ class CustomTheme {
   final partOfCountTextProperty = TextStyle(
     fontSize: 36,
     color: textPurple,
-    fontFamily: Assets.fonts.montserratVariableFontWght,
+    fontFamily: Assets.fonts.senRegular,
     fontWeight: FontWeight.w500,
   );
 
@@ -169,14 +168,24 @@ class CustomTheme {
 
   static const skipButtonColor = Color(0xFF1D82F9);
 
-  final privacyProperty =
-      TextStyle(fontSize: 16, color: mainColor, fontFamily: Assets.fonts.montserratVariableFontWght);
+  final privacyProperty = TextStyle(
+    fontSize: 16,
+    color: mainColor,
+    fontFamily: Assets.fonts.senRegular,
+  );
 
-  final skipButtonsStyle =
-      TextStyle(fontSize: 16, color: skipButtonColor, fontFamily: Assets.fonts.montserratVariableFontWght);
+  final skipButtonsStyle = TextStyle(
+    fontSize: 16,
+    color: skipButtonColor,
+    fontFamily: Assets.fonts.senRegular,
+  );
 
   final titleSettingsProperty = TextStyle(
-      fontSize: 34, color: mainColor, fontWeight: FontWeight.w500, fontFamily: Assets.fonts.montserratVariableFontWght);
+    fontSize: 34,
+    color: mainColor,
+    fontWeight: FontWeight.w500,
+    fontFamily: Assets.fonts.senBold,
+  );
 
   static const borderFillColor = Color(0xFFA6ABB5);
 
@@ -197,15 +206,14 @@ class CustomTheme {
   final setupScreenProperty = TextStyle(
     fontSize: 20,
     color: mainColor,
-    fontWeight: FontWeight.w500,
-    fontFamily: Assets.fonts.montserratVariableFontWght,
+    fontFamily: Assets.fonts.senBold,
   );
 
   final greetingsProperty = TextStyle(
     fontSize: 24,
     color: CustomTheme.mainColor,
     fontWeight: FontWeight.w500,
-    fontFamily: Assets.fonts.montserratVariableFontWght,
+    fontFamily: Assets.fonts.senBold,
   );
 
   static const themeColor = Color(0xFF8F9AA9);
@@ -213,7 +221,7 @@ class CustomTheme {
   final notHaveAccountProperty = TextStyle(
     fontSize: 16,
     color: themeColor,
-    fontFamily: Assets.fonts.montserratVariableFontWght,
+    fontFamily: Assets.fonts.senRegular,
   );
 
   static const signUpProperty = TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.bold);
