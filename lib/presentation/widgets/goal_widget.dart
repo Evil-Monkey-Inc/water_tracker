@@ -82,7 +82,7 @@ class _GoalWidgetState extends State<GoalWidget> with SingleTickerProviderStateM
                   style: TextStyle(
                     fontSize: iconTitleSize.toDouble(),
                     fontWeight: FontWeight.w500,
-                    fontFamily: Assets.fonts.montserratVariableFontWght,
+                    fontFamily: Assets.fonts.senBold,
                     color: isSelected ? CustomTheme.decorationColor : CustomTheme.mainColor,
                   ),
                 ),

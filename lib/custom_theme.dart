@@ -12,28 +12,23 @@ class CustomTheme {
     fontFamily: Assets.fonts.senRegular,
   );
 
-  final counterProperty = TextStyle(
+  final counterProperty = const TextStyle(
     fontSize: 56,
     color: CustomTheme.mainColor,
     fontWeight: FontWeight.w300,
+  );
+
+  final tabFemaleTextProperty = TextStyle(
+    fontSize: 16,
     fontFamily: Assets.fonts.senRegular,
+    fontWeight: FontWeight.w500,
   );
 
-  final tabFemaleTextProperty = Text(
-    LocaleKeys.woman.tr(),
-    style: TextStyle(
-      fontSize: 16,
-      fontFamily: Assets.fonts.senRegular,
-      fontWeight: FontWeight.w500,
-    ),
+  final tabMaleTextProperty = TextStyle(
+    fontSize: 16,
+    fontFamily: Assets.fonts.senRegular,
+    fontWeight: FontWeight.w500,
   );
-
-  final tabMaleTextProperty = Text(LocaleKeys.man.tr(),
-      style: TextStyle(
-        fontSize: 16,
-        fontFamily: Assets.fonts.senRegular,
-        fontWeight: FontWeight.w500,
-      ));
 
   final selectSexButtonProp = TextStyle(
     fontSize: 16,

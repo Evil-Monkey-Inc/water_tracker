@@ -57,8 +57,13 @@ class _SelectSexButtonState extends State<SelectSexButton> with SingleTickerProv
                       indicatorWeight: indicatorWeight,
                       indicator: BoxDecoration(color: CustomTheme.mainColor, borderRadius: BorderRadius.circular(40)),
                       tabs: [
-                        Tab(child: CustomTheme().tabMaleTextProperty),
-                        Tab(child: CustomTheme().tabFemaleTextProperty),
+                        Tab(child: Text(LocaleKeys.man.tr(), style: CustomTheme().tabMaleTextProperty)),
+                        Tab(
+                          child: Text(
+                            LocaleKeys.woman.tr(),
+                            style: CustomTheme().tabFemaleTextProperty,
+                          ),
+                        ),
                       ],
                     ),
                   ),
