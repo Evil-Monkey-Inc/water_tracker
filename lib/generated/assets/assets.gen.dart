@@ -12,14 +12,6 @@ import 'package:flutter/widgets.dart';
 class $AssetsFontsGen {
   const $AssetsFontsGen();
 
-  /// File path: assets/fonts/Montserrat-Italic-VariableFont_wght.ttf
-  String get montserratItalicVariableFontWght =>
-      'assets/fonts/Montserrat-Italic-VariableFont_wght.ttf';
-
-  /// File path: assets/fonts/Montserrat-VariableFont_wght.ttf
-  String get montserratVariableFontWght =>
-      'assets/fonts/Montserrat-VariableFont_wght.ttf';
-
   /// File path: assets/fonts/Sen-Bold.ttf
   String get senBold => 'assets/fonts/Sen-Bold.ttf';
 
@@ -30,13 +22,7 @@ class $AssetsFontsGen {
   String get senRegular => 'assets/fonts/Sen-Regular.ttf';
 
   /// List of all assets
-  List<String> get values => [
-        montserratItalicVariableFontWght,
-        montserratVariableFontWght,
-        senBold,
-        senExtraBold,
-        senRegular
-      ];
+  List<String> get values => [senBold, senExtraBold, senRegular];
 }
 
 class $AssetsImagesGen {
