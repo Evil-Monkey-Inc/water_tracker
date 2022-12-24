@@ -39,7 +39,7 @@ class _MyLogFormWidgetState extends State<SignUpForm> {
         children: [
           Text(
             LocaleKeys.start_your_journey.tr(),
-            style: CustomTheme.greetingsProperty,
+            style: CustomTheme().greetingsProperty,
           ),
           spacer,
           InputFieldWidget(

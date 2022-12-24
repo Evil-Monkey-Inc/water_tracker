@@ -21,7 +21,7 @@ class _TitleSettingWidgetState extends State<TitleSettingWidget> {
           flex: widget.upperFlex,
           child: Text(
             widget.firstTitleText,
-            style: CustomTheme.titleSettingsProperty,
+            style: CustomTheme().titleSettingsProperty,
           ),
         ),
         Spacer(flex: widget.downFlex),

@@ -17,7 +17,7 @@ class AlreadyHaveAnAccountWidget extends StatelessWidget {
         child: Text.rich(
           TextSpan(
             text: LocaleKeys.already_have_an_account.tr(),
-            style: CustomTheme.notHaveAccountProperty,
+            style: CustomTheme().notHaveAccountProperty,
             children: [
               CustomTheme.spaceTextSpan,
               TextSpan(

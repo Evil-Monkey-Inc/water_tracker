@@ -9,6 +9,157 @@
 
 import 'package:flutter/widgets.dart';
 
+class $AssetsFontsGen {
+  const $AssetsFontsGen();
+
+  /// File path: assets/fonts/Montserrat-Italic-VariableFont_wght.ttf
+  String get montserratItalicVariableFontWght =>
+      'assets/fonts/Montserrat-Italic-VariableFont_wght.ttf';
+
+  /// File path: assets/fonts/Montserrat-VariableFont_wght.ttf
+  String get montserratVariableFontWght =>
+      'assets/fonts/Montserrat-VariableFont_wght.ttf';
+
+  /// File path: assets/fonts/NunitoSans-Black.ttf
+  String get nunitoSansBlack => 'assets/fonts/NunitoSans-Black.ttf';
+
+  /// File path: assets/fonts/NunitoSans-BlackItalic.ttf
+  String get nunitoSansBlackItalic => 'assets/fonts/NunitoSans-BlackItalic.ttf';
+
+  /// File path: assets/fonts/NunitoSans-Bold.ttf
+  String get nunitoSansBold => 'assets/fonts/NunitoSans-Bold.ttf';
+
+  /// File path: assets/fonts/NunitoSans-BoldItalic.ttf
+  String get nunitoSansBoldItalic => 'assets/fonts/NunitoSans-BoldItalic.ttf';
+
+  /// File path: assets/fonts/NunitoSans-ExtraBold.ttf
+  String get nunitoSansExtraBold => 'assets/fonts/NunitoSans-ExtraBold.ttf';
+
+  /// File path: assets/fonts/NunitoSans-ExtraBoldItalic.ttf
+  String get nunitoSansExtraBoldItalic =>
+      'assets/fonts/NunitoSans-ExtraBoldItalic.ttf';
+
+  /// File path: assets/fonts/NunitoSans-ExtraLight.ttf
+  String get nunitoSansExtraLight => 'assets/fonts/NunitoSans-ExtraLight.ttf';
+
+  /// File path: assets/fonts/NunitoSans-ExtraLightItalic.ttf
+  String get nunitoSansExtraLightItalic =>
+      'assets/fonts/NunitoSans-ExtraLightItalic.ttf';
+
+  /// File path: assets/fonts/NunitoSans-Italic.ttf
+  String get nunitoSansItalic => 'assets/fonts/NunitoSans-Italic.ttf';
+
+  /// File path: assets/fonts/NunitoSans-Light.ttf
+  String get nunitoSansLight => 'assets/fonts/NunitoSans-Light.ttf';
+
+  /// File path: assets/fonts/NunitoSans-LightItalic.ttf
+  String get nunitoSansLightItalic => 'assets/fonts/NunitoSans-LightItalic.ttf';
+
+  /// File path: assets/fonts/NunitoSans-Regular.ttf
+  String get nunitoSansRegular => 'assets/fonts/NunitoSans-Regular.ttf';
+
+  /// File path: assets/fonts/NunitoSans-SemiBold.ttf
+  String get nunitoSansSemiBold => 'assets/fonts/NunitoSans-SemiBold.ttf';
+
+  /// File path: assets/fonts/NunitoSans-SemiBoldItalic.ttf
+  String get nunitoSansSemiBoldItalic =>
+      'assets/fonts/NunitoSans-SemiBoldItalic.ttf';
+
+  /// File path: assets/fonts/Poppins-Black.ttf
+  String get poppinsBlack => 'assets/fonts/Poppins-Black.ttf';
+
+  /// File path: assets/fonts/Poppins-BlackItalic.ttf
+  String get poppinsBlackItalic => 'assets/fonts/Poppins-BlackItalic.ttf';
+
+  /// File path: assets/fonts/Poppins-Bold.ttf
+  String get poppinsBold => 'assets/fonts/Poppins-Bold.ttf';
+
+  /// File path: assets/fonts/Poppins-BoldItalic.ttf
+  String get poppinsBoldItalic => 'assets/fonts/Poppins-BoldItalic.ttf';
+
+  /// File path: assets/fonts/Poppins-ExtraBold.ttf
+  String get poppinsExtraBold => 'assets/fonts/Poppins-ExtraBold.ttf';
+
+  /// File path: assets/fonts/Poppins-ExtraBoldItalic.ttf
+  String get poppinsExtraBoldItalic =>
+      'assets/fonts/Poppins-ExtraBoldItalic.ttf';
+
+  /// File path: assets/fonts/Poppins-ExtraLight.ttf
+  String get poppinsExtraLight => 'assets/fonts/Poppins-ExtraLight.ttf';
+
+  /// File path: assets/fonts/Poppins-ExtraLightItalic.ttf
+  String get poppinsExtraLightItalic =>
+      'assets/fonts/Poppins-ExtraLightItalic.ttf';
+
+  /// File path: assets/fonts/Poppins-Italic.ttf
+  String get poppinsItalic => 'assets/fonts/Poppins-Italic.ttf';
+
+  /// File path: assets/fonts/Poppins-Light.ttf
+  String get poppinsLight => 'assets/fonts/Poppins-Light.ttf';
+
+  /// File path: assets/fonts/Poppins-LightItalic.ttf
+  String get poppinsLightItalic => 'assets/fonts/Poppins-LightItalic.ttf';
+
+  /// File path: assets/fonts/Poppins-Medium.ttf
+  String get poppinsMedium => 'assets/fonts/Poppins-Medium.ttf';
+
+  /// File path: assets/fonts/Poppins-MediumItalic.ttf
+  String get poppinsMediumItalic => 'assets/fonts/Poppins-MediumItalic.ttf';
+
+  /// File path: assets/fonts/Poppins-Regular.ttf
+  String get poppinsRegular => 'assets/fonts/Poppins-Regular.ttf';
+
+  /// File path: assets/fonts/Poppins-SemiBold.ttf
+  String get poppinsSemiBold => 'assets/fonts/Poppins-SemiBold.ttf';
+
+  /// File path: assets/fonts/Poppins-SemiBoldItalic.ttf
+  String get poppinsSemiBoldItalic => 'assets/fonts/Poppins-SemiBoldItalic.ttf';
+
+  /// File path: assets/fonts/Poppins-Thin.ttf
+  String get poppinsThin => 'assets/fonts/Poppins-Thin.ttf';
+
+  /// File path: assets/fonts/Poppins-ThinItalic.ttf
+  String get poppinsThinItalic => 'assets/fonts/Poppins-ThinItalic.ttf';
+
+  /// List of all assets
+  List<String> get values => [
+        montserratItalicVariableFontWght,
+        montserratVariableFontWght,
+        nunitoSansBlack,
+        nunitoSansBlackItalic,
+        nunitoSansBold,
+        nunitoSansBoldItalic,
+        nunitoSansExtraBold,
+        nunitoSansExtraBoldItalic,
+        nunitoSansExtraLight,
+        nunitoSansExtraLightItalic,
+        nunitoSansItalic,
+        nunitoSansLight,
+        nunitoSansLightItalic,
+        nunitoSansRegular,
+        nunitoSansSemiBold,
+        nunitoSansSemiBoldItalic,
+        poppinsBlack,
+        poppinsBlackItalic,
+        poppinsBold,
+        poppinsBoldItalic,
+        poppinsExtraBold,
+        poppinsExtraBoldItalic,
+        poppinsExtraLight,
+        poppinsExtraLightItalic,
+        poppinsItalic,
+        poppinsLight,
+        poppinsLightItalic,
+        poppinsMedium,
+        poppinsMediumItalic,
+        poppinsRegular,
+        poppinsSemiBold,
+        poppinsSemiBoldItalic,
+        poppinsThin,
+        poppinsThinItalic
+      ];
+}
+
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
@@ -96,6 +247,7 @@ class $AssetsTranslationsGen {
 class Assets {
   Assets._();
 
+  static const $AssetsFontsGen fonts = $AssetsFontsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
   static const $AssetsTranslationsGen translations = $AssetsTranslationsGen();
 }

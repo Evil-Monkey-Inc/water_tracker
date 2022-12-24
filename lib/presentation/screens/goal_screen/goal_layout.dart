@@ -24,7 +24,7 @@ class GoalLayout extends StatefulWidget {
 class _GoalLayoutState extends State<GoalLayout> {
   Set<Goal> selectedGoals = {};
 
-  static const spaces = SizedBox(height: 24);
+  static const spaces = SizedBox(height: 14);
   static const spacesBetween = SizedBox(height: 16);
   static const paddingHorizontal = EdgeInsets.symmetric(horizontal: 24.0);
   static const upperFlex = 3;
@@ -62,7 +62,7 @@ class _GoalLayoutState extends State<GoalLayout> {
                   upperFlex: upperFlex,
                   downFlex: downFlex,
                 ),
-                spaces,
+                spacesBetween,
                 Expanded(
                   child: GridView.count(
                     mainAxisSpacing: axisSpacing,

@@ -53,7 +53,7 @@ class NotificationWidget extends StatelessWidget {
                   flex: upperFlex,
                   child: Text(
                     LocaleKeys.notification_text.tr(),
-                    style: CustomTheme.notificationTextSize,
+                    style: CustomTheme().notificationTextSize,
                     textAlign: TextAlign.center,
                   ),
                 ),

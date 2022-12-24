@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:water_tracker/custom_theme.dart';
+import 'package:water_tracker/generated/assets/assets.gen.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({
@@ -35,7 +36,10 @@ class CustomButton extends StatelessWidget {
         padding: paddingAroundButton,
         child: Text(
           text,
-          style: TextStyle(fontSize: CustomTheme.fontSizeButton, color: textButtonColor),
+          style: TextStyle(
+              fontSize: CustomTheme.fontSizeButton,
+              color: textButtonColor,
+              fontFamily: Assets.fonts.montserratItalicVariableFontWght),
         ),
       ),
     );

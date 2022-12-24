@@ -47,10 +47,10 @@ class _MainLayoutState extends State<MainLayout> {
                 RichText(
                   text: TextSpan(
                     children: <TextSpan>[
-                      TextSpan(text: LocaleKeys.you_already_got.tr(), style: CustomTheme.gotCupsTextProperty),
-                      TextSpan(text: ' ${state.counter}', style: CustomTheme.countTextProperty),
-                      const TextSpan(text: '/$cupsMaxCount ', style: CustomTheme.partOfCountTextProperty),
-                      TextSpan(text: LocaleKeys.cups.tr(), style: CustomTheme.gotCupsTextProperty),
+                      TextSpan(text: LocaleKeys.you_already_got.tr(), style: CustomTheme().gotCupsTextProperty),
+                      TextSpan(text: ' ${state.counter}', style: CustomTheme().countTextProperty),
+                      TextSpan(text: '/$cupsMaxCount ', style: CustomTheme().partOfCountTextProperty),
+                      TextSpan(text: LocaleKeys.cups.tr(), style: CustomTheme().gotCupsTextProperty),
                     ],
                   ),
                 ),
@@ -59,7 +59,7 @@ class _MainLayoutState extends State<MainLayout> {
                   alignment: Alignment.topLeft,
                   child: Text(
                     '${state.counter * 250}${LocaleKeys.ml.tr()}',
-                    style: CustomTheme.counterMl,
+                    style: CustomTheme().counterMl,
                   ),
                 ),
                 spaceBetweenManAndMl,

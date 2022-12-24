@@ -15,24 +15,24 @@ class PrivacyPolicyAndTermsWidget extends StatelessWidget {
       child: Text.rich(
         TextSpan(
           text: LocaleKeys.by_signing_in_you_agree_to_our.tr(),
-          style: CustomTheme.restText,
+          style: CustomTheme().restText,
           children: <TextSpan>[
             CustomTheme.spaceTextSpan,
             TextSpan(
               text: LocaleKeys.terms.tr(),
-              style: CustomTheme.termsProperty,
+              style: CustomTheme().termsProperty,
               recognizer: TapGestureRecognizer()..onTap = () {},
               // TODO:  code to open / launch terms of service link here
             ),
             CustomTheme.spaceTextSpan,
             TextSpan(
               text: LocaleKeys.and.tr(),
-              style: CustomTheme.privacyProperty,
+              style: CustomTheme().privacyProperty,
             ),
             CustomTheme.spaceTextSpan,
             TextSpan(
               text: LocaleKeys.privacy_policy.tr(),
-              style: CustomTheme.privacyPolicyTextProperty,
+              style: CustomTheme().privacyPolicyTextProperty,
               recognizer: TapGestureRecognizer()
                 ..onTap = () {
                   // TODO:  code to open / launch terms of service link here

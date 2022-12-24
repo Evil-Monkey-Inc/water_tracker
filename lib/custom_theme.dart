@@ -1,25 +1,64 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:water_tracker/generated/assets/assets.gen.dart';
+import 'generated/locale_keys.g.dart';
 
 class CustomTheme {
-  static const privacyPolicyProperty = TextStyle(
+  final privacyPolicyProperty = TextStyle(
+    fontSize: 16,
+    color: Colors.black,
+    fontWeight: FontWeight.w500,
+    decoration: TextDecoration.underline,
+    fontFamily: Assets.fonts.montserratVariableFontWght,
+  );
+
+  final counterProperty = TextStyle(
+    fontSize: 56,
+    color: CustomTheme.mainColor,
+    fontWeight: FontWeight.w300,
+    fontFamily: Assets.fonts.montserratVariableFontWght,
+  );
+
+  final tabFemaleTextProperty = Text(
+    LocaleKeys.woman.tr(),
+    style: TextStyle(
+      fontSize: 16,
+      fontFamily: Assets.fonts.montserratVariableFontWght,
+      fontWeight: FontWeight.w500,
+    ),
+  );
+
+  final tabMaleTextProperty = Text(LocaleKeys.man.tr(),
+      style: TextStyle(
+        fontSize: 16,
+        fontFamily: Assets.fonts.montserratVariableFontWght,
+        fontWeight: FontWeight.w500,
+      ));
+
+  final selectSexButtonProp = TextStyle(
+    fontSize: 16,
+    fontFamily: Assets.fonts.montserratVariableFontWght,
+    fontWeight: FontWeight.w500,
+  );
+
+  final largeText = TextStyle(
+    fontSize: 34,
+    fontFamily: Assets.fonts.montserratVariableFontWght,
+    fontWeight: FontWeight.w500,
+  );
+
+  final termsProperty = TextStyle(
     fontSize: 16,
     color: Colors.black,
     fontWeight: FontWeight.bold,
     decoration: TextDecoration.underline,
+    fontFamily: Assets.fonts.montserratItalicVariableFontWght,
   );
 
-  static const largeText = TextStyle(fontSize: 34);
-
-  static const termsProperty = TextStyle(
+  final restText = TextStyle(
     fontSize: 16,
     color: Colors.black,
-    fontWeight: FontWeight.bold,
-    decoration: TextDecoration.underline,
-  );
-
-  static const restText = TextStyle(
-    fontSize: 16,
-    color: Colors.black,
+    fontFamily: Assets.fonts.montserratItalicVariableFontWght,
   );
 
   static const focusedBorder = OutlineInputBorder(
@@ -49,36 +88,68 @@ class CustomTheme {
     borderSide: BorderSide(color: Colors.red),
   );
 
-  static const privacyPolicyTextProperty = TextStyle(
+  final privacyPolicyTextProperty = TextStyle(
     fontSize: 16,
     color: Colors.black,
     decoration: TextDecoration.underline,
-    fontWeight: FontWeight.bold,
+    fontWeight: FontWeight.w500,
+    fontFamily: Assets.fonts.montserratVariableFontWght,
   );
 
   static const decorationColor = Colors.white;
 
   static const shadowColor = Color(0xFFFAFAFA);
 
-  static const header = TextStyle(fontSize: 20);
+  final header = TextStyle(
+    fontSize: 16,
+    fontFamily: Assets.fonts.montserratVariableFontWght,
+    fontWeight: FontWeight.w500,
+  );
 
-  static const counterMl = TextStyle(fontSize: 18, color: mainColor);
+  final counterMl = TextStyle(
+    fontSize: 18,
+    color: mainColor,
+    fontFamily: Assets.fonts.montserratVariableFontWght,
+  );
 
-  static const notificationTextSize = TextStyle(fontSize: 24);
+  final notificationTextSize = TextStyle(
+    fontSize: 24,
+    fontFamily: Assets.fonts.montserratVariableFontWght,
+    fontWeight: FontWeight.w500,
+  );
 
   static const sizeOfButton = TextStyle(fontSize: 16);
 
-  static const sizeOfDataWidget = TextStyle(fontSize: 20);
+  final sizeOfDataWidget = TextStyle(
+    fontSize: 20,
+    fontFamily: Assets.fonts.montserratVariableFontWght,
+    fontWeight: FontWeight.w500,
+  );
 
-  static const gotCupsTextProperty = TextStyle(fontSize: 36, color: mainColor);
+  final gotCupsTextProperty = TextStyle(
+    fontSize: 36,
+    color: mainColor,
+    fontFamily: Assets.fonts.montserratVariableFontWght,
+    fontWeight: FontWeight.w500,
+  );
 
   static const countTextColor = Color(0xFF7E32CB);
 
-  static const countTextProperty = TextStyle(fontSize: 36, color: countTextColor);
+  final countTextProperty = TextStyle(
+    fontSize: 36,
+    color: countTextColor,
+    fontFamily: Assets.fonts.montserratVariableFontWght,
+    fontWeight: FontWeight.w500,
+  );
 
   static const textPurple = Color(0xFFBA68C8);
 
-  static const partOfCountTextProperty = TextStyle(fontSize: 36, color: textPurple);
+  final partOfCountTextProperty = TextStyle(
+    fontSize: 36,
+    color: textPurple,
+    fontFamily: Assets.fonts.montserratVariableFontWght,
+    fontWeight: FontWeight.w500,
+  );
 
   static const fontSizeButton = 16.0;
 
@@ -98,15 +169,20 @@ class CustomTheme {
 
   static const skipButtonColor = Color(0xFF1D82F9);
 
-  static const privacyProperty = TextStyle(fontSize: 16, color: mainColor);
+  final privacyProperty =
+      TextStyle(fontSize: 16, color: mainColor, fontFamily: Assets.fonts.montserratVariableFontWght);
 
-  static const skipButtonsStyle = TextStyle(fontSize: 22, color: skipButtonColor);
+  final skipButtonsStyle =
+      TextStyle(fontSize: 16, color: skipButtonColor, fontFamily: Assets.fonts.montserratVariableFontWght);
 
-  static const titleSettingsProperty = TextStyle(fontSize: 34, color: mainColor, fontWeight: FontWeight.bold);
+  final titleSettingsProperty = TextStyle(
+      fontSize: 34, color: mainColor, fontWeight: FontWeight.w500, fontFamily: Assets.fonts.montserratVariableFontWght);
 
   static const borderFillColor = Color(0xFFA6ABB5);
 
-  static const borderLabelStyle = TextStyle(color: mainColor);
+  static const labelTextColor = Color(0xFFA6ABB5);
+
+  static const borderLabelStyle = TextStyle(color: labelTextColor);
 
   static const backgroundFieldColor = Color(0xFFF2F4F8);
 
@@ -116,15 +192,29 @@ class CustomTheme {
 
   static const buttonLightColor = Color(0xFFF1F1F1);
 
-  static const minimumSizeButton = Size.fromHeight(12);
+  static const minimumSizeButton = Size.fromHeight(8);
 
-  static const setupScreenProperty = TextStyle(fontSize: 24, color: mainColor, fontWeight: FontWeight.bold);
+  final setupScreenProperty = TextStyle(
+    fontSize: 20,
+    color: mainColor,
+    fontWeight: FontWeight.w500,
+    fontFamily: Assets.fonts.montserratVariableFontWght,
+  );
 
-  static const greetingsProperty = TextStyle(fontSize: 28, color: mainColor);
+  final greetingsProperty = TextStyle(
+    fontSize: 24,
+    color: CustomTheme.mainColor,
+    fontWeight: FontWeight.w500,
+    fontFamily: Assets.fonts.montserratVariableFontWght,
+  );
 
   static const themeColor = Color(0xFF8F9AA9);
 
-  static const notHaveAccountProperty = TextStyle(fontSize: 16, color: themeColor);
+  final notHaveAccountProperty = TextStyle(
+    fontSize: 16,
+    color: themeColor,
+    fontFamily: Assets.fonts.montserratVariableFontWght,
+  );
 
   static const signUpProperty = TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.bold);
 

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:water_tracker/custom_theme.dart';
 import 'package:water_tracker/data/models/goal.dart';
 import 'package:water_tracker/data/models/goal_widget_model.dart';
+import 'package:water_tracker/generated/assets/assets.gen.dart';
 import 'package:water_tracker/presentation/widgets/icon_image_widget.dart';
 
 class GoalWidget extends StatefulWidget {
@@ -80,6 +81,8 @@ class _GoalWidgetState extends State<GoalWidget> with SingleTickerProviderStateM
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: iconTitleSize.toDouble(),
+                    fontWeight: FontWeight.w500,
+                    fontFamily: Assets.fonts.montserratVariableFontWght,
                     color: isSelected ? CustomTheme.decorationColor : CustomTheme.mainColor,
                   ),
                 ),

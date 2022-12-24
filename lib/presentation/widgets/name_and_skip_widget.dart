@@ -18,14 +18,14 @@ class NameAndSkipWidget extends StatelessWidget {
       centerTitle: true,
       title: Text(
         LocaleKeys.setup_profile.tr(),
-        style: CustomTheme.setupScreenProperty,
+        style: CustomTheme().setupScreenProperty,
       ),
       actions: [
         TextButton(
           onPressed: onPressed,
           child: Text(
             LocaleKeys.skip.tr(),
-            style: CustomTheme.skipButtonsStyle,
+            style: CustomTheme().skipButtonsStyle,
           ),
         ),
       ],

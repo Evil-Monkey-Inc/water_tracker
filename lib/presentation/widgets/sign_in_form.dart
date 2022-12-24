@@ -1,8 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:water_tracker/custom_theme.dart';
 import 'package:water_tracker/env_variables.dart';
 import 'package:water_tracker/form_validators.dart';
+import 'package:water_tracker/generated/assets/assets.gen.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
 import 'package:water_tracker/presentation/widgets/custom_button.dart';
 import 'package:water_tracker/presentation/widgets/input_field_widget.dart';
@@ -31,7 +33,7 @@ class _MyLogFormWidgetState extends State<SignInForm> {
         children: [
           Text(
             LocaleKeys.welcome_back_tony.tr(),
-            style: CustomTheme.greetingsProperty,
+            style: CustomTheme().greetingsProperty,
           ),
           spacer,
           InputFieldWidget(
