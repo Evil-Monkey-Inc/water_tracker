@@ -46,17 +46,20 @@ class _MyLogFormWidgetState extends State<SignUpForm> {
             labelText: LocaleKeys.enter_your_email.tr(),
             validator: FormValidators.emailValidator,
             controller: _email,
+            obscureText: false,
           ),
           spacer,
           InputFieldWidget(
             labelText: LocaleKeys.enter_password.tr(),
             validator: FormValidators.passwordRegValidator,
             controller: _pass,
+            obscureText: false,
           ),
           spacer,
           InputFieldWidget(
             labelText: LocaleKeys.re_enter_your_password.tr(),
             validator: (value) => FormValidators.repeatPasswordValidator(value, _pass.text),
+            obscureText: false,
           ),
           spacer,
           CustomButton(
