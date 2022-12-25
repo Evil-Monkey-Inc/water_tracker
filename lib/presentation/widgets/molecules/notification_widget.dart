@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:water_tracker/custom_theme.dart';
 import 'package:water_tracker/generated/assets/assets.gen.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
-import 'package:water_tracker/presentation/widgets/custom_button.dart';
+import 'package:water_tracker/presentation/widgets/molecules/custom_button.dart';
 
 class NotificationWidget extends StatelessWidget {
   const NotificationWidget({super.key});

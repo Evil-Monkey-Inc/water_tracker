@@ -1,8 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:water_tracker/generated/assets/assets.gen.dart';
-import 'package:water_tracker/presentation/widgets/calendar_widget.dart';
-import 'package:water_tracker/presentation/widgets/custom_icon_button_widget.dart';
+import 'package:water_tracker/presentation/widgets/atoms/calendar_widget.dart';
+import 'package:water_tracker/presentation/widgets/atoms/custom_icon_button_widget.dart';
 
 class AssistantWidget extends StatefulWidget {
   const AssistantWidget({super.key});

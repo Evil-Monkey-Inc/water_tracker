@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:water_tracker/custom_theme.dart';
 import 'package:water_tracker/data/models/goal.dart';
 import 'package:water_tracker/data/models/goal_widget_model.dart';
-import 'package:water_tracker/presentation/widgets/icon_image_widget.dart';
+import 'package:water_tracker/presentation/widgets/atoms/icon_image_widget.dart';
 
 class GoalWidget extends StatefulWidget {
   const GoalWidget({

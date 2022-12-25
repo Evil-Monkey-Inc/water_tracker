@@ -6,12 +6,12 @@ import 'package:water_tracker/presentation/screens/main_screen/main_screen.dart'
 import 'package:water_tracker/presentation/screens/sign_in_screen/bloc/sign_in_bloc.dart';
 import 'package:water_tracker/presentation/screens/sign_in_screen/bloc/sign_in_event.dart';
 import 'package:water_tracker/presentation/screens/sign_in_screen/bloc/sign_in_state.dart';
-import 'package:water_tracker/presentation/widgets/hiding_on_keyboard_shown_widget.dart';
-import 'package:water_tracker/presentation/widgets/logo_widget.dart';
-import 'package:water_tracker/presentation/widgets/not_have_account_widget.dart';
-import 'package:water_tracker/presentation/widgets/person_image_widget.dart';
-import 'package:water_tracker/presentation/widgets/privacy_policy_and_terms_widget.dart';
-import 'package:water_tracker/presentation/widgets/sign_in_form.dart';
+import 'package:water_tracker/presentation/widgets/molecules/hiding_on_keyboard_shown_widget.dart';
+import 'package:water_tracker/presentation/widgets/atoms/logo_widget.dart';
+import 'package:water_tracker/presentation/widgets/molecules/not_have_account_widget.dart';
+import 'package:water_tracker/presentation/widgets/atoms/person_image_widget.dart';
+import 'package:water_tracker/presentation/widgets/molecules/privacy_policy_and_terms_widget.dart';
+import 'package:water_tracker/presentation/widgets/organisms/sign_in_form.dart';
 
 class SignInLayout extends StatefulWidget {
   const SignInLayout({super.key});

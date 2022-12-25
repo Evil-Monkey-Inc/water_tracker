@@ -4,9 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:water_tracker/custom_theme.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
 import 'package:water_tracker/presentation/screens/main_screen/bloc/main_screen_bloc.dart';
-import 'package:water_tracker/presentation/widgets/assistant_widget.dart';
-import 'package:water_tracker/presentation/widgets/custom_button.dart';
-import 'package:water_tracker/presentation/widgets/person_image_widget.dart';
+import 'package:water_tracker/presentation/widgets/molecules/assistant_widget.dart';
+import 'package:water_tracker/presentation/widgets/molecules/custom_button.dart';
+import 'package:water_tracker/presentation/widgets/atoms/person_image_widget.dart';
 
 import 'package:water_tracker/presentation/screens/main_screen/bloc/main_screen_event.dart';
 import 'package:water_tracker/presentation/screens/main_screen/bloc/main_screen_state.dart';
