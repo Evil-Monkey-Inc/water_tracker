@@ -26,6 +26,7 @@ class _CustomSliderWidgetState extends State<CustomSliderWidget> {
   static const disabledThumbRadius = 5;
   static const spaces = SizedBox(height: 24);
   static const counterProperty = CustomTheme.sliderProperty;
+
   late int generalInfValue;
 
   @override
@@ -43,7 +44,7 @@ class _CustomSliderWidgetState extends State<CustomSliderWidget> {
         spaces,
         Text(
           generalInfValue.round().toString(),
-          style: counterProperty,
+          style: CustomTheme().counterProperty,
         ),
         SliderTheme(
           data: SliderThemeData(
@@ -55,8 +56,8 @@ class _CustomSliderWidgetState extends State<CustomSliderWidget> {
             trackHeight: lineHeight,
             activeTrackColor: CustomTheme.mainColor,
             inactiveTrackColor: CustomTheme.backgroundSliderLine,
-            activeTickMarkColor: Colors.transparent,
-            inactiveTickMarkColor: Colors.transparent,
+            activeTickMarkColor: CustomTheme.customButtonShadowColor,
+            inactiveTickMarkColor: CustomTheme.customButtonShadowColor,
             thumbColor: CustomTheme.mainColor,
           ),
           child: Slider(

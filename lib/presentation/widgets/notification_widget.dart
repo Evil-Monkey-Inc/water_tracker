@@ -53,7 +53,7 @@ class NotificationWidget extends StatelessWidget {
                   flex: upperFlex,
                   child: Text(
                     LocaleKeys.notification_text.tr(),
-                    style: CustomTheme.notificationTextSize,
+                    style: CustomTheme().notificationTextSize,
                     textAlign: TextAlign.center,
                   ),
                 ),
@@ -67,7 +67,7 @@ class NotificationWidget extends StatelessWidget {
               text: LocaleKeys.every_hour.tr(),
               onPressed: () {},
               buttonColor: CustomTheme.buttonLightColor,
-              textButtonColor: Colors.black,
+              textButtonColor: CustomTheme.textButtonColor,
             ),
           ),
           spaceBetweenButtons,

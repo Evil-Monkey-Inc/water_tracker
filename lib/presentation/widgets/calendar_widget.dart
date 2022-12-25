@@ -15,7 +15,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
   Widget build(BuildContext context) {
     return Text(
       widget.dateTime.toString(),
-      style: CustomTheme.sizeOfDataWidget,
+      style: CustomTheme().sizeOfDataWidget,
     );
   }
 }

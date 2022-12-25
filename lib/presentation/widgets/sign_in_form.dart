@@ -42,7 +42,7 @@ class _MyLogFormWidgetState extends State<SignInForm> {
         children: [
           Text(
             LocaleKeys.welcome_back_tony.tr(),
-            style: CustomTheme.greetingsProperty,
+            style: CustomTheme().greetingsProperty,
           ),
           spacer,
           InputFieldWidget(

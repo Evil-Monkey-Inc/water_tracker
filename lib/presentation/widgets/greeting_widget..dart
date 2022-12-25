@@ -27,7 +27,7 @@ class GreetingWidget extends StatelessWidget {
             child: Text(
               LocaleKeys.manage_water_title.tr(),
               textAlign: TextAlign.center,
-              style: CustomTheme.largeText,
+              style: CustomTheme().largeText,
             ),
           ),
           space,
@@ -36,7 +36,7 @@ class GreetingWidget extends StatelessWidget {
             child: Text(
               LocaleKeys.description.tr(),
               textAlign: TextAlign.center,
-              style: CustomTheme.header,
+              style: CustomTheme().header,
             ),
           ),
         ],

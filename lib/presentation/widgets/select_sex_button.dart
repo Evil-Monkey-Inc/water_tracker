@@ -15,12 +15,12 @@ class SelectSexButton extends StatefulWidget {
 class _SelectSexButtonState extends State<SelectSexButton> with SingleTickerProviderStateMixin {
   static const indicatorWeight = 2.0;
   static const countTabs = 2;
-  static const buttonWeight = 62.0;
-  static const heightButton = 80.0;
-  static const space = SizedBox(height: 20);
+  static const buttonWeight = 55.0;
+  static const heightButton = 72.0;
+  static const space = SizedBox(height: 14);
   static const spaceInsideButton = EdgeInsets.all(8);
   final sexTextProperty = Text(LocaleKeys.sex.tr(), style: CustomTheme.sexStyleProperty);
-  final tabMaleTextProperty = Text(LocaleKeys.man.tr(), style: CustomTheme.tabMaleTextProperty);
+  final tabMaleTextProperty = Text(LocaleKeys.man.tr(), style: CustomTheme.tabTextFemaleStyleProperty);
   final tabFemaleTextProperty = Text(LocaleKeys.woman.tr(), style: CustomTheme.tabTextFemaleStyleProperty);
 
   late final TabController controller;
@@ -59,8 +59,13 @@ class _SelectSexButtonState extends State<SelectSexButton> with SingleTickerProv
                       indicatorWeight: indicatorWeight,
                       indicator: BoxDecoration(color: CustomTheme.mainColor, borderRadius: BorderRadius.circular(40)),
                       tabs: [
-                        Tab(child: tabMaleTextProperty),
-                        Tab(child: tabFemaleTextProperty),
+                        Tab(child: Text(LocaleKeys.man.tr(), style: CustomTheme().tabMaleTextProperty)),
+                        Tab(
+                          child: Text(
+                            LocaleKeys.woman.tr(),
+                            style: CustomTheme().tabFemaleTextProperty,
+                          ),
+                        ),
                       ],
                     ),
                   ),

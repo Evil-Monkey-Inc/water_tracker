@@ -21,7 +21,7 @@ class NotHaveAccount extends StatelessWidget {
               textAlign: TextAlign.center,
               TextSpan(
                 text: LocaleKeys.dont_have_an_account_yet.tr(),
-                style: CustomTheme.notHaveAccountProperty,
+                style: CustomTheme().notHaveAccountProperty,
                 children: [
                   spaceTextSpan,
                   TextSpan(

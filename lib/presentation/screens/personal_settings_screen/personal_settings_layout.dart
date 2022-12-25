@@ -26,9 +26,9 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
   int weight = minValueWeight;
   int age = minValueAge;
 
-  final sliderWeightTextProperty = Text(LocaleKeys.weight.tr(), style: CustomTheme.header);
-  final sliderAgeTextProperty = Text(LocaleKeys.age.tr(), style: CustomTheme.header);
-  static const spaces = SizedBox(height: 24);
+  final sliderWeightTextProperty = Text(LocaleKeys.weight.tr(), style: CustomTheme().header);
+  final sliderAgeTextProperty = Text(LocaleKeys.age.tr(), style: CustomTheme().header);
+  static const spaces = SizedBox(height: 14);
   static const paddingHorizontal = EdgeInsets.symmetric(horizontal: 24.0);
   static const maxValueAge = 100;
   static const minValueAge = 5;
@@ -73,14 +73,12 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
                   spaces,
                   spaces,
                   SelectSexButton(onChanged: (value) => setState(() => gender = value)),
-                  spaces,
                   CustomSliderWidget(
                     onChanged: (value) => setState(() => age = value),
                     sliderNameAndProperty: sliderAgeTextProperty,
                     maxValue: maxValueAge,
                     minValue: minValueAge,
                   ),
-                  spaces,
                   CustomSliderWidget(
                     onChanged: (value) => setState(() => weight = value),
                     sliderNameAndProperty: sliderWeightTextProperty,

@@ -22,6 +22,22 @@ class $AssetsDocsGen {
   List<String> get values => [privacyPolicy, termsAndConditions];
 }
 
+class $AssetsFontsGen {
+  const $AssetsFontsGen();
+
+  /// File path: assets/fonts/Sen-Bold.ttf
+  String get senBold => 'assets/fonts/Sen-Bold.ttf';
+
+  /// File path: assets/fonts/Sen-ExtraBold.ttf
+  String get senExtraBold => 'assets/fonts/Sen-ExtraBold.ttf';
+
+  /// File path: assets/fonts/Sen-Regular.ttf
+  String get senRegular => 'assets/fonts/Sen-Regular.ttf';
+
+  /// List of all assets
+  List<String> get values => [senBold, senExtraBold, senRegular];
+}
+
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
@@ -110,6 +126,7 @@ class Assets {
   Assets._();
 
   static const $AssetsDocsGen docs = $AssetsDocsGen();
+  static const $AssetsFontsGen fonts = $AssetsFontsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
   static const $AssetsTranslationsGen translations = $AssetsTranslationsGen();
 }

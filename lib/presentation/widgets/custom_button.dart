@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:water_tracker/custom_theme.dart';
+import 'package:water_tracker/generated/assets/assets.gen.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({
@@ -26,7 +27,7 @@ class CustomButton extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         backgroundColor: buttonColor,
         elevation: 0.0,
-        shadowColor: Colors.transparent,
+        shadowColor: CustomTheme.customButtonShadowColor,
         padding: paddingInsideButton,
         minimumSize: CustomTheme.minimumSizeButton,
         shape: const RoundedRectangleBorder(borderRadius: CustomTheme.roundingButton),
@@ -35,7 +36,7 @@ class CustomButton extends StatelessWidget {
         padding: paddingAroundButton,
         child: Text(
           text,
-          style: TextStyle(fontSize: CustomTheme.fontSizeButton, color: textButtonColor),
+          style: CustomTheme().buttonStyleProp.copyWith(color: textButtonColor),
         ),
       ),
     );
