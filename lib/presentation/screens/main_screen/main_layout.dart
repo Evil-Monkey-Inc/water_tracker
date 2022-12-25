@@ -19,7 +19,9 @@ class MainLayout extends StatefulWidget {
 }
 
 class _MainLayoutState extends State<MainLayout> {
-  static const cupsMaxCount = 8;
+  static const cupsMaxCount = MainScreenBloc.maxCupCount;
+  static const singleCupWeight = MainScreenBloc.singleCupWeight;
+
   static const paddingHorizontal = EdgeInsets.symmetric(horizontal: 28.0);
   static const spaces = SizedBox(height: 24);
   static const betweenCounters = SizedBox(height: 16);
@@ -37,7 +39,18 @@ class _MainLayoutState extends State<MainLayout> {
     return Scaffold(
       body: Padding(
         padding: paddingHorizontal,
-        child: BlocBuilder<MainScreenBloc, CounterState>(
+        child: BlocConsumer<MainScreenBloc, MainScreenState>(
+          listener: (context, state) {
+            if (state is ErrorMainScreenState) {
+              ScaffoldMessenger.of(context).hideCurrentSnackBar();
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  behavior: SnackBarBehavior.floating,
+                  content: Text(LocaleKeys.failed_to_increment_count.tr()),
+                ),
+              );
+            }
+          },
           builder: (context, state) {
             return Column(
               children: [
@@ -58,7 +71,7 @@ class _MainLayoutState extends State<MainLayout> {
                 Align(
                   alignment: Alignment.topLeft,
                   child: Text(
-                    '${state.counter * 250}${LocaleKeys.ml.tr()}',
+                    '${state.counter * singleCupWeight}${LocaleKeys.ml.tr()}',
                     style: CustomTheme().counterMl,
                   ),
                 ),
@@ -70,10 +83,7 @@ class _MainLayoutState extends State<MainLayout> {
                 spaceBetween,
                 CustomButton(
                   text: 'ad',
-                  onPressed: () {
-                    context.read<MainScreenBloc>().add(SaveCounterEvent(state.counter));
-                    context.read<MainScreenBloc>().add(AppLaunchEvent());
-                  },
+                  onPressed: () => context.read<MainScreenBloc>().add(SaveCounterEvent()),
                   buttonColor: Colors.red,
                   textButtonColor: Colors.red,
                 ),
@@ -85,5 +95,3 @@ class _MainLayoutState extends State<MainLayout> {
     );
   }
 }
-// context.read<MainScreenBloc>().add(SaveCounterEvent(counterCups))
-// counterCups < 8 ? _incrementCounterCups : null

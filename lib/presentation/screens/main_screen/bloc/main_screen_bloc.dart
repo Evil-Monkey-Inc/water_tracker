@@ -3,15 +3,28 @@ import 'package:water_tracker/data/repository/repository.dart';
 import 'package:water_tracker/presentation/screens/main_screen/bloc/main_screen_event.dart';
 import 'package:water_tracker/presentation/screens/main_screen/bloc/main_screen_state.dart';
 
-class MainScreenBloc extends Bloc<MainScreenEvent, CounterState> {
-  MainScreenBloc(this.repository) : super(CounterState(counter: 0)) {
+class MainScreenBloc extends Bloc<MainScreenEvent, MainScreenState> {
+  MainScreenBloc(this.repository) : super(CounterState(0)) {
     on<SaveCounterEvent>((event, emit) async {
-      await repository.saveCupCount(state.counter + 1);
+      try {
+        emit(CounterState(0));
+        final newCount = state.counter + 1;
+        if (newCount > maxCupCount) return;
+        final isSaved = await repository.saveCupCount(newCount);
+        emit(isSaved ? CounterState(newCount) : ErrorMainScreenState(state.counter));
+      } catch (e) {
+        ErrorMainScreenState(state.counter);
+      }
     });
     on<AppLaunchEvent>((event, emit) async {
       final result = await repository.getCupCount(DateTime.now());
-      emit(CounterState(counter: result!));
+      emit(result == null ? ErrorMainScreenState(state.counter) : CounterState(result));
     });
   }
+
+  static const maxCupCount = 8;
+
+  static const singleCupWeight = 250;
+
   final Repository repository;
 }

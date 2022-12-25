@@ -1,13 +1,13 @@
-abstract class MainScreenState {}
+abstract class MainScreenState {
+  const MainScreenState(this.counter);
 
-class InitialMainScreenState extends MainScreenState {}
-
-class CounterState extends MainScreenState {
-  CounterState({required this.counter});
   final int counter;
 }
 
+class CounterState extends MainScreenState {
+  CounterState(super.counter);
+}
+
 class ErrorMainScreenState extends MainScreenState {
-  ErrorMainScreenState(this.exception);
-  final Object exception;
+  ErrorMainScreenState(super.counter);
 }
