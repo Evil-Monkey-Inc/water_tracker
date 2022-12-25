@@ -70,6 +70,8 @@ class CustomTheme {
 
   static const sizeOfDataWidget = TextStyle(fontSize: 20);
 
+  static const tabTextFemaleStyleProperty = TextStyle(fontSize: 20);
+
   static const gotCupsTextProperty = TextStyle(fontSize: 36, color: mainColor);
 
   static const countTextColor = Color(0xFF7E32CB);
@@ -125,6 +127,14 @@ class CustomTheme {
   static const privacyPolicyBackground = Colors.white;
 
   static const themeColor = Color(0xFF8F9AA9);
+
+  static const textSpanStyle = TextStyle(fontSize: 16, color: Colors.black);
+
+  static const sliderProperty = TextStyle(fontSize: 60, color: CustomTheme.mainColor);
+
+  static const sexStyleProperty = TextStyle(fontSize: 20);
+
+  static const tabMaleTextProperty = TextStyle(fontSize: 20);
 
   static const notHaveAccountProperty = TextStyle(fontSize: 16, color: themeColor);
 

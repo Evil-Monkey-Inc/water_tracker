@@ -19,9 +19,9 @@ class _SelectSexButtonState extends State<SelectSexButton> with SingleTickerProv
   static const heightButton = 80.0;
   static const space = SizedBox(height: 20);
   static const spaceInsideButton = EdgeInsets.all(8);
-  final sexTextProperty = Text(LocaleKeys.sex.tr(), style: const TextStyle(fontSize: 20));
-  final tabMaleTextProperty = Text(LocaleKeys.man.tr(), style: const TextStyle(fontSize: 20));
-  final tabFemaleTextProperty = Text(LocaleKeys.woman.tr(), style: const TextStyle(fontSize: 20));
+  final sexTextProperty = Text(LocaleKeys.sex.tr(), style: CustomTheme.sexStyleProperty);
+  final tabMaleTextProperty = Text(LocaleKeys.man.tr(), style: CustomTheme.tabMaleTextProperty);
+  final tabFemaleTextProperty = Text(LocaleKeys.woman.tr(), style: CustomTheme.tabTextFemaleStyleProperty);
 
   late final TabController controller;
 

@@ -7,20 +7,23 @@ class InputFieldWidget extends StatelessWidget {
     required this.labelText,
     this.validator,
     this.controller,
+    this.obscureText = false,
+    this.suffixIcon,
   }) : super(key: key);
 
   final String labelText;
   final SingleRegistrationValidatorFunction? validator;
   final TextEditingController? controller;
+  final bool obscureText;
+  final Widget? suffixIcon;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      decoration: InputDecoration(
-        labelText: labelText,
-      ),
+      decoration: InputDecoration(labelText: labelText, suffixIcon: suffixIcon),
       validator: validator,
       controller: controller,
+      obscureText: obscureText,
     );
   }
 }
