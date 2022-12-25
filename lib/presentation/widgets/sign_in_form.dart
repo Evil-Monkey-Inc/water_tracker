@@ -22,7 +22,7 @@ class _MyLogFormWidgetState extends State<SignInForm> {
   static const spacer = SizedBox(height: 28);
   final formKey = GlobalKey<FormState>();
   final emailNode = FocusNode();
-  bool secureController = false;
+  var secureController = true;
 
   static const visibilityOff = Icon(
     Icons.visibility_off,
@@ -55,10 +55,10 @@ class _MyLogFormWidgetState extends State<SignInForm> {
             labelText: LocaleKeys.enter_password.tr(),
             validator: FormValidators.passwordRegValidator,
             controller: _pass,
-            obscureText: !secureController,
+            obscureText: secureController,
             suffixIcon: GestureDetector(
               onTap: () => setState(() => secureController = !secureController),
-              child: secureController ? visibilityOff : visibility,
+              child: secureController ? visibility : visibilityOff,
             ),
           ),
           spacer,
