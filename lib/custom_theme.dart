@@ -98,6 +98,8 @@ class CustomTheme {
     fontFamily: Assets.fonts.senBold,
   );
 
+  static const notHaveAccountStyle = TextStyle(fontSize: 16, color: mainColor);
+
   final counterMl = TextStyle(
     fontSize: 18,
     color: mainColor,
@@ -218,6 +220,8 @@ class CustomTheme {
   );
 
   static const signUpProperty = TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.bold);
+
+  static const notHaveAccount = TextStyle(fontSize: 16, color: Colors.black);
 
   static const focusColor = mainColor;
 
