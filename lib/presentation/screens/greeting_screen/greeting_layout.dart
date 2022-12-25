@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:water_tracker/custom_theme.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
 import 'package:water_tracker/presentation/screens/main_screen/main_screen.dart';
-import 'package:water_tracker/presentation/widgets/custom_button.dart';
-import 'package:water_tracker/presentation/widgets/greeting_widget.dart';
+import 'package:water_tracker/presentation/widgets/molecules/custom_button.dart';
+import 'package:water_tracker/presentation/widgets/molecules/greeting_widget.dart';
 
 class GreetingLayout extends StatelessWidget {
   const GreetingLayout({super.key});

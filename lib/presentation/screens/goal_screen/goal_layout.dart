@@ -9,10 +9,10 @@ import 'package:water_tracker/presentation/screens/goal_screen/bloc/goal_bloc.da
 import 'package:water_tracker/presentation/screens/goal_screen/bloc/goal_event.dart';
 import 'package:water_tracker/presentation/screens/goal_screen/bloc/goal_state.dart';
 import 'package:water_tracker/presentation/screens/notification_screen/notification_screen.dart';
-import 'package:water_tracker/presentation/widgets/custom_button.dart';
-import 'package:water_tracker/presentation/widgets/goal_widget.dart';
-import 'package:water_tracker/presentation/widgets/name_and_skip_widget.dart';
-import 'package:water_tracker/presentation/widgets/title_settings_widget.dart';
+import 'package:water_tracker/presentation/widgets/molecules/custom_button.dart';
+import 'package:water_tracker/presentation/widgets/molecules/goal_widget.dart';
+import 'package:water_tracker/presentation/widgets/molecules/name_and_skip_widget.dart';
+import 'package:water_tracker/presentation/widgets/atoms/title_settings_widget.dart';
 
 class GoalLayout extends StatefulWidget {
   const GoalLayout({super.key});
