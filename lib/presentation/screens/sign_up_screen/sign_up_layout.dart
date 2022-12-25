@@ -7,6 +7,7 @@ import 'package:water_tracker/presentation/screens/sign_up_screen/bloc/sign_up_b
 import 'package:water_tracker/presentation/screens/sign_up_screen/bloc/sign_up_event.dart';
 import 'package:water_tracker/presentation/screens/sign_up_screen/bloc/sign_up_state.dart';
 import 'package:water_tracker/presentation/widgets/already_have_an_account.widget.dart';
+import 'package:water_tracker/presentation/widgets/hiding_on_keyboard_shown_widget.dart';
 import 'package:water_tracker/presentation/widgets/logo_widget.dart';
 import 'package:water_tracker/presentation/widgets/person_image_widget.dart';
 import 'package:water_tracker/presentation/widgets/privacy_policy_and_terms_widget.dart';
@@ -45,7 +46,10 @@ class _SignUpLayoutState extends State<SignUpLayout> {
                   spaces,
                   const LogoWidget(),
                   spaces,
-                  PersonImageWidget.womanWay(),
+                  HidingOnKeyboardShownWidget(
+                    childHeight: PersonImageWidget.imageHeight,
+                    child: PersonImageWidget.womanWay(),
+                  ),
                   SignUpForm(
                     isButtonEnabled: state is! LoadingSignUpState,
                     onSignUpButtonPressed: (email, pass) =>
