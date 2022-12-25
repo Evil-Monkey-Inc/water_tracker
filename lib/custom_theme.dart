@@ -242,8 +242,6 @@ class CustomTheme {
 
   static const sexStyleProperty = TextStyle(fontSize: 20);
 
-  static const tabMaleTextProperty = TextStyle(fontSize: 20);
-
   final notHaveAccountProperty = TextStyle(
     fontSize: 16,
     color: themeColor,
