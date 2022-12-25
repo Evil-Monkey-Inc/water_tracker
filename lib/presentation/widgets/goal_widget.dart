@@ -1,17 +1,16 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:water_tracker/custom_theme.dart';
-import 'package:water_tracker/custom_theme.dart';
 import 'package:water_tracker/data/models/goal.dart';
 import 'package:water_tracker/data/models/goal_widget_model.dart';
 import 'package:water_tracker/presentation/widgets/icon_image_widget.dart';
 
 class GoalWidget extends StatefulWidget {
   const GoalWidget({
-    Key? key,
+    super.key,
     required this.model,
     required this.onChanged,
-  }) : super(key: key);
+  });
 
   final GoalWidgetModel model;
   final void Function(Goal goal, bool isSelected) onChanged;
@@ -55,8 +54,8 @@ class _GoalWidgetState extends State<GoalWidget> with SingleTickerProviderStateM
           sizeAnimationController.reverse();
         }),
         onTapDown: (dp) => sizeAnimationController.reverse(),
-        onTapUp: (dp) => Timer(const Duration(milliseconds: animationTime), () => sizeAnimationController.fling()),
-        onTapCancel: () => sizeAnimationController.fling(),
+        onTapUp: (dp) => Timer(const Duration(milliseconds: animationTime), sizeAnimationController.fling),
+        onTapCancel: sizeAnimationController.fling,
         child: AnimatedContainer(
           height: widgetHeight.toDouble(),
           width: widgetWidth.toDouble(),

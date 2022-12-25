@@ -3,12 +3,12 @@ import 'package:water_tracker/custom_theme.dart';
 
 class CustomSliderWidget extends StatefulWidget {
   const CustomSliderWidget({
-    Key? key,
+    super.key,
     required this.onChanged,
     required this.sliderNameAndProperty,
     this.maxValue = 0,
     this.minValue = 0,
-  }) : super(key: key);
+  });
 
   final void Function(int values) onChanged;
   final Text sliderNameAndProperty;
@@ -25,7 +25,6 @@ class _CustomSliderWidgetState extends State<CustomSliderWidget> {
   static const enabledRadius = 12;
   static const disabledThumbRadius = 5;
   static const spaces = SizedBox(height: 24);
-  static const counterProperty = CustomTheme.sliderProperty;
 
   late int generalInfValue;
 

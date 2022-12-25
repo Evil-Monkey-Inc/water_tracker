@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
 import 'package:water_tracker/presentation/screens/main_screen/main_screen.dart';
-import 'package:water_tracker/presentation/screens/sing_in_screen/bloc/sign_in_bloc.dart';
-import 'package:water_tracker/presentation/screens/sing_in_screen/bloc/sign_in_event.dart';
-import 'package:water_tracker/presentation/screens/sing_in_screen/bloc/sign_in_state.dart';
+import 'package:water_tracker/presentation/screens/sign_in_screen/bloc/sign_in_bloc.dart';
+import 'package:water_tracker/presentation/screens/sign_in_screen/bloc/sign_in_event.dart';
+import 'package:water_tracker/presentation/screens/sign_in_screen/bloc/sign_in_state.dart';
 import 'package:water_tracker/presentation/widgets/hiding_on_keyboard_shown_widget.dart';
 import 'package:water_tracker/presentation/widgets/logo_widget.dart';
 import 'package:water_tracker/presentation/widgets/not_have_account_widget.dart';
@@ -14,7 +14,7 @@ import 'package:water_tracker/presentation/widgets/privacy_policy_and_terms_widg
 import 'package:water_tracker/presentation/widgets/sign_in_form.dart';
 
 class SignInLayout extends StatefulWidget {
-  const SignInLayout({Key? key}) : super(key: key);
+  const SignInLayout({super.key});
 
   @override
   State<SignInLayout> createState() => _SignInLayoutState();
@@ -34,7 +34,7 @@ class _SignInLayoutState extends State<SignInLayout> {
             if (state is ErrorSignInState) {
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(LocaleKeys.error_try_again.tr())));
             }
-            if (state is SuccessfullySingInState) {
+            if (state is SuccessfullySignInState) {
               Navigator.of(context).push(MaterialPageRoute(builder: (context) => const MainScreen()));
             }
           },

@@ -8,11 +8,11 @@ import 'package:water_tracker/presentation/widgets/assistant_widget.dart';
 import 'package:water_tracker/presentation/widgets/custom_button.dart';
 import 'package:water_tracker/presentation/widgets/person_image_widget.dart';
 
-import 'bloc/main_screen_event.dart';
-import 'bloc/main_screen_state.dart';
+import 'package:water_tracker/presentation/screens/main_screen/bloc/main_screen_event.dart';
+import 'package:water_tracker/presentation/screens/main_screen/bloc/main_screen_state.dart';
 
 class MainLayout extends StatefulWidget {
-  const MainLayout({Key? key}) : super(key: key);
+  const MainLayout({super.key});
 
   @override
   State<MainLayout> createState() => _MainLayoutState();

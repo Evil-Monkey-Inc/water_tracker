@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 class IconImageWidget extends StatelessWidget {
   const IconImageWidget(
     this.imagePath, {
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final String imagePath;
 

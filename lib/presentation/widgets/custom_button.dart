@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:water_tracker/custom_theme.dart';
-import 'package:water_tracker/generated/assets/assets.gen.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({
-    Key? key,
+    super.key,
     required this.text,
     required this.onPressed,
     this.isEnabled = true,
     required this.buttonColor,
     required this.textButtonColor,
-  }) : super(key: key);
+  });
 
   final bool isEnabled;
   final String text;

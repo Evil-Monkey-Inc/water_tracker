@@ -12,8 +12,7 @@ UserSettings _$UserSettingsFromJson(Map<String, dynamic> json) => UserSettings(
       weight: json['weight'] as int,
     );
 
-Map<String, dynamic> _$UserSettingsToJson(UserSettings instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$UserSettingsToJson(UserSettings instance) => <String, dynamic>{
       'gender': _$GenderEnumMap[instance.gender]!,
       'age': instance.age,
       'weight': instance.weight,

@@ -6,7 +6,7 @@ import 'package:water_tracker/presentation/screens/personal_settings_screen/bloc
 import 'package:water_tracker/presentation/screens/personal_settings_screen/personal_settings_layout.dart';
 
 class PersonalSettingScreen extends StatelessWidget {
-  const PersonalSettingScreen({Key? key}) : super(key: key);
+  const PersonalSettingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -3,11 +3,11 @@ import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 
 class HidingOnKeyboardShownWidget extends StatefulWidget {
   const HidingOnKeyboardShownWidget({
-    Key? key,
+    super.key,
     required this.child,
     this.duration = const Duration(milliseconds: 300),
     required this.childHeight,
-  }) : super(key: key);
+  });
 
   final Widget child;
   final Duration duration;
@@ -37,7 +37,7 @@ class _HidingOnKeyboardShownWidgetState extends State<HidingOnKeyboardShownWidge
     super.initState();
     final keyboardVisibilityController = KeyboardVisibilityController();
     updateVisibility(keyboardVisibilityController.isVisible);
-    keyboardVisibilityController.onChange.forEach((bool visible) => updateVisibility(visible));
+    keyboardVisibilityController.onChange.forEach(updateVisibility);
   }
 
   @override

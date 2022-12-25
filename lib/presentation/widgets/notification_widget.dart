@@ -6,7 +6,7 @@ import 'package:water_tracker/generated/locale_keys.g.dart';
 import 'package:water_tracker/presentation/widgets/custom_button.dart';
 
 class NotificationWidget extends StatelessWidget {
-  const NotificationWidget({Key? key}) : super(key: key);
+  const NotificationWidget({super.key});
 
   static const largeSpace = SizedBox(height: 140);
   static const spaces = SizedBox(height: 20);

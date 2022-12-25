@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:water_tracker/generated/assets/assets.gen.dart';
 
 class LogoWidget extends StatelessWidget {
-  const LogoWidget({Key? key}) : super(key: key);
+  const LogoWidget({super.key});
 
   static const logoWidth = 16.0;
   static const logoTextWidth = 87.5;

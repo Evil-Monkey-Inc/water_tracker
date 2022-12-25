@@ -5,8 +5,6 @@ import 'package:water_tracker/presentation/screens/goal_screen/bloc/goal_event.d
 import 'package:water_tracker/presentation/screens/goal_screen/bloc/goal_state.dart';
 
 class GoalBloc extends Bloc<GoalEvent, GoalState> {
-  final Repository repository;
-
   GoalBloc(this.repository) : super(InitialGoalState()) {
     on<SaveGoalEvent>((event, emit) async {
       try {
@@ -19,4 +17,5 @@ class GoalBloc extends Bloc<GoalEvent, GoalState> {
       }
     });
   }
+  final Repository repository;
 }

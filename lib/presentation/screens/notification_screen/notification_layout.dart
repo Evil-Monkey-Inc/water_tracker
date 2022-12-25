@@ -4,7 +4,7 @@ import 'package:water_tracker/presentation/widgets/name_and_skip_widget.dart';
 import 'package:water_tracker/presentation/widgets/notification_widget.dart';
 
 class NotificationLayout extends StatelessWidget {
-  const NotificationLayout({Key? key}) : super(key: key);
+  const NotificationLayout({super.key});
 
   static const paddingHorizontal = EdgeInsets.symmetric(horizontal: 24.0);
   static const largeSpace = SizedBox(height: 140);

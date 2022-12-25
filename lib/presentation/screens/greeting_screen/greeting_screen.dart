@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'greeting_layout.dart';
+import 'package:water_tracker/presentation/screens/greeting_screen/greeting_layout.dart';
 
 class GreetingScreen extends StatelessWidget {
-  const GreetingScreen({Key? key}) : super(key: key);
+  const GreetingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

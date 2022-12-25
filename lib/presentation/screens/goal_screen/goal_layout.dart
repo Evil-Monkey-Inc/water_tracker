@@ -15,7 +15,7 @@ import 'package:water_tracker/presentation/widgets/name_and_skip_widget.dart';
 import 'package:water_tracker/presentation/widgets/title_settings_widget.dart';
 
 class GoalLayout extends StatefulWidget {
-  const GoalLayout({Key? key}) : super(key: key);
+  const GoalLayout({super.key});
 
   @override
   State<GoalLayout> createState() => _GoalLayoutState();

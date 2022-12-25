@@ -5,8 +5,6 @@ import 'package:water_tracker/presentation/screens/personal_settings_screen/bloc
 import 'package:water_tracker/presentation/screens/personal_settings_screen/bloc/personal_setting_state.dart';
 
 class PersonalSettingBloc extends Bloc<PersonalSettingEvent, PersonalSettingState> {
-  final Repository repository;
-
   PersonalSettingBloc(this.repository) : super(InitialSettingScreenState()) {
     on<SaveGeneralSettingEvent>((event, emit) async {
       try {
@@ -19,4 +17,5 @@ class PersonalSettingBloc extends Bloc<PersonalSettingEvent, PersonalSettingStat
       }
     });
   }
+  final Repository repository;
 }
