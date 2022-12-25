@@ -5,17 +5,21 @@ class HidingOnKeyboardShownWidget extends StatefulWidget {
   const HidingOnKeyboardShownWidget({
     Key? key,
     required this.child,
-    this.duration = const Duration(milliseconds: 3000),
+    this.duration = const Duration(milliseconds: 300),
+    required this.childHeight,
   }) : super(key: key);
 
   final Widget child;
   final Duration duration;
+  final double childHeight;
 
   @override
   State<HidingOnKeyboardShownWidget> createState() => _HidingOnKeyboardShownWidgetState();
 }
 
 class _HidingOnKeyboardShownWidgetState extends State<HidingOnKeyboardShownWidget> with SingleTickerProviderStateMixin {
+  static const curve = Curves.fastOutSlowIn;
+
   var isKeyboardVisible = false;
 
   void showWidget() => setState(() => isKeyboardVisible = false);
@@ -23,6 +27,10 @@ class _HidingOnKeyboardShownWidgetState extends State<HidingOnKeyboardShownWidge
   void hideWidget() => setState(() => isKeyboardVisible = true);
 
   void updateVisibility(bool isKeyboardVisible) => isKeyboardVisible ? hideWidget() : showWidget();
+
+  double get height => isKeyboardVisible ? 0.0 : widget.childHeight;
+
+  double get opacity => isKeyboardVisible ? 0.0 : 1.0;
 
   @override
   void initState() {
@@ -34,30 +42,17 @@ class _HidingOnKeyboardShownWidgetState extends State<HidingOnKeyboardShownWidge
 
   @override
   Widget build(BuildContext context) {
-
-    return  AnimatedContainer(
+    return AnimatedContainer(
+      curve: curve,
       duration: widget.duration,
-
-      height: isKeyboardVisible ? 0 : null,
-      width: isKeyboardVisible ? 0 : null,
-      child: isKeyboardVisible  ? null : widget.child,
-    );
-
-    return AnimatedOpacity(
-      duration: widget.duration,
-      opacity: isKeyboardVisible ? 0 : 1,
-      child: AnimatedScale(
-        scale: isKeyboardVisible ? 0 : 1,
+      alignment: Alignment.topCenter,
+      height: height,
+      child: AnimatedOpacity(
+        curve: curve,
         duration: widget.duration,
-        child: AnimatedContainer(
-          duration: widget.duration,
-
-          height: isKeyboardVisible ? 0 : null,
-          width: isKeyboardVisible ? 0 : null,
-          child: isKeyboardVisible  ? null : widget.child,
-        ),
+        opacity: opacity,
+        child: widget.child,
       ),
     );
-
   }
 }

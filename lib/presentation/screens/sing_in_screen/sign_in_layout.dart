@@ -43,7 +43,10 @@ class _SignInLayoutState extends State<SignInLayout> {
                   spaces,
                   const LogoWidget(),
                   spaces,
-                  HidingOnKeyboardShownWidget(child: PersonImageWidget.manWay()),
+                  HidingOnKeyboardShownWidget(
+                    childHeight: PersonImageWidget.imageHeight,
+                    child: PersonImageWidget.manWay(),
+                  ),
                   SignInForm(
                     isButtonEnabled: state is! LoadingSignInState,
                     onSignInButtonPressed: (String email, String password) {
