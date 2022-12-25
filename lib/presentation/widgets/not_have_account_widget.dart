@@ -7,7 +7,7 @@ import 'package:water_tracker/presentation/screens/sign_up_screen/sign_up_screen
 class NotHaveAccount extends StatelessWidget {
   const NotHaveAccount({Key? key}) : super(key: key);
 
-  static const spaceTextSpan = TextSpan(text: ' ', style: TextStyle(fontSize: 16, color: Colors.black));
+  static const spaceTextSpan = TextSpan(text: ' ', style: CustomTheme.textSpanStyle);
   static const notHaveAccountPadding = EdgeInsets.all(8.0);
 
   @override
