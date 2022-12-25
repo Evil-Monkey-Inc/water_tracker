@@ -1,10 +1,9 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
+import 'package:water_tracker/custom_theme.dart';
 import 'package:water_tracker/custom_theme.dart';
 import 'package:water_tracker/data/models/goal.dart';
 import 'package:water_tracker/data/models/goal_widget_model.dart';
-import 'package:water_tracker/generated/assets/assets.gen.dart';
 import 'package:water_tracker/presentation/widgets/icon_image_widget.dart';
 
 class GoalWidget extends StatefulWidget {
@@ -27,9 +26,7 @@ class _GoalWidgetState extends State<GoalWidget> with SingleTickerProviderStateM
   static const paddingBetweenGoals = EdgeInsets.symmetric(horizontal: 16);
   static const widgetHeight = 150;
   static const widgetWidth = 165;
-  static const iconTitleSize = 16;
   static const animationTime = 150;
-
   static const colorAnimationDuration = Duration(milliseconds: 200);
   late final colorAnimationController = AnimationController(
     duration: colorAnimationDuration,
@@ -79,12 +76,9 @@ class _GoalWidgetState extends State<GoalWidget> with SingleTickerProviderStateM
                 child: Text(
                   widget.model.title,
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: iconTitleSize.toDouble(),
-                    fontWeight: FontWeight.w500,
-                    fontFamily: Assets.fonts.senBold,
-                    color: isSelected ? CustomTheme.decorationColor : CustomTheme.mainColor,
-                  ),
+                  style: CustomTheme()
+                      .goalWidgetProp
+                      .copyWith(color: isSelected ? CustomTheme.decorationColor : CustomTheme.mainColor),
                 ),
               ),
             ],

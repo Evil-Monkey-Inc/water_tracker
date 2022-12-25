@@ -36,8 +36,7 @@ class CustomButton extends StatelessWidget {
         padding: paddingAroundButton,
         child: Text(
           text,
-          style:
-              TextStyle(fontSize: CustomTheme.fontSizeButton, color: textButtonColor, fontFamily: Assets.fonts.senBold),
+          style: CustomTheme().buttonStyleProp.copyWith(color: textButtonColor),
         ),
       ),
     );

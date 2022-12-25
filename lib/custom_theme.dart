@@ -16,6 +16,16 @@ class CustomTheme {
     fontWeight: FontWeight.w300,
   );
 
+  final buttonStyleProp =
+      TextStyle(fontSize: CustomTheme.fontSizeButton, color: Colors.white, fontFamily: Assets.fonts.senBold);
+
+  final goalWidgetProp = TextStyle(
+    fontSize: 16.0,
+    fontWeight: FontWeight.w500,
+    fontFamily: Assets.fonts.senBold,
+    color: CustomTheme.mainColor,
+  );
+
   final tabFemaleTextProperty = TextStyle(
     fontSize: 16,
     fontFamily: Assets.fonts.senRegular,
@@ -147,6 +157,10 @@ class CustomTheme {
 
   static const fontSizeButton = 16.0;
 
+  final buttonProperty =
+      TextStyle(fontSize: CustomTheme.fontSizeButton, color: textButtonColor, fontFamily: Assets.fonts.senBold)
+          .copyWith();
+
   static const mainColor = Color(0xFF292D32);
 
   static const mainButtonBackgroundColor = Color(0xFFF1F1F1);
@@ -210,6 +224,10 @@ class CustomTheme {
     fontWeight: FontWeight.w500,
     fontFamily: Assets.fonts.senBold,
   );
+
+  static const backgroundNameSkipWidgetColor = Colors.transparent;
+
+  static const textButtonColor = mainColor;
 
   static const customButtonShadowColor = Colors.transparent;
 

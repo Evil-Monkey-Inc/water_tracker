@@ -13,7 +13,7 @@ class NameAndSkipWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppBar(
       automaticallyImplyLeading: false,
-      backgroundColor: Colors.transparent,
+      backgroundColor: CustomTheme.backgroundNameSkipWidgetColor,
       elevation: 0,
       centerTitle: true,
       title: Text(
