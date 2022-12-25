@@ -55,8 +55,8 @@ class _CustomSliderWidgetState extends State<CustomSliderWidget> {
             trackHeight: lineHeight,
             activeTrackColor: CustomTheme.mainColor,
             inactiveTrackColor: CustomTheme.backgroundSliderLine,
-            activeTickMarkColor: Colors.transparent,
-            inactiveTickMarkColor: Colors.transparent,
+            activeTickMarkColor: CustomTheme.customButtonShadowColor,
+            inactiveTickMarkColor: CustomTheme.customButtonShadowColor,
             thumbColor: CustomTheme.mainColor,
           ),
           child: Slider(

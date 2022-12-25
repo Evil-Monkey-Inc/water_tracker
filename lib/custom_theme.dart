@@ -211,6 +211,8 @@ class CustomTheme {
     fontFamily: Assets.fonts.senBold,
   );
 
+  static const customButtonShadowColor = Colors.transparent;
+
   static const themeColor = Color(0xFF8F9AA9);
 
   final notHaveAccountProperty = TextStyle(
