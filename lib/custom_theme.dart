@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:water_tracker/generated/assets/assets.gen.dart';
 
 class CustomTheme {
@@ -257,4 +258,25 @@ class CustomTheme {
   static const themeDataColor = mainColor;
 
   static const roundingButton = BorderRadius.all(Radius.circular(40));
+
+  static const backgroundColor = Color(0xFFFAFAFA);
+
+  static const inputDecorationTheme = InputDecorationTheme(
+    focusedBorder: CustomTheme.focusedBorder,
+    focusedErrorBorder: CustomTheme.focusedErrorBorder,
+    enabledBorder: CustomTheme.unFocusedBorder,
+    disabledBorder: CustomTheme.disabledBorder,
+    border: CustomTheme.focusedBorder,
+    errorBorder: CustomTheme.errorBorder,
+    filled: true,
+    fillColor: CustomTheme.backgroundFieldColor,
+    labelStyle: CustomTheme.borderLabelStyle,
+  );
+
+  final systemTheme = SystemUiOverlayStyle.light.copyWith(
+    statusBarColor: backgroundColor,
+    statusBarIconBrightness: Brightness.dark,
+    systemNavigationBarColor: backgroundColor,
+    systemNavigationBarDividerColor: backgroundColor,
+  );
 }

@@ -22,23 +22,11 @@ class _WaterAppState extends State<WaterApp> {
       theme: ThemeData(
         primaryColor: CustomTheme.themeDataColor,
         focusColor: CustomTheme.focusColor,
-        inputDecorationTheme: const InputDecorationTheme(
-          focusedBorder: CustomTheme.focusedBorder,
-          focusedErrorBorder: CustomTheme.focusedErrorBorder,
-          enabledBorder: CustomTheme.unFocusedBorder,
-          disabledBorder: CustomTheme.disabledBorder,
-          border: CustomTheme.focusedBorder,
-          errorBorder: CustomTheme.errorBorder,
-          filled: true,
-          fillColor: CustomTheme.backgroundFieldColor,
-          labelStyle: CustomTheme.borderLabelStyle,
-        ),
+        inputDecorationTheme: CustomTheme.inputDecorationTheme,
         textSelectionTheme: CustomTheme.cursorColor,
       ),
       home: const SignInScreen(),
-      builder: (context, widget) {
-        return SafeArea(child: widget ?? const SizedBox());
-      },
+      builder: (context, widget) => SafeArea(child: widget ?? const SizedBox()),
     );
   }
 }
