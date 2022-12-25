@@ -4,7 +4,7 @@ import 'package:water_tracker/custom_theme.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
 
 class NameAndSkipWidget extends StatelessWidget {
-  const NameAndSkipWidget({Key? key, required this.onPressed}) : super(key: key);
+  const NameAndSkipWidget({super.key, required this.onPressed});
 
   final emptySpace = const SizedBox();
   final VoidCallback? onPressed;

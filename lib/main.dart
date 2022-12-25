@@ -1,10 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:water_tracker/water_app.dart';
-import 'generated/codegen_loader.g.dart';
+import 'package:water_tracker/generated/codegen_loader.g.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
-import 'get_it.dart';
+import 'package:water_tracker/firebase_options.dart';
+import 'package:water_tracker/get_it.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

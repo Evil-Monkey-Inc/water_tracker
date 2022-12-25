@@ -8,7 +8,7 @@ import 'package:water_tracker/presentation/widgets/custom_button.dart';
 import 'package:water_tracker/presentation/widgets/input_field_widget.dart';
 
 class SignInForm extends StatefulWidget {
-  const SignInForm({Key? key, required this.onSignInButtonPressed, required this.isButtonEnabled}) : super(key: key);
+  const SignInForm({super.key, required this.onSignInButtonPressed, required this.isButtonEnabled});
   final void Function(String email, String password) onSignInButtonPressed;
   final bool isButtonEnabled;
 

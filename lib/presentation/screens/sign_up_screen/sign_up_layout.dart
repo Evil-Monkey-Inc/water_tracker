@@ -14,7 +14,7 @@ import 'package:water_tracker/presentation/widgets/privacy_policy_and_terms_widg
 import 'package:water_tracker/presentation/widgets/sign_up_form.dart';
 
 class SignUpLayout extends StatefulWidget {
-  const SignUpLayout({Key? key}) : super(key: key);
+  const SignUpLayout({super.key});
 
   @override
   State<SignUpLayout> createState() => _SignUpLayoutState();

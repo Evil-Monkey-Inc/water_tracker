@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:water_tracker/custom_theme.dart';
 
 class CalendarWidget extends StatefulWidget {
-  const CalendarWidget({Key? key, required this.dateTime}) : super(key: key);
+  const CalendarWidget({super.key, required this.dateTime});
 
   final String dateTime;
 

@@ -5,7 +5,7 @@ import 'package:water_tracker/presentation/widgets/calendar_widget.dart';
 import 'package:water_tracker/presentation/widgets/custom_icon_button_widget.dart';
 
 class AssistantWidget extends StatefulWidget {
-  const AssistantWidget({Key? key}) : super(key: key);
+  const AssistantWidget({super.key});
 
   @override
   State<AssistantWidget> createState() => _AssistantWidgetState();

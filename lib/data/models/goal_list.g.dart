@@ -7,9 +7,7 @@ part of 'goal_list.dart';
 // **************************************************************************
 
 GoalList _$GoalListFromJson(Map<String, dynamic> json) => GoalList(
-      goals: (json['goals'] as List<dynamic>)
-          .map((e) => $enumDecode(_$GoalEnumMap, e))
-          .toList(),
+      goals: (json['goals'] as List<dynamic>).map((e) => $enumDecode(_$GoalEnumMap, e)).toList(),
     );
 
 Map<String, dynamic> _$GoalListToJson(GoalList instance) => <String, dynamic>{

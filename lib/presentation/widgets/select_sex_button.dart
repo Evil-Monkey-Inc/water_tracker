@@ -5,7 +5,7 @@ import 'package:water_tracker/data/models/gender.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
 
 class SelectSexButton extends StatefulWidget {
-  const SelectSexButton({Key? key, required this.onChanged}) : super(key: key);
+  const SelectSexButton({super.key, required this.onChanged});
   final void Function(Gender) onChanged;
 
   @override

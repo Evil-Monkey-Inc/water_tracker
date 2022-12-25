@@ -6,7 +6,7 @@ import 'package:water_tracker/generated/assets/assets.gen.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
 
 class GreetingWidget extends StatelessWidget {
-  const GreetingWidget({Key? key}) : super(key: key);
+  const GreetingWidget({super.key});
 
   static const space = SizedBox(height: 36);
   static const logoWidth = 64.0;

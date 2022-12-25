@@ -4,10 +4,10 @@ import 'package:water_tracker/custom_theme.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
 import 'package:water_tracker/presentation/screens/main_screen/main_screen.dart';
 import 'package:water_tracker/presentation/widgets/custom_button.dart';
-import 'package:water_tracker/presentation/widgets/greeting_widget..dart';
+import 'package:water_tracker/presentation/widgets/greeting_widget.dart';
 
 class GreetingLayout extends StatelessWidget {
-  const GreetingLayout({Key? key}) : super(key: key);
+  const GreetingLayout({super.key});
 
   static const paddingHorizontal = EdgeInsets.symmetric(horizontal: 28.0);
   static const spaces = SizedBox(height: 24);

@@ -5,7 +5,7 @@ import 'package:water_tracker/generated/locale_keys.g.dart';
 import 'package:water_tracker/presentation/screens/sign_up_screen/sign_up_screen.dart';
 
 class NotHaveAccount extends StatelessWidget {
-  const NotHaveAccount({Key? key}) : super(key: key);
+  const NotHaveAccount({super.key});
 
   static const spaceTextSpan = TextSpan(text: ' ', style: CustomTheme.textSpanStyle);
   static const notHaveAccountPadding = EdgeInsets.all(8.0);

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CustomIconButtonWidget extends StatelessWidget {
-  const CustomIconButtonWidget({Key? key, required this.onTap, required this.image}) : super(key: key);
+  const CustomIconButtonWidget({super.key, required this.onTap, required this.image});
   final VoidCallback onTap;
   final Image image;
   static const heightWidget = 24.0;

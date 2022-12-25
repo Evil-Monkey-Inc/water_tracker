@@ -3,10 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:water_tracker/data/repository/repository.dart';
 import 'package:water_tracker/get_it.dart';
 import 'package:water_tracker/presentation/screens/sign_up_screen/bloc/sign_up_bloc.dart';
-import 'sign_up_layout.dart';
+import 'package:water_tracker/presentation/screens/sign_up_screen/sign_up_layout.dart';
 
 class SignUpScreen extends StatelessWidget {
-  const SignUpScreen({Key? key}) : super(key: key);
+  const SignUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,14 +1,13 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:water_tracker/custom_theme.dart';
 import 'package:water_tracker/generated/assets/assets.gen.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
 
 class PrivacyPolicyAndTermsWidget extends StatelessWidget {
-  const PrivacyPolicyAndTermsWidget({Key? key}) : super(key: key);
+  const PrivacyPolicyAndTermsWidget({super.key});
 
   static const paddingPrivacyPolicyTermsWidget = EdgeInsets.all(16.0);
 

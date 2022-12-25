@@ -6,7 +6,7 @@ import 'package:water_tracker/presentation/screens/main_screen/bloc/main_screen_
 import 'package:water_tracker/presentation/screens/main_screen/main_layout.dart';
 
 class MainScreen extends StatelessWidget {
-  const MainScreen({Key? key}) : super(key: key);
+  const MainScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
