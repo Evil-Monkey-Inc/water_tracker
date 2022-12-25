@@ -25,6 +25,7 @@ class _CustomSliderWidgetState extends State<CustomSliderWidget> {
   static const enabledRadius = 12;
   static const disabledThumbRadius = 5;
   static const spaces = SizedBox(height: 24);
+  static const counterProperty = CustomTheme.sliderProperty;
 
   late int generalInfValue;
 

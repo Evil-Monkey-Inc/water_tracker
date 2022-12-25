@@ -130,6 +130,8 @@ class CustomTheme {
     fontWeight: FontWeight.w500,
   );
 
+  static const tabTextFemaleStyleProperty = TextStyle(fontSize: 20);
+
   final gotCupsTextProperty = TextStyle(
     fontSize: 36,
     color: mainColor,
@@ -158,8 +160,7 @@ class CustomTheme {
   static const fontSizeButton = 16.0;
 
   final buttonProperty =
-      TextStyle(fontSize: CustomTheme.fontSizeButton, color: textButtonColor, fontFamily: Assets.fonts.senBold)
-          .copyWith();
+      TextStyle(fontSize: CustomTheme.fontSizeButton, color: textButtonColor, fontFamily: Assets.fonts.senBold);
 
   static const mainColor = Color(0xFF292D32);
 
@@ -231,7 +232,17 @@ class CustomTheme {
 
   static const customButtonShadowColor = Colors.transparent;
 
+  static const privacyPolicyBackground = Colors.white;
+
   static const themeColor = Color(0xFF8F9AA9);
+
+  static const textSpanStyle = TextStyle(fontSize: 16, color: Colors.black);
+
+  static const sliderProperty = TextStyle(fontSize: 60, color: CustomTheme.mainColor);
+
+  static const sexStyleProperty = TextStyle(fontSize: 20);
+
+  static const tabMaleTextProperty = TextStyle(fontSize: 20);
 
   final notHaveAccountProperty = TextStyle(
     fontSize: 16,

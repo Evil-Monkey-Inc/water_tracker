@@ -38,14 +38,8 @@ dependencies:
   shared_preferences: ^2.0.15
   json_serializable: ^6.5.4
   json_annotation: ^4.7.0
-  google_fonts: ^3.0.1
-
-
-
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
+  flutter_markdown: ^0.6.13
+  flutter_keyboard_visibility: ^5.4.0
 
 dev_dependencies:
   flutter_test:
@@ -76,6 +70,7 @@ flutter:
   assets:
     - assets/translations/
     - assets/images/
+    - assets/docs/
     - assets/fonts/
 
 
@@ -84,13 +79,6 @@ flutter:
 
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
-
-  # To add custom fonts to your application, add a fonts section here,
-  # in this "flutter" section. Each entry in this list should have a
-  # "family" key with the font family name, and a "fonts" key with a
-  # list giving the asset and other descriptors for the font. For
-  # example:
-
 
 flutter_gen:
   output: lib/generated/assets
