@@ -7,7 +7,7 @@ class InputFieldWidget extends StatelessWidget {
     required this.labelText,
     this.validator,
     this.controller,
-    required this.obscureText,
+    this.obscureText = false,
     this.suffixIcon,
   }) : super(key: key);
 
