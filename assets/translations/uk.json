@@ -47,5 +47,5 @@
   "you_already_got" : "Ви вже випили",
   "cups" : "чашки",
   "ml" : "/2000 мл",
-  "failed_to_increment_count": "Помилка при додаванні"
+  "failed_to_increment_count": "Не вдалося збільшити кількість води"
 }
