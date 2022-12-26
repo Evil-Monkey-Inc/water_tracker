@@ -46,7 +46,7 @@
   "get_started" : "Get started",
   "you_already_got" : "You've already got",
   "cups" : "cups",
-  "ml" : "/2000 ml",
+  "ml" : "ml",
   "failed_to_increment_count": "Failed to increment water count"
 }
 

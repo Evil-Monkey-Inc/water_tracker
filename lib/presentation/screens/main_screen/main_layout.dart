@@ -52,8 +52,8 @@ class _MainLayoutState extends State<MainLayout> {
                 ),
                 MainScreenCounterWidget(
                   maxCount: cupsMaxCount,
+                  singleCupWeight: singleCupWeight,
                   count: state.counter,
-                  cupWeight: singleCupWeight,
                 ),
               ],
             );
