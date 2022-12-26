@@ -34,7 +34,7 @@ class _MainCounterButtonWidgetState extends State<MainCounterButtonWidget> {
           onPressed: widget.onPressed,
           icon: SvgPicture.asset(
             Assets.images.waterDrop,
-            width: 40,
+            width: 30,
           ),
         ),
       ),

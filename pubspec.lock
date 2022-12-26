@@ -27,7 +27,7 @@ packages:
     description:
       path: "."
       ref: develop
-      resolved-ref: "9c025e5f22e4ed53161d5724bb312a7259247495"
+      resolved-ref: "36204c5e290d7866f24cec3e563f5449be0c3f4a"
       url: "https://github.com/zddarova/animated_ripple"
     source: git
     version: "0.0.1"
