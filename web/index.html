@@ -32,6 +32,25 @@
   <title>water_tracker</title>
   <link rel="manifest" href="manifest.json">
 
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyAyh29mdGpH9gaqEgpjRsvvW0DTiHtuxlU",
+      authDomain: "water-tracker-e1672.firebaseapp.com",
+      projectId: "water-tracker-e1672",
+      storageBucket: "water-tracker-e1672.appspot.com",
+      messagingSenderId: "464833728790",
+      appId: "1:464833728790:web:39411f543bc1fa0babc037",
+      measurementId: "G-2GTP0SXKXJ"
+    };
+
+
+    const app = initializeApp(firebaseConfig);
+  </script>
+
   <script>
     // The value below is injected by flutter build, do not touch.
     var serviceWorkerVersion = null;
@@ -54,6 +73,7 @@
         }
       });
     });
+
   </script>
 </body>
 </html>
