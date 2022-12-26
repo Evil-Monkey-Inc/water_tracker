@@ -5,14 +5,14 @@ import 'package:water_tracker/generated/locale_keys.g.dart';
 import 'package:water_tracker/presentation/widgets/atoms/person_image_widget.dart';
 import 'package:water_tracker/presentation/widgets/molecules/assistant_widget.dart';
 
-class MainScreenButtonWidget extends StatelessWidget {
-  const MainScreenButtonWidget({super.key, required this.count, required this.maxCount, required this.cupWeight})
+class MainScreenCounterWidget extends StatelessWidget {
+  const MainScreenCounterWidget({super.key, required this.count, required this.maxCount, required this.cupWeight})
       : counterCupWeight = count * cupWeight;
 
   final int count;
   final int maxCount;
   final int cupWeight;
-  final counterCupWeight;
+  final int counterCupWeight;
   static const spaces = SizedBox(height: 24);
   static const betweenCounters = SizedBox(height: 16);
   static const spaceBetween = SizedBox(height: 44);

@@ -6,7 +6,7 @@ import 'package:water_tracker/presentation/screens/main_screen/bloc/main_screen_
 import 'package:water_tracker/presentation/widgets/atoms/main_counter_button_widget.dart';
 import 'package:water_tracker/presentation/screens/main_screen/bloc/main_screen_event.dart';
 import 'package:water_tracker/presentation/screens/main_screen/bloc/main_screen_state.dart';
-import 'package:water_tracker/presentation/widgets/molecules/main_screen_button_widget.dart';
+import 'package:water_tracker/presentation/widgets/molecules/main_counter_button_widget.dart';
 
 class MainLayout extends StatefulWidget {
   const MainLayout({super.key});
@@ -47,10 +47,10 @@ class _MainLayoutState extends State<MainLayout> {
             return Stack(
               alignment: Alignment.bottomCenter,
               children: [
-                MainCounterButtonWidget(
+                MainScreenButtonWidget(
                   onPressed: () => context.read<MainScreenBloc>().add(SaveCounterEvent()),
                 ),
-                MainScreenButtonWidget(
+                MainScreenCounterWidget(
                   maxCount: cupsMaxCount,
                   count: state.counter,
                   cupWeight: singleCupWeight,
