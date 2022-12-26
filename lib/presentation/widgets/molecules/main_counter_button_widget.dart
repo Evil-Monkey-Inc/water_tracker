@@ -6,13 +6,21 @@ import 'package:water_tracker/presentation/widgets/atoms/person_image_widget.dar
 import 'package:water_tracker/presentation/widgets/molecules/assistant_widget.dart';
 
 class MainScreenCounterWidget extends StatelessWidget {
-  const MainScreenCounterWidget({super.key, required this.count, required this.maxCount, required this.cupWeight})
-      : maxWaterWeight = count * cupWeight;
+  const MainScreenCounterWidget({
+    super.key,
+    required this.count,
+    required this.maxCount,
+    required this.singleCupWeight,
+  })  : currentCupWeight = count * singleCupWeight,
+        maxWeight = maxCount * singleCupWeight;
 
   final int count;
   final int maxCount;
-  final int cupWeight;
-  final int maxWaterWeight;
+  final int singleCupWeight;
+
+  final int maxWeight;
+  final int currentCupWeight;
+
   static const spaces = SizedBox(height: 24);
   static const betweenCounters = SizedBox(height: 16);
   static const spaceBetween = SizedBox(height: 44);
@@ -29,7 +37,7 @@ class MainScreenCounterWidget extends StatelessWidget {
           text: TextSpan(
             children: <TextSpan>[
               TextSpan(text: LocaleKeys.you_already_got.tr(), style: CustomTheme().gotCupsTextProperty),
-              TextSpan(text: '$count', style: CustomTheme().countTextProperty),
+              TextSpan(text: ' $count', style: CustomTheme().countTextProperty),
               TextSpan(text: '/$maxCount ', style: CustomTheme().partOfCountTextProperty),
               TextSpan(text: LocaleKeys.cups.tr(), style: CustomTheme().gotCupsTextProperty),
             ],
@@ -39,7 +47,7 @@ class MainScreenCounterWidget extends StatelessWidget {
         Align(
           alignment: Alignment.topLeft,
           child: Text(
-            '$maxWaterWeight${LocaleKeys.ml.tr()}',
+            '$currentCupWeight/$maxWeight ${LocaleKeys.ml.tr()}',
             style: CustomTheme().counterMl,
           ),
         ),
