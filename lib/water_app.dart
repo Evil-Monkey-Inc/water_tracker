@@ -2,7 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:water_tracker/custom_theme.dart';
-import 'package:water_tracker/presentation/screens/sign_in_screen/sign_in_screen.dart';
+import 'package:water_tracker/presentation/screens/main_screen/main_screen.dart';
 
 class WaterApp extends StatefulWidget {
   const WaterApp({super.key});
@@ -25,7 +25,7 @@ class _WaterAppState extends State<WaterApp> {
         inputDecorationTheme: CustomTheme.inputDecorationTheme,
         textSelectionTheme: CustomTheme.cursorColor,
       ),
-      home: const SignInScreen(),
+      home: const MainScreen(),
       builder: (context, widget) => SafeArea(child: widget ?? const SizedBox()),
     );
   }

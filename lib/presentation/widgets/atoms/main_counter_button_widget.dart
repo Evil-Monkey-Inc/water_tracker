@@ -17,6 +17,7 @@ class _MainCounterButtonWidgetState extends State<MainCounterButtonWidget> {
   static const animatedRadius = Size.fromRadius(300);
   static const numberOfRipples = 7;
   static const duration = Duration(seconds: 1);
+  static const buttonWidth = 30.0;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +35,7 @@ class _MainCounterButtonWidgetState extends State<MainCounterButtonWidget> {
           onPressed: widget.onPressed,
           icon: SvgPicture.asset(
             Assets.images.waterDrop,
-            width: 30,
+            width: buttonWidth,
           ),
         ),
       ),

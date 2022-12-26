@@ -5,8 +5,8 @@ import 'package:water_tracker/generated/locale_keys.g.dart';
 import 'package:water_tracker/presentation/widgets/atoms/person_image_widget.dart';
 import 'package:water_tracker/presentation/widgets/molecules/assistant_widget.dart';
 
-class MainScreenCounterWidget extends StatelessWidget {
-  const MainScreenCounterWidget({super.key, required this.count, required this.maxCount, required this.cupWeight});
+class MainScreenButtonWidget extends StatelessWidget {
+  const MainScreenButtonWidget({super.key, required this.count, required this.maxCount, required this.cupWeight});
 
   final int count;
   final int maxCount;
@@ -27,7 +27,7 @@ class MainScreenCounterWidget extends StatelessWidget {
           text: TextSpan(
             children: <TextSpan>[
               TextSpan(text: LocaleKeys.you_already_got.tr(), style: CustomTheme().gotCupsTextProperty),
-              TextSpan(text: ' $count', style: CustomTheme().countTextProperty),
+              TextSpan(text: '$count', style: CustomTheme().countTextProperty),
               TextSpan(text: '/$maxCount ', style: CustomTheme().partOfCountTextProperty),
               TextSpan(text: LocaleKeys.cups.tr(), style: CustomTheme().gotCupsTextProperty),
             ],
