@@ -7,12 +7,12 @@ import 'package:water_tracker/presentation/widgets/molecules/assistant_widget.da
 
 class MainScreenCounterWidget extends StatelessWidget {
   const MainScreenCounterWidget({super.key, required this.count, required this.maxCount, required this.cupWeight})
-      : counterCupWeight = count * cupWeight;
+      : maxWaterWeight = count * cupWeight;
 
   final int count;
   final int maxCount;
   final int cupWeight;
-  final int counterCupWeight;
+  final int maxWaterWeight;
   static const spaces = SizedBox(height: 24);
   static const betweenCounters = SizedBox(height: 16);
   static const spaceBetween = SizedBox(height: 44);
@@ -39,7 +39,7 @@ class MainScreenCounterWidget extends StatelessWidget {
         Align(
           alignment: Alignment.topLeft,
           child: Text(
-            '$counterCupWeight${LocaleKeys.ml.tr()}',
+            '$maxWaterWeight${LocaleKeys.ml.tr()}',
             style: CustomTheme().counterMl,
           ),
         ),
