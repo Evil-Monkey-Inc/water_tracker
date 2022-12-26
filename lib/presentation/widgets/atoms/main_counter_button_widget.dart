@@ -1,6 +1,8 @@
 import 'package:animated_ripple/animated_ripple.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:water_tracker/custom_theme.dart';
+import 'package:water_tracker/generated/assets/assets.gen.dart';
 
 class MainCounterButtonWidget extends StatefulWidget {
   const MainCounterButtonWidget({super.key, required this.onPressed});
@@ -28,8 +30,12 @@ class _MainCounterButtonWidgetState extends State<MainCounterButtonWidget> {
           duration: duration,
           color: CustomTheme.mainColor,
           secondaryColor: CustomTheme.secondaryColor,
-          rippleEffect: RippleEffect.speedUpOnTap,
+          rippleEffect: RippleEffect.looped,
           onPressed: widget.onPressed,
+          icon: SvgPicture.asset(
+            Assets.images.waterDrop,
+            width: 40,
+          ),
         ),
       ),
     );

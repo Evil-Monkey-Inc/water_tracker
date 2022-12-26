@@ -40,7 +40,12 @@ dependencies:
   json_annotation: ^4.7.0
   flutter_markdown: ^0.6.13
   flutter_keyboard_visibility: ^5.4.0
-  animated_ripple: ^0.0.1
+
+  animated_ripple:
+    git:
+      url: https://github.com/zddarova/animated_ripple
+      ref: develop
+
 
 dev_dependencies:
   flutter_test:
