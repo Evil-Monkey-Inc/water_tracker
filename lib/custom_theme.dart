@@ -11,6 +11,8 @@ class CustomTheme {
     fontFamily: Assets.fonts.senRegular,
   );
 
+  static const secondaryColor = Colors.white;
+
   final counterProperty = const TextStyle(
     fontSize: 56,
     color: CustomTheme.mainColor,
