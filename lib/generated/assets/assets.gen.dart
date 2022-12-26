@@ -48,10 +48,12 @@ class $AssetsImagesGen {
   AssetGenImage get carrot => const AssetGenImage('assets/images/carrot.png');
 
   /// File path: assets/images/custom_close_icon.png
-  AssetGenImage get customCloseIcon => const AssetGenImage('assets/images/custom_close_icon.png');
+  AssetGenImage get customCloseIcon =>
+      const AssetGenImage('assets/images/custom_close_icon.png');
 
   /// File path: assets/images/dumbbells.png
-  AssetGenImage get dumbbells => const AssetGenImage('assets/images/dumbbells.png');
+  AssetGenImage get dumbbells =>
+      const AssetGenImage('assets/images/dumbbells.png');
 
   /// File path: assets/images/hike.png
   AssetGenImage get hike => const AssetGenImage('assets/images/hike.png');
@@ -63,25 +65,33 @@ class $AssetsImagesGen {
   String get logoName => 'assets/images/logo_name.svg';
 
   /// File path: assets/images/main_screen_person.png
-  AssetGenImage get mainScreenPerson => const AssetGenImage('assets/images/main_screen_person.png');
+  AssetGenImage get mainScreenPerson =>
+      const AssetGenImage('assets/images/main_screen_person.png');
 
   /// File path: assets/images/man_login.png
-  AssetGenImage get manLogin => const AssetGenImage('assets/images/man_login.png');
+  AssetGenImage get manLogin =>
+      const AssetGenImage('assets/images/man_login.png');
 
   /// File path: assets/images/notification.png
-  AssetGenImage get notification => const AssetGenImage('assets/images/notification.png');
+  AssetGenImage get notification =>
+      const AssetGenImage('assets/images/notification.png');
 
   /// File path: assets/images/setting_icon.png
-  AssetGenImage get settingIcon => const AssetGenImage('assets/images/setting_icon.png');
+  AssetGenImage get settingIcon =>
+      const AssetGenImage('assets/images/setting_icon.png');
 
   /// File path: assets/images/stars.png
   AssetGenImage get stars => const AssetGenImage('assets/images/stars.png');
+
+  /// File path: assets/images/water_drop.svg
+  String get waterDrop => 'assets/images/water_drop.svg';
 
   /// File path: assets/images/weight.png
   AssetGenImage get weight => const AssetGenImage('assets/images/weight.png');
 
   /// File path: assets/images/woman_login.png
-  AssetGenImage get womanLogin => const AssetGenImage('assets/images/woman_login.png');
+  AssetGenImage get womanLogin =>
+      const AssetGenImage('assets/images/woman_login.png');
 
   /// List of all assets
   List<dynamic> get values => [
@@ -97,6 +107,7 @@ class $AssetsImagesGen {
         notification,
         settingIcon,
         stars,
+        waterDrop,
         weight,
         womanLogin
       ];
