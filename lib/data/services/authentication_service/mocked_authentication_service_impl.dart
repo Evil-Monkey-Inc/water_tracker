@@ -1,18 +1,7 @@
 import 'package:water_tracker/data/models/responses/sign_in_result.dart';
 import 'package:water_tracker/data/models/responses/sign_up_result.dart';
 import 'package:water_tracker/data/models/user.dart';
-
-abstract class AuthenticationService {
-  Future<SignUpResult> registerUser(
-    String email,
-    String password,
-  );
-
-  Future<SignInResult> loginUser(
-    String email,
-    String password,
-  );
-}
+import 'package:water_tracker/data/services/authentication_service/authentication_service.dart';
 
 class MockedAuthenticationServiceImpl extends AuthenticationService {
   @override
