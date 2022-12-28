@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:water_tracker/custom_theme.dart';
 import 'package:water_tracker/presentation/screens/sign_in_screen/sign_in_screen.dart';
 
@@ -12,6 +13,12 @@ class WaterApp extends StatefulWidget {
 }
 
 class _WaterAppState extends State<WaterApp> {
+  @override
+  void initState() {
+    FlutterNativeSplash.remove();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
