@@ -58,6 +58,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/hike.png
   AssetGenImage get hike => const AssetGenImage('assets/images/hike.png');
 
+  /// File path: assets/images/launcher_logo.png
+  AssetGenImage get launcherLogo =>
+      const AssetGenImage('assets/images/launcher_logo.png');
+
   /// File path: assets/images/logo.svg
   String get logo => 'assets/images/logo.svg';
 
@@ -100,6 +104,7 @@ class $AssetsImagesGen {
         customCloseIcon,
         dumbbells,
         hike,
+        launcherLogo,
         logo,
         logoName,
         mainScreenPerson,
