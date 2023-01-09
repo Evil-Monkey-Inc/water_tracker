@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:water_tracker/custom_theme.dart';
+import 'package:water_tracker/data/models/gender.dart';
+import 'package:water_tracker/data/models/user_settings.dart';
 import 'package:water_tracker/env_variables.dart';
 import 'package:water_tracker/form_validators.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
 import 'package:water_tracker/presentation/widgets/molecules/custom_button.dart';
 import 'package:water_tracker/presentation/widgets/molecules/input_field_widget.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class SignUpForm extends StatefulWidget {
   const SignUpForm({super.key, required this.isButtonEnabled, required this.onSignUpButtonPressed});
@@ -30,6 +33,7 @@ class _MyLogFormWidgetState extends State<SignUpForm> {
     _email.dispose();
     super.dispose();
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -64,6 +68,11 @@ class _MyLogFormWidgetState extends State<SignUpForm> {
             onPressed: () {
               if (EnvVariables.disableValidation || formKey.currentState!.validate()) {
                 widget.onSignUpButtonPressed(_email.text, _pass.text);
+                final testRef = FirebaseFirestore.instance.collection('users').withConverter<UserSettings>(
+                  fromFirestore: (snapshot, _) => UserSettings.fromJson(snapshot.data()!),
+                  toFirestore: (settings, _) => settings.toJson(),
+                );
+               testRef.add(UserSettings(gender: Gender.female, age: 21, weight: 71));
               }
             },
             text: LocaleKeys.sign_up.tr(),
