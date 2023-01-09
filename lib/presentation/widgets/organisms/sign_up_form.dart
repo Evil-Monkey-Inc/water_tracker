@@ -68,12 +68,12 @@ class _MyLogFormWidgetState extends State<SignUpForm> {
             onPressed: () {
               if (EnvVariables.disableValidation || formKey.currentState!.validate()) {
                 widget.onSignUpButtonPressed(_email.text, _pass.text);
-                final testRef = FirebaseFirestore.instance.collection('users').withConverter<UserSettings>(
+               final testRef = FirebaseFirestore.instance.collection('users').doc(_email.text).withConverter<UserSettings>(
                   fromFirestore: (snapshot, _) => UserSettings.fromJson(snapshot.data()!),
-                  toFirestore: (settings, _) => settings.toJson(),
+                 toFirestore: (settings, _) => settings.toJson(),
                 );
-               testRef.add(UserSettings(gender: Gender.female, age: 21, weight: 71));
-              }
+               testRef.set(UserSettings(gender: Gender.female, age: 21, weight: 71));
+             }
             },
             text: LocaleKeys.sign_up.tr(),
             buttonColor: CustomTheme.buttonDarkColor,
