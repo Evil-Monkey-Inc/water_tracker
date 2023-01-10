@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:water_tracker/custom_theme.dart';
 import 'package:water_tracker/data/models/gender.dart';
+import 'package:water_tracker/data/models/goal.dart';
+import 'package:water_tracker/data/models/goal_list.dart';
 import 'package:water_tracker/data/models/user_settings.dart';
 import 'package:water_tracker/env_variables.dart';
 import 'package:water_tracker/form_validators.dart';
@@ -11,7 +13,10 @@ import 'package:water_tracker/presentation/widgets/molecules/input_field_widget.
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class SignUpForm extends StatefulWidget {
-  const SignUpForm({super.key, required this.isButtonEnabled, required this.onSignUpButtonPressed});
+  const SignUpForm(
+      {super.key,
+      required this.isButtonEnabled,
+      required this.onSignUpButtonPressed});
 
   final void Function(String email, String password) onSignUpButtonPressed;
   final bool isButtonEnabled;
@@ -33,7 +38,6 @@ class _MyLogFormWidgetState extends State<SignUpForm> {
     _email.dispose();
     super.dispose();
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -60,20 +64,31 @@ class _MyLogFormWidgetState extends State<SignUpForm> {
           spacer,
           InputFieldWidget(
             labelText: LocaleKeys.re_enter_your_password.tr(),
-            validator: (value) => FormValidators.repeatPasswordValidator(value, _pass.text),
+            validator: (value) =>
+                FormValidators.repeatPasswordValidator(value, _pass.text),
           ),
           spacer,
           CustomButton(
             isEnabled: widget.isButtonEnabled,
             onPressed: () {
-              if (EnvVariables.disableValidation || formKey.currentState!.validate()) {
+              if (EnvVariables.disableValidation ||
+                  formKey.currentState!.validate()) {
                 widget.onSignUpButtonPressed(_email.text, _pass.text);
-               final testRef = FirebaseFirestore.instance.collection('users').doc(_email.text).withConverter<UserSettings>(
-                  fromFirestore: (snapshot, _) => UserSettings.fromJson(snapshot.data()!),
-                 toFirestore: (settings, _) => settings.toJson(),
+                final DateTime now = DateTime.now();
+                final testRef = FirebaseFirestore.instance
+                    .collection('users')
+                    .doc(_email.text);
+                testRef.set(
+                  {
+                    "userSettings": [
+                      UserSettings(gender: Gender.female, age: 21, weight: 71)
+                          .toJson(),
+                      GoalList(goals: [Goal.drinkWater]).toJson(),
+                    ],
+                    "userCount" : {DateTime.parse(now.toString()) : 21}
+                  },
                 );
-               testRef.set(UserSettings(gender: Gender.female, age: 21, weight: 71));
-             }
+              }
             },
             text: LocaleKeys.sign_up.tr(),
             buttonColor: CustomTheme.buttonDarkColor,
