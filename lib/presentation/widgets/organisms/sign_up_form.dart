@@ -1,16 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:water_tracker/custom_theme.dart';
-import 'package:water_tracker/data/models/gender.dart';
-import 'package:water_tracker/data/models/goal.dart';
-import 'package:water_tracker/data/models/goal_list.dart';
-import 'package:water_tracker/data/models/user_settings.dart';
 import 'package:water_tracker/env_variables.dart';
 import 'package:water_tracker/form_validators.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
 import 'package:water_tracker/presentation/widgets/molecules/custom_button.dart';
 import 'package:water_tracker/presentation/widgets/molecules/input_field_widget.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+
 
 class SignUpForm extends StatefulWidget {
   const SignUpForm(
@@ -74,19 +70,6 @@ class _MyLogFormWidgetState extends State<SignUpForm> {
               if (EnvVariables.disableValidation ||
                   formKey.currentState!.validate()) {
                 widget.onSignUpButtonPressed(_email.text, _pass.text);
-                final testRef = FirebaseFirestore.instance
-                    .collection('users')
-                    .doc(_email.text);
-                testRef.set(
-                  {
-                    "userSettings": [
-                      UserSettings(gender: Gender.female, age: 21, weight: 71)
-                          .toJson(),
-                      GoalList(goals: [Goal.drinkWater]).toJson(),
-                    ],
-                    "userCount" : {DateTime.parse(DateTime.now().toString())}
-                  },
-                );
               }
             },
             text: LocaleKeys.sign_up.tr(),
