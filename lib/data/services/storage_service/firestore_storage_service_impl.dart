@@ -1,9 +1,7 @@
 import 'package:water_tracker/data/models/goal_list.dart';
-import 'package:water_tracker/data/models/user.dart';
 import 'package:water_tracker/data/models/user_settings.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:water_tracker/form_validators.dart';
-import 'package:water_tracker/presentation/widgets/organisms/sign_up_form.dart';
+
 
 
 
