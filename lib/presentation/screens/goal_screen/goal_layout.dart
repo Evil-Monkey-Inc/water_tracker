@@ -15,7 +15,9 @@ import 'package:water_tracker/presentation/widgets/molecules/name_and_skip_widge
 import 'package:water_tracker/presentation/widgets/atoms/title_settings_widget.dart';
 
 class GoalLayout extends StatefulWidget {
-  const GoalLayout({super.key});
+  const GoalLayout({super.key, required this.email});
+
+  final String email;
 
   @override
   State<GoalLayout> createState() => _GoalLayoutState();
@@ -87,7 +89,7 @@ class _GoalLayoutState extends State<GoalLayout> {
                 spacesBetween,
                 CustomButton(
                   onPressed: () {
-                    context.read<GoalBloc>().add(SaveGoalEvent(selectedGoals.toList()));
+                    context.read<GoalBloc>().add(SaveGoalEvent(email: widget.email, goals: selectedGoals.toList()));
                     Navigator.of(context).push(MaterialPageRoute(builder: (context) => const NotificationScreen()));
                   },
                   text: LocaleKeys.next.tr(),

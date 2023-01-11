@@ -15,7 +15,9 @@ import 'package:water_tracker/presentation/screens/personal_settings_screen/bloc
 import 'package:water_tracker/presentation/screens/personal_settings_screen/bloc/personal_setting_state.dart';
 
 class PersonalSettingsLayout extends StatefulWidget {
-  const PersonalSettingsLayout({super.key});
+  const PersonalSettingsLayout({super.key, required this.email});
+
+  final String email;
 
   @override
   State<PersonalSettingsLayout> createState() => _PersonalSettingsLayoutState();
@@ -46,9 +48,8 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
         child: BlocConsumer<PersonalSettingBloc, PersonalSettingState>(
           listener: (BuildContext context, state) {
             if (state is SuccessfullyPersonalSettingState) {
-              Navigator.of(context).push(MaterialPageRoute(builder: (context) => const GoalScreen()));
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  GoalScreen(email: widget.email)));
             }
-
             if (state is ErrorPersonalSettingState) {
               ScaffoldMessenger.of(context)
                   .showSnackBar(SnackBar(content: Text(LocaleKeys.please_fill_in_general_information.tr())));
@@ -61,7 +62,7 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
                   spaces,
                   NameAndSkipWidget(
                     onPressed: () {
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => const GoalScreen()));
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  GoalScreen(email: widget.email)));
                     },
                   ),
                   spaces,
@@ -89,7 +90,7 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
                   CustomButton(
                     text: LocaleKeys.next.tr(),
                     onPressed: () =>
-                        context.read<PersonalSettingBloc>().add(SaveGeneralSettingEvent(gender, age, weight)),
+                        context.read<PersonalSettingBloc>().add(SaveGeneralSettingEvent(email: widget.email, sex: gender, age: age, weight: weight)),
                     buttonColor: CustomTheme.buttonDarkColor,
                     textButtonColor: CustomTheme.decorationColor,
                   ),

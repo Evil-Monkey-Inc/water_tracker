@@ -22,9 +22,9 @@ abstract class Repository {
 
   Future<int?> getCupCount(DateTime time);
 
-  Future<void> saveUserInfo(UserSettings userSettings);
+  Future<void> saveUserInfo(String email, UserSettings userSettings);
 
-  Future<void> saveUserGoal(GoalList goalsList);
+  Future<void> saveUserGoal(String email, GoalList goalsList);
 
 
 }

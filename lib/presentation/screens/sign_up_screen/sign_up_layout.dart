@@ -34,9 +34,6 @@ class _SignUpLayoutState extends State<SignUpLayout> {
             if (state is ErrorRegistrationState) {
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(LocaleKeys.error_try_again.tr())));
             }
-            if (state is SuccessfullySignUpState) {
-              Navigator.of(context).push(MaterialPageRoute(builder: (context) => const PersonalSettingScreen()));
-            }
           },
           builder: (BuildContext context, state) {
             return SingleChildScrollView(
@@ -52,8 +49,11 @@ class _SignUpLayoutState extends State<SignUpLayout> {
                   ),
                   SignUpForm(
                     isButtonEnabled: state is! LoadingSignUpState,
-                    onSignUpButtonPressed: (email, pass) =>
-                        context.read<SignUpBloc>().add(CreateUserEvent(email, pass)),
+                    onSignUpButtonPressed: (email, pass) {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => PersonalSettingScreen(email: email)));
+                      context.read<SignUpBloc>().add(CreateUserEvent(email, pass));
+                    },
                   ),
                   const PrivacyPolicyAndTermsWidget(),
                   spaces,

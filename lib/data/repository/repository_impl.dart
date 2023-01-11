@@ -57,10 +57,10 @@ class RepositoryImpl extends Repository {
   String getDateKey(DateTime dateTime) => counterCupsDateFormat.format(dateTime);
 
   @override
-  Future<void> saveUserGoal(GoalList goalsList) => fireStoreService.saveUserGoal(goalsList);
+  Future<void> saveUserGoal(String email, GoalList goalsList) => fireStoreService.saveUserGoal(email, goalsList);
 
   @override
-  Future<void> saveUserInfo(UserSettings userSettings) => fireStoreService.saveUserInfo(userSettings);
+  Future<void> saveUserInfo(String email, UserSettings userSettings) => fireStoreService.saveUserInfo(email, userSettings);
 
  
 }

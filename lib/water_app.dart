@@ -33,7 +33,7 @@ class _WaterAppState extends State<WaterApp> {
         inputDecorationTheme: CustomTheme.inputDecorationTheme,
         textSelectionTheme: CustomTheme.cursorColor,
       ),
-      home: const PersonalSettingScreen(),
+      home: const SignInScreen(),
       builder: (context, widget) => SafeArea(child: widget ?? const SizedBox()),
     );
   }

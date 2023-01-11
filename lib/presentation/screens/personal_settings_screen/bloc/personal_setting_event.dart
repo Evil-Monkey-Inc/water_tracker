@@ -3,7 +3,8 @@ import 'package:water_tracker/data/models/gender.dart';
 abstract class PersonalSettingEvent {}
 
 class SaveGeneralSettingEvent extends PersonalSettingEvent {
-  SaveGeneralSettingEvent(this.sex, this.age, this.weight);
+  SaveGeneralSettingEvent({required this.sex, required this.age, required this.weight, required this.email});
+  final String email;
   final Gender sex;
   final int age;
   final int weight;

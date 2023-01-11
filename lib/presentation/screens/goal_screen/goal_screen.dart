@@ -6,13 +6,15 @@ import 'package:water_tracker/presentation/screens/goal_screen/bloc/goal_bloc.da
 import 'package:water_tracker/presentation/screens/goal_screen/goal_layout.dart';
 
 class GoalScreen extends StatelessWidget {
-  const GoalScreen({super.key});
+  const GoalScreen({super.key, required this.email});
+
+  final String email;
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider<GoalBloc>(
       create: (context) => GoalBloc(getIt<Repository>()),
-      child: const GoalLayout(),
+      child:  GoalLayout(email: email),
     );
   }
 }
