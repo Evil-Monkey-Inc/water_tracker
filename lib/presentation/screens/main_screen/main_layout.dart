@@ -9,7 +9,9 @@ import 'package:water_tracker/presentation/screens/main_screen/bloc/main_screen_
 import 'package:water_tracker/presentation/widgets/molecules/main_counter_button_widget.dart';
 
 class MainLayout extends StatefulWidget {
-  const MainLayout({super.key});
+  const MainLayout({super.key, required this.email});
+
+  final String email;
 
   @override
   State<MainLayout> createState() => _MainLayoutState();
@@ -48,7 +50,7 @@ class _MainLayoutState extends State<MainLayout> {
               alignment: Alignment.bottomCenter,
               children: [
                 MainScreenButtonWidget(
-                  onPressed: () => context.read<MainScreenBloc>().add(SaveCounterEvent()),
+                  onPressed: () => context.read<MainScreenBloc>().add(SaveCounterEvent(widget.email)),
                 ),
                 MainScreenCounterWidget(
                   maxCount: cupsMaxCount,

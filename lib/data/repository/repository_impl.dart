@@ -2,9 +2,9 @@ import 'package:water_tracker/data/models/goal_list.dart';
 import 'package:water_tracker/data/models/user_settings.dart';
 import 'package:water_tracker/data/repository/repository.dart';
 import 'package:water_tracker/data/services/authentication_service/authentication_service.dart';
+import 'package:water_tracker/data/services/storage_service/firestore_storage_serice.dart';
 import 'package:water_tracker/data/services/storage_service/shered_preff_storage_service.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:water_tracker/data/services/storage_service/firestore_storage_service_impl.dart';
 
 class RepositoryImpl extends Repository {
   RepositoryImpl(this.registrationService, this.sheredPreffStorageService, this.fireStoreService);
@@ -61,6 +61,9 @@ class RepositoryImpl extends Repository {
 
   @override
   Future<void> saveUserInfo(String email, UserSettings userSettings) => fireStoreService.saveUserInfo(email, userSettings);
+
+  @override
+  Future<void> saveUserCount(String email, int counterCups) => fireStoreService.saveUserCount(email, counterCups);
 
  
 }

@@ -9,6 +9,7 @@ class MainScreenBloc extends Bloc<MainScreenEvent, MainScreenState> {
       try {
         final newCount = state.counter + 1;
         if (newCount > maxCupCount) return;
+        await repository.saveUserCount(event.email, newCount);
         final isSaved = await repository.saveCupCount(newCount);
         emit(isSaved ? CounterState(newCount) : ErrorMainScreenState(state.counter));
       } catch (e) {

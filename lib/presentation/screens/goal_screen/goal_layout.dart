@@ -42,7 +42,7 @@ class _GoalLayoutState extends State<GoalLayout> {
         child: BlocConsumer<GoalBloc, GoalState>(
           listener: (context, state) {
             if (state is SuccessfullyGoalState) {
-              Navigator.of(context).push(MaterialPageRoute(builder: (context) => const NotificationScreen()));
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  NotificationScreen(email: widget.email)));
             }
             if (state is ErrorGoalState) {
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(LocaleKeys.failed_store.tr())));
@@ -55,7 +55,7 @@ class _GoalLayoutState extends State<GoalLayout> {
                 spaces,
                 NameAndSkipWidget(
                   onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const NotificationScreen()));
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => NotificationScreen(email: widget.email)));
                   },
                 ),
                 spaces,
@@ -90,7 +90,7 @@ class _GoalLayoutState extends State<GoalLayout> {
                 CustomButton(
                   onPressed: () {
                     context.read<GoalBloc>().add(SaveGoalEvent(email: widget.email, goals: selectedGoals.toList()));
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const NotificationScreen()));
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  NotificationScreen(email: widget.email)));
                   },
                   text: LocaleKeys.next.tr(),
                   buttonColor: CustomTheme.buttonDarkColor,

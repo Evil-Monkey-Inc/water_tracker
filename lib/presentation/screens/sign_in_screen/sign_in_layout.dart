@@ -34,9 +34,6 @@ class _SignInLayoutState extends State<SignInLayout> {
             if (state is ErrorSignInState) {
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(LocaleKeys.error_try_again.tr())));
             }
-            if (state is SuccessfullySignInState) {
-              Navigator.of(context).push(MaterialPageRoute(builder: (context) => const MainScreen()));
-            }
           },
           builder: (BuildContext context, state) {
             return SingleChildScrollView(
@@ -54,6 +51,7 @@ class _SignInLayoutState extends State<SignInLayout> {
                   SignInForm(
                     isButtonEnabled: state is! LoadingSignInState,
                     onSignInButtonPressed: (String email, String password) {
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  MainScreen(email: email)));
                       context.read<SignInBloc>().add(SignInUserEvent(email, password));
                     },
                   ),
