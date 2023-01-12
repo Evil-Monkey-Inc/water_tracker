@@ -2,7 +2,7 @@ import 'package:water_tracker/data/models/goal_list.dart';
 import 'package:water_tracker/data/models/user_settings.dart';
 import 'package:water_tracker/data/repository/repository.dart';
 import 'package:water_tracker/data/services/authentication_service/authentication_service.dart';
-import 'package:water_tracker/data/services/storage_service/firestore_storage_serice.dart';
+import 'package:water_tracker/data/services/storage_service/firestore_storage_service.dart';
 import 'package:water_tracker/data/services/storage_service/shered_preff_storage_service.dart';
 import 'package:easy_localization/easy_localization.dart';
 

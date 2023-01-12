@@ -9,10 +9,11 @@ import 'package:water_tracker/presentation/widgets/molecules/input_field_widget.
 
 
 class SignUpForm extends StatefulWidget {
-  const SignUpForm(
-      {super.key,
-      required this.isButtonEnabled,
-      required this.onSignUpButtonPressed});
+  const SignUpForm({
+    super.key,
+    required this.isButtonEnabled,
+    required this.onSignUpButtonPressed,
+  });
 
   final void Function(String email, String password) onSignUpButtonPressed;
   final bool isButtonEnabled;

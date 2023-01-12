@@ -1,7 +1,8 @@
 import 'package:water_tracker/data/models/goal_list.dart';
 import 'package:water_tracker/data/models/user_settings.dart';
+// ignore: depend_on_referenced_packages
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:water_tracker/data/services/storage_service/firestore_storage_serice.dart';
+import 'package:water_tracker/data/services/storage_service/firestore_storage_service.dart';
 
 class FireStoreStorageServiceImpl extends FireStoreStorageService{
 

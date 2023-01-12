@@ -51,7 +51,10 @@ class _SignUpLayoutState extends State<SignUpLayout> {
                     isButtonEnabled: state is! LoadingSignUpState,
                     onSignUpButtonPressed: (email, pass) {
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => PersonalSettingScreen(email: email)));
+                          builder: (context) =>
+                              PersonalSettingScreen(email: email),
+                        ),
+                      );
                       context.read<SignUpBloc>().add(CreateUserEvent(email, pass));
                     },
                   ),
