@@ -1,17 +1,7 @@
 import 'package:water_tracker/data/models/goal_list.dart';
 import 'package:water_tracker/data/models/user_settings.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-
-
-
-
-abstract class FireStoreStorageService{
-  Future<void> saveUserInfo(String email, UserSettings userSettings);
-
-  Future<void> saveUserGoal(String email, GoalList goalsList);
-
-// Future<void> saveCupCount(String dateKey, int counterCups);
-}
+import 'package:water_tracker/data/services/storage_service/firestore_storage_serice.dart';
 
 class FireStoreStorageServiceImpl extends FireStoreStorageService{
 
@@ -37,8 +27,7 @@ class FireStoreStorageServiceImpl extends FireStoreStorageService{
 
   @override
   Future<void> saveUserGoal(String email, GoalList goalsList) async {
-    final testRef =
-        FirebaseFirestore.instance.collection(collectionKey).doc(email);
+    final testRef = FirebaseFirestore.instance.collection(collectionKey).doc(email);
     await testRef.set(
       {
         userSettingsKey: GoalList(goals: goalsList.goals).toJson(),
@@ -47,11 +36,15 @@ class FireStoreStorageServiceImpl extends FireStoreStorageService{
     );
   }
 
-/*  @override
-  Future<bool> saveCupCount(String dateKey, int counterCups) {
-    // TODO: implement saveCupCount
-    throw UnimplementedError();
-  }*/
-
-
+  @override
+  Future<void> saveUserCount(String email, int counterCups) async {
+    final time = DateTime.parse(DateTime.now().toString());
+    final String dateKey = "userCups.$time";
+    final testRef = FirebaseFirestore.instance.collection(collectionKey).doc(email);
+    await testRef.update(
+      {
+        dateKey : counterCups.toString()
+      },
+    );
+  }
 }
