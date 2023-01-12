@@ -8,14 +8,13 @@ class FireStoreStorageServiceImpl extends FireStoreStorageService{
 
   static const collectionKey = 'users';
   static const userSettingsKey = 'userSettings';
-  static const userCountKey = 'userCount';
+  static const userCountCupKey = 'userCount';
 
 
   @override
   Future<void> saveUserInfo(String email, UserSettings userSettings) async {
-    final testRef =
-        FirebaseFirestore.instance.collection(collectionKey).doc(email);
-    await testRef.set(
+    final userCollection = FirebaseFirestore.instance.collection(collectionKey).doc(email);
+    await userCollection.set(
       {
         userSettingsKey: UserSettings(
           gender: userSettings.gender,
@@ -28,8 +27,8 @@ class FireStoreStorageServiceImpl extends FireStoreStorageService{
 
   @override
   Future<void> saveUserGoal(String email, GoalList goalsList) async {
-    final testRef = FirebaseFirestore.instance.collection(collectionKey).doc(email);
-    await testRef.set(
+    final userCollection = FirebaseFirestore.instance.collection(collectionKey).doc(email);
+    await userCollection.set(
       {
         userSettingsKey: GoalList(goals: goalsList.goals).toJson(),
       },
@@ -39,12 +38,12 @@ class FireStoreStorageServiceImpl extends FireStoreStorageService{
 
   @override
   Future<void> saveUserCount(String email, int counterCups) async {
-    final time = DateTime.parse(DateTime.now().toString());
-    final String dateKey = "userCups.$time";
-    final testRef = FirebaseFirestore.instance.collection(collectionKey).doc(email);
-    await testRef.update(
+    final date = DateTime.parse(DateTime.now().toString());
+    final String countUserDataKey = "userCups.$date";
+    final userCollection = FirebaseFirestore.instance.collection(collectionKey).doc(email);
+    await userCollection.update(
       {
-        dateKey : counterCups.toString()
+        countUserDataKey : counterCups.toString()
       },
     );
   }
