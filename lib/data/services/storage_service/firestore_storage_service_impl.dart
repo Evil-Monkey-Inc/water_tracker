@@ -39,8 +39,7 @@ class FireStoreStorageServiceImpl extends FireStoreStorageService{
       final timeConverter = DateTime.parse(DateTime.now().toString());
       final String dateKey = "userCups.$timeConverter";
       final testRef = FirebaseFirestore.instance.collection(collectionKey).doc(email);
-      await testRef.update(
-        {dateKey: counterCups.toString()},
+      await testRef.update({dateKey: counterCups.toString()},
       );
     }
   }
