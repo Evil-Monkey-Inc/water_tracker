@@ -2,16 +2,14 @@ import 'package:water_tracker/data/models/goal_list.dart';
 import 'package:water_tracker/data/models/user_settings.dart';
 import 'package:water_tracker/data/repository/repository.dart';
 import 'package:water_tracker/data/services/authentication_service/authentication_service.dart';
-import 'package:water_tracker/data/services/storage_service/firestore_storage_service.dart';
-import 'package:water_tracker/data/services/storage_service/shered_preff_storage_service.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:water_tracker/data/services/storage_service/storage_service.dart';
 
 class RepositoryImpl extends Repository {
-  RepositoryImpl(this.registrationService, this.sheredPreffStorageService, this.fireStoreService);
+  RepositoryImpl(this.registrationService, this.storageService);
 
   final AuthenticationService registrationService;
-  final SheredPreffStorageService sheredPreffStorageService;
-  final FireStoreStorageService fireStoreService;
+  final StorageService storageService;
 
   final counterCupsDateFormat = DateFormat('dd.mm.yyyy');
 
@@ -30,43 +28,28 @@ class RepositoryImpl extends Repository {
   }
 
   @override
-  Future<bool> saveGeneralInfo(UserSettings userSettings) async {
-    final result = await sheredPreffStorageService.saveGeneralInfo(userSettings);
+  Future<bool> saveGeneralInfo(String email, UserSettings userSettings) async {
+    final result = await storageService.saveUserSetting(email, userSettings);
     return result;
   }
 
   @override
-  Future<bool> saveGoal(GoalList goalsList) async {
-    final result = await sheredPreffStorageService.saveGoal(goalsList);
+  Future<bool> saveGoal(String email, GoalList goalsList) async {
+    final result = await storageService.saveUserGoal(email, goalsList);
     return result;
   }
 
   @override
-  Future<String?> getGoal() => sheredPreffStorageService.getGoal();
-
-  @override
-  Future<bool> saveCupCount(int counterCups) async {
+  Future<bool> saveCupCount(String email, int counterCups) async {
     final time = DateTime.now();
-    final result = await sheredPreffStorageService.saveCupCount(getDateKey(time), counterCups);
+    final result = await storageService.saveUserCount(email, getDateKey(time), counterCups);
     return result;
   }
 
   @override
-  Future<int?> getCupCount(DateTime time) async => sheredPreffStorageService.getCupCount(getDateKey(time));
+  Future<int?> getCupCount(String email, DateTime time) async {
+    return storageService.getUserCount(email, getDateKey(time));
+  }
 
   String getDateKey(DateTime dateTime) => counterCupsDateFormat.format(dateTime);
-
-  @override
-  Future<void> saveUserGoal(String email, GoalList goalsList) => fireStoreService.saveUserGoal(email, goalsList);
-
-  @override
-  Future<void> saveUserInfo(String email, UserSettings userSettings) => fireStoreService.saveUserInfo(email, userSettings);
-
-  @override
-  Future<void> saveUserCount(String email, int counterCups) => fireStoreService.saveUserCount(email, counterCups);
-
-  @override
-  Future<int?> getUserCount(String email) => fireStoreService.getUserCount(email);
-
- 
 }

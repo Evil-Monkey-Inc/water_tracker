@@ -1,59 +1,70 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:water_tracker/data/models/goal_list.dart';
 import 'package:water_tracker/data/models/user_settings.dart';
-// ignore: depend_on_referenced_packages
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:water_tracker/data/services/storage_service/firestore_storage_service.dart';
+import 'package:water_tracker/data/services/storage_service/storage_service.dart';
 
-class FireStoreStorageServiceImpl extends FireStoreStorageService{
-
-  static const collectionKey = 'users';
-  static const userSettingsKey = 'userSettings';
-  static const userCountCupKey = 'userCount';
-  static const amountOfWaterDrunkKey = 'amountOfWaterDrunk';
-
-  late final int countCup;
-  String date = DateFormat('y-M-d').format(DateTime.now());
-
+class FireStoreStorageServiceImpl extends FireStoreStorageService {
+  final fireStore = FirebaseFirestore.instance;
 
   @override
-  Future<void> saveUserInfo(String email, UserSettings userSettings) async {
-    final userCollection = FirebaseFirestore.instance.collection(collectionKey).doc(email);
-    await userCollection.set(
-      {
-        userSettingsKey: UserSettings(
-          gender: userSettings.gender,
-          age: userSettings.age,
-          weight: userSettings.weight,
-        ).toJson(),
-      },
-    );
+  Future<bool> saveUserSetting(String email, UserSettings userSettings) async {
+    try {
+      final userCollection = fireStore.collection(StorageService.usersKey).doc(email);
+      await userCollection.set(
+        {StorageService.userSettingsKey: userSettings.toJson()},
+      );
+      return true;
+    } on FirebaseException {
+      return false;
+    }
   }
 
   @override
-  Future<void> saveUserGoal(String email, GoalList goalsList) async {
-    final userCollection = FirebaseFirestore.instance.collection(collectionKey).doc(email);
-    await userCollection.set(
-      {userSettingsKey: GoalList(goals: goalsList.goals).toJson()},
-      SetOptions(merge: true),
-    );
+  Future<bool> saveUserGoal(String email, GoalList goalsList) async {
+    try {
+      final userCollection = fireStore.collection(StorageService.usersKey).doc(email);
+
+      await userCollection.set(
+        {StorageService.userSettingsKey: goalsList.toJson()},
+        SetOptions(merge: true),
+      );
+      return true;
+    } on FirebaseException {
+      return false;
+    }
   }
 
   @override
-  Future<void> saveUserCount(String email, int counterCups) async {
-    final userCollection = FirebaseFirestore.instance.collection(collectionKey).doc(email).collection(userCountCupKey).doc(amountOfWaterDrunkKey);
-    await userCollection.set({date : counterCups});
+  Future<bool> saveUserCount(String email, String dateKey, int counterCups) async {
+    try {
+      final userCollection = fireStore
+          .collection(StorageService.usersKey)
+          .doc(email)
+          .collection(StorageService.userCountKey)
+          .doc(StorageService.amountOfWaterDrunkKey);
+
+      await userCollection.set({dateKey: counterCups});
+      return true;
+    } on FirebaseException {
+      return false;
+    }
   }
 
-
-
   @override
-  Future<int?> getUserCount(String email) async {
-    final userCollection = FirebaseFirestore.instance.collection(collectionKey).doc(email).collection(userCountCupKey).doc(amountOfWaterDrunkKey);
-    await userCollection.get().then((DocumentSnapshot documentSnapshot) {
-      final Map<String, dynamic> data =
-      documentSnapshot.data()! as Map<String, dynamic>;
-      countCup = data[date] as int;
-    });
-    return countCup;
-  }}
+  Future<int?> getUserCount(String email, String dateKey) async {
+    try {
+      final userCollection = fireStore
+          .collection(StorageService.usersKey)
+          .doc(email)
+          .collection(StorageService.userCountKey)
+          .doc(StorageService.amountOfWaterDrunkKey);
+
+      final documentSnapshot = await userCollection.get();
+      final data = documentSnapshot.data();
+      return data?[dateKey] as int?;
+    } on FirebaseException {
+      return 0;
+    }
+  }
+}
