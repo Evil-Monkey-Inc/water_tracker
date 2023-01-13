@@ -24,6 +24,13 @@ class _WaterAppState extends State<WaterApp> {
     super.initState();
   }
 
+  static const signInScreenPath = 'SignInScreen';
+  static const signUpScreenPath = 'SignUpScreen';
+  static const personalSettingScreenPath = 'PersonalSettingScreen';
+  static const notificationScreenPath = 'NotificationScreen';
+  static const greetingScreenPath = 'GreetingScreen';
+  static const mainScreenPath = 'MainScreen';
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -37,14 +44,14 @@ class _WaterAppState extends State<WaterApp> {
         inputDecorationTheme: CustomTheme.inputDecorationTheme,
         textSelectionTheme: CustomTheme.cursorColor,
       ),
-      initialRoute: "SignInScreen",
+      initialRoute: signInScreenPath,
       routes: {
-        "SignInScreen" : (context) =>  const SignInScreen(),
-        "SignUpScreen" : (context) => const SignUpScreen(),
-        "PersonalSettingScreen" : (context) =>   const PersonalSettingScreen(),
-        "NotificationScreen" : (context) =>  const NotificationScreen(),
-        "GreetingScreen" : (context) =>  const GreetingScreen(),
-        "MainScreen" : (context) =>  const MainScreen(),
+        signInScreenPath : (context) =>  const SignInScreen(),
+        signUpScreenPath : (context) => const SignUpScreen(),
+        personalSettingScreenPath : (context) =>   const PersonalSettingScreen(),
+        notificationScreenPath : (context) =>  const NotificationScreen(),
+        greetingScreenPath : (context) =>  const GreetingScreen(),
+        mainScreenPath : (context) =>  const MainScreen(),
       },
       home: const SignInScreen(),
       builder: (context, widget) => SafeArea(child: widget ?? const SizedBox()),
