@@ -24,7 +24,7 @@ class _MainLayoutState extends State<MainLayout> {
 
   @override
   void initState() {
-    context.read<MainScreenBloc>().add(AppLaunchEvent());
+    context.read<MainScreenBloc>().add(AppLaunchEvent(widget.email));
     super.initState();
   }
 

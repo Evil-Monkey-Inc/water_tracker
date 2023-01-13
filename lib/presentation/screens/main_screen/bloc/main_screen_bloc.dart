@@ -17,6 +17,7 @@ class MainScreenBloc extends Bloc<MainScreenEvent, MainScreenState> {
       }
     });
     on<AppLaunchEvent>((event, emit) async {
+      await repository.getUserCount(event.email);
       final result = await repository.getCupCount(DateTime.now());
       emit(result == null ? ErrorMainScreenState(state.counter) : CounterState(result));
     });

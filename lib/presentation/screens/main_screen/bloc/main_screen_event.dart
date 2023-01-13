@@ -5,4 +5,7 @@ class SaveCounterEvent extends MainScreenEvent {
   final String email;
 }
 
-class AppLaunchEvent extends MainScreenEvent {}
+class AppLaunchEvent extends MainScreenEvent {
+  AppLaunchEvent(this.email);
+  final String email;
+}
