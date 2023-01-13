@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:water_tracker/data/models/goal_list.dart';
 import 'package:water_tracker/data/models/user_settings.dart';
 // ignore: depend_on_referenced_packages
@@ -35,6 +34,7 @@ class FireStoreStorageServiceImpl extends FireStoreStorageService{
     final userCollection = FirebaseFirestore.instance.collection(collectionKey).doc(email);
     await userCollection.set(
       {userSettingsKey: GoalList(goals: goalsList.goals).toJson()},
+>>>>>>>>> Temporary merge branch 2
       SetOptions(merge: true),
     );
   }
