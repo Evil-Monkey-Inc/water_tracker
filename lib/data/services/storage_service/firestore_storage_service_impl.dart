@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:water_tracker/data/models/goal_list.dart';
 import 'package:water_tracker/data/models/user_settings.dart';
 // ignore: depend_on_referenced_packages
@@ -9,6 +10,10 @@ class FireStoreStorageServiceImpl extends FireStoreStorageService{
   static const collectionKey = 'users';
   static const userSettingsKey = 'userSettings';
   static const userCountCupKey = 'userCount';
+  static const amountOfWaterDrunkKey = 'amountOfWaterDrunk';
+
+  late final int countCup;
+  String date = DateFormat('y-M-d').format(DateTime.now());
 
 
   @override
@@ -36,10 +41,19 @@ class FireStoreStorageServiceImpl extends FireStoreStorageService{
 
   @override
     Future<void> saveUserCount(String email, int counterCups) async {
-      final timeConverter = DateTime.parse(DateTime.now().toString());
-      final String dateKey = "userCups.$timeConverter";
-      final testRef = FirebaseFirestore.instance.collection(collectionKey).doc(email);
-      await testRef.update({dateKey: counterCups.toString()},
-      );
+      final userCollection = FirebaseFirestore.instance.collection(collectionKey).doc(email).collection(userCountCupKey).doc(amountOfWaterDrunkKey);
+      await userCollection.set({date : counterCups});
     }
-  }
+
+
+
+  @override
+  Future<int?> getUserCount(String email) async {
+    final userCollection = FirebaseFirestore.instance.collection(collectionKey).doc(email).collection(userCountCupKey).doc(amountOfWaterDrunkKey);
+    await userCollection.get().then((DocumentSnapshot documentSnapshot) {
+      final Map<String, dynamic> data =
+      documentSnapshot.data()! as Map<String, dynamic>;
+       countCup = data[date] as int;
+    });
+    return countCup;
+  }}

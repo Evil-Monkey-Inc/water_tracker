@@ -65,5 +65,8 @@ class RepositoryImpl extends Repository {
   @override
   Future<void> saveUserCount(String email, int counterCups) => fireStoreService.saveUserCount(email, counterCups);
 
+  @override
+  Future<int?> getUserCount(String email) => fireStoreService.getUserCount(email);
+
  
 }

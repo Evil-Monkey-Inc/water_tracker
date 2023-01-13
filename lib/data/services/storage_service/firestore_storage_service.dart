@@ -7,4 +7,6 @@ abstract class FireStoreStorageService{
   Future<void> saveUserGoal(String email, GoalList goalsList);
 
   Future<void> saveUserCount(String email, int counterCups);
+
+  Future<int?> getUserCount(String email);
 }
