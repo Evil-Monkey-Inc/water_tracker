@@ -8,7 +8,6 @@ import 'package:water_tracker/generated/locale_keys.g.dart';
 import 'package:water_tracker/presentation/screens/goal_screen/bloc/goal_bloc.dart';
 import 'package:water_tracker/presentation/screens/goal_screen/bloc/goal_event.dart';
 import 'package:water_tracker/presentation/screens/goal_screen/bloc/goal_state.dart';
-import 'package:water_tracker/presentation/screens/notification_screen/notification_screen.dart';
 import 'package:water_tracker/presentation/widgets/molecules/custom_button.dart';
 import 'package:water_tracker/presentation/widgets/molecules/goal_widget.dart';
 import 'package:water_tracker/presentation/widgets/molecules/name_and_skip_widget.dart';
@@ -32,6 +31,8 @@ class _GoalLayoutState extends State<GoalLayout> {
   static const axisSpacing = 16.0;
   static const crossAxisCount = 2;
 
+  static const navigationPath = 'NotificationScreen';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,7 +41,7 @@ class _GoalLayoutState extends State<GoalLayout> {
         child: BlocConsumer<GoalBloc, GoalState>(
           listener: (context, state) {
             if (state is SuccessfullyGoalState) {
-              Navigator.of(context).push(MaterialPageRoute(builder: (context) => const NotificationScreen()));
+              Navigator.pushNamed(context, navigationPath);
             }
             if (state is ErrorGoalState) {
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(LocaleKeys.failed_store.tr())));
@@ -53,7 +54,7 @@ class _GoalLayoutState extends State<GoalLayout> {
                 spaces,
                 NameAndSkipWidget(
                   onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const NotificationScreen()));
+                    Navigator.pushNamed(context, navigationPath);
                   },
                 ),
                 spaces,
@@ -88,7 +89,7 @@ class _GoalLayoutState extends State<GoalLayout> {
                 CustomButton(
                   onPressed: () {
                     context.read<GoalBloc>().add(SaveGoalEvent(selectedGoals.toList()));
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const NotificationScreen()));
+                    Navigator.pushNamed(context, navigationPath);
                   },
                   text: LocaleKeys.next.tr(),
                   buttonColor: CustomTheme.buttonDarkColor,

@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:water_tracker/custom_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
-import 'package:water_tracker/presentation/screens/sign_in_screen/sign_in_screen.dart';
+
 
 class AlreadyHaveAnAccountWidget extends StatelessWidget {
   const AlreadyHaveAnAccountWidget({super.key});
 
   static const notHaveAccountPadding = EdgeInsets.all(8.0);
+  static const navigationPath = 'SignInScreen';
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +29,7 @@ class AlreadyHaveAnAccountWidget extends StatelessWidget {
           ),
           textAlign: TextAlign.center,
         ),
-        onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const SignInScreen())),
+        onTap: () => Navigator.pushNamed(context, navigationPath),
       ),
     );
   }
