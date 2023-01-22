@@ -36,7 +36,7 @@ class _SignInLayoutState extends State<SignInLayout> {
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(LocaleKeys.error_try_again.tr())));
             }
             if (state is SuccessfullySignInState) {
-              Navigator.pushNamed(context, SignInScreen.navigationPath);
+              Navigator.of(context).pushNamedAndRemoveUntil(SignInScreen.navigationPath, (Route<dynamic> route) => false);
             }
           },
           builder: (BuildContext context, state) {

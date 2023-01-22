@@ -47,7 +47,7 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
         child: BlocConsumer<PersonalSettingBloc, PersonalSettingState>(
           listener: (BuildContext context, state) {
             if (state is SuccessfullyPersonalSettingState) {
-              Navigator.pushNamed(context, PersonalSettingScreen.navigationPath);
+              Navigator.of(context).pushNamedAndRemoveUntil( PersonalSettingScreen.navigationPath, (Route<dynamic> route) => false);
             }
 
             if (state is ErrorPersonalSettingState) {
@@ -62,7 +62,7 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
                   spaces,
                   NameAndSkipWidget(
                     onPressed: () {
-                      Navigator.pushNamed(context, PersonalSettingScreen.navigationPath);
+                      Navigator.of(context).pushNamedAndRemoveUntil( PersonalSettingScreen.navigationPath, (Route<dynamic> route) => false);
                     },
                   ),
                   spaces,

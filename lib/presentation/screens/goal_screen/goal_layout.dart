@@ -40,7 +40,7 @@ class _GoalLayoutState extends State<GoalLayout> {
         child: BlocConsumer<GoalBloc, GoalState>(
           listener: (context, state) {
             if (state is SuccessfullyGoalState) {
-              Navigator.pushNamed(context, GoalScreen.navigationPath);
+              Navigator.of(context).pushNamedAndRemoveUntil(GoalScreen.navigationPath, (Route<dynamic> route) => false);
             }
             if (state is ErrorGoalState) {
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(LocaleKeys.failed_store.tr())));
@@ -53,7 +53,7 @@ class _GoalLayoutState extends State<GoalLayout> {
                 spaces,
                 NameAndSkipWidget(
                   onPressed: () {
-                    Navigator.pushNamed(context, GoalScreen.navigationPath);
+                    Navigator.of(context).pushNamedAndRemoveUntil(GoalScreen.navigationPath, (Route<dynamic> route) => false);
                   },
                 ),
                 spaces,
@@ -88,7 +88,7 @@ class _GoalLayoutState extends State<GoalLayout> {
                 CustomButton(
                   onPressed: () {
                     context.read<GoalBloc>().add(SaveGoalEvent(selectedGoals.toList()));
-                    Navigator.pushNamed(context, GoalScreen.navigationPath);
+                    Navigator.of(context).pushNamedAndRemoveUntil(GoalScreen.navigationPath, (Route<dynamic> route) => false);
                   },
                   text: LocaleKeys.next.tr(),
                   buttonColor: CustomTheme.buttonDarkColor,

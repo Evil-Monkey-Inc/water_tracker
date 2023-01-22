@@ -24,7 +24,7 @@ class NotificationLayout extends StatelessWidget {
             spaces,
             NameAndSkipWidget(
               onPressed: () {
-                Navigator.pushNamed(context, NotificationScreen.navigationPath);
+                Navigator.of(context).pushNamedAndRemoveUntil(NotificationScreen.navigationPath, (Route<dynamic> route) => false);
               },
             ),
             largeSpace,

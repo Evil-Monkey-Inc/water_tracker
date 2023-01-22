@@ -25,8 +25,6 @@ class _WaterAppState extends State<WaterApp> {
     super.initState();
   }
 
-
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -42,6 +40,8 @@ class _WaterAppState extends State<WaterApp> {
       ),
       initialRoute: SignInScreen.initializePath,
       routes: {
+        SignInScreen.initializePath : (_) => const SignInScreen(),
+        SignUpScreen.initializePath : (_) => const SignUpScreen(),
         SignInScreen.navigationPath : (_) =>  const MainScreen(),
         SignUpScreen.navigationPath : (_) => const PersonalSettingScreen(),
         PersonalSettingScreen.navigationPath : (_) => const GoalScreen(),

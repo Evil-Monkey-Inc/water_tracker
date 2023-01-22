@@ -27,7 +27,7 @@ class GreetingLayout extends StatelessWidget {
               buttonColor: CustomTheme.buttonDarkColor,
               textButtonColor: CustomTheme.decorationColor,
               onPressed: () {
-                Navigator.pushNamed(context, GreetingScreen.navigationPath);
+                Navigator.of(context).pushNamedAndRemoveUntil(GreetingScreen.navigationPath, (Route<dynamic> route) => false);
               },
               text: LocaleKeys.get_started.tr(),
             ),
