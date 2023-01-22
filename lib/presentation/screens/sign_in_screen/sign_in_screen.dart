@@ -9,6 +9,7 @@ class SignInScreen extends StatelessWidget {
   const SignInScreen({super.key});
 
   static const navigationPath = 'MainScreen';
+  static const initializePath = 'SignInPath';
 
   @override
   Widget build(BuildContext context) {

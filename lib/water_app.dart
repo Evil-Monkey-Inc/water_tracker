@@ -25,6 +25,8 @@ class _WaterAppState extends State<WaterApp> {
     super.initState();
   }
 
+
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -38,9 +40,9 @@ class _WaterAppState extends State<WaterApp> {
         inputDecorationTheme: CustomTheme.inputDecorationTheme,
         textSelectionTheme: CustomTheme.cursorColor,
       ),
-      initialRoute: SignInScreen.navigationPath,
+      initialRoute: SignInScreen.initializePath,
       routes: {
-        SignInScreen.navigationPath : (_) =>  const SignInScreen(),
+        SignInScreen.navigationPath : (_) =>  const MainScreen(),
         SignUpScreen.navigationPath : (_) => const PersonalSettingScreen(),
         PersonalSettingScreen.navigationPath : (_) => const GoalScreen(),
         GoalScreen.navigationPath : (_) =>  const NotificationScreen(),
