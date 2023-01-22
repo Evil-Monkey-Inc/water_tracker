@@ -2,9 +2,9 @@ import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:water_tracker/data/models/goal_list.dart';
 import 'package:water_tracker/data/models/user_settings.dart';
-import 'package:water_tracker/data/services/storage_service/shered_preff_storage_service.dart';
+import 'package:water_tracker/data/services/storage_service/shared_preff_storage_service.dart';
 
-class SheredPreffStorageImplements extends SheredPreffStorageService {
+class SharedPreffStorageImplements extends SharedPreffStorageService {
   static const userSettingsKey = 'userSettings';
   static const goalsListKey = 'goalsListKey';
 
