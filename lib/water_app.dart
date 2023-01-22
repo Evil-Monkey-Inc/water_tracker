@@ -35,7 +35,8 @@ class _WaterAppState extends State<WaterApp> {
       ),
       home: const SignInScreen(),
       builder: (context, widget) {
-        // WT-114 (andreyK): for some reasons, wrapping all in safeArea breaks status and nav bar theming on iOS
+        // For some reasons, wrapping all in safeArea breaks status and nav bar theming on iOS.
+        // WT-114 (andreyK): https://evil-monkey.atlassian.net/browse/WT-101
         final shouldUseSafeArea = !Platform.isIOS;
         var child = widget ?? const SizedBox();
         if (shouldUseSafeArea) child = SafeArea(child: child);
