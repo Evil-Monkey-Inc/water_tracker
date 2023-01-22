@@ -11,7 +11,7 @@ class RepositoryImpl extends Repository {
   final AuthenticationService registrationService;
   final StorageService storageService;
 
-  final counterCupsDateFormat = DateFormat('dd.mm.yyyy');
+  final counterCupsDateFormat = DateFormat('dd.MM.yyyy');
 
   @override
   Future<bool> registerUser(String email, String password) async {
