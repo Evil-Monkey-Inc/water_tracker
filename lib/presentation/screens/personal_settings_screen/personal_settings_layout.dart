@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:water_tracker/custom_theme.dart';
 import 'package:water_tracker/data/models/gender.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
+import 'package:water_tracker/presentation/screens/personal_settings_screen/porsonal_settings_screen.dart';
 import 'package:water_tracker/presentation/widgets/molecules/custom_button.dart';
 import 'package:water_tracker/presentation/widgets/molecules/custom_slider_widget.dart';
 import 'package:water_tracker/presentation/widgets/molecules/name_and_skip_widget.dart';
@@ -38,8 +39,6 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
   static const upperFlex = 3;
   static const downFlex = 1;
 
-  static const navigationPath = 'NotificationScreen';
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,7 +47,7 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
         child: BlocConsumer<PersonalSettingBloc, PersonalSettingState>(
           listener: (BuildContext context, state) {
             if (state is SuccessfullyPersonalSettingState) {
-              Navigator.pushNamed(context, navigationPath);
+              Navigator.pushNamed(context, PersonalSettingScreen.navigationPath);
             }
 
             if (state is ErrorPersonalSettingState) {
@@ -63,7 +62,7 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
                   spaces,
                   NameAndSkipWidget(
                     onPressed: () {
-                      Navigator.pushNamed(context, navigationPath);
+                      Navigator.pushNamed(context, PersonalSettingScreen.navigationPath);
                     },
                   ),
                   spaces,

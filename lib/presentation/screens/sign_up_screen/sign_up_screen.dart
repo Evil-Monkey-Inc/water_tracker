@@ -8,6 +8,8 @@ import 'package:water_tracker/presentation/screens/sign_up_screen/sign_up_layout
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
 
+  static const navigationPath = 'PersonalSettingScreen';
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider<SignUpBloc>(

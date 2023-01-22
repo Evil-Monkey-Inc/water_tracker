@@ -8,6 +8,8 @@ import 'package:water_tracker/presentation/screens/personal_settings_screen/pers
 class PersonalSettingScreen extends StatelessWidget {
   const PersonalSettingScreen({super.key});
 
+  static const navigationPath = 'GoalScreen';
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider<PersonalSettingBloc>(

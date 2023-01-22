@@ -8,6 +8,8 @@ import 'package:water_tracker/presentation/screens/goal_screen/goal_layout.dart'
 class GoalScreen extends StatelessWidget {
   const GoalScreen({super.key});
 
+  static const navigationPath = 'NotificationScreen';
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider<GoalBloc>(

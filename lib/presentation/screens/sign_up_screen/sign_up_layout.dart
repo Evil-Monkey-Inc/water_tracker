@@ -5,6 +5,7 @@ import 'package:water_tracker/generated/locale_keys.g.dart';
 import 'package:water_tracker/presentation/screens/sign_up_screen/bloc/sign_up_bloc.dart';
 import 'package:water_tracker/presentation/screens/sign_up_screen/bloc/sign_up_event.dart';
 import 'package:water_tracker/presentation/screens/sign_up_screen/bloc/sign_up_state.dart';
+import 'package:water_tracker/presentation/screens/sign_up_screen/sign_up_screen.dart';
 import 'package:water_tracker/presentation/widgets/molecules/already_have_an_account.widget.dart';
 import 'package:water_tracker/presentation/widgets/molecules/hiding_on_keyboard_shown_widget.dart';
 import 'package:water_tracker/presentation/widgets/atoms/logo_widget.dart';
@@ -23,8 +24,6 @@ class _SignUpLayoutState extends State<SignUpLayout> {
   static const spaces = SizedBox(height: 24);
   static const paddingHorizontal = EdgeInsets.symmetric(horizontal: 24.0);
 
-  static const navigationPath = 'PersonalSettingScreen';
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +35,7 @@ class _SignUpLayoutState extends State<SignUpLayout> {
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(LocaleKeys.error_try_again.tr())));
             }
             if (state is SuccessfullySignUpState) {
-              Navigator.pushNamed(context, navigationPath);
+              Navigator.pushNamed(context, SignUpScreen.navigationPath);
             }
           },
           builder: (BuildContext context, state) {

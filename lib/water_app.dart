@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:water_tracker/custom_theme.dart';
+import 'package:water_tracker/presentation/screens/goal_screen/goal_screen.dart';
 import 'package:water_tracker/presentation/screens/greeting_screen/greeting_screen.dart';
 import 'package:water_tracker/presentation/screens/main_screen/main_screen.dart';
 import 'package:water_tracker/presentation/screens/notification_screen/notification_screen.dart';
@@ -24,13 +25,6 @@ class _WaterAppState extends State<WaterApp> {
     super.initState();
   }
 
-  static const signInScreenPath = 'SignInScreen';
-  static const signUpScreenPath = 'SignUpScreen';
-  static const personalSettingScreenPath = 'PersonalSettingScreen';
-  static const notificationScreenPath = 'NotificationScreen';
-  static const greetingScreenPath = 'GreetingScreen';
-  static const mainScreenPath = 'MainScreen';
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -44,14 +38,14 @@ class _WaterAppState extends State<WaterApp> {
         inputDecorationTheme: CustomTheme.inputDecorationTheme,
         textSelectionTheme: CustomTheme.cursorColor,
       ),
-      initialRoute: signInScreenPath,
+      initialRoute: SignInScreen.navigationPath,
       routes: {
-        signInScreenPath : (context) =>  const SignInScreen(),
-        signUpScreenPath : (context) => const SignUpScreen(),
-        personalSettingScreenPath : (context) =>   const PersonalSettingScreen(),
-        notificationScreenPath : (context) =>  const NotificationScreen(),
-        greetingScreenPath : (context) =>  const GreetingScreen(),
-        mainScreenPath : (context) =>  const MainScreen(),
+        SignInScreen.navigationPath : (_) =>  const SignInScreen(),
+        SignUpScreen.navigationPath : (_) => const PersonalSettingScreen(),
+        PersonalSettingScreen.navigationPath : (_) => const GoalScreen(),
+        GoalScreen.navigationPath : (_) =>  const NotificationScreen(),
+        NotificationScreen.navigationPath : (_) =>  const GreetingScreen(),
+        GreetingScreen.navigationPath : (_) =>  const MainScreen(),
       },
       home: const SignInScreen(),
       builder: (context, widget) => SafeArea(child: widget ?? const SizedBox()),
