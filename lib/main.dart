@@ -12,7 +12,7 @@ import 'package:water_tracker/get_it.dart';
 void main() async {
   final binding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: binding);
-  SystemChrome.setSystemUIOverlayStyle(CustomTheme().systemTheme);
+  SystemChrome.setSystemUIOverlayStyle(CustomTheme.systemTheme);
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
