@@ -4,7 +4,7 @@ import 'package:water_tracker/presentation/screens/notification_screen/notificat
 class NotificationScreen extends StatelessWidget {
   const NotificationScreen({super.key});
 
-  static const navigationPath = 'GreetingScreen';
+  static const route = 'notification_screen';
 
   @override
   Widget build(BuildContext context) {

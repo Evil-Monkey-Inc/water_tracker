@@ -29,7 +29,7 @@ class AlreadyHaveAnAccountWidget extends StatelessWidget {
           ),
           textAlign: TextAlign.center,
         ),
-        onTap: () => Navigator.pushNamed(context, SignInScreen.initializePath),
+        onTap: () => Navigator.of(context).pushNamedAndRemoveUntil(SignInScreen.route, (Route<dynamic> route) => false)
       ),
     );
   }

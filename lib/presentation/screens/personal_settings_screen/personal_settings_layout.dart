@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:water_tracker/custom_theme.dart';
 import 'package:water_tracker/data/models/gender.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
-import 'package:water_tracker/presentation/screens/personal_settings_screen/porsonal_settings_screen.dart';
+import 'package:water_tracker/presentation/screens/goal_screen/goal_screen.dart';
 import 'package:water_tracker/presentation/widgets/molecules/custom_button.dart';
 import 'package:water_tracker/presentation/widgets/molecules/custom_slider_widget.dart';
 import 'package:water_tracker/presentation/widgets/molecules/name_and_skip_widget.dart';
@@ -47,12 +47,11 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
         child: BlocConsumer<PersonalSettingBloc, PersonalSettingState>(
           listener: (BuildContext context, state) {
             if (state is SuccessfullyPersonalSettingState) {
-              Navigator.of(context).pushNamedAndRemoveUntil( PersonalSettingScreen.navigationPath, (Route<dynamic> route) => false);
+              Navigator.of(context).pushNamed(GoalScreen.route);
             }
 
             if (state is ErrorPersonalSettingState) {
-              ScaffoldMessenger.of(context)
-                  .showSnackBar(SnackBar(content: Text(LocaleKeys.please_fill_in_general_information.tr())));
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(LocaleKeys.please_fill_in_general_information.tr())));
             }
           },
           builder: (BuildContext context, state) {
@@ -62,7 +61,7 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
                   spaces,
                   NameAndSkipWidget(
                     onPressed: () {
-                      Navigator.of(context).pushNamedAndRemoveUntil( PersonalSettingScreen.navigationPath, (Route<dynamic> route) => false);
+                      Navigator.of(context).pushNamed(GoalScreen.route);
                     },
                   ),
                   spaces,
