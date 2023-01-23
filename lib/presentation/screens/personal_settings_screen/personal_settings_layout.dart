@@ -49,7 +49,9 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
             if (state is SuccessfullyPersonalSettingState) {
               Navigator.of(context).pushNamed(GoalScreen.route);
             }
-
+            if(state is SuccessfullySkipButtonState){
+              Navigator.of(context).pushNamed(GoalScreen.route);
+            }
             if (state is ErrorPersonalSettingState) {
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(LocaleKeys.please_fill_in_general_information.tr())));
             }
@@ -60,9 +62,7 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
                 children: [
                   spaces,
                   NameAndSkipWidget(
-                    onPressed: () {
-                      Navigator.of(context).pushNamed(GoalScreen.route);
-                    },
+                    onPressed: () => context.read<PersonalSettingBloc>().add(SkipPersonalSettingScreenEvent()),
                   ),
                   spaces,
                   TitleSettingWidget(

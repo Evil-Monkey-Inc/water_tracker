@@ -6,3 +6,5 @@ class SaveGoalEvent extends GoalEvent {
   SaveGoalEvent(this.goals);
   final List<Goal> goals;
 }
+
+class SkipGoalScreenEvent extends GoalEvent {}

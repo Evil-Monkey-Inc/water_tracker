@@ -9,6 +9,8 @@ import 'package:water_tracker/presentation/screens/goal_screen/bloc/goal_bloc.da
 import 'package:water_tracker/presentation/screens/goal_screen/bloc/goal_event.dart';
 import 'package:water_tracker/presentation/screens/goal_screen/bloc/goal_state.dart';
 import 'package:water_tracker/presentation/screens/notification_screen/notification_screen.dart';
+import 'package:water_tracker/presentation/screens/personal_settings_screen/bloc/personal_setting_bloc.dart';
+import 'package:water_tracker/presentation/screens/personal_settings_screen/bloc/personal_setting_event.dart';
 import 'package:water_tracker/presentation/widgets/molecules/custom_button.dart';
 import 'package:water_tracker/presentation/widgets/molecules/goal_widget.dart';
 import 'package:water_tracker/presentation/widgets/molecules/name_and_skip_widget.dart';
@@ -42,6 +44,9 @@ class _GoalLayoutState extends State<GoalLayout> {
             if (state is SuccessfullyGoalState) {
               Navigator.of(context).pushNamed(NotificationScreen.route);
             }
+            if(state is SuccessfullySkipButtonState){
+              Navigator.of(context).pushNamed(NotificationScreen.route);
+            }
             if (state is ErrorGoalState) {
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(LocaleKeys.failed_store.tr())));
             }
@@ -52,9 +57,7 @@ class _GoalLayoutState extends State<GoalLayout> {
               children: [
                 spaces,
                 NameAndSkipWidget(
-                  onPressed: () {
-                    Navigator.of(context).pushNamed(NotificationScreen.route);
-                  },
+                  onPressed: () => context.read<GoalBloc>().add(SkipGoalScreenEvent())
                 ),
                 spaces,
                 TitleSettingWidget(
