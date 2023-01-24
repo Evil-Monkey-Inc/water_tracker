@@ -6,6 +6,9 @@ import 'package:water_tracker/presentation/screens/personal_settings_screen/bloc
 
 class PersonalSettingBloc extends Bloc<PersonalSettingEvent, PersonalSettingState> {
   PersonalSettingBloc(this.repository) : super(InitialSettingScreenState()) {
+
+    on<SkipPersonalSettingScreenEvent>((event, emit) async => emit(SuccessfullySkipButtonState()));
+
     on<SaveGeneralSettingEvent>((event, emit) async {
       try {
         emit(SavingPersonalSettingState());

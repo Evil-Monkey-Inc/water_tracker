@@ -8,6 +8,8 @@ import 'package:water_tracker/presentation/screens/main_screen/main_layout.dart'
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
 
+  static const route = 'main_screen';
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider<MainScreenBloc>(

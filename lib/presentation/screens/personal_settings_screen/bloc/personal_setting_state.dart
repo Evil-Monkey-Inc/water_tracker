@@ -6,6 +6,8 @@ class SavingPersonalSettingState extends PersonalSettingState {}
 
 class SuccessfullyPersonalSettingState extends PersonalSettingState {}
 
+class SuccessfullySkipButtonState extends PersonalSettingState {}
+
 class ErrorPersonalSettingState extends PersonalSettingState {
   ErrorPersonalSettingState(this.exception);
   final Object exception;

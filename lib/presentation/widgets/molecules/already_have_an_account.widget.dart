@@ -4,6 +4,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
 import 'package:water_tracker/presentation/screens/sign_in_screen/sign_in_screen.dart';
 
+
 class AlreadyHaveAnAccountWidget extends StatelessWidget {
   const AlreadyHaveAnAccountWidget({super.key});
 
@@ -28,7 +29,7 @@ class AlreadyHaveAnAccountWidget extends StatelessWidget {
           ),
           textAlign: TextAlign.center,
         ),
-        onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const SignInScreen())),
+        onTap: () => Navigator.of(context).pushReplacementNamed(SignInScreen.route)
       ),
     );
   }
