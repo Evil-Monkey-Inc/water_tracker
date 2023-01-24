@@ -31,7 +31,7 @@ class NotHaveAccount extends StatelessWidget {
                 ],
               ),
             ),
-            onTap: () =>  Navigator.of(context).pushNamed(SignUpScreen.route),
+            onTap: () =>  Navigator.of(context).pushReplacementNamed(SignUpScreen.route)
           ),
         ],
       ),

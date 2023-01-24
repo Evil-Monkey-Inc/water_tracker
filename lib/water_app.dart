@@ -48,7 +48,6 @@ class _WaterAppState extends State<WaterApp> {
         GreetingScreen.route : (_) =>  const GreetingScreen(),
         MainScreen.route : (_) =>  const MainScreen(),
       },
-      home: const SignInScreen(),
       builder: (context, widget) => SafeArea(child: widget ?? const SizedBox()),
     );
   }
