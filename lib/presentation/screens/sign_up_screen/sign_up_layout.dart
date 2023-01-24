@@ -18,9 +18,11 @@ class SignUpLayout extends StatefulWidget {
 
   @override
   State<SignUpLayout> createState() => _SignUpLayoutState();
+
 }
 
 class _SignUpLayoutState extends State<SignUpLayout> {
+
   static const spaces = SizedBox(height: 24);
   static const paddingHorizontal = EdgeInsets.symmetric(horizontal: 24.0);
 

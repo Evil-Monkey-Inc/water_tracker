@@ -51,7 +51,7 @@ class _SignInLayoutState extends State<SignInLayout> {
                   SignInForm(
                     isButtonEnabled: state is! LoadingSignInState,
                     onSignInButtonPressed: (String email, String password) {
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  MainScreen(email: email)));
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  const MainScreen()));
                       context.read<SignInBloc>().add(SignInUserEvent(email, password));
                     },
                   ),

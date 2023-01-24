@@ -4,9 +4,8 @@ import 'package:water_tracker/presentation/widgets/molecules/name_and_skip_widge
 import 'package:water_tracker/presentation/widgets/molecules/notification_widget.dart';
 
 class NotificationLayout extends StatelessWidget {
-  const NotificationLayout({super.key, required this.email});
+  const NotificationLayout({super.key});
 
-  final String email;
 
   static const paddingHorizontal = EdgeInsets.symmetric(horizontal: 24.0);
   static const largeSpace = SizedBox(height: 140);
@@ -26,7 +25,7 @@ class NotificationLayout extends StatelessWidget {
             spaces,
             NameAndSkipWidget(
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => GreetingScreen(email: email)));
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => const GreetingScreen()));
               },
             ),
             largeSpace,

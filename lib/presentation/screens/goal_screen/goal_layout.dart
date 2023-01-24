@@ -15,9 +15,8 @@ import 'package:water_tracker/presentation/widgets/molecules/name_and_skip_widge
 import 'package:water_tracker/presentation/widgets/atoms/title_settings_widget.dart';
 
 class GoalLayout extends StatefulWidget {
-  const GoalLayout({super.key, required this.email});
+  const GoalLayout({super.key});
 
-  final String email;
 
   @override
   State<GoalLayout> createState() => _GoalLayoutState();
@@ -42,7 +41,7 @@ class _GoalLayoutState extends State<GoalLayout> {
         child: BlocConsumer<GoalBloc, GoalState>(
           listener: (context, state) {
             if (state is SuccessfullyGoalState) {
-              Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  NotificationScreen(email: widget.email)));
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  const NotificationScreen()));
             }
             if (state is ErrorGoalState) {
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(LocaleKeys.failed_store.tr())));
@@ -55,7 +54,7 @@ class _GoalLayoutState extends State<GoalLayout> {
                 spaces,
                 NameAndSkipWidget(
                   onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => NotificationScreen(email: widget.email)));
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const NotificationScreen()));
                   },
                 ),
                 spaces,
@@ -89,8 +88,8 @@ class _GoalLayoutState extends State<GoalLayout> {
                 spacesBetween,
                 CustomButton(
                   onPressed: () {
-                    context.read<GoalBloc>().add(SaveGoalEvent(email: widget.email, goals: selectedGoals.toList()));
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  NotificationScreen(email: widget.email)));
+                    context.read<GoalBloc>().add(SaveGoalEvent(goals: selectedGoals.toList()));
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  const NotificationScreen()));
                   },
                   text: LocaleKeys.next.tr(),
                   buttonColor: CustomTheme.buttonDarkColor,

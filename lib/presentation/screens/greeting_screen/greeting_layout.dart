@@ -7,9 +7,8 @@ import 'package:water_tracker/presentation/widgets/molecules/custom_button.dart'
 import 'package:water_tracker/presentation/widgets/molecules/greeting_widget.dart';
 
 class GreetingLayout extends StatelessWidget {
-  const GreetingLayout({super.key, required this.email});
+  const GreetingLayout({super.key});
 
-  final String email;
 
   static const paddingHorizontal = EdgeInsets.symmetric(horizontal: 28.0);
   static const spaces = SizedBox(height: 24);
@@ -28,7 +27,7 @@ class GreetingLayout extends StatelessWidget {
               buttonColor: CustomTheme.buttonDarkColor,
               textButtonColor: CustomTheme.decorationColor,
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  MainScreen(email: email)));
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  const MainScreen()));
               },
               text: LocaleKeys.get_started.tr(),
             ),

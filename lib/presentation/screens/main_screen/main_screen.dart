@@ -6,15 +6,15 @@ import 'package:water_tracker/presentation/screens/main_screen/bloc/main_screen_
 import 'package:water_tracker/presentation/screens/main_screen/main_layout.dart';
 
 class MainScreen extends StatelessWidget {
-  const MainScreen({super.key, required this.email});
+  const MainScreen({super.key});
 
-  final String email;
+
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider<MainScreenBloc>(
       create: (context) => MainScreenBloc(getIt<Repository>()),
-      child:  MainLayout(email: email),
+      child:  const MainLayout(),
     );
   }
 }
