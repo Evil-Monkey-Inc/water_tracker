@@ -15,9 +15,7 @@ import 'package:water_tracker/presentation/screens/personal_settings_screen/bloc
 import 'package:water_tracker/presentation/screens/personal_settings_screen/bloc/personal_setting_state.dart';
 
 class PersonalSettingsLayout extends StatefulWidget {
-  const PersonalSettingsLayout({super.key, required this.email});
-
-  final String email;
+  const PersonalSettingsLayout({super.key});
 
   @override
   State<PersonalSettingsLayout> createState() => _PersonalSettingsLayoutState();
@@ -90,7 +88,7 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
                   CustomButton(
                     text: LocaleKeys.next.tr(),
                     onPressed: () =>
-                        context.read<PersonalSettingBloc>().add(SaveGeneralSettingEvent(email: widget.email, sex: gender, age: age, weight: weight)),
+                        context.read<PersonalSettingBloc>().add(SaveGeneralSettingEvent(sex: gender, age: age, weight: weight)),
                     buttonColor: CustomTheme.buttonDarkColor,
                     textButtonColor: CustomTheme.decorationColor,
                   ),

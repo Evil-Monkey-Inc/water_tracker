@@ -6,15 +6,14 @@ import 'package:water_tracker/presentation/screens/personal_settings_screen/bloc
 import 'package:water_tracker/presentation/screens/personal_settings_screen/personal_settings_layout.dart';
 
 class PersonalSettingScreen extends StatelessWidget {
-  const PersonalSettingScreen({super.key, required this.email});
+  const PersonalSettingScreen({super.key});
 
-  final String email;
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider<PersonalSettingBloc>(
       create: (context) => PersonalSettingBloc(getIt<Repository>()),
-      child:  PersonalSettingsLayout(email: email),
+      child:  const PersonalSettingsLayout(),
     );
   }
 }

@@ -6,21 +6,21 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:water_tracker/data/services/storage_service/storage_service.dart';
 
 class RepositoryImpl extends Repository {
-  RepositoryImpl(this.registrationService, this.storageService, [this._userEmail]);
+  RepositoryImpl(this.registrationService, this.storageService);
 
   final AuthenticationService registrationService;
   final StorageService storageService;
 
-  late final String? _userEmail;
+  String? _userEmail;
 
   set userEmail(String value) => _userEmail = value;
 
-  String get userEmail => _userEmail!;
+  String? get userEmail => _userEmail;
 
   final counterCupsDateFormat = DateFormat('dd.MM.yyyy');
 
   @override
-  Future<bool> registerUser(email, String password) async {
+  Future<bool> registerUser(String email, String password) async {
     final result = await registrationService.registerUser(email, password);
     final isSuccessful = result.error == null;
     return isSuccessful;
