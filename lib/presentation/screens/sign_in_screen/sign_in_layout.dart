@@ -37,10 +37,7 @@ class _SignInLayoutState extends State<SignInLayout> {
               );
             }
             if (state is SuccessfullySignInState) {
-              Navigator.of(context).pushNamedAndRemoveUntil(
-                MainScreen.route,
-                (Route<dynamic> route) => false,
-              );
+              Navigator.of(context).pushReplacementNamed(MainScreen.route);
             }
           },
           builder: (BuildContext context, state) {
@@ -59,9 +56,7 @@ class _SignInLayoutState extends State<SignInLayout> {
                   SignInForm(
                     isButtonEnabled: state is! LoadingSignInState,
                     onSignInButtonPressed: (String email, String password) {
-                      context
-                          .read<SignInBloc>()
-                          .add(SignInUserEvent(email, password));
+                      context.read<SignInBloc>().add(SignInUserEvent(email, password));
                     },
                   ),
                   const PrivacyPolicyAndTermsWidget(),

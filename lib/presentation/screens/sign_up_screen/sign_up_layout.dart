@@ -37,10 +37,7 @@ class _SignUpLayoutState extends State<SignUpLayout> {
               );
             }
             if (state is SuccessfullySignUpState) {
-              Navigator.of(context).pushNamedAndRemoveUntil(
-                PersonalSettingScreen.route,
-                (Route<dynamic> route) => false,
-              );
+              Navigator.of(context).pushReplacementNamed(PersonalSettingScreen.route);
             }
           },
           builder: (BuildContext context, state) {
