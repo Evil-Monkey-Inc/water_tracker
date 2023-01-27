@@ -47,7 +47,6 @@
   "you_already_got" : "You've already got",
   "cups" : "cups",
   "ml" : "ml",
-  "failed_to_increment_count": "Failed to increment water count",
-  "testKey" : "huy"
+  "failed_to_increment_count": "Failed to increment water count"
 }
 
