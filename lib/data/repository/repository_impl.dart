@@ -13,7 +13,7 @@ class RepositoryImpl extends Repository {
 
   String? _userEmail;
 
-  set userEmail(String value) => _userEmail = value;
+  set userEmail(String? value) => _userEmail = value;
 
   String? get userEmail => _userEmail;
 

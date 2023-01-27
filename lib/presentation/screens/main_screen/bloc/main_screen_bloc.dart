@@ -9,14 +9,14 @@ class MainScreenBloc extends Bloc<MainScreenEvent, MainScreenState> {
       try {
         final newCount = state.counter + 1;
         if (newCount > maxCupCount) return;
-        final isSaved = await repository.saveCupCount(repositoryImpl!.userEmail, newCount);
+        final isSaved = await repository.saveCupCount(newCount);
         emit(isSaved ? CounterState(newCount) : ErrorMainScreenState(state.counter));
       } catch (e) {
         ErrorMainScreenState(state.counter);
       }
     });
     on<AppLaunchEvent>((event, emit) async {
-      final result = await repository.getCupCount(repositoryImpl!.userEmail, DateTime.now());
+      final result = await repository.getCupCount(DateTime.now());
       emit(result == null ? ErrorMainScreenState(state.counter) : CounterState(result));
     });
   }

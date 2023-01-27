@@ -1,7 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:water_tracker/data/models/user_settings.dart';
 import 'package:water_tracker/data/repository/repository.dart';
-import 'package:water_tracker/data/repository/repository_impl.dart';
 import 'package:water_tracker/presentation/screens/personal_settings_screen/bloc/personal_setting_event.dart';
 import 'package:water_tracker/presentation/screens/personal_settings_screen/bloc/personal_setting_state.dart';
 
