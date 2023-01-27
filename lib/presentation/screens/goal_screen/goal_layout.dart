@@ -88,7 +88,7 @@ class _GoalLayoutState extends State<GoalLayout> {
                 spacesBetween,
                 CustomButton(
                   onPressed: () {
-                    context.read<GoalBloc>().add(SaveGoalEvent(goals: selectedGoals.toList()));
+                    context.read<GoalBloc>().add(SaveGoalEvent(selectedGoals.toList()));
                     Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  const NotificationScreen()));
                   },
                   text: LocaleKeys.next.tr(),
