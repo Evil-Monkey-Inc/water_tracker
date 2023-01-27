@@ -11,18 +11,24 @@ class RepositoryImpl extends Repository {
   final AuthenticationService registrationService;
   final StorageService storageService;
 
+  final counterCupsDateFormat = DateFormat('dd.MM.yyyy');
+
   String? _userEmail;
 
-  set userEmail(String? value) => _userEmail = value;
+  String get userEmail {
+    if (_userEmail == null) throw Exception('email coul not be null at this point');
+    return _userEmail!;
+  }
 
-  String? get userEmail => _userEmail;
-
-  final counterCupsDateFormat = DateFormat('dd.MM.yyyy');
+  set userEmail(String value) {
+    _userEmail = value;
+  }
 
   @override
   Future<bool> registerUser(String email, String password) async {
     final result = await registrationService.registerUser(email, password);
     final isSuccessful = result.error == null;
+    if (isSuccessful) userEmail = email;
     return isSuccessful;
   }
 
@@ -30,31 +36,32 @@ class RepositoryImpl extends Repository {
   Future<bool> loginUser(String email, String password) async {
     final result = await registrationService.loginUser(email, password);
     final isSuccessful = result.error == null;
+    if (isSuccessful) _userEmail = email;
     return isSuccessful;
   }
 
   @override
-  Future<bool> saveGeneralInfo(String email, UserSettings userSettings) async {
-    final result = await storageService.saveUserSetting(email, userSettings);
+  Future<bool> saveGeneralInfo(UserSettings userSettings) async {
+    final result = await storageService.saveUserSetting(userEmail, userSettings);
     return result;
   }
 
   @override
-  Future<bool> saveGoal(String email, GoalList goalsList) async {
-    final result = await storageService.saveUserGoal(email, goalsList);
+  Future<bool> saveGoal(GoalList goalsList) async {
+    final result = await storageService.saveUserGoal(userEmail, goalsList);
     return result;
   }
 
   @override
-  Future<bool> saveCupCount(String email, int counterCups) async {
+  Future<bool> saveCupCount(int counterCups) async {
     final time = DateTime.now();
-    final result = await storageService.saveUserCount(email, getDateKey(time), counterCups);
+    final result = await storageService.saveUserCount(userEmail, getDateKey(time), counterCups);
     return result;
   }
 
   @override
-  Future<int?> getCupCount(String email, DateTime time) async {
-    return storageService.getUserCount(email, getDateKey(time));
+  Future<int?> getCupCount(DateTime time) async {
+    return storageService.getUserCount(userEmail, getDateKey(time));
   }
 
   String getDateKey(DateTime dateTime) => counterCupsDateFormat.format(dateTime);

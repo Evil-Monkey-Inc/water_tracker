@@ -12,12 +12,12 @@ abstract class Repository {
     String password,
   );
 
-  Future<bool> saveGeneralInfo(String email, UserSettings userSettings);
+  Future<bool> saveGeneralInfo(UserSettings userSettings);
 
-  Future<bool> saveGoal(String email, GoalList goalsList);
+  Future<bool> saveGoal(GoalList goalsList);
 
 
-  Future<bool> saveCupCount(String email, int counterCups);
+  Future<bool> saveCupCount(int counterCups);
 
-  Future<int?> getCupCount(String email,  DateTime time);
+  Future<int?> getCupCount(DateTime time);
 }
