@@ -2,7 +2,6 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:water_tracker/custom_theme.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
-import 'package:water_tracker/presentation/screens/greeting_screen/greeting_screen.dart';
 import 'package:water_tracker/presentation/screens/main_screen/main_screen.dart';
 import 'package:water_tracker/presentation/widgets/molecules/custom_button.dart';
 import 'package:water_tracker/presentation/widgets/molecules/greeting_widget.dart';
@@ -28,7 +27,10 @@ class GreetingLayout extends StatelessWidget {
               textButtonColor: CustomTheme.decorationColor,
               onPressed: () {
                 // todo: (George) made pushReplace
-                Navigator.of(context).pushNamedAndRemoveUntil(MainScreen.route, (Route<dynamic> route) => false);
+                Navigator.of(context).pushNamedAndRemoveUntil(
+                  MainScreen.route,
+                  (Route<dynamic> route) => false,
+                );
               },
               text: LocaleKeys.get_started.tr(),
             ),

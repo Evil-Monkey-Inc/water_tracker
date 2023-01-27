@@ -6,7 +6,8 @@ part 'user_settings.g.dart';
 class UserSettings {
   UserSettings({required this.gender, required this.age, required this.weight});
 
-  factory UserSettings.fromJson(Map<String, dynamic> json) => _$UserSettingsFromJson(json);
+  factory UserSettings.fromJson(Map<String, dynamic> json) =>
+      _$UserSettingsFromJson(json);
   final Gender gender;
   final int age;
   final int weight;

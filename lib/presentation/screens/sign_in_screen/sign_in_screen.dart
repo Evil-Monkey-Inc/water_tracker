@@ -12,6 +12,9 @@ class SignInScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<SignInBloc>(create: (context) => SignInBloc(getIt<Repository>()), child: const SignInLayout());
+    return BlocProvider<SignInBloc>(
+      create: (context) => SignInBloc(getIt<Repository>()),
+      child: const SignInLayout(),
+    );
   }
 }

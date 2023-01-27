@@ -13,7 +13,10 @@ class AuthenticationServiceFirebaseImpl extends AuthenticationService {
     SignUpException? error;
     auth.UserCredential? credential;
     try {
-      credential = await firebaseAuth.createUserWithEmailAndPassword(email: email, password: password);
+      credential = await firebaseAuth.createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
     } on auth.FirebaseAuthException catch (e) {
       error = SignUpException.fromFirebaseAuth(e);
     }
@@ -28,7 +31,10 @@ class AuthenticationServiceFirebaseImpl extends AuthenticationService {
     auth.UserCredential? credential;
     SignUpException? error;
     try {
-      credential = await firebaseAuth.signInWithEmailAndPassword(email: email, password: password);
+      credential = await firebaseAuth.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
     } on auth.FirebaseAuthException catch (e) {
       error = SignUpException.fromFirebaseAuth(e);
     }

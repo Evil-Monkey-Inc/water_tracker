@@ -22,7 +22,10 @@ class _AssistantWidgetState extends State<AssistantWidget> {
         const Spacer(),
         CalendarWidget(dateTime: DateFormat(dateFormat).format(dataNow)),
         const Spacer(),
-        CustomIconButtonWidget(onTap: () {}, image: Image.asset(Assets.images.settingIcon.path)),
+        CustomIconButtonWidget(
+          onTap: () {},
+          image: Image.asset(Assets.images.settingIcon.path),
+        ),
       ],
     );
   }

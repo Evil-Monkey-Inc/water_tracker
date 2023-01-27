@@ -1,3 +1,3 @@
-abstract class NotificationScreenEvent{}
+abstract class NotificationScreenEvent {}
 
-class SkipNotificationScreenEvent extends NotificationScreenEvent{}
+class SkipNotificationScreenEvent extends NotificationScreenEvent {}

@@ -7,7 +7,6 @@ import 'package:water_tracker/generated/locale_keys.g.dart';
 import 'package:water_tracker/presentation/widgets/molecules/custom_button.dart';
 import 'package:water_tracker/presentation/widgets/molecules/input_field_widget.dart';
 
-
 class SignUpForm extends StatefulWidget {
   const SignUpForm({
     super.key,

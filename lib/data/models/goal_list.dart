@@ -7,7 +7,8 @@ part 'goal_list.g.dart';
 class GoalList {
   GoalList({required this.goals});
 
-  factory GoalList.fromJson(Map<String, dynamic> json) => _$GoalListFromJson(json);
+  factory GoalList.fromJson(Map<String, dynamic> json) =>
+      _$GoalListFromJson(json);
   final List<Goal> goals;
 
   Map<String, dynamic> toJson() => _$GoalListToJson(this);

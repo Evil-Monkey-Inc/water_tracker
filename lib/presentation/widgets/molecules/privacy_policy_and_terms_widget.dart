@@ -27,7 +27,10 @@ class PrivacyPolicyAndTermsWidget extends StatelessWidget {
               recognizer: TapGestureRecognizer()
                 ..onTap = () {
                   showModalBottomSheet(
-                    shape: const RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(30))),
+                    shape: const RoundedRectangleBorder(
+                      borderRadius:
+                          BorderRadius.vertical(top: Radius.circular(30)),
+                    ),
                     isScrollControlled: true,
                     context: context,
                     backgroundColor: CustomTheme.privacyPolicyBackground,
@@ -36,13 +39,23 @@ class PrivacyPolicyAndTermsWidget extends StatelessWidget {
                       minChildSize: 0.32,
                       initialChildSize: 0.9,
                       maxChildSize: 0.9,
-                      builder: (BuildContext context, ScrollController scrollController) => FutureBuilder(
-                        future: DefaultAssetBundle.of(context).loadString(Assets.docs.termsAndConditions),
-                        builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
+                      builder: (
+                        BuildContext context,
+                        ScrollController scrollController,
+                      ) =>
+                          FutureBuilder(
+                        future: DefaultAssetBundle.of(context)
+                            .loadString(Assets.docs.termsAndConditions),
+                        builder: (
+                          BuildContext context,
+                          AsyncSnapshot<dynamic> snapshot,
+                        ) {
                           if (snapshot.hasData) {
                             return Markdown(data: snapshot.data);
                           } else {
-                            return const Center(child: CircularProgressIndicator());
+                            return const Center(
+                              child: CircularProgressIndicator(),
+                            );
                           }
                         },
                       ),
@@ -62,7 +75,10 @@ class PrivacyPolicyAndTermsWidget extends StatelessWidget {
               recognizer: TapGestureRecognizer()
                 ..onTap = () {
                   showModalBottomSheet(
-                    shape: const RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(30))),
+                    shape: const RoundedRectangleBorder(
+                      borderRadius:
+                          BorderRadius.vertical(top: Radius.circular(30)),
+                    ),
                     isScrollControlled: true,
                     context: context,
                     backgroundColor: CustomTheme.privacyPolicyBackground,
@@ -71,13 +87,23 @@ class PrivacyPolicyAndTermsWidget extends StatelessWidget {
                       minChildSize: 0.32,
                       initialChildSize: 0.9,
                       maxChildSize: 0.9,
-                      builder: (BuildContext context, ScrollController scrollController) => FutureBuilder(
-                        future: DefaultAssetBundle.of(context).loadString(Assets.docs.privacyPolicy),
-                        builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
+                      builder: (
+                        BuildContext context,
+                        ScrollController scrollController,
+                      ) =>
+                          FutureBuilder(
+                        future: DefaultAssetBundle.of(context)
+                            .loadString(Assets.docs.privacyPolicy),
+                        builder: (
+                          BuildContext context,
+                          AsyncSnapshot<dynamic> snapshot,
+                        ) {
                           if (snapshot.hasData) {
                             return Markdown(data: snapshot.data);
                           } else {
-                            return const Center(child: CircularProgressIndicator());
+                            return const Center(
+                              child: CircularProgressIndicator(),
+                            );
                           }
                         },
                       ),

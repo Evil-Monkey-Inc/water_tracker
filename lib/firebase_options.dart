@@ -70,7 +70,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '464833728790',
     projectId: 'water-tracker-e1672',
     storageBucket: 'water-tracker-e1672.appspot.com',
-    iosClientId: '464833728790-6m5v5gjp5uqaqdulvb2n7oti1mm74lnr.apps.googleusercontent.com',
+    iosClientId:
+        '464833728790-6m5v5gjp5uqaqdulvb2n7oti1mm74lnr.apps.googleusercontent.com',
     iosBundleId: 'com.example.waterTracker',
   );
 }

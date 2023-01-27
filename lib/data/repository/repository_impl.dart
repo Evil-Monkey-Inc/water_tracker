@@ -42,7 +42,8 @@ class RepositoryImpl extends Repository {
 
   @override
   Future<bool> saveGeneralInfo(UserSettings userSettings) async {
-    final result = await storageService.saveUserSetting(userEmail, userSettings);
+    final result =
+        await storageService.saveUserSetting(userEmail, userSettings);
     return result;
   }
 
@@ -55,7 +56,11 @@ class RepositoryImpl extends Repository {
   @override
   Future<bool> saveCupCount(int counterCups) async {
     final time = DateTime.now();
-    final result = await storageService.saveUserCount(userEmail, getDateKey(time), counterCups);
+    final result = await storageService.saveUserCount(
+      userEmail,
+      getDateKey(time),
+      counterCups,
+    );
     return result;
   }
 
@@ -64,5 +69,6 @@ class RepositoryImpl extends Repository {
     return storageService.getUserCount(userEmail, getDateKey(time));
   }
 
-  String getDateKey(DateTime dateTime) => counterCupsDateFormat.format(dateTime);
+  String getDateKey(DateTime dateTime) =>
+      counterCupsDateFormat.format(dateTime);
 }

@@ -8,7 +8,11 @@ import 'package:water_tracker/presentation/widgets/molecules/custom_button.dart'
 import 'package:water_tracker/presentation/widgets/molecules/input_field_widget.dart';
 
 class SignInForm extends StatefulWidget {
-  const SignInForm({super.key, required this.onSignInButtonPressed, required this.isButtonEnabled});
+  const SignInForm({
+    super.key,
+    required this.onSignInButtonPressed,
+    required this.isButtonEnabled,
+  });
   final void Function(String email, String password) onSignInButtonPressed;
   final bool isButtonEnabled;
 
@@ -64,7 +68,8 @@ class _MyLogFormWidgetState extends State<SignInForm> {
           spacer,
           CustomButton(
             onPressed: () {
-              if (EnvVariables.disableValidation || formKey.currentState!.validate()) {
+              if (EnvVariables.disableValidation ||
+                  formKey.currentState!.validate()) {
                 widget.onSignInButtonPressed(_email.text, _pass.text);
               }
             },

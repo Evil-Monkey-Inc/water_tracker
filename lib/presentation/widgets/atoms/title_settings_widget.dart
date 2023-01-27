@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:water_tracker/custom_theme.dart';
 
 class TitleSettingWidget extends StatefulWidget {
-  const TitleSettingWidget(this.firstTitleText, {super.key, required this.downFlex, required this.upperFlex});
+  const TitleSettingWidget(
+    this.firstTitleText, {
+    super.key,
+    required this.downFlex,
+    required this.upperFlex,
+  });
   final String firstTitleText;
   final int downFlex;
   final int upperFlex;

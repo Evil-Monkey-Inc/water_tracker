@@ -39,7 +39,10 @@ class _CustomSliderWidgetState extends State<CustomSliderWidget> {
     return Column(
       children: [
         spaces,
-        Align(alignment: Alignment.bottomLeft, child: widget.sliderNameAndProperty),
+        Align(
+          alignment: Alignment.bottomLeft,
+          child: widget.sliderNameAndProperty,
+        ),
         spaces,
         Text(
           generalInfValue.round().toString(),

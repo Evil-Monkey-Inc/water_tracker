@@ -8,8 +8,13 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
     on<CreateUserEvent>((event, emit) async {
       try {
         emit(LoadingSignUpState());
-        final isSuccess = await repository.registerUser(event.password, event.email);
-        emit(isSuccess ? SuccessfullySignUpState() : ErrorRegistrationState(Exception()));
+        final isSuccess =
+            await repository.registerUser(event.password, event.email);
+        emit(
+          isSuccess
+              ? SuccessfullySignUpState()
+              : ErrorRegistrationState(Exception()),
+        );
       } catch (e) {
         emit(ErrorRegistrationState(e));
       }

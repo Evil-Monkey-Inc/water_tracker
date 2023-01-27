@@ -29,7 +29,9 @@ class CustomButton extends StatelessWidget {
         shadowColor: CustomTheme.customButtonShadowColor,
         padding: paddingInsideButton,
         minimumSize: CustomTheme.minimumSizeButton,
-        shape: const RoundedRectangleBorder(borderRadius: CustomTheme.roundingButton),
+        shape: const RoundedRectangleBorder(
+          borderRadius: CustomTheme.roundingButton,
+        ),
       ),
       child: Padding(
         padding: paddingAroundButton,

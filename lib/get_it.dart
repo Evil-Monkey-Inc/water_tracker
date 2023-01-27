@@ -11,11 +11,14 @@ import 'package:water_tracker/env_variables.dart';
 final getIt = GetIt.instance;
 
 void setupServicesLocator() {
-  final authService =
-      EnvVariables.mockAuthService ? MockedAuthenticationServiceImpl() : AuthenticationServiceFirebaseImpl();
+  final authService = EnvVariables.mockAuthService
+      ? MockedAuthenticationServiceImpl()
+      : AuthenticationServiceFirebaseImpl();
   final firebaseStorage = FireStoreStorageServiceImpl();
 
   getIt.registerSingleton<AuthenticationService>(authService);
   getIt.registerSingleton<FireStoreStorageService>(firebaseStorage);
-  getIt.registerSingleton<Repository>(RepositoryImpl(authService, firebaseStorage));
+  getIt.registerSingleton<Repository>(
+    RepositoryImpl(authService, firebaseStorage),
+  );
 }

@@ -10,7 +10,8 @@ class FireStoreStorageServiceImpl extends FireStoreStorageService {
   @override
   Future<bool> saveUserSetting(String email, UserSettings userSettings) async {
     try {
-      final userCollection = fireStore.collection(StorageService.usersKey).doc(email);
+      final userCollection =
+          fireStore.collection(StorageService.usersKey).doc(email);
       await userCollection.set(
         {StorageService.userSettingsKey: userSettings.toJson()},
       );
@@ -23,7 +24,8 @@ class FireStoreStorageServiceImpl extends FireStoreStorageService {
   @override
   Future<bool> saveUserGoal(String email, GoalList goalsList) async {
     try {
-      final userCollection = fireStore.collection(StorageService.usersKey).doc(email);
+      final userCollection =
+          fireStore.collection(StorageService.usersKey).doc(email);
 
       await userCollection.set(
         {StorageService.userSettingsKey: goalsList.toJson()},
@@ -36,7 +38,11 @@ class FireStoreStorageServiceImpl extends FireStoreStorageService {
   }
 
   @override
-  Future<bool> saveUserCount(String email, String dateKey, int counterCups) async {
+  Future<bool> saveUserCount(
+    String email,
+    String dateKey,
+    int counterCups,
+  ) async {
     try {
       final userCollection = fireStore
           .collection(StorageService.usersKey)

@@ -48,7 +48,8 @@ class _MainLayoutState extends State<MainLayout> {
               alignment: Alignment.bottomCenter,
               children: [
                 MainScreenButtonWidget(
-                  onPressed: () => context.read<MainScreenBloc>().add(SaveCounterEvent()),
+                  onPressed: () =>
+                      context.read<MainScreenBloc>().add(SaveCounterEvent()),
                 ),
                 MainScreenCounterWidget(
                   maxCount: cupsMaxCount,

@@ -16,7 +16,6 @@ abstract class Repository {
 
   Future<bool> saveGoal(GoalList goalsList);
 
-
   Future<bool> saveCupCount(int counterCups);
 
   Future<int?> getCupCount(DateTime time);

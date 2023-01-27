@@ -9,8 +9,6 @@ import 'package:water_tracker/presentation/screens/goal_screen/bloc/goal_bloc.da
 import 'package:water_tracker/presentation/screens/goal_screen/bloc/goal_event.dart';
 import 'package:water_tracker/presentation/screens/goal_screen/bloc/goal_state.dart';
 import 'package:water_tracker/presentation/screens/notification_screen/notification_screen.dart';
-import 'package:water_tracker/presentation/screens/personal_settings_screen/bloc/personal_setting_bloc.dart';
-import 'package:water_tracker/presentation/screens/personal_settings_screen/bloc/personal_setting_event.dart';
 import 'package:water_tracker/presentation/widgets/molecules/custom_button.dart';
 import 'package:water_tracker/presentation/widgets/molecules/goal_widget.dart';
 import 'package:water_tracker/presentation/widgets/molecules/name_and_skip_widget.dart';
@@ -44,11 +42,13 @@ class _GoalLayoutState extends State<GoalLayout> {
             if (state is SuccessfullyGoalState) {
               Navigator.of(context).pushNamed(NotificationScreen.route);
             }
-            if(state is SuccessfullySkipButtonState){
+            if (state is SuccessfullySkipButtonState) {
               Navigator.of(context).pushNamed(NotificationScreen.route);
             }
             if (state is ErrorGoalState) {
-              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(LocaleKeys.failed_store.tr())));
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: Text(LocaleKeys.failed_store.tr())),
+              );
             }
           },
           builder: (context, state) {
@@ -57,7 +57,8 @@ class _GoalLayoutState extends State<GoalLayout> {
               children: [
                 spaces,
                 NameAndSkipWidget(
-                  onPressed: () => context.read<GoalBloc>().add(SkipGoalScreenEvent())
+                  onPressed: () =>
+                      context.read<GoalBloc>().add(SkipGoalScreenEvent()),
                 ),
                 spaces,
                 TitleSettingWidget(
@@ -75,7 +76,9 @@ class _GoalLayoutState extends State<GoalLayout> {
                         .map(
                           (goal) => GoalWidget(
                             onChanged: (_, isSelected) => setState(
-                              () => isSelected ? selectedGoals.add(goal) : selectedGoals.remove(goal),
+                              () => isSelected
+                                  ? selectedGoals.add(goal)
+                                  : selectedGoals.remove(goal),
                             ),
                             model: GoalWidgetModel(
                               goal: goal,
@@ -89,7 +92,9 @@ class _GoalLayoutState extends State<GoalLayout> {
                 ),
                 spacesBetween,
                 CustomButton(
-                  onPressed: () => context.read<GoalBloc>().add(SaveGoalEvent(selectedGoals.toList())),
+                  onPressed: () => context
+                      .read<GoalBloc>()
+                      .add(SaveGoalEvent(selectedGoals.toList())),
                   text: LocaleKeys.next.tr(),
                   buttonColor: CustomTheme.buttonDarkColor,
                   textButtonColor: CustomTheme.decorationColor,

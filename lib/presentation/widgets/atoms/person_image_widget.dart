@@ -7,11 +7,14 @@ class PersonImageWidget extends StatelessWidget {
     super.key,
   });
 
-  factory PersonImageWidget.womanWay() => PersonImageWidget(Assets.images.womanLogin.path);
+  factory PersonImageWidget.womanWay() =>
+      PersonImageWidget(Assets.images.womanLogin.path);
 
-  factory PersonImageWidget.manWay() => PersonImageWidget(Assets.images.manLogin.path);
+  factory PersonImageWidget.manWay() =>
+      PersonImageWidget(Assets.images.manLogin.path);
 
-  factory PersonImageWidget.mainWay() => PersonImageWidget(Assets.images.mainScreenPerson.path);
+  factory PersonImageWidget.mainWay() =>
+      PersonImageWidget(Assets.images.mainScreenPerson.path);
   static const imageHeight = 241.0;
   final String imagePath;
 

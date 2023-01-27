@@ -11,7 +11,10 @@ class SharedPreffStorageImplements extends SharedPreffStorageService {
   @override
   Future<bool> saveGeneralInfo(UserSettings userSettings) async {
     final prefs = await SharedPreferences.getInstance();
-    final result = await prefs.setString(userSettingsKey, jsonEncode(userSettings.toJson()));
+    final result = await prefs.setString(
+      userSettingsKey,
+      jsonEncode(userSettings.toJson()),
+    );
 
     return result;
   }
@@ -19,7 +22,8 @@ class SharedPreffStorageImplements extends SharedPreffStorageService {
   @override
   Future<bool> saveGoal(GoalList goalsList) async {
     final prefs = await SharedPreferences.getInstance();
-    final result = await prefs.setString(goalsListKey, jsonEncode(goalsList.toJson()));
+    final result =
+        await prefs.setString(goalsListKey, jsonEncode(goalsList.toJson()));
     return result;
   }
 
