@@ -2,10 +2,11 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
-import 'package:water_tracker/presentation/screens/personal_settings_screen/porsonal_settings_screen.dart';
+import 'package:water_tracker/presentation/screens/personal_settings_screen/personal_settings_screen.dart';
 import 'package:water_tracker/presentation/screens/sign_up_screen/bloc/sign_up_bloc.dart';
 import 'package:water_tracker/presentation/screens/sign_up_screen/bloc/sign_up_event.dart';
 import 'package:water_tracker/presentation/screens/sign_up_screen/bloc/sign_up_state.dart';
+import 'package:water_tracker/presentation/screens/sign_up_screen/sign_up_screen.dart';
 import 'package:water_tracker/presentation/widgets/molecules/already_have_an_account.widget.dart';
 import 'package:water_tracker/presentation/widgets/molecules/hiding_on_keyboard_shown_widget.dart';
 import 'package:water_tracker/presentation/widgets/atoms/logo_widget.dart';
@@ -18,11 +19,9 @@ class SignUpLayout extends StatefulWidget {
 
   @override
   State<SignUpLayout> createState() => _SignUpLayoutState();
-
 }
 
 class _SignUpLayoutState extends State<SignUpLayout> {
-
   static const spaces = SizedBox(height: 24);
   static const paddingHorizontal = EdgeInsets.symmetric(horizontal: 24.0);
 
@@ -35,6 +34,9 @@ class _SignUpLayoutState extends State<SignUpLayout> {
           listener: (context, state) {
             if (state is ErrorRegistrationState) {
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(LocaleKeys.error_try_again.tr())));
+            }
+            if (state is SuccessfullySignUpState) {
+              Navigator.of(context).pushNamedAndRemoveUntil(PersonalSettingScreen.route, (Route<dynamic> route) => false);
             }
           },
           builder: (BuildContext context, state) {
@@ -51,13 +53,8 @@ class _SignUpLayoutState extends State<SignUpLayout> {
                   ),
                   SignUpForm(
                     isButtonEnabled: state is! LoadingSignUpState,
-                    onSignUpButtonPressed: (email, pass) {
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => const PersonalSettingScreen(),
-                        ),
-                      );
-                      context.read<SignUpBloc>().add(CreateUserEvent(email, pass));
-                    },
+                    onSignUpButtonPressed: (email, pass) =>
+                        context.read<SignUpBloc>().add(CreateUserEvent(email, pass)),
                   ),
                   const PrivacyPolicyAndTermsWidget(),
                   spaces,

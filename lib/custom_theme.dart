@@ -275,10 +275,10 @@ class CustomTheme {
     labelStyle: CustomTheme.borderLabelStyle,
   );
 
-  final systemTheme = SystemUiOverlayStyle.light.copyWith(
+  static const systemTheme = SystemUiOverlayStyle(
     statusBarColor: backgroundColor,
-    statusBarIconBrightness: Brightness.dark,
     systemNavigationBarColor: backgroundColor,
-    systemNavigationBarDividerColor: backgroundColor,
+    statusBarIconBrightness: Brightness.dark, // For Android (dark icons)
+    statusBarBrightness: Brightness.light, // For iOS (dark icons)
   );
 }

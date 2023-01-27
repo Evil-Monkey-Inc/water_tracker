@@ -8,3 +8,5 @@ class SaveGeneralSettingEvent extends PersonalSettingEvent {
   final int age;
   final int weight;
 }
+
+class SkipPersonalSettingScreenEvent extends PersonalSettingEvent{}

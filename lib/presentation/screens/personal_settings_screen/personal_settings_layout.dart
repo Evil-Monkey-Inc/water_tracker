@@ -46,11 +46,13 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
         child: BlocConsumer<PersonalSettingBloc, PersonalSettingState>(
           listener: (BuildContext context, state) {
             if (state is SuccessfullyPersonalSettingState) {
-              Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  const GoalScreen()));
+              Navigator.of(context).pushNamed(GoalScreen.route);
+            }
+            if(state is SuccessfullySkipButtonState){
+              Navigator.of(context).pushNamed(GoalScreen.route);
             }
             if (state is ErrorPersonalSettingState) {
-              ScaffoldMessenger.of(context)
-                  .showSnackBar(SnackBar(content: Text(LocaleKeys.please_fill_in_general_information.tr())));
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(LocaleKeys.please_fill_in_general_information.tr())));
             }
           },
           builder: (BuildContext context, state) {
@@ -59,9 +61,7 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
                 children: [
                   spaces,
                   NameAndSkipWidget(
-                    onPressed: () {
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  const GoalScreen()));
-                    },
+                    onPressed: () => context.read<PersonalSettingBloc>().add(SkipPersonalSettingScreenEvent()),
                   ),
                   spaces,
                   TitleSettingWidget(

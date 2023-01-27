@@ -8,13 +8,13 @@ import 'package:water_tracker/presentation/screens/goal_screen/goal_layout.dart'
 class GoalScreen extends StatelessWidget {
   const GoalScreen({super.key});
 
-
+  static const route = 'goal_screen';
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider<GoalBloc>(
       create: (context) => GoalBloc(getIt<Repository>()),
-      child:  const GoalLayout(),
+      child: const GoalLayout(),
     );
   }
 }

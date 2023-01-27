@@ -4,7 +4,7 @@ import 'package:water_tracker/presentation/screens/greeting_screen/greeting_layo
 class GreetingScreen extends StatelessWidget {
   const GreetingScreen({super.key});
 
-
+  static const route = 'greeting_screen';
 
   @override
   Widget build(BuildContext context) {
