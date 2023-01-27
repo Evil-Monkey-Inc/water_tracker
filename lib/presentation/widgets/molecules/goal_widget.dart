@@ -19,7 +19,8 @@ class GoalWidget extends StatefulWidget {
   State<GoalWidget> createState() => _GoalWidgetState();
 }
 
-class _GoalWidgetState extends State<GoalWidget> with SingleTickerProviderStateMixin {
+class _GoalWidgetState extends State<GoalWidget>
+    with SingleTickerProviderStateMixin {
   static const upperSpace = SizedBox(height: 12);
   static const betweenSpace = SizedBox(height: 14);
   static const paddingBetweenGoals = EdgeInsets.symmetric(horizontal: 16);
@@ -54,14 +55,19 @@ class _GoalWidgetState extends State<GoalWidget> with SingleTickerProviderStateM
           sizeAnimationController.reverse();
         }),
         onTapDown: (dp) => sizeAnimationController.reverse(),
-        onTapUp: (dp) => Timer(const Duration(milliseconds: animationTime), sizeAnimationController.fling),
+        onTapUp: (dp) => Timer(
+          const Duration(milliseconds: animationTime),
+          sizeAnimationController.fling,
+        ),
         onTapCancel: sizeAnimationController.fling,
         child: AnimatedContainer(
           height: widgetHeight.toDouble(),
           width: widgetWidth.toDouble(),
           duration: colorAnimationDuration,
           decoration: BoxDecoration(
-            color: isSelected ? CustomTheme.mainColor : CustomTheme.backgroundSexBottomColor,
+            color: isSelected
+                ? CustomTheme.mainColor
+                : CustomTheme.backgroundSexBottomColor,
             borderRadius: CustomTheme.goalCirculars,
           ),
           child: Column(
@@ -75,9 +81,11 @@ class _GoalWidgetState extends State<GoalWidget> with SingleTickerProviderStateM
                 child: Text(
                   widget.model.title,
                   textAlign: TextAlign.center,
-                  style: CustomTheme()
-                      .goalWidgetProp
-                      .copyWith(color: isSelected ? CustomTheme.decorationColor : CustomTheme.mainColor),
+                  style: CustomTheme().goalWidgetProp.copyWith(
+                        color: isSelected
+                            ? CustomTheme.decorationColor
+                            : CustomTheme.mainColor,
+                      ),
                 ),
               ),
             ],

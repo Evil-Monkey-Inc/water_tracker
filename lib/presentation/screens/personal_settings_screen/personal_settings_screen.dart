@@ -14,7 +14,7 @@ class PersonalSettingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider<PersonalSettingBloc>(
       create: (context) => PersonalSettingBloc(getIt<Repository>()),
-      child:  const PersonalSettingsLayout(),
+      child: const PersonalSettingsLayout(),
     );
   }
 }

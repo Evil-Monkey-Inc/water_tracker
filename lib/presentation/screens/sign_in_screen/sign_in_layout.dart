@@ -6,7 +6,6 @@ import 'package:water_tracker/presentation/screens/main_screen/main_screen.dart'
 import 'package:water_tracker/presentation/screens/sign_in_screen/bloc/sign_in_bloc.dart';
 import 'package:water_tracker/presentation/screens/sign_in_screen/bloc/sign_in_event.dart';
 import 'package:water_tracker/presentation/screens/sign_in_screen/bloc/sign_in_state.dart';
-import 'package:water_tracker/presentation/screens/sign_in_screen/sign_in_screen.dart';
 import 'package:water_tracker/presentation/widgets/molecules/hiding_on_keyboard_shown_widget.dart';
 import 'package:water_tracker/presentation/widgets/atoms/logo_widget.dart';
 import 'package:water_tracker/presentation/widgets/molecules/not_have_account_widget.dart';
@@ -33,10 +32,12 @@ class _SignInLayoutState extends State<SignInLayout> {
         child: BlocConsumer<SignInBloc, SignInState>(
           listener: (BuildContext context, state) {
             if (state is ErrorSignInState) {
-              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(LocaleKeys.error_try_again.tr())));
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: Text(LocaleKeys.error_try_again.tr())),
+              );
             }
             if (state is SuccessfullySignInState) {
-              Navigator.of(context).pushNamedAndRemoveUntil(MainScreen.route, (Route<dynamic> route) => false);
+              Navigator.of(context).pushReplacementNamed(MainScreen.route);
             }
           },
           builder: (BuildContext context, state) {

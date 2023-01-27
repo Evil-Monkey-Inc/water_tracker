@@ -5,8 +5,10 @@ import 'package:water_tracker/data/services/authentication_service/authenticatio
 
 class MockedAuthenticationServiceImpl extends AuthenticationService {
   @override
-  Future<SignUpResult> registerUser(String email, String password) async => SignUpResult(User(''), null);
+  Future<SignUpResult> registerUser(String email, String password) async =>
+      SignUpResult(User(''), null);
 
   @override
-  Future<SignInResult> loginUser(String email, String password) async => SignInResult(User(''), null);
+  Future<SignInResult> loginUser(String email, String password) async =>
+      SignInResult(User(''), null);
 }

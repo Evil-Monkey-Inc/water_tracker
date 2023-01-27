@@ -14,10 +14,13 @@ class HidingOnKeyboardShownWidget extends StatefulWidget {
   final double childHeight;
 
   @override
-  State<HidingOnKeyboardShownWidget> createState() => _HidingOnKeyboardShownWidgetState();
+  State<HidingOnKeyboardShownWidget> createState() =>
+      _HidingOnKeyboardShownWidgetState();
 }
 
-class _HidingOnKeyboardShownWidgetState extends State<HidingOnKeyboardShownWidget> with SingleTickerProviderStateMixin {
+class _HidingOnKeyboardShownWidgetState
+    extends State<HidingOnKeyboardShownWidget>
+    with SingleTickerProviderStateMixin {
   static const curve = Curves.fastOutSlowIn;
 
   var isKeyboardVisible = false;
@@ -26,7 +29,8 @@ class _HidingOnKeyboardShownWidgetState extends State<HidingOnKeyboardShownWidge
 
   void hideWidget() => setState(() => isKeyboardVisible = true);
 
-  void updateVisibility(bool isKeyboardVisible) => isKeyboardVisible ? hideWidget() : showWidget();
+  void updateVisibility(bool isKeyboardVisible) =>
+      isKeyboardVisible ? hideWidget() : showWidget();
 
   double get height => isKeyboardVisible ? 0.0 : widget.childHeight;
 

@@ -8,7 +8,11 @@ import 'package:water_tracker/presentation/widgets/molecules/custom_button.dart'
 import 'package:water_tracker/presentation/widgets/molecules/input_field_widget.dart';
 
 class SignUpForm extends StatefulWidget {
-  const SignUpForm({super.key, required this.isButtonEnabled, required this.onSignUpButtonPressed});
+  const SignUpForm({
+    super.key,
+    required this.isButtonEnabled,
+    required this.onSignUpButtonPressed,
+  });
 
   final void Function(String email, String password) onSignUpButtonPressed;
   final bool isButtonEnabled;
@@ -56,13 +60,15 @@ class _MyLogFormWidgetState extends State<SignUpForm> {
           spacer,
           InputFieldWidget(
             labelText: LocaleKeys.re_enter_your_password.tr(),
-            validator: (value) => FormValidators.repeatPasswordValidator(value, _pass.text),
+            validator: (value) =>
+                FormValidators.repeatPasswordValidator(value, _pass.text),
           ),
           spacer,
           CustomButton(
             isEnabled: widget.isButtonEnabled,
             onPressed: () {
-              if (EnvVariables.disableValidation || formKey.currentState!.validate()) {
+              if (EnvVariables.disableValidation ||
+                  formKey.currentState!.validate()) {
                 widget.onSignUpButtonPressed(_email.text, _pass.text);
               }
             },

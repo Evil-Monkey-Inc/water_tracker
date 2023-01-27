@@ -12,23 +12,31 @@ class SelectSexButton extends StatefulWidget {
   State<SelectSexButton> createState() => _SelectSexButtonState();
 }
 
-class _SelectSexButtonState extends State<SelectSexButton> with SingleTickerProviderStateMixin {
+class _SelectSexButtonState extends State<SelectSexButton>
+    with SingleTickerProviderStateMixin {
   static const indicatorWeight = 2.0;
   static const countTabs = 2;
   static const buttonWeight = 55.0;
   static const heightButton = 72.0;
   static const space = SizedBox(height: 14);
   static const spaceInsideButton = EdgeInsets.all(8);
-  final sexTextProperty = Text(LocaleKeys.sex.tr(), style: CustomTheme.sexStyleProperty);
-  final tabMaleTextProperty = Text(LocaleKeys.man.tr(), style: CustomTheme.tabTextFemaleStyleProperty);
-  final tabFemaleTextProperty = Text(LocaleKeys.woman.tr(), style: CustomTheme.tabTextFemaleStyleProperty);
+  final sexTextProperty =
+      Text(LocaleKeys.sex.tr(), style: CustomTheme.sexStyleProperty);
+  final tabMaleTextProperty =
+      Text(LocaleKeys.man.tr(), style: CustomTheme.tabTextFemaleStyleProperty);
+  final tabFemaleTextProperty = Text(
+    LocaleKeys.woman.tr(),
+    style: CustomTheme.tabTextFemaleStyleProperty,
+  );
 
   late final TabController controller;
 
   @override
   void initState() {
     controller = TabController(length: countTabs, vsync: this);
-    controller.addListener(() => widget.onChanged(Gender.values[controller.index])); // controller.index
+    controller.addListener(
+      () => widget.onChanged(Gender.values[controller.index]),
+    ); // controller.index
     super.initState();
   }
 
@@ -41,8 +49,10 @@ class _SelectSexButtonState extends State<SelectSexButton> with SingleTickerProv
         Container(
           height: heightButton,
           width: MediaQuery.of(context).size.height,
-          decoration:
-              BoxDecoration(color: CustomTheme.backgroundSexBottomColor, borderRadius: BorderRadius.circular(40)),
+          decoration: BoxDecoration(
+            color: CustomTheme.backgroundSexBottomColor,
+            borderRadius: BorderRadius.circular(40),
+          ),
           child: Column(
             children: [
               Padding(
@@ -57,9 +67,17 @@ class _SelectSexButtonState extends State<SelectSexButton> with SingleTickerProv
                       labelColor: CustomTheme.sexLabelColor,
                       indicatorColor: CustomTheme.mainColor,
                       indicatorWeight: indicatorWeight,
-                      indicator: BoxDecoration(color: CustomTheme.mainColor, borderRadius: BorderRadius.circular(40)),
+                      indicator: BoxDecoration(
+                        color: CustomTheme.mainColor,
+                        borderRadius: BorderRadius.circular(40),
+                      ),
                       tabs: [
-                        Tab(child: Text(LocaleKeys.man.tr(), style: CustomTheme().tabMaleTextProperty)),
+                        Tab(
+                          child: Text(
+                            LocaleKeys.man.tr(),
+                            style: CustomTheme().tabMaleTextProperty,
+                          ),
+                        ),
                         Tab(
                           child: Text(
                             LocaleKeys.woman.tr(),

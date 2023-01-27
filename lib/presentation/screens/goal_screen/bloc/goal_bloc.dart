@@ -6,8 +6,9 @@ import 'package:water_tracker/presentation/screens/goal_screen/bloc/goal_state.d
 
 class GoalBloc extends Bloc<GoalEvent, GoalState> {
   GoalBloc(this.repository) : super(InitialGoalState()) {
-
-    on<SkipGoalScreenEvent>((event, emit) async => emit(SuccessfullySkipButtonState()));
+    on<SkipGoalScreenEvent>(
+      (event, emit) async => emit(SuccessfullySkipButtonState()),
+    );
 
     on<SaveGoalEvent>((event, emit) async {
       try {

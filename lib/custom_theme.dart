@@ -19,8 +19,11 @@ class CustomTheme {
     fontWeight: FontWeight.w300,
   );
 
-  final buttonStyleProp =
-      TextStyle(fontSize: CustomTheme.fontSizeButton, color: Colors.white, fontFamily: Assets.fonts.senBold);
+  final buttonStyleProp = TextStyle(
+    fontSize: CustomTheme.fontSizeButton,
+    color: Colors.white,
+    fontFamily: Assets.fonts.senBold,
+  );
 
   final goalWidgetProp = TextStyle(
     fontSize: 16.0,
@@ -162,8 +165,11 @@ class CustomTheme {
 
   static const fontSizeButton = 16.0;
 
-  final buttonProperty =
-      TextStyle(fontSize: CustomTheme.fontSizeButton, color: textButtonColor, fontFamily: Assets.fonts.senBold);
+  final buttonProperty = TextStyle(
+    fontSize: CustomTheme.fontSizeButton,
+    color: textButtonColor,
+    fontFamily: Assets.fonts.senBold,
+  );
 
   static const mainColor = Color(0xFF292D32);
 
@@ -177,7 +183,8 @@ class CustomTheme {
 
   static const cursorColor = TextSelectionThemeData(cursorColor: mainColor);
 
-  static const spaceTextSpan = TextSpan(text: ' ', style: TextStyle(fontSize: 16, color: mainColor));
+  static const spaceTextSpan =
+      TextSpan(text: ' ', style: TextStyle(fontSize: 16, color: mainColor));
 
   static const skipButtonColor = Color(0xFF1D82F9);
 
@@ -241,7 +248,8 @@ class CustomTheme {
 
   static const textSpanStyle = TextStyle(fontSize: 16, color: Colors.black);
 
-  static const sliderProperty = TextStyle(fontSize: 60, color: CustomTheme.mainColor);
+  static const sliderProperty =
+      TextStyle(fontSize: 60, color: CustomTheme.mainColor);
 
   static const sexStyleProperty = TextStyle(fontSize: 20);
 
@@ -251,7 +259,8 @@ class CustomTheme {
     fontFamily: Assets.fonts.senRegular,
   );
 
-  static const signUpProperty = TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.bold);
+  static const signUpProperty =
+      TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.bold);
 
   static const notHaveAccount = TextStyle(fontSize: 16, color: Colors.black);
 

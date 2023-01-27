@@ -36,10 +36,19 @@ class MainScreenCounterWidget extends StatelessWidget {
         RichText(
           text: TextSpan(
             children: <TextSpan>[
-              TextSpan(text: LocaleKeys.you_already_got.tr(), style: CustomTheme().gotCupsTextProperty),
+              TextSpan(
+                text: LocaleKeys.you_already_got.tr(),
+                style: CustomTheme().gotCupsTextProperty,
+              ),
               TextSpan(text: ' $count', style: CustomTheme().countTextProperty),
-              TextSpan(text: '/$maxCount ', style: CustomTheme().partOfCountTextProperty),
-              TextSpan(text: LocaleKeys.cups.tr(), style: CustomTheme().gotCupsTextProperty),
+              TextSpan(
+                text: '/$maxCount ',
+                style: CustomTheme().partOfCountTextProperty,
+              ),
+              TextSpan(
+                text: LocaleKeys.cups.tr(),
+                style: CustomTheme().gotCupsTextProperty,
+              ),
             ],
           ),
         ),

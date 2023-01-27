@@ -8,8 +8,11 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
     on<SignInUserEvent>((event, emit) async {
       try {
         emit(LoadingSignInState());
-        final isSuccess = await repository.loginUser(event.email, event.password);
-        emit(isSuccess ? SuccessfullySignInState() : ErrorSignInState(Exception()));
+        final isSuccess =
+            await repository.loginUser(event.email, event.password);
+        emit(
+          isSuccess ? SuccessfullySignInState() : ErrorSignInState(Exception()),
+        );
       } catch (e) {
         emit(ErrorSignInState(e));
       }

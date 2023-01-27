@@ -2,13 +2,16 @@ import 'package:water_tracker/data/models/goal_list.dart';
 import 'package:water_tracker/data/models/user_settings.dart';
 
 abstract class StorageService {
-  Future<bool> saveGeneralInfo(UserSettings userSettings);
+  static const usersKey = 'users';
+  static const userSettingsKey = 'userSettings';
+  static const userCountKey = 'userCount';
+  static const amountOfWaterDrunkKey = 'amountOfWaterDrunk';
 
-  Future<bool> saveGoal(GoalList goalsList);
+  Future<bool> saveUserSetting(String email, UserSettings userSettings);
 
-  Future<String?> getGoal();
+  Future<bool> saveUserGoal(String email, GoalList goalsList);
 
-  Future<bool> saveCupCount(String dateKey, int counterCups);
+  Future<bool> saveUserCount(String email, String dateKey, int counterCups);
 
-  Future<int?> getCupCount(String dateKey);
+  Future<int?> getUserCount(String email, String dateKey);
 }

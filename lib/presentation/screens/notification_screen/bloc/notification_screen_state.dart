@@ -1,5 +1,5 @@
-abstract class NotificationScreenState{}
+abstract class NotificationScreenState {}
 
-class InitialNotificationState extends NotificationScreenState{}
+class InitialNotificationState extends NotificationScreenState {}
 
-class SuccessfullySkipButtonState extends NotificationScreenState{}
+class SuccessfullySkipButtonState extends NotificationScreenState {}

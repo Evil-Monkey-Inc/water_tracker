@@ -17,7 +17,6 @@ import 'package:water_tracker/presentation/screens/personal_settings_screen/bloc
 class PersonalSettingsLayout extends StatefulWidget {
   const PersonalSettingsLayout({super.key});
 
-
   @override
   State<PersonalSettingsLayout> createState() => _PersonalSettingsLayoutState();
 }
@@ -27,8 +26,10 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
   int weight = minValueWeight;
   int age = minValueAge;
 
-  final sliderWeightTextProperty = Text(LocaleKeys.weight.tr(), style: CustomTheme().header);
-  final sliderAgeTextProperty = Text(LocaleKeys.age.tr(), style: CustomTheme().header);
+  final sliderWeightTextProperty =
+      Text(LocaleKeys.weight.tr(), style: CustomTheme().header);
+  final sliderAgeTextProperty =
+      Text(LocaleKeys.age.tr(), style: CustomTheme().header);
   static const spaces = SizedBox(height: 14);
   static const paddingHorizontal = EdgeInsets.symmetric(horizontal: 24.0);
   static const maxValueAge = 100;
@@ -49,11 +50,17 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
             if (state is SuccessfullyPersonalSettingState) {
               Navigator.of(context).pushNamed(GoalScreen.route);
             }
-            if(state is SuccessfullySkipButtonState){
+            if (state is SuccessfullySkipButtonState) {
               Navigator.of(context).pushNamed(GoalScreen.route);
             }
             if (state is ErrorPersonalSettingState) {
-              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(LocaleKeys.please_fill_in_general_information.tr())));
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(
+                    LocaleKeys.please_fill_in_general_information.tr(),
+                  ),
+                ),
+              );
             }
           },
           builder: (BuildContext context, state) {
@@ -62,7 +69,9 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
                 children: [
                   spaces,
                   NameAndSkipWidget(
-                    onPressed: () => context.read<PersonalSettingBloc>().add(SkipPersonalSettingScreenEvent()),
+                    onPressed: () => context
+                        .read<PersonalSettingBloc>()
+                        .add(SkipPersonalSettingScreenEvent()),
                   ),
                   spaces,
                   TitleSettingWidget(
@@ -72,7 +81,9 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
                   ),
                   spaces,
                   spaces,
-                  SelectSexButton(onChanged: (value) => setState(() => gender = value)),
+                  SelectSexButton(
+                    onChanged: (value) => setState(() => gender = value),
+                  ),
                   CustomSliderWidget(
                     onChanged: (value) => setState(() => age = value),
                     sliderNameAndProperty: sliderAgeTextProperty,
@@ -88,8 +99,13 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
                   spaces,
                   CustomButton(
                     text: LocaleKeys.next.tr(),
-                    onPressed: () =>
-                        context.read<PersonalSettingBloc>().add(SaveGeneralSettingEvent(gender, age, weight)),
+                    onPressed: () => context.read<PersonalSettingBloc>().add(
+                          SaveGeneralSettingEvent(
+                            sex: gender,
+                            age: age,
+                            weight: weight,
+                          ),
+                        ),
                     buttonColor: CustomTheme.buttonDarkColor,
                     textButtonColor: CustomTheme.decorationColor,
                   ),

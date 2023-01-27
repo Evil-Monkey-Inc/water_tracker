@@ -6,7 +6,6 @@ import 'package:water_tracker/presentation/screens/personal_settings_screen/pers
 import 'package:water_tracker/presentation/screens/sign_up_screen/bloc/sign_up_bloc.dart';
 import 'package:water_tracker/presentation/screens/sign_up_screen/bloc/sign_up_event.dart';
 import 'package:water_tracker/presentation/screens/sign_up_screen/bloc/sign_up_state.dart';
-import 'package:water_tracker/presentation/screens/sign_up_screen/sign_up_screen.dart';
 import 'package:water_tracker/presentation/widgets/molecules/already_have_an_account.widget.dart';
 import 'package:water_tracker/presentation/widgets/molecules/hiding_on_keyboard_shown_widget.dart';
 import 'package:water_tracker/presentation/widgets/atoms/logo_widget.dart';
@@ -33,10 +32,12 @@ class _SignUpLayoutState extends State<SignUpLayout> {
         child: BlocConsumer<SignUpBloc, SignUpState>(
           listener: (context, state) {
             if (state is ErrorRegistrationState) {
-              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(LocaleKeys.error_try_again.tr())));
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: Text(LocaleKeys.error_try_again.tr())),
+              );
             }
             if (state is SuccessfullySignUpState) {
-              Navigator.of(context).pushNamedAndRemoveUntil(PersonalSettingScreen.route, (Route<dynamic> route) => false);
+              Navigator.of(context).pushReplacementNamed(PersonalSettingScreen.route);
             }
           },
           builder: (BuildContext context, state) {
@@ -53,8 +54,9 @@ class _SignUpLayoutState extends State<SignUpLayout> {
                   ),
                   SignUpForm(
                     isButtonEnabled: state is! LoadingSignUpState,
-                    onSignUpButtonPressed: (email, pass) =>
-                        context.read<SignUpBloc>().add(CreateUserEvent(email, pass)),
+                    onSignUpButtonPressed: (email, pass) => context
+                        .read<SignUpBloc>()
+                        .add(CreateUserEvent(email, pass)),
                   ),
                   const PrivacyPolicyAndTermsWidget(),
                   spaces,
