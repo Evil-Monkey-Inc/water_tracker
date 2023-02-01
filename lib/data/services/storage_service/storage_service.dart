@@ -4,6 +4,7 @@ import 'package:water_tracker/data/models/user_settings.dart';
 abstract class StorageService {
   static const usersKey = 'users';
   static const userSettingsKey = 'userSettings';
+  static const userGoalKey = 'userGoal';
   static const userCountKey = 'userCount';
   static const amountOfWaterDrunkKey = 'amountOfWaterDrunk';
 

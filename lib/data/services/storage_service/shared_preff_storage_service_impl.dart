@@ -3,26 +3,17 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:water_tracker/data/models/goal_list.dart';
 import 'package:water_tracker/data/models/user_settings.dart';
 import 'package:water_tracker/data/services/storage_service/shared_preff_storage_service.dart';
+import 'package:water_tracker/data/services/storage_service/storage_service.dart';
 
 class SharedPreffStorageImplements extends SharedPreffStorageService {
-
-  static const amountOfWaterDrunkKey = 'amountOfWaterDrunk';
-  static const userCountKey = 'userCount';
-
-
-  static const exceptionMessage = 'email could not be null at this point';
-  final List<String> userInfo = [];
-
   @override
   Future<bool> saveUserSetting(String email, UserSettings userSettings) async {
     final prefs = await SharedPreferences.getInstance();
+    final map = {email: userSettings.toJson()};
     final result = await prefs.setString(
-      email,
-      jsonEncode(userSettings),
+      StorageService.usersKey,
+      jsonEncode(map),
     );
-
-    final encodeMap = prefs.getString(email);
-    userInfo.add(encodeMap!);
 
     return result;
   }
@@ -30,25 +21,34 @@ class SharedPreffStorageImplements extends SharedPreffStorageService {
   @override
   Future<bool> saveUserGoal(String email, GoalList goalsList) async {
     final prefs = await SharedPreferences.getInstance();
-    await prefs.setString(email, jsonEncode(goalsList));
-    final encodeMap = prefs.getString(email);
-    userInfo.add(encodeMap!);
-    final result = await prefs.setStringList(email, userInfo);
+    final lastValue = prefs.getString(StorageService.usersKey);
+    final nestingMap = {
+      StorageService.usersKey: {lastValue: goalsList.toJson()}
+    };
+    final result = await prefs.setString(StorageService.usersKey, jsonEncode(nestingMap));
     return result;
   }
 
   @override
   Future<bool> saveUserCount(String email, String dateKey, int counterCups) async {
     final prefs = await SharedPreferences.getInstance();
-    final cupsMap = {dateKey : counterCups};
-    final fullNestingMap = {userCountKey : cupsMap};
-    final result = await prefs.setString(amountOfWaterDrunkKey, jsonEncode(fullNestingMap));
+    final cupsMap = {
+      StorageService.userCountKey: {
+        StorageService.amountOfWaterDrunkKey: {dateKey: counterCups}
+      }
+    };
+    final result = await prefs.setString(email, jsonEncode(cupsMap));
+
     return result;
   }
 
   @override
   Future<int?> getUserCount(String email, String dateKey) async {
     final prefs = await SharedPreferences.getInstance();
-    return prefs.getInt(dateKey) ?? 0;
+    final value = prefs.getString(email);
+    final decodeValue = json.decode(value!);
+    final cupCount = decodeValue[StorageService.userCountKey][StorageService.amountOfWaterDrunkKey][dateKey];
+
+    return prefs.getInt(cupCount) ?? 0;
   }
 }

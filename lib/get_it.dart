@@ -14,11 +14,11 @@ void setupServicesLocator() {
   final authService = EnvVariables.mockAuthService
       ? MockedAuthenticationServiceImpl()
       : AuthenticationServiceFirebaseImpl();
-  final firebaseStorage = SharedPreffStorageImplements();
+  final storage = SharedPreffStorageImplements();
 
   getIt.registerSingleton<AuthenticationService>(authService);
-  getIt.registerSingleton<SharedPreffStorageService>(firebaseStorage);
+  getIt.registerSingleton<SharedPreffStorageService>(storage);
   getIt.registerSingleton<Repository>(
-    RepositoryImpl(authService, firebaseStorage),
+    RepositoryImpl(authService, storage),
   );
 }
