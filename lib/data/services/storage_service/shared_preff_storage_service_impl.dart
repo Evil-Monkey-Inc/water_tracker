@@ -5,16 +5,20 @@ import 'package:water_tracker/data/models/user_settings.dart';
 import 'package:water_tracker/data/services/storage_service/shared_preff_storage_service.dart';
 import 'package:water_tracker/data/services/storage_service/storage_service.dart';
 
+typedef UserMap = Map<String, dynamic>;
+
 class SharedPreffStorageImplements extends SharedPreffStorageService {
   @override
   Future<bool> saveUserSetting(String email, UserSettings userSettings) async {
     final prefs = await SharedPreferences.getInstance();
-    final map = {email: userSettings.toJson()};
+    final UserMap currentMap = jsonDecode(prefs.getString(StorageService.usersKey) ?? '');
+    final UserMap userMap = currentMap[email] ?? {};
+    userMap[StorageService.userSettingsKey] = userSettings.toJson();
+    currentMap[StorageService.usersKey] = userMap;
     final result = await prefs.setString(
       StorageService.usersKey,
-      jsonEncode(map),
+      jsonEncode(currentMap),
     );
-
     return result;
   }
 
