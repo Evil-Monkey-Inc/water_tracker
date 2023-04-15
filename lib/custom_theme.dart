@@ -107,7 +107,7 @@ class CustomTheme {
 
   static const decorationColor = Colors.white;
 
-  static const shadowColor = Color(0xFFFAFAFA);
+
 
   final header = TextStyle(
     fontSize: 16,

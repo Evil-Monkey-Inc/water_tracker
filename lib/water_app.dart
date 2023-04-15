@@ -2,7 +2,8 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:water_tracker/custom_theme.dart';
+import 'package:water_tracker/config/theme/theme_container.dart';
+import 'package:water_tracker/config/theme/theme_extension/radius_extension.dart';
 import 'package:water_tracker/presentation/screens/goal_screen/goal_screen.dart';
 import 'package:water_tracker/presentation/screens/greeting_screen/greeting_screen.dart';
 import 'package:water_tracker/presentation/screens/main_screen/main_screen.dart';
@@ -27,17 +28,18 @@ class _WaterAppState extends State<WaterApp> {
 
   @override
   Widget build(BuildContext context) {
+    final themeExtensions = <ThemeExtension>[RadiusExtension.instance];
     return MaterialApp(
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
       scrollBehavior: const CupertinoScrollBehavior(),
-      theme: ThemeData(
-        primaryColor: CustomTheme.themeDataColor,
-        focusColor: CustomTheme.focusColor,
-        inputDecorationTheme: CustomTheme.inputDecorationTheme,
-        textSelectionTheme: CustomTheme.cursorColor,
-      ),
+      theme:  ThemeContainer.lightTheme.copyWith(
+          extensions: themeExtensions),
+      darkTheme: ThemeContainer.darkTheme.copyWith(
+          extensions: themeExtensions),
+       // TODO(Sanya): implement theme mode solution
+        themeMode: ThemeMode.light,
       initialRoute: SignInScreen.route,
       routes: {
         SignInScreen.route: (_) => const SignInScreen(),

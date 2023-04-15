@@ -33,7 +33,7 @@ class NotificationWidget extends StatelessWidget {
         borderRadius: const BorderRadius.all(widgetRadius),
         boxShadow: [
           BoxShadow(
-            color: CustomTheme.shadowColor.withOpacity(0.1),
+            color: Theme.of(context).shadowColor.withOpacity(0.1),
             spreadRadius: spreadRadius,
             blurRadius: blurRadius,
             offset: offset,
@@ -53,7 +53,7 @@ class NotificationWidget extends StatelessWidget {
                   flex: upperFlex,
                   child: Text(
                     LocaleKeys.notification_text.tr(),
-                    style: CustomTheme().notificationTextSize,
+                    style: Theme.of(context).textTheme.headline1,
                     textAlign: TextAlign.center,
                   ),
                 ),
