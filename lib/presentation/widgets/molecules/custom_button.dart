@@ -21,8 +21,6 @@ class CustomButton extends StatelessWidget {
   static const paddingAroundButton = EdgeInsets.symmetric(vertical: 12.0);
   @override
   Widget build(BuildContext context) {
-    final backgroundColor = Theme.of(context).dividerColor;
-    const customButtonShadowColor = Colors.transparent;
     final buttonStyleProp = TextStyle(
       fontSize: CustomTheme.fontSizeButton,
       color: Theme.of(context).backgroundColor,
@@ -34,7 +32,7 @@ class CustomButton extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         backgroundColor: buttonColor,
         elevation: 0.0,
-        shadowColor: customButtonShadowColor,
+        shadowColor: Colors.transparent,
         padding: EdgeInsets.all(a!),
         minimumSize: CustomTheme.minimumSizeButton,
         shape: const RoundedRectangleBorder(

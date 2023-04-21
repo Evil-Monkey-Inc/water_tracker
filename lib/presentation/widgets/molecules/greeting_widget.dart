@@ -13,6 +13,8 @@ class GreetingWidget extends StatelessWidget {
   static const widthWidget = 400;
   static const titlePadding = EdgeInsets.symmetric(horizontal: 34);
   static const titleDescription = EdgeInsets.symmetric(horizontal: 36);
+  static const size = 34.0;
+  static const  anotherSize = 20.0;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +29,7 @@ class GreetingWidget extends StatelessWidget {
               LocaleKeys.manage_water_title.tr(),
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.headline3?.copyWith(
-                fontSize: 34,
+                fontSize: size,
                 fontFamily: Assets.fonts.senRegular,
                 fontWeight: FontWeight.w500,
                 color: Theme.of(context).primaryColor
@@ -42,7 +44,7 @@ class GreetingWidget extends StatelessWidget {
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.headline3?.copyWith(
                 fontWeight: FontWeight.w400,
-                fontSize: 20,
+                fontSize: anotherSize,
                   color: Theme.of(context).primaryColor,
               ),
             ),

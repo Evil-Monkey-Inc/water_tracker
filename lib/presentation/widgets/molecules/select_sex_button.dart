@@ -1,6 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:water_tracker/config/theme/theme_palette/light_palette.dart';
 import 'package:water_tracker/data/models/gender.dart';
 import 'package:water_tracker/generated/assets/assets.gen.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
@@ -36,75 +35,73 @@ class _SelectSexButtonState extends State<SelectSexButton>
 
   @override
   Widget build(BuildContext context) {
-    final sexTextProperty = Text(LocaleKeys.sex.tr(),
-        style: Theme.of(context).textTheme.headline4?.copyWith(
-              color: Theme.of(context).primaryColor,
-              fontWeight: FontWeight.w500,
-              fontSize: 16,
-            ));
-    final primaryColor = Theme.of(context).primaryColor;
-    final backgroundSexBottomColor = Theme.of(context).dividerColor;
-    final sexLabelColor = Theme.of(context).primaryColorLight;
-    final primaryColorDark = Theme.of(context).primaryColorDark;
-      return Column(
-        children: [
-          Align(alignment: Alignment.bottomLeft, child: sexTextProperty),
-          space,
-          Container(
-            height: heightButton,
-            width: MediaQuery.of(context).size.height,
-            decoration: BoxDecoration(
-              color: backgroundSexBottomColor,
-              borderRadius: BorderRadius.circular(40),
-            ),
-            child: Column(
-              children: [
-                Padding(
-                  padding: spaceInsideButton,
-                  child: SizedBox(
-                    height: buttonWeight,
-                    child: DefaultTabController(
-                      length: countTabs,
-                      child: TabBar(
-                        controller: controller,
-                        unselectedLabelColor: primaryColor,
-                        labelColor: sexLabelColor,
-                        indicatorColor: primaryColor,
-                        indicatorWeight: indicatorWeight,
-                        indicator: BoxDecoration(
-                          color: primaryColor,
-                          borderRadius: BorderRadius.circular(40),
-                        ),
-                        tabs: [
-                          Tab(
-                            child: Text(
-                              LocaleKeys.man.tr(),
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontFamily: Assets.fonts.senRegular,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ),
-                          Tab(
-                            child: Text(
-                              LocaleKeys.woman.tr(),
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontFamily: Assets.fonts.senRegular,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ),
-                        ],
+    final sexTextProperty = Text(
+      LocaleKeys.sex.tr(),
+      style: Theme.of(context).textTheme.headline4?.copyWith(
+            color: Theme.of(context).primaryColor,
+            fontWeight: FontWeight.w500,
+            fontSize: 16,
+          ),
+    );
+    return Column(
+      children: [
+        Align(alignment: Alignment.bottomLeft, child: sexTextProperty),
+        space,
+        Container(
+          height: heightButton,
+          width: MediaQuery.of(context).size.height,
+          decoration: BoxDecoration(
+            color: Theme.of(context).dividerColor,
+            borderRadius: BorderRadius.circular(40),
+          ),
+          child: Column(
+            children: [
+              Padding(
+                padding: spaceInsideButton,
+                child: SizedBox(
+                  height: buttonWeight,
+                  child: DefaultTabController(
+                    length: countTabs,
+                    child: TabBar(
+                      controller: controller,
+                      unselectedLabelColor: Theme.of(context).primaryColor,
+                      labelColor: Theme.of(context).primaryColorLight,
+                      indicatorColor: Theme.of(context).primaryColor,
+                      indicatorWeight: indicatorWeight,
+                      indicator: BoxDecoration(
+                        color: Theme.of(context).primaryColor,
+                        borderRadius: BorderRadius.circular(40),
                       ),
+                      tabs: [
+                        Tab(
+                          child: Text(
+                            LocaleKeys.man.tr(),
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontFamily: Assets.fonts.senRegular,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ),
+                        Tab(
+                          child: Text(
+                            LocaleKeys.woman.tr(),
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontFamily: Assets.fonts.senRegular,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                )
-              ],
-            ),
+                ),
+              )
+            ],
           ),
-        ],
-      );
-    }
+        ),
+      ],
+    );
   }
+}

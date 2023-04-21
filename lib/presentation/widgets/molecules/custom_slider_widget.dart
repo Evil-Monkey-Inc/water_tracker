@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:water_tracker/custom_theme.dart';
 import 'package:water_tracker/generated/assets/assets.gen.dart';
 
 class CustomSliderWidget extends StatefulWidget {
@@ -26,6 +25,7 @@ class _CustomSliderWidgetState extends State<CustomSliderWidget> {
   static const enabledRadius = 12;
   static const disabledThumbRadius = 5;
   static const spaces = SizedBox(height: 24);
+  static const size = 56.0;
 
   late int generalInfValue;
 
@@ -37,10 +37,6 @@ class _CustomSliderWidgetState extends State<CustomSliderWidget> {
 
   @override
   Widget build(BuildContext context) {
-    final backgroundSliderLine = Theme.of(context).primaryColorLight;
-
-    final primaryColor = Theme.of(context).primaryColor;
-    const customButtonShadowColor = Colors.transparent;
     return Column(
       children: [
         spaces,
@@ -52,10 +48,10 @@ class _CustomSliderWidgetState extends State<CustomSliderWidget> {
         Text(
           generalInfValue.round().toString(),
           style: Theme.of(context).textTheme.headline3?.copyWith(
-            fontSize: 56,
+            fontSize: size,
             fontFamily: Assets.fonts.senRegular,
             fontWeight: FontWeight.w300,
-            color: primaryColor
+            color: Theme.of(context).primaryColor
           ),
         ),
         SliderTheme(
@@ -66,14 +62,14 @@ class _CustomSliderWidgetState extends State<CustomSliderWidget> {
             ),
             showValueIndicator: ShowValueIndicator.always,
             trackHeight: lineHeight,
-            activeTrackColor: primaryColor,
-            inactiveTrackColor: backgroundSliderLine,
-            activeTickMarkColor: customButtonShadowColor,
-            inactiveTickMarkColor: customButtonShadowColor,
-            thumbColor: primaryColor,
+            activeTrackColor: Theme.of(context).primaryColor,
+            inactiveTrackColor: Theme.of(context).primaryColorLight,
+            activeTickMarkColor: Colors.transparent,
+            inactiveTickMarkColor: Colors.transparent,
+            thumbColor: Theme.of(context).primaryColor,
           ),
           child: Slider(
-            thumbColor: primaryColor,
+            thumbColor: Theme.of(context).primaryColor,
             value: generalInfValue.toDouble(),
             min: widget.minValue.toDouble(),
             max: widget.maxValue.toDouble(),

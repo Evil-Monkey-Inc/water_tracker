@@ -26,6 +26,8 @@ class MainScreenCounterWidget extends StatelessWidget {
   static const betweenCounters = SizedBox(height: 16);
   static const spaceBetween = SizedBox(height: 44);
   static const spaceBetweenManAndMl = SizedBox(height: 42);
+  static const size = 36.0;
+  static const anotherSize = 18.0;
 
   @override
   Widget build(BuildContext context) {
@@ -41,14 +43,14 @@ class MainScreenCounterWidget extends StatelessWidget {
                 text: LocaleKeys.you_already_got.tr(),
                 style: Theme.of(context).textTheme.caption?.copyWith(
                   fontWeight: FontWeight.w500,
-                  fontSize: 36
+                  fontSize: size
                 ),
               ),
               TextSpan(text: ' $count', style: Theme.of(context).textTheme.overline),
               TextSpan(
                 text: '/$maxCount ',
                 style: Theme.of(context).textTheme.bodyText1?.copyWith(
-                  fontSize: 36,
+                  fontSize: size,
                   color: LightPalette.purpleTextColor,
                   fontFamily: Assets.fonts.senRegular,
                 ),
@@ -56,7 +58,7 @@ class MainScreenCounterWidget extends StatelessWidget {
               TextSpan(
                 text: LocaleKeys.cups.tr(),
                 style: Theme.of(context).textTheme.button?.copyWith(
-                  fontSize: 36,
+                  fontSize: size,
                   fontWeight: FontWeight.w500,
                 ),
               ),
@@ -69,7 +71,7 @@ class MainScreenCounterWidget extends StatelessWidget {
           child: Text(
             '$currentCupWeight/$maxWeight ${LocaleKeys.ml.tr()}',
             style: Theme.of(context).textTheme.button?.copyWith(
-              fontSize: 18,
+              fontSize: anotherSize,
               fontWeight: FontWeight.w400
             ),
           ),

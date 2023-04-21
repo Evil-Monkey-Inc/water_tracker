@@ -19,8 +19,6 @@ class PrivacyPolicyAndTermsWidget extends StatelessWidget {
         color: Theme.of(context).primaryColor,
       ),
     );
-
-    final privacyPolicyBackground = Theme.of(context).primaryColorLight;
     return Padding(
       padding: paddingPrivacyPolicyTermsWidget,
       child: Text.rich(
@@ -31,9 +29,10 @@ class PrivacyPolicyAndTermsWidget extends StatelessWidget {
             spaceTextSpan,
             TextSpan(
               text: LocaleKeys.terms.tr(),
-              style: Theme.of(context).textTheme.subtitle2?.copyWith(
-                fontWeight: FontWeight.w500
-              ),
+              style: Theme.of(context)
+                  .textTheme
+                  .subtitle2
+                  ?.copyWith(fontWeight: FontWeight.w500),
               recognizer: TapGestureRecognizer()
                 ..onTap = () {
                   showModalBottomSheet(
@@ -43,7 +42,7 @@ class PrivacyPolicyAndTermsWidget extends StatelessWidget {
                     ),
                     isScrollControlled: true,
                     context: context,
-                    backgroundColor: privacyPolicyBackground,
+                    backgroundColor: Theme.of(context).primaryColorLight,
                     builder: (context) => DraggableScrollableSheet(
                       expand: false,
                       minChildSize: 0.32,
@@ -81,9 +80,10 @@ class PrivacyPolicyAndTermsWidget extends StatelessWidget {
             spaceTextSpan,
             TextSpan(
               text: LocaleKeys.privacy_policy.tr(),
-              style:  Theme.of(context).textTheme.subtitle2?.copyWith(
-                fontWeight: FontWeight.w500
-              ),
+              style: Theme.of(context)
+                  .textTheme
+                  .subtitle2
+                  ?.copyWith(fontWeight: FontWeight.w500),
               recognizer: TapGestureRecognizer()
                 ..onTap = () {
                   showModalBottomSheet(
@@ -93,7 +93,7 @@ class PrivacyPolicyAndTermsWidget extends StatelessWidget {
                     ),
                     isScrollControlled: true,
                     context: context,
-                    backgroundColor: privacyPolicyBackground,
+                    backgroundColor: Theme.of(context).primaryColorLight,
                     builder: (context) => DraggableScrollableSheet(
                       expand: false,
                       minChildSize: 0.32,
