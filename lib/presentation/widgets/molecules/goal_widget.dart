@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:water_tracker/custom_theme.dart';
 import 'package:water_tracker/data/models/goal.dart';
 import 'package:water_tracker/data/models/goal_widget_model.dart';
+import 'package:water_tracker/generated/assets/assets.gen.dart';
 import 'package:water_tracker/presentation/widgets/atoms/icon_image_widget.dart';
 
 class GoalWidget extends StatefulWidget {
@@ -46,6 +47,9 @@ class _GoalWidgetState extends State<GoalWidget>
 
   @override
   Widget build(BuildContext context) {
+    final backgroundSexBottomColor = Theme.of(context).primaryColorLight;
+    final decorationColor = Theme.of(context).primaryColorLight;
+    final primaryColor = Theme.of(context).primaryColor;
     return Transform.scale(
       scale: sizeAnimationController.value,
       child: GestureDetector(
@@ -66,29 +70,31 @@ class _GoalWidgetState extends State<GoalWidget>
           duration: colorAnimationDuration,
           decoration: BoxDecoration(
             color: isSelected
-                ? CustomTheme.mainColor
-                : CustomTheme.backgroundSexBottomColor,
+                ? primaryColor
+                : backgroundSexBottomColor,
             borderRadius: CustomTheme.goalCirculars,
           ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              upperSpace,
-              IconImageWidget(widget.model.imagePath),
-              betweenSpace,
-              Padding(
-                padding: paddingBetweenGoals,
-                child: Text(
-                  widget.model.title,
-                  textAlign: TextAlign.center,
-                  style: CustomTheme().goalWidgetProp.copyWith(
-                        color: isSelected
-                            ? CustomTheme.decorationColor
-                            : CustomTheme.mainColor,
-                      ),
+          child: Container(
+            color: Theme.of(context).dividerColor,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                upperSpace,
+                IconImageWidget(widget.model.imagePath),
+                betweenSpace,
+                Padding(
+                  padding: paddingBetweenGoals,
+                  child: Text(
+                    widget.model.title,
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.bodyText1?.copyWith(
+                      color: isSelected ? decorationColor : primaryColor,
+                      fontWeight: FontWeight.w500
+                    ),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

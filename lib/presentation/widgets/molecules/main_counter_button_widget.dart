@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:water_tracker/custom_theme.dart';
+import 'package:water_tracker/config/theme/theme_palette/light_palette.dart';
+import 'package:water_tracker/generated/assets/assets.gen.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
 import 'package:water_tracker/presentation/widgets/atoms/person_image_widget.dart';
 import 'package:water_tracker/presentation/widgets/molecules/assistant_widget.dart';
@@ -38,16 +39,26 @@ class MainScreenCounterWidget extends StatelessWidget {
             children: <TextSpan>[
               TextSpan(
                 text: LocaleKeys.you_already_got.tr(),
-                style: CustomTheme().gotCupsTextProperty,
+                style: Theme.of(context).textTheme.caption?.copyWith(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 36
+                ),
               ),
-              TextSpan(text: ' $count', style: CustomTheme().countTextProperty),
+              TextSpan(text: ' $count', style: Theme.of(context).textTheme.overline),
               TextSpan(
                 text: '/$maxCount ',
-                style: CustomTheme().partOfCountTextProperty,
+                style: Theme.of(context).textTheme.bodyText1?.copyWith(
+                  fontSize: 36,
+                  color: LightPalette.purpleTextColor,
+                  fontFamily: Assets.fonts.senRegular,
+                ),
               ),
               TextSpan(
                 text: LocaleKeys.cups.tr(),
-                style: CustomTheme().gotCupsTextProperty,
+                style: Theme.of(context).textTheme.button?.copyWith(
+                  fontSize: 36,
+                  fontWeight: FontWeight.w500,
+                ),
               ),
             ],
           ),
@@ -57,7 +68,10 @@ class MainScreenCounterWidget extends StatelessWidget {
           alignment: Alignment.topLeft,
           child: Text(
             '$currentCupWeight/$maxWeight ${LocaleKeys.ml.tr()}',
-            style: CustomTheme().counterMl,
+            style: Theme.of(context).textTheme.button?.copyWith(
+              fontSize: 18,
+              fontWeight: FontWeight.w400
+            ),
           ),
         ),
         spaceBetweenManAndMl,

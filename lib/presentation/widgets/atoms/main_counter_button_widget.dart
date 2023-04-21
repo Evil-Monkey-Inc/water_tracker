@@ -16,6 +16,7 @@ class MainScreenButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final secondaryColor = Theme.of(context).backgroundColor;
     return Align(
       alignment: Alignment.bottomCenter,
       child: SizedBox(
@@ -24,8 +25,8 @@ class MainScreenButtonWidget extends StatelessWidget {
           size: _animatedRadius,
           numberOfRipples: _numberOfRipples,
           duration: _duration,
-          color: CustomTheme.mainColor,
-          secondaryColor: CustomTheme.secondaryColor,
+          color: Theme.of(context).primaryColor,
+          secondaryColor: secondaryColor,
           rippleEffect: RippleEffect.looped,
           onPressed: onPressed,
           icon: SvgPicture.asset(

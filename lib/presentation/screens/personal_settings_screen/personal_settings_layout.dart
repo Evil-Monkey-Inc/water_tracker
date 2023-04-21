@@ -25,11 +25,6 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
   var gender = Gender.male;
   int weight = minValueWeight;
   int age = minValueAge;
-
-  final sliderWeightTextProperty =
-      Text(LocaleKeys.weight.tr(), style: CustomTheme().header);
-  final sliderAgeTextProperty =
-      Text(LocaleKeys.age.tr(), style: CustomTheme().header);
   static const spaces = SizedBox(height: 14);
   static const paddingHorizontal = EdgeInsets.symmetric(horizontal: 24.0);
   static const maxValueAge = 100;
@@ -42,6 +37,19 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
 
   @override
   Widget build(BuildContext context) {
+    final sliderAgeTextProperty =
+    Text(LocaleKeys.age.tr(), style: Theme.of(context).textTheme.headline3?.copyWith(
+      color: Theme.of(context).primaryColor,
+      fontWeight: FontWeight.w500,
+      fontSize: 16
+    ));
+    final sliderWeightTextProperty =
+    Text(LocaleKeys.weight.tr(), style: Theme.of(context).textTheme.headline3?.copyWith(
+      color: Theme.of(context).primaryColor,
+      fontWeight: FontWeight.w500,
+      fontSize: 16,
+    ));
+    final buttonDarkColor = Theme.of(context).primaryColor;
     return Scaffold(
       body: Padding(
         padding: paddingHorizontal,
@@ -64,6 +72,7 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
             }
           },
           builder: (BuildContext context, state) {
+            final decorationColor = Theme.of(context).primaryColorLight;
             return SingleChildScrollView(
               child: Column(
                 children: [
@@ -106,8 +115,8 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
                             weight: weight,
                           ),
                         ),
-                    buttonColor: CustomTheme.buttonDarkColor,
-                    textButtonColor: CustomTheme.decorationColor,
+                    buttonColor: buttonDarkColor,
+                    textButtonColor: decorationColor,
                   ),
                   spaces,
                 ],

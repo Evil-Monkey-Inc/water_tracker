@@ -1,8 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:water_tracker/config/theme/theme_palette/light_palette.dart';
 import 'package:water_tracker/custom_theme.dart';
 import 'package:water_tracker/env_variables.dart';
 import 'package:water_tracker/form_validators.dart';
+import 'package:water_tracker/generated/assets/assets.gen.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
 import 'package:water_tracker/presentation/widgets/molecules/custom_button.dart';
 import 'package:water_tracker/presentation/widgets/molecules/input_field_widget.dart';
@@ -13,6 +15,7 @@ class SignInForm extends StatefulWidget {
     required this.onSignInButtonPressed,
     required this.isButtonEnabled,
   });
+
   final void Function(String email, String password) onSignInButtonPressed;
   final bool isButtonEnabled;
 
@@ -30,23 +33,28 @@ class _MyLogFormWidgetState extends State<SignInForm> {
 
   static const visibilityOff = Icon(
     Icons.visibility_off,
-    color: CustomTheme.mainColor,
+    color: LightPalette.primaryColor,
   );
 
   static const visibility = Icon(
     Icons.visibility,
-    color: CustomTheme.mainColor,
+    color: LightPalette.primaryColor,
   );
 
   @override
   Widget build(BuildContext context) {
+    final buttonDarkColor = Theme.of(context).primaryColor;
+    final decorationColor = Theme.of(context).primaryColorLight;
     return Form(
       key: formKey,
       child: Column(
         children: [
           Text(
             LocaleKeys.welcome_back_tony.tr(),
-            style: CustomTheme().greetingsProperty,
+            style: Theme.of(context).textTheme.subtitle1?.copyWith(
+              fontWeight: FontWeight.w500,
+              fontSize: 24
+            ),
           ),
           spacer,
           InputFieldWidget(
@@ -75,8 +83,8 @@ class _MyLogFormWidgetState extends State<SignInForm> {
             },
             text: LocaleKeys.sign_in.tr(),
             isEnabled: true,
-            buttonColor: CustomTheme.buttonDarkColor,
-            textButtonColor: CustomTheme.decorationColor,
+            buttonColor: buttonDarkColor,
+            textButtonColor: decorationColor,
           ),
         ],
       ),

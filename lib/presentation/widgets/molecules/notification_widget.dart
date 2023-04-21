@@ -25,11 +25,15 @@ class NotificationWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final buttonDarkColor = Theme.of(context).primaryColor;
+    final decorationColor = Theme.of(context).primaryColorLight;
+    final textButtonColor = Theme.of(context).primaryColor;
+    final buttonLightColor = Theme.of(context).primaryColorLight;
     return Container(
       height: heightWidget,
       width: widthWidget,
       decoration: BoxDecoration(
-        color: CustomTheme.decorationColor,
+        color: decorationColor,
         borderRadius: const BorderRadius.all(widgetRadius),
         boxShadow: [
           BoxShadow(
@@ -53,7 +57,12 @@ class NotificationWidget extends StatelessWidget {
                   flex: upperFlex,
                   child: Text(
                     LocaleKeys.notification_text.tr(),
-                    style: Theme.of(context).textTheme.headline1,
+                    style: Theme.of(context).textTheme.headline3?.copyWith(
+                      fontFamily: Assets.fonts.senRegular,
+                      fontWeight: FontWeight.w500,
+                      color: Theme.of(context).primaryColor,
+                      fontSize: 24
+                    ),
                     textAlign: TextAlign.center,
                   ),
                 ),
@@ -66,8 +75,8 @@ class NotificationWidget extends StatelessWidget {
             child: CustomButton(
               text: LocaleKeys.every_hour.tr(),
               onPressed: () {},
-              buttonColor: CustomTheme.buttonLightColor,
-              textButtonColor: CustomTheme.textButtonColor,
+              buttonColor: Theme.of(context).dividerColor,
+              textButtonColor: textButtonColor,
             ),
           ),
           spaceBetweenButtons,
@@ -76,8 +85,8 @@ class NotificationWidget extends StatelessWidget {
             child: CustomButton(
               text: LocaleKeys.every_two_hours.tr(),
               onPressed: () {},
-              buttonColor: CustomTheme.buttonDarkColor,
-              textButtonColor: CustomTheme.decorationColor,
+              buttonColor: buttonDarkColor,
+              textButtonColor: decorationColor,
             ),
           ),
           downFlex

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:water_tracker/config/theme/theme_palette/dark_palette.dart';
 import 'package:water_tracker/config/theme/theme_palette/default_palette.dart';
 import 'package:water_tracker/config/theme/theme_palette/light_palette.dart';
+import 'package:water_tracker/generated/assets/assets.gen.dart';
 
 abstract class VendorTheme {
   ThemeData get lightTheme;
@@ -14,31 +15,52 @@ class VenomTheme implements VendorTheme {
   ThemeData get lightTheme {
     return ThemeData(
       shadowColor: LightPalette.shadowColor,
-      primarySwatch: DefaultPalette.kToDark,
-      backgroundColor: DefaultPalette.deepPurpleAccent,
+      primarySwatch: LightPalette.kToDark,
+      backgroundColor: LightPalette.backgroundColor,
       disabledColor: DefaultPalette.deepPurpleAccent,
-      primaryColor: DefaultPalette.deepPurpleAccent,
-      dividerColor: DefaultPalette.deepPurpleAccent,
+      primaryColor: LightPalette.primaryColor,
+      dividerColor: LightPalette.greyFillColor,
       unselectedWidgetColor: DefaultPalette.deepPurpleAccent,
       toggleableActiveColor: DefaultPalette.deepPurpleAccent,
-      hintColor: DefaultPalette.greenAccent,
+      hintColor: DefaultPalette.deepPurpleAccent,
+      primaryColorDark: LightPalette.blackColor,
+      primaryColorLight: LightPalette.whiteColor,
+      hoverColor: LightPalette.purpleColor,
+      highlightColor: LightPalette.purpleTextColor,
+      cardColor: LightPalette.blueColor,
+      splashColor: LightPalette.greyBlueColor,
       appBarTheme: const AppBarTheme(
-        shadowColor: DefaultPalette.deepPurpleAccent,
-        color: DefaultPalette.deepPurpleAccent,
+        shadowColor: LightPalette.shadowColor,
+        color: LightPalette.primaryColor,
       ),
       iconTheme: const IconThemeData(color: DefaultPalette.deepPurpleAccent),
-      inputDecorationTheme: const InputDecorationTheme(
+      inputDecorationTheme:  const InputDecorationTheme(
+        labelStyle: TextStyle(
+          color: LightPalette.textFieldColor,
+        ),
+        fillColor: LightPalette.greyFillColor ,
+        filled: true,
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.all(Radius.circular(10)),
+          borderSide: BorderSide(color: Colors.black),
+        ),
+        disabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.all(Radius.circular(10)),
+          borderSide: BorderSide.none,
+        ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+            borderSide: BorderSide.none,
+          ),
           errorBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: DefaultPalette.deepPurpleAccent),
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+            borderSide: BorderSide(color: Colors.red),
           ),
-          focusedErrorBorder: OutlineInputBorder(
-            borderSide:
-            BorderSide(color: DefaultPalette.deepPurpleAccent, width: 2.0),
+          focusedErrorBorder:OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+            borderSide: BorderSide(color: Colors.red),
           ),
-          focusedBorder: OutlineInputBorder(
-            borderSide:
-            BorderSide(color: DefaultPalette.deepPurpleAccent, width: 2.0),
-          )),
+         ),
       errorColor: DefaultPalette.redAccent,
       scaffoldBackgroundColor: DefaultPalette.whiteBackground,
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
@@ -47,82 +69,73 @@ class VenomTheme implements VendorTheme {
         selectedItemColor: DefaultPalette.whiteBackground,
         unselectedItemColor: DefaultPalette.whiteBackground,
       ),
-      textTheme:  TextTheme(
+      textTheme: TextTheme(
         headline1: TextStyle(
-          color: LightPalette.mainColor,
-          fontWeight: FontWeight.w500,
-          fontSize: 24,
+          color: LightPalette.blueColor,
+          fontFamily: Assets.fonts.senRegular,
+          fontSize: 16,
+          fontWeight: FontWeight.w400,
         ),
         headline2: TextStyle(
-          color: DefaultPalette.deepPurpleAccent,
-          fontWeight: FontWeight.w400,
-          fontSize: 60,
-          letterSpacing: -0.5,
+          fontSize: 16,
+          color: LightPalette.blackColor,
+          fontFamily: Assets.fonts.senRegular,
         ),
         headline3: TextStyle(
-          color: DefaultPalette.deepPurpleAccent,
-          fontWeight: FontWeight.w400,
-          fontSize: 48,
-          letterSpacing: 0,
+          fontSize: 16,
+          fontFamily: Assets.fonts.senBold,
         ),
-        headline4: TextStyle(
-          color: DefaultPalette.deepPurpleAccent,
-          fontWeight: FontWeight.w400,
-          fontSize: 34,
-          letterSpacing: 0,
-        ),
+        headline4: TextStyle(fontSize: 20),
         headline5: TextStyle(
-          color: DefaultPalette.deepPurpleAccent,
-          fontSize: 24,
-          letterSpacing: 0.18,
-          fontWeight: FontWeight.w400,
+            fontSize: 16, color: LightPalette.blackColor
         ),
         headline6: TextStyle(
-          color: DefaultPalette.deepPurpleAccent,
-          fontSize: 20,
-          letterSpacing: 0.15,
-          fontWeight: FontWeight.w500,
+          color: LightPalette.greyBlueColor,
+          fontSize: 16,
+          fontFamily: Assets.fonts.senRegular,
         ),
         subtitle1: TextStyle(
-          color: DefaultPalette.deepPurpleAccent,
-          fontWeight: FontWeight.w400,
-          fontSize: 16,
-          letterSpacing: 0.15,
+            fontSize: 16,
+            color: LightPalette.blackColor,
+            fontWeight: FontWeight.w400
         ),
+
         subtitle2: TextStyle(
-          color: DefaultPalette.deepPurpleAccent,
-          fontWeight: FontWeight.w500,
-          fontSize: 14,
-          letterSpacing: 0.1,
+          fontSize: 16,
+          color: LightPalette.blackColor,
+          fontWeight: FontWeight.bold,
+          decoration: TextDecoration.underline,
+          fontFamily: Assets.fonts.senRegular,
         ),
         bodyText1: TextStyle(
-          color: DefaultPalette.deepPurpleAccent,
-          fontWeight: FontWeight.w400,
-          fontSize: 16,
-          letterSpacing: 0.5,
+          fontSize: 16.0,
+          fontWeight: FontWeight.w500,
+          fontFamily: Assets.fonts.senBold,
+          color: LightPalette.primaryColor,
         ),
+
         bodyText2: TextStyle(
-          color: DefaultPalette.deepPurpleAccent,
-          fontWeight: FontWeight.w400,
-          fontSize: 14,
-          letterSpacing: 0.25,
+          fontSize: 18,
+          color: LightPalette.blackColor,
+          fontFamily: Assets.fonts.senRegular,
+          fontWeight: FontWeight.w500,
         ),
         button: TextStyle(
-          color: DefaultPalette.deepPurpleAccent,
-          fontWeight: FontWeight.w500,
-          fontSize: 14,
-          letterSpacing: 1.25,
+          fontSize: 18,
+          color: LightPalette.primaryColor,
+          fontFamily: Assets.fonts.senRegular,
         ),
         caption: TextStyle(
-          color: DefaultPalette.deepPurpleAccent,
-          fontWeight: FontWeight.w400, // Normal
           fontSize: 12,
-          letterSpacing: 0.4,
+          color: LightPalette.primaryColor,
+          fontFamily: Assets.fonts.senRegular,
+          fontWeight: FontWeight.w500,
         ),
+
         overline: TextStyle(
-          color: DefaultPalette.deepPurpleAccent,
-          fontSize: 10,
-          letterSpacing: 1.5,
+          fontSize: 36,
+          color: LightPalette.purpleColor,
+          fontFamily: Assets.fonts.senRegular,
           fontWeight: FontWeight.w500,
         ),
       ).apply(fontFamily: 'Roboto'),
@@ -151,11 +164,11 @@ class VenomTheme implements VendorTheme {
           ),
           focusedErrorBorder: OutlineInputBorder(
             borderSide:
-            BorderSide(color: DefaultPalette.deepPurpleAccent, width: 2.0),
+                BorderSide(color: DefaultPalette.deepPurpleAccent, width: 2.0),
           ),
           focusedBorder: OutlineInputBorder(
             borderSide:
-            BorderSide(color: DefaultPalette.deepPurpleAccent, width: 2.0),
+                BorderSide(color: DefaultPalette.deepPurpleAccent, width: 2.0),
           )),
       errorColor: DefaultPalette.redAccent,
       scaffoldBackgroundColor: DefaultPalette.whiteBackground,
@@ -261,7 +274,7 @@ class CarnageTheme implements VendorTheme {
       unselectedWidgetColor: DarkPalette.greenColor,
       toggleableActiveColor: DarkPalette.greenColor,
       hintColor: DarkPalette.greenColor,
-      appBarTheme:  AppBarTheme(
+      appBarTheme: AppBarTheme(
         shadowColor: DarkPalette.greenColor,
         color: DarkPalette.greenColor,
       ),
@@ -271,12 +284,10 @@ class CarnageTheme implements VendorTheme {
             borderSide: BorderSide(color: DarkPalette.greenColor),
           ),
           focusedErrorBorder: OutlineInputBorder(
-            borderSide:
-            BorderSide(color: DarkPalette.greenColor, width: 2.0),
+            borderSide: BorderSide(color: DarkPalette.greenColor, width: 2.0),
           ),
           focusedBorder: OutlineInputBorder(
-            borderSide:
-            BorderSide(color: DarkPalette.greenColor, width: 2.0),
+            borderSide: BorderSide(color: DarkPalette.greenColor, width: 2.0),
           )),
       errorColor: DarkPalette.greenColor,
       scaffoldBackgroundColor: DarkPalette.greenColor,
@@ -335,6 +346,7 @@ class CarnageTheme implements VendorTheme {
           fontSize: 14,
           letterSpacing: 0.1,
         ),
+
         bodyText1: TextStyle(
           color: DefaultPalette.deepPurpleAccent,
           fontWeight: FontWeight.w400,
@@ -391,11 +403,11 @@ class CarnageTheme implements VendorTheme {
           ),
           focusedErrorBorder: OutlineInputBorder(
             borderSide:
-            BorderSide(color: DefaultPalette.deepPurpleAccent, width: 2.0),
+                BorderSide(color: DefaultPalette.deepPurpleAccent, width: 2.0),
           ),
           focusedBorder: OutlineInputBorder(
             borderSide:
-            BorderSide(color: DefaultPalette.deepPurpleAccent, width: 2.0),
+                BorderSide(color: DefaultPalette.deepPurpleAccent, width: 2.0),
           )),
       errorColor: DefaultPalette.redAccent,
       scaffoldBackgroundColor: DefaultPalette.whiteBackground,
