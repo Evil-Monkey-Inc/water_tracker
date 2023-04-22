@@ -29,4 +29,5 @@ class LightPalette {
   static const greyBlueColor = Color(0xFFA6ABB5);
   static const greyFillColor = Color(0xFFF1F1F1);
   static const textFieldColor = Color(0xffA6ABB5);
+  static const red = Color(0xFFF44336);
 }

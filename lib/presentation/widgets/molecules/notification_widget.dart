@@ -1,6 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:water_tracker/custom_theme.dart';
 import 'package:water_tracker/generated/assets/assets.gen.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
 import 'package:water_tracker/presentation/widgets/molecules/custom_button.dart';
@@ -25,15 +24,11 @@ class NotificationWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final buttonDarkColor = Theme.of(context).primaryColor;
-    final decorationColor = Theme.of(context).primaryColorLight;
-    final textButtonColor = Theme.of(context).primaryColor;
-    final buttonLightColor = Theme.of(context).primaryColorLight;
     return Container(
       height: heightWidget,
       width: widthWidget,
       decoration: BoxDecoration(
-        color: decorationColor,
+        color: Theme.of(context).primaryColorLight,
         borderRadius: const BorderRadius.all(widgetRadius),
         boxShadow: [
           BoxShadow(
@@ -58,11 +53,10 @@ class NotificationWidget extends StatelessWidget {
                   child: Text(
                     LocaleKeys.notification_text.tr(),
                     style: Theme.of(context).textTheme.headline3?.copyWith(
-                      fontFamily: Assets.fonts.senRegular,
-                      fontWeight: FontWeight.w500,
-                      color: Theme.of(context).primaryColor,
-                      fontSize: 24
-                    ),
+                        fontFamily: Assets.fonts.senRegular,
+                        fontWeight: FontWeight.w500,
+                        color: Theme.of(context).primaryColor,
+                        fontSize: 24),
                     textAlign: TextAlign.center,
                   ),
                 ),
@@ -76,7 +70,7 @@ class NotificationWidget extends StatelessWidget {
               text: LocaleKeys.every_hour.tr(),
               onPressed: () {},
               buttonColor: Theme.of(context).dividerColor,
-              textButtonColor: textButtonColor,
+              textButtonColor: Theme.of(context).primaryColor,
             ),
           ),
           spaceBetweenButtons,
@@ -85,8 +79,8 @@ class NotificationWidget extends StatelessWidget {
             child: CustomButton(
               text: LocaleKeys.every_two_hours.tr(),
               onPressed: () {},
-              buttonColor: buttonDarkColor,
-              textButtonColor: decorationColor,
+              buttonColor: Theme.of(context).primaryColor,
+              textButtonColor: Theme.of(context).primaryColorLight,
             ),
           ),
           downFlex

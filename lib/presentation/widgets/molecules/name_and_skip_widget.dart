@@ -9,19 +9,20 @@ class NameAndSkipWidget extends StatelessWidget {
 
   final emptySpace = const SizedBox();
   final VoidCallback? onPressed;
+  static const sizeOfElevation = 0.0;
+  static const size = 20.0;
 
   @override
   Widget build(BuildContext context) {
-    const backgroundNameSkipWidgetColor = Colors.transparent;
     return AppBar(
       automaticallyImplyLeading: false,
-      backgroundColor: backgroundNameSkipWidgetColor,
-      elevation: 0,
+      backgroundColor: Colors.transparent,
+      elevation: sizeOfElevation,
       centerTitle: true,
       title: Text(
         LocaleKeys.setup_profile.tr(),
         style: Theme.of(context).textTheme.headline1?.copyWith(
-          fontSize: 20,
+          fontSize: size,
           color: LightPalette.primaryColor,
           fontFamily: Assets.fonts.senBold,
           fontWeight: FontWeight.w500,

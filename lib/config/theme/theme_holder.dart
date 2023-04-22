@@ -34,33 +34,33 @@ class VenomTheme implements VendorTheme {
         color: LightPalette.primaryColor,
       ),
       iconTheme: const IconThemeData(color: DefaultPalette.deepPurpleAccent),
-      inputDecorationTheme:  const InputDecorationTheme(
+      inputDecorationTheme: const InputDecorationTheme(
         labelStyle: TextStyle(
           color: LightPalette.textFieldColor,
         ),
-        fillColor: LightPalette.greyFillColor ,
+        fillColor: LightPalette.greyFillColor,
         filled: true,
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(10)),
-          borderSide: BorderSide(color: Colors.black),
+          borderSide: BorderSide(color: LightPalette.blackColor),
         ),
         disabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(10)),
           borderSide: BorderSide.none,
         ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(10)),
-            borderSide: BorderSide.none,
-          ),
-          errorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(10)),
-            borderSide: BorderSide(color: Colors.red),
-          ),
-          focusedErrorBorder:OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(10)),
-            borderSide: BorderSide(color: Colors.red),
-          ),
-         ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.all(Radius.circular(10)),
+          borderSide: BorderSide.none,
+        ),
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.all(Radius.circular(10)),
+          borderSide: BorderSide(color: LightPalette.red),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.all(Radius.circular(10)),
+          borderSide: BorderSide(color: LightPalette.red),
+        ),
+      ),
       errorColor: DefaultPalette.redAccent,
       scaffoldBackgroundColor: DefaultPalette.whiteBackground,
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
@@ -86,9 +86,7 @@ class VenomTheme implements VendorTheme {
           fontFamily: Assets.fonts.senBold,
         ),
         headline4: TextStyle(fontSize: 20),
-        headline5: TextStyle(
-            fontSize: 16, color: LightPalette.blackColor
-        ),
+        headline5: TextStyle(fontSize: 16, color: LightPalette.blackColor),
         headline6: TextStyle(
           color: LightPalette.greyBlueColor,
           fontSize: 16,
@@ -97,9 +95,7 @@ class VenomTheme implements VendorTheme {
         subtitle1: TextStyle(
             fontSize: 16,
             color: LightPalette.blackColor,
-            fontWeight: FontWeight.w400
-        ),
-
+            fontWeight: FontWeight.w400),
         subtitle2: TextStyle(
           fontSize: 16,
           color: LightPalette.blackColor,
@@ -113,7 +109,6 @@ class VenomTheme implements VendorTheme {
           fontFamily: Assets.fonts.senBold,
           color: LightPalette.primaryColor,
         ),
-
         bodyText2: TextStyle(
           fontSize: 18,
           color: LightPalette.blackColor,
@@ -131,7 +126,6 @@ class VenomTheme implements VendorTheme {
           fontFamily: Assets.fonts.senRegular,
           fontWeight: FontWeight.w500,
         ),
-
         overline: TextStyle(
           fontSize: 36,
           color: LightPalette.purpleColor,
@@ -159,17 +153,18 @@ class VenomTheme implements VendorTheme {
       ),
       iconTheme: const IconThemeData(color: DefaultPalette.deepPurpleAccent),
       inputDecorationTheme: const InputDecorationTheme(
-          errorBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: DefaultPalette.deepPurpleAccent),
-          ),
-          focusedErrorBorder: OutlineInputBorder(
-            borderSide:
-                BorderSide(color: DefaultPalette.deepPurpleAccent, width: 2.0),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderSide:
-                BorderSide(color: DefaultPalette.deepPurpleAccent, width: 2.0),
-          )),
+        errorBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: DefaultPalette.deepPurpleAccent),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderSide:
+              BorderSide(color: DefaultPalette.deepPurpleAccent, width: 2.0),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide:
+              BorderSide(color: DefaultPalette.deepPurpleAccent, width: 2.0),
+        ),
+      ),
       errorColor: DefaultPalette.redAccent,
       scaffoldBackgroundColor: DefaultPalette.whiteBackground,
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
@@ -274,21 +269,22 @@ class CarnageTheme implements VendorTheme {
       unselectedWidgetColor: DarkPalette.greenColor,
       toggleableActiveColor: DarkPalette.greenColor,
       hintColor: DarkPalette.greenColor,
-      appBarTheme: AppBarTheme(
+      appBarTheme: const AppBarTheme(
         shadowColor: DarkPalette.greenColor,
         color: DarkPalette.greenColor,
       ),
       iconTheme: const IconThemeData(color: DarkPalette.greenColor),
       inputDecorationTheme: const InputDecorationTheme(
-          errorBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: DarkPalette.greenColor),
-          ),
-          focusedErrorBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: DarkPalette.greenColor, width: 2.0),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: DarkPalette.greenColor, width: 2.0),
-          )),
+        errorBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: DarkPalette.greenColor),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: DarkPalette.greenColor, width: 2.0),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: DarkPalette.greenColor, width: 2.0),
+        ),
+      ),
       errorColor: DarkPalette.greenColor,
       scaffoldBackgroundColor: DarkPalette.greenColor,
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
@@ -346,7 +342,6 @@ class CarnageTheme implements VendorTheme {
           fontSize: 14,
           letterSpacing: 0.1,
         ),
-
         bodyText1: TextStyle(
           color: DefaultPalette.deepPurpleAccent,
           fontWeight: FontWeight.w400,
@@ -398,17 +393,18 @@ class CarnageTheme implements VendorTheme {
       ),
       iconTheme: const IconThemeData(color: DefaultPalette.deepPurpleAccent),
       inputDecorationTheme: const InputDecorationTheme(
-          errorBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: DefaultPalette.deepPurpleAccent),
-          ),
-          focusedErrorBorder: OutlineInputBorder(
-            borderSide:
-                BorderSide(color: DefaultPalette.deepPurpleAccent, width: 2.0),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderSide:
-                BorderSide(color: DefaultPalette.deepPurpleAccent, width: 2.0),
-          )),
+        errorBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: DefaultPalette.deepPurpleAccent),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderSide:
+              BorderSide(color: DefaultPalette.deepPurpleAccent, width: 2.0),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide:
+              BorderSide(color: DefaultPalette.deepPurpleAccent, width: 2.0),
+        ),
+      ),
       errorColor: DefaultPalette.redAccent,
       scaffoldBackgroundColor: DefaultPalette.whiteBackground,
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(

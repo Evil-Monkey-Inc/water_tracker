@@ -21,7 +21,7 @@ class AlreadyHaveAnAccountWidget extends StatelessWidget {
     );
     return Padding(
       padding: notHaveAccountPadding,
-      child: InkWell(
+      child: GestureDetector(
         child: Text.rich(
           TextSpan(
             text: LocaleKeys.already_have_an_account.tr(),

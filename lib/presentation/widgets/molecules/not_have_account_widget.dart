@@ -19,7 +19,7 @@ class NotHaveAccount extends StatelessWidget {
       padding: notHaveAccountPadding,
       child: Column(
         children: [
-          InkWell(
+          GestureDetector(
             child: Text.rich(
               textAlign: TextAlign.center,
               TextSpan(
@@ -32,7 +32,7 @@ class NotHaveAccount extends StatelessWidget {
                     style: Theme.of(context).textTheme.headline6?.copyWith(
                       fontSize: 16,
                       color: LightPalette.blackColor,
-                      fontWeight: FontWeight.w500
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                 ],

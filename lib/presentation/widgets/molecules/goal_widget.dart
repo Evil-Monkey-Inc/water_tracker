@@ -47,9 +47,6 @@ class _GoalWidgetState extends State<GoalWidget>
 
   @override
   Widget build(BuildContext context) {
-    final backgroundSexBottomColor = Theme.of(context).primaryColorLight;
-    final decorationColor = Theme.of(context).primaryColorLight;
-    final primaryColor = Theme.of(context).primaryColor;
     return Transform.scale(
       scale: sizeAnimationController.value,
       child: GestureDetector(
@@ -70,8 +67,8 @@ class _GoalWidgetState extends State<GoalWidget>
           duration: colorAnimationDuration,
           decoration: BoxDecoration(
             color: isSelected
-                ? primaryColor
-                : backgroundSexBottomColor,
+                ? Theme.of(context).primaryColor
+                : Theme.of(context).primaryColorLight,
             borderRadius: CustomTheme.goalCirculars,
           ),
           child: Container(
@@ -88,9 +85,10 @@ class _GoalWidgetState extends State<GoalWidget>
                     widget.model.title,
                     textAlign: TextAlign.center,
                     style: Theme.of(context).textTheme.bodyText1?.copyWith(
-                      color: isSelected ? decorationColor : primaryColor,
-                      fontWeight: FontWeight.w500
-                    ),
+                        color: isSelected
+                            ? Theme.of(context).primaryColorLight
+                            : Theme.of(context).primaryColor,
+                        fontWeight: FontWeight.w500),
                   ),
                 ),
               ],
