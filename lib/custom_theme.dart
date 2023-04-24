@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:water_tracker/generated/assets/assets.gen.dart';
 
 class CustomTheme {
 
@@ -15,12 +13,4 @@ class CustomTheme {
 
   static const backgroundColor = Color(0xFFFAFAFA);
 
-
-
-  static const systemTheme = SystemUiOverlayStyle(
-    statusBarColor: backgroundColor,
-    systemNavigationBarColor: backgroundColor,
-    statusBarIconBrightness: Brightness.dark, // For Android (dark icons)
-    statusBarBrightness: Brightness.light, // For iOS (dark icons)
-  );
 }

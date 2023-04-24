@@ -22,25 +22,26 @@ class NameAndSkipWidget extends StatelessWidget {
       title: Text(
         LocaleKeys.setup_profile.tr(),
         style: Theme.of(context).textTheme.headline1?.copyWith(
-          fontSize: fontSize,
-          color: LightPalette.primaryColor,
-          fontFamily: Assets.fonts.senBold,
-          fontWeight: FontWeight.w500,
-        ),
+              fontSize: fontSize,
+              color: LightPalette.primaryColor,
+              fontFamily: Assets.fonts.senBold,
+              fontWeight: FontWeight.w500,
+            ),
       ),
       actions: [
         TextButton(
-          onPressed:onPressed,
-      style: ButtonStyle(
-        overlayColor: MaterialStateProperty.all(Colors.white),
-        ),
-          child:Text(
+          onPressed: onPressed,
+          style: ButtonStyle(
+            overlayColor: MaterialStateProperty.all(Colors.white),
+          ),
+          child: Text(
             LocaleKeys.skip.tr(),
             style: Theme.of(context).textTheme.headline1?.copyWith(
-                fontWeight: FontWeight.w500,
-            ),
+                  fontWeight: FontWeight.w500,
+                ),
           ),
-        )],
+        )
+      ],
     );
   }
 }
