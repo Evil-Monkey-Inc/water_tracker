@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:water_tracker/config/theme/theme_extension/radius_extension.dart';
 import 'package:water_tracker/custom_theme.dart';
+import 'package:water_tracker/generated/assets/assets.gen.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({
@@ -18,16 +19,20 @@ class CustomButton extends StatelessWidget {
   final Color buttonColor;
   final Color textButtonColor;
   static const paddingAroundButton = EdgeInsets.symmetric(vertical: 12.0);
-
   @override
   Widget build(BuildContext context) {
+    final buttonStyleProp = TextStyle(
+      fontSize: CustomTheme.fontSizeButton,
+      color: Theme.of(context).backgroundColor,
+      fontFamily: Assets.fonts.senBold,
+    );
     final a = Theme.of(context).extension<RadiusExtension>()?.buttonBorderRadius;
     return ElevatedButton(
       onPressed: isEnabled ? onPressed : null,
       style: ElevatedButton.styleFrom(
         backgroundColor: buttonColor,
         elevation: 0.0,
-        shadowColor: CustomTheme.customButtonShadowColor,
+        shadowColor: Colors.transparent,
         padding: EdgeInsets.all(a!),
         minimumSize: CustomTheme.minimumSizeButton,
         shape: const RoundedRectangleBorder(
@@ -38,7 +43,7 @@ class CustomButton extends StatelessWidget {
         padding: paddingAroundButton,
         child: Text(
           text,
-          style: CustomTheme().buttonStyleProp.copyWith(color: textButtonColor),
+          style: buttonStyleProp.copyWith(color: textButtonColor),
         ),
       ),
     );

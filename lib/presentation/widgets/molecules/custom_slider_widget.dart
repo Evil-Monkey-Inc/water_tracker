@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:water_tracker/custom_theme.dart';
+import 'package:water_tracker/generated/assets/assets.gen.dart';
 
 class CustomSliderWidget extends StatefulWidget {
   const CustomSliderWidget({
@@ -21,10 +21,11 @@ class CustomSliderWidget extends StatefulWidget {
 
 class _CustomSliderWidgetState extends State<CustomSliderWidget> {
   static const divisions = 180;
-  static const double lineHeight = 1.0;
+  static const  lineHeight = 1.0;
   static const enabledRadius = 12;
   static const disabledThumbRadius = 5;
   static const spaces = SizedBox(height: 24);
+  static const fontSize = 56.0;
 
   late int generalInfValue;
 
@@ -46,7 +47,12 @@ class _CustomSliderWidgetState extends State<CustomSliderWidget> {
         spaces,
         Text(
           generalInfValue.round().toString(),
-          style: CustomTheme().counterProperty,
+          style: Theme.of(context).textTheme.headline3?.copyWith(
+            fontSize: fontSize,
+            fontFamily: Assets.fonts.senRegular,
+            fontWeight: FontWeight.w300,
+            color: Theme.of(context).primaryColor
+          ),
         ),
         SliderTheme(
           data: SliderThemeData(
@@ -56,14 +62,14 @@ class _CustomSliderWidgetState extends State<CustomSliderWidget> {
             ),
             showValueIndicator: ShowValueIndicator.always,
             trackHeight: lineHeight,
-            activeTrackColor: CustomTheme.mainColor,
-            inactiveTrackColor: CustomTheme.backgroundSliderLine,
-            activeTickMarkColor: CustomTheme.customButtonShadowColor,
-            inactiveTickMarkColor: CustomTheme.customButtonShadowColor,
-            thumbColor: CustomTheme.mainColor,
+            activeTrackColor: Theme.of(context).primaryColor,
+            inactiveTrackColor: Theme.of(context).primaryColorLight,
+            activeTickMarkColor: Colors.transparent,
+            inactiveTickMarkColor: Colors.transparent,
+            thumbColor: Theme.of(context).primaryColor,
           ),
           child: Slider(
-            thumbColor: CustomTheme.mainColor,
+            thumbColor: Theme.of(context).primaryColor,
             value: generalInfValue.toDouble(),
             min: widget.minValue.toDouble(),
             max: widget.maxValue.toDouble(),
