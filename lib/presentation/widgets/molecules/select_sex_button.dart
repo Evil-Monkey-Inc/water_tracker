@@ -22,7 +22,8 @@ class _SelectSexButtonState extends State<SelectSexButton>
   static const space = SizedBox(height: 14);
   static const spaceInsideButton = EdgeInsets.all(8);
   late final TabController controller;
-  var isSelected = true;
+  static const fontSize = 16.0;
+  final circularRadius = BorderRadius.circular(40.0);
 
   @override
   void initState() {
@@ -40,7 +41,7 @@ class _SelectSexButtonState extends State<SelectSexButton>
       style: Theme.of(context).textTheme.headline4?.copyWith(
             color: Theme.of(context).primaryColor,
             fontWeight: FontWeight.w500,
-            fontSize: 16,
+            fontSize: fontSize,
           ),
     );
     return Column(
@@ -52,7 +53,7 @@ class _SelectSexButtonState extends State<SelectSexButton>
           width: MediaQuery.of(context).size.height,
           decoration: BoxDecoration(
             color: Theme.of(context).dividerColor,
-            borderRadius: BorderRadius.circular(40),
+            borderRadius: circularRadius,
           ),
           child: Column(
             children: [
@@ -70,14 +71,14 @@ class _SelectSexButtonState extends State<SelectSexButton>
                       indicatorWeight: indicatorWeight,
                       indicator: BoxDecoration(
                         color: Theme.of(context).primaryColor,
-                        borderRadius: BorderRadius.circular(40),
+                        borderRadius: circularRadius,
                       ),
                       tabs: [
                         Tab(
                           child: Text(
                             LocaleKeys.man.tr(),
                             style: TextStyle(
-                              fontSize: 16,
+                              fontSize: fontSize,
                               fontFamily: Assets.fonts.senRegular,
                               fontWeight: FontWeight.w500,
                             ),
@@ -87,7 +88,7 @@ class _SelectSexButtonState extends State<SelectSexButton>
                           child: Text(
                             LocaleKeys.woman.tr(),
                             style: TextStyle(
-                              fontSize: 16,
+                              fontSize: fontSize,
                               fontFamily: Assets.fonts.senRegular,
                               fontWeight: FontWeight.w500,
                             ),
