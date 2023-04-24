@@ -10,7 +10,7 @@ class NameAndSkipWidget extends StatelessWidget {
   final emptySpace = const SizedBox();
   final VoidCallback? onPressed;
   static const sizeOfElevation = 0.0;
-  static const size = 20.0;
+  static const fontSize = 20.0;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class NameAndSkipWidget extends StatelessWidget {
       title: Text(
         LocaleKeys.setup_profile.tr(),
         style: Theme.of(context).textTheme.headline1?.copyWith(
-          fontSize: size,
+          fontSize: fontSize,
           color: LightPalette.primaryColor,
           fontFamily: Assets.fonts.senBold,
           fontWeight: FontWeight.w500,

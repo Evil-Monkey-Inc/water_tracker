@@ -21,11 +21,11 @@ class CustomSliderWidget extends StatefulWidget {
 
 class _CustomSliderWidgetState extends State<CustomSliderWidget> {
   static const divisions = 180;
-  static const double lineHeight = 1.0;
+  static const  lineHeight = 1.0;
   static const enabledRadius = 12;
   static const disabledThumbRadius = 5;
   static const spaces = SizedBox(height: 24);
-  static const size = 56.0;
+  static const fontSize = 56.0;
 
   late int generalInfValue;
 
@@ -48,7 +48,7 @@ class _CustomSliderWidgetState extends State<CustomSliderWidget> {
         Text(
           generalInfValue.round().toString(),
           style: Theme.of(context).textTheme.headline3?.copyWith(
-            fontSize: size,
+            fontSize: fontSize,
             fontFamily: Assets.fonts.senRegular,
             fontWeight: FontWeight.w300,
             color: Theme.of(context).primaryColor
