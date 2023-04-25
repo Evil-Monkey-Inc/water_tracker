@@ -28,6 +28,7 @@ class _MyLogFormWidgetState extends State<SignUpForm> {
   final _email = TextEditingController();
   final formKey = GlobalKey<FormState>();
   final emailNode = FocusNode();
+  static const fontSize = 24.0;
 
   @override
   void dispose() {
@@ -38,8 +39,6 @@ class _MyLogFormWidgetState extends State<SignUpForm> {
 
   @override
   Widget build(BuildContext context) {
-    final decorationColor = Theme.of(context).primaryColorLight;
-    final buttonDarkColor = Theme.of(context).primaryColor;
     return Form(
       key: formKey,
       child: Column(
@@ -47,11 +46,11 @@ class _MyLogFormWidgetState extends State<SignUpForm> {
           Text(
             LocaleKeys.start_your_journey.tr(),
             style: Theme.of(context).textTheme.headline2?.copyWith(
-              fontSize: 24,
-              color: LightPalette.primaryColor,
-              fontWeight: FontWeight.w500,
-              fontFamily: Assets.fonts.senBold,
-            ),
+                  fontSize: fontSize,
+                  color: LightPalette.primaryColor,
+                  fontWeight: FontWeight.w500,
+                  fontFamily: Assets.fonts.senBold,
+                ),
           ),
           spacer,
           InputFieldWidget(
@@ -81,8 +80,8 @@ class _MyLogFormWidgetState extends State<SignUpForm> {
               }
             },
             text: LocaleKeys.sign_up.tr(),
-            buttonColor: buttonDarkColor,
-            textButtonColor: decorationColor,
+            buttonColor: Theme.of(context).primaryColor,
+            textButtonColor: Theme.of(context).primaryColorLight,
           ),
         ],
       ),

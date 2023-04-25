@@ -31,25 +31,28 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
   static const minValueAge = 5;
   static const maxValueWeight = 150;
   static const minValueWeight = 24;
-
+  static const fontSize = 16.0;
   static const upperFlex = 3;
   static const downFlex = 1;
 
   @override
   Widget build(BuildContext context) {
-    final sliderAgeTextProperty =
-    Text(LocaleKeys.age.tr(), style: Theme.of(context).textTheme.headline3?.copyWith(
-      color: Theme.of(context).primaryColor,
-      fontWeight: FontWeight.w500,
-      fontSize: 16
-    ));
-    final sliderWeightTextProperty =
-    Text(LocaleKeys.weight.tr(), style: Theme.of(context).textTheme.headline3?.copyWith(
-      color: Theme.of(context).primaryColor,
-      fontWeight: FontWeight.w500,
-      fontSize: 16,
-    ));
-    final buttonDarkColor = Theme.of(context).primaryColor;
+    final sliderAgeTextProperty = Text(
+      LocaleKeys.age.tr(),
+      style: Theme.of(context).textTheme.headline3?.copyWith(
+            color: Theme.of(context).primaryColor,
+            fontWeight: FontWeight.w500,
+            fontSize: fontSize,
+          ),
+    );
+    final sliderWeightTextProperty = Text(
+      LocaleKeys.weight.tr(),
+      style: Theme.of(context).textTheme.headline3?.copyWith(
+            color: Theme.of(context).primaryColor,
+            fontWeight: FontWeight.w500,
+            fontSize: fontSize,
+          ),
+    );
     return Scaffold(
       body: Padding(
         padding: paddingHorizontal,
@@ -72,7 +75,6 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
             }
           },
           builder: (BuildContext context, state) {
-            final decorationColor = Theme.of(context).primaryColorLight;
             return SingleChildScrollView(
               child: Column(
                 children: [
@@ -115,8 +117,8 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
                             weight: weight,
                           ),
                         ),
-                    buttonColor: buttonDarkColor,
-                    textButtonColor: decorationColor,
+                    buttonColor: Theme.of(context).primaryColor,
+                    textButtonColor: Theme.of(context).primaryColorLight,
                   ),
                   spaces,
                 ],

@@ -30,6 +30,7 @@ class _MyLogFormWidgetState extends State<SignInForm> {
   final formKey = GlobalKey<FormState>();
   final emailNode = FocusNode();
   var secureController = true;
+  static const fontSize = 24.0;
 
   static const visibilityOff = Icon(
     Icons.visibility_off,
@@ -43,8 +44,6 @@ class _MyLogFormWidgetState extends State<SignInForm> {
 
   @override
   Widget build(BuildContext context) {
-    final buttonDarkColor = Theme.of(context).primaryColor;
-    final decorationColor = Theme.of(context).primaryColorLight;
     return Form(
       key: formKey,
       child: Column(
@@ -52,9 +51,9 @@ class _MyLogFormWidgetState extends State<SignInForm> {
           Text(
             LocaleKeys.welcome_back_tony.tr(),
             style: Theme.of(context).textTheme.subtitle1?.copyWith(
-              fontWeight: FontWeight.w500,
-              fontSize: 24
-            ),
+                  fontWeight: FontWeight.w500,
+                  fontSize: fontSize,
+                ),
           ),
           spacer,
           InputFieldWidget(
@@ -83,8 +82,8 @@ class _MyLogFormWidgetState extends State<SignInForm> {
             },
             text: LocaleKeys.sign_in.tr(),
             isEnabled: true,
-            buttonColor: buttonDarkColor,
-            textButtonColor: decorationColor,
+            buttonColor: Theme.of(context).primaryColor,
+            textButtonColor: Theme.of(context).primaryColorLight,
           ),
         ],
       ),
