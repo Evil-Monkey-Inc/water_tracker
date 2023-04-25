@@ -42,25 +42,28 @@ class MainScreenCounterWidget extends StatelessWidget {
               TextSpan(
                 text: LocaleKeys.you_already_got.tr(),
                 style: Theme.of(context).textTheme.caption?.copyWith(
-                  fontWeight: FontWeight.w500,
-                  fontSize: size
-                ),
+                      fontWeight: FontWeight.w500,
+                      fontSize: size,
+                    ),
               ),
-              TextSpan(text: ' $count', style: Theme.of(context).textTheme.overline),
+              TextSpan(
+                text: ' $count',
+                style: Theme.of(context).textTheme.overline,
+              ),
               TextSpan(
                 text: '/$maxCount ',
                 style: Theme.of(context).textTheme.bodyText1?.copyWith(
-                  fontSize: size,
-                  color: LightPalette.purpleTextColor,
-                  fontFamily: Assets.fonts.senRegular,
-                ),
+                      fontSize: size,
+                      color: LightPalette.purpleTextColor,
+                      fontFamily: Assets.fonts.senRegular,
+                    ),
               ),
               TextSpan(
                 text: LocaleKeys.cups.tr(),
                 style: Theme.of(context).textTheme.button?.copyWith(
-                  fontSize: size,
-                  fontWeight: FontWeight.w500,
-                ),
+                      fontSize: size,
+                      fontWeight: FontWeight.w500,
+                    ),
               ),
             ],
           ),
@@ -70,10 +73,10 @@ class MainScreenCounterWidget extends StatelessWidget {
           alignment: Alignment.topLeft,
           child: Text(
             '$currentCupWeight/$maxWeight ${LocaleKeys.ml.tr()}',
-            style: Theme.of(context).textTheme.button?.copyWith(
-              fontSize: anotherSize,
-              fontWeight: FontWeight.w400
-            ),
+            style: Theme.of(context)
+                .textTheme
+                .button
+                ?.copyWith(fontSize: anotherSize, fontWeight: FontWeight.w400),
           ),
         ),
         spaceBetweenManAndMl,
