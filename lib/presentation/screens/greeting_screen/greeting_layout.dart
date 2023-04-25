@@ -14,9 +14,6 @@ class GreetingLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final decorationColor = Theme.of(context).primaryColorLight;
-    final buttonDarkColor = Theme.of(context).primaryColor;
-
     return Scaffold(
       body: Padding(
         padding: paddingHorizontal,
@@ -26,8 +23,8 @@ class GreetingLayout extends StatelessWidget {
             const GreetingWidget(),
             const Spacer(),
             CustomButton(
-              buttonColor: buttonDarkColor,
-              textButtonColor: decorationColor,
+              buttonColor: Theme.of(context).primaryColor,
+              textButtonColor: Theme.of(context).primaryColorLight,
               onPressed: () => Navigator.of(context)
                   .pushNamedAndRemoveUntil(MainScreen.route, (_) => false),
               text: LocaleKeys.get_started.tr(),
