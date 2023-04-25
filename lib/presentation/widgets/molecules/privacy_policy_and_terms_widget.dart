@@ -9,13 +9,14 @@ class PrivacyPolicyAndTermsWidget extends StatelessWidget {
   const PrivacyPolicyAndTermsWidget({super.key});
 
   static const paddingPrivacyPolicyTermsWidget = EdgeInsets.all(16.0);
+  static const fontSize = 16.0;
 
   @override
   Widget build(BuildContext context) {
     final spaceTextSpan = TextSpan(
       text: ' ',
       style: TextStyle(
-        fontSize: 16,
+        fontSize: fontSize,
         color: Theme.of(context).primaryColor,
       ),
     );
