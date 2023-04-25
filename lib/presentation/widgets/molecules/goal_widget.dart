@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:water_tracker/custom_theme.dart';
 import 'package:water_tracker/data/models/goal.dart';
 import 'package:water_tracker/data/models/goal_widget_model.dart';
-import 'package:water_tracker/generated/assets/assets.gen.dart';
 import 'package:water_tracker/presentation/widgets/atoms/icon_image_widget.dart';
 
 class GoalWidget extends StatefulWidget {
@@ -71,28 +70,26 @@ class _GoalWidgetState extends State<GoalWidget>
                 : Theme.of(context).primaryColorLight,
             borderRadius: CustomTheme.goalCirculars,
           ),
-          child: Container(
-            color: Theme.of(context).dividerColor,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                upperSpace,
-                IconImageWidget(widget.model.imagePath),
-                betweenSpace,
-                Padding(
-                  padding: paddingBetweenGoals,
-                  child: Text(
-                    widget.model.title,
-                    textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.bodyText1?.copyWith(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              upperSpace,
+              IconImageWidget(widget.model.imagePath),
+              betweenSpace,
+              Padding(
+                padding: paddingBetweenGoals,
+                child: Text(
+                  widget.model.title,
+                  textAlign: TextAlign.center,
+                  style: Theme.of(context).textTheme.bodyText1?.copyWith(
                         color: isSelected
                             ? Theme.of(context).primaryColorLight
                             : Theme.of(context).primaryColor,
-                        fontWeight: FontWeight.w500),
-                  ),
+                        fontWeight: FontWeight.w500,
+                      ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
