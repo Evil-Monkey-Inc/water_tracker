@@ -60,6 +60,7 @@ class _CustomSliderWidgetState extends State<CustomSliderWidget> {
               enabledThumbRadius: enabledRadius.toDouble(),
               disabledThumbRadius: disabledThumbRadius.toDouble(),
             ),
+            overlayColor:Theme.of(context).splashColor,
             showValueIndicator: ShowValueIndicator.always,
             trackHeight: lineHeight,
             activeTrackColor: Theme.of(context).primaryColor,
