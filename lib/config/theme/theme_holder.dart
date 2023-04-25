@@ -85,17 +85,19 @@ class VenomTheme implements VendorTheme {
           fontSize: 16,
           fontFamily: Assets.fonts.senBold,
         ),
-        headline4: TextStyle(fontSize: 20),
-        headline5: TextStyle(fontSize: 16, color: LightPalette.blackColor),
+        headline4: const TextStyle(fontSize: 20),
+        headline5:
+            const TextStyle(fontSize: 16, color: LightPalette.blackColor),
         headline6: TextStyle(
           color: LightPalette.greyBlueColor,
           fontSize: 16,
           fontFamily: Assets.fonts.senRegular,
         ),
-        subtitle1: TextStyle(
-            fontSize: 16,
-            color: LightPalette.blackColor,
-            fontWeight: FontWeight.w400),
+        subtitle1: const TextStyle(
+          fontSize: 16,
+          color: LightPalette.blackColor,
+          fontWeight: FontWeight.w400,
+        ),
         subtitle2: TextStyle(
           fontSize: 16,
           color: LightPalette.blackColor,
