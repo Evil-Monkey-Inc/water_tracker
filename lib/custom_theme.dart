@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class CustomTheme {
 
+  // TODO(Benik): to theme extension
 
   static const goalCirculars = BorderRadius.all(Radius.circular(16));
 
@@ -10,4 +11,5 @@ class CustomTheme {
   static const minimumSizeButton = Size.fromHeight(8);
 
   static const roundingButton = BorderRadius.all(Radius.circular(40));
+
 }
