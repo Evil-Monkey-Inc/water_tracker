@@ -21,6 +21,7 @@ class NotificationWidget extends StatelessWidget {
   static const spreadRadius = 3.0;
   static const blurRadius = 12.0;
   static const offset = Offset(-4, 2);
+  static const fontSize = 24.0;
 
   @override
   Widget build(BuildContext context) {
@@ -53,10 +54,11 @@ class NotificationWidget extends StatelessWidget {
                   child: Text(
                     LocaleKeys.notification_text.tr(),
                     style: Theme.of(context).textTheme.headline3?.copyWith(
-                        fontFamily: Assets.fonts.senRegular,
-                        fontWeight: FontWeight.w500,
-                        color: Theme.of(context).primaryColor,
-                        fontSize: 24),
+                          fontFamily: Assets.fonts.senRegular,
+                          fontWeight: FontWeight.w500,
+                          color: Theme.of(context).primaryColor,
+                          fontSize: fontSize,
+                        ),
                     textAlign: TextAlign.center,
                   ),
                 ),

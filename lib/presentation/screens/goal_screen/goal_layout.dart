@@ -33,8 +33,6 @@ class _GoalLayoutState extends State<GoalLayout> {
 
   @override
   Widget build(BuildContext context) {
-    final decorationColor = Theme.of(context).primaryColorLight;
-    final buttonDarkColor = Theme.of(context).primaryColor;
     return Scaffold(
       body: Padding(
         padding: paddingHorizontal,
@@ -97,8 +95,8 @@ class _GoalLayoutState extends State<GoalLayout> {
                       .read<GoalBloc>()
                       .add(SaveGoalEvent(selectedGoals.toList())),
                   text: LocaleKeys.next.tr(),
-                  buttonColor: buttonDarkColor,
-                  textButtonColor: decorationColor,
+                  buttonColor: Theme.of(context).primaryColor,
+                  textButtonColor: Theme.of(context).primaryColorLight,
                 ),
                 spaces,
               ],

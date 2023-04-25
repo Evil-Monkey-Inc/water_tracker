@@ -1,7 +1,6 @@
 import 'package:animated_ripple/animated_ripple.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:water_tracker/custom_theme.dart';
 import 'package:water_tracker/generated/assets/assets.gen.dart';
 
 class MainScreenButtonWidget extends StatelessWidget {
@@ -16,7 +15,6 @@ class MainScreenButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final secondaryColor = Theme.of(context).backgroundColor;
     return Align(
       alignment: Alignment.bottomCenter,
       child: SizedBox(
@@ -26,7 +24,7 @@ class MainScreenButtonWidget extends StatelessWidget {
           numberOfRipples: _numberOfRipples,
           duration: _duration,
           color: Theme.of(context).primaryColor,
-          secondaryColor: secondaryColor,
+          secondaryColor: Theme.of(context).backgroundColor,
           rippleEffect: RippleEffect.looped,
           onPressed: onPressed,
           icon: SvgPicture.asset(

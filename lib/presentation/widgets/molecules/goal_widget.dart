@@ -81,11 +81,12 @@ class _GoalWidgetState extends State<GoalWidget>
                 child: Text(
                   widget.model.title,
                   textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.bodyText2?.copyWith(
-                    color: isSelected
-                        ? Theme.of(context).primaryColorLight
-                        : Theme.of(context).primaryColor,
-                  ),
+                  style: Theme.of(context).textTheme.bodyText1?.copyWith(
+                        color: isSelected
+                            ? Theme.of(context).primaryColorLight
+                            : Theme.of(context).primaryColor,
+                        fontWeight: FontWeight.w500,
+                      ),
                 ),
               ),
             ],

@@ -9,13 +9,14 @@ class AlreadyHaveAnAccountWidget extends StatelessWidget {
   const AlreadyHaveAnAccountWidget({super.key});
 
   static const notHaveAccountPadding = EdgeInsets.all(8.0);
+  static const fontSize = 16.0;
 
   @override
   Widget build(BuildContext context) {
     final spaceTextSpan = TextSpan(
       text: ' ',
       style: TextStyle(
-        fontSize: 16,
+        fontSize: fontSize,
         color: Theme.of(context).primaryColor,
       ),
     );
@@ -26,9 +27,9 @@ class AlreadyHaveAnAccountWidget extends StatelessWidget {
           TextSpan(
             text: LocaleKeys.already_have_an_account.tr(),
             style: Theme.of(context).textTheme.headline5?.copyWith(
-              color: LightPalette.greyBlueColor,
-              fontFamily: Assets.fonts.senRegular,
-            ),
+                  color: LightPalette.greyBlueColor,
+                  fontFamily: Assets.fonts.senRegular,
+                ),
             children: [
               spaceTextSpan,
               TextSpan(

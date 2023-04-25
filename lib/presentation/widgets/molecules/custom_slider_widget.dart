@@ -48,10 +48,11 @@ class _CustomSliderWidgetState extends State<CustomSliderWidget> {
         Text(
           generalInfValue.round().toString(),
           style: Theme.of(context).textTheme.headline3?.copyWith(
-              fontSize: fontSize,
-              fontFamily: Assets.fonts.senRegular,
-              fontWeight: FontWeight.w300,
-              color: Theme.of(context).primaryColor),
+                fontSize: fontSize,
+                fontFamily: Assets.fonts.senRegular,
+                fontWeight: FontWeight.w300,
+                color: Theme.of(context).primaryColor,
+              ),
         ),
         SliderTheme(
           data: SliderThemeData(
@@ -59,6 +60,7 @@ class _CustomSliderWidgetState extends State<CustomSliderWidget> {
               enabledThumbRadius: enabledRadius.toDouble(),
               disabledThumbRadius: disabledThumbRadius.toDouble(),
             ),
+            overlayColor:Theme.of(context).splashColor,
             showValueIndicator: ShowValueIndicator.always,
             trackHeight: lineHeight,
             activeTrackColor: Theme.of(context).primaryColor,
