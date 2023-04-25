@@ -25,18 +25,13 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
   var gender = Gender.male;
   int weight = minValueWeight;
   int age = minValueAge;
-
-  final sliderWeightTextProperty =
-      Text(LocaleKeys.weight.tr(), style: CustomTheme().header);
-  final sliderAgeTextProperty =
-      Text(LocaleKeys.age.tr(), style: CustomTheme().header);
   static const spaces = SizedBox(height: 14);
   static const paddingHorizontal = EdgeInsets.symmetric(horizontal: 24.0);
   static const maxValueAge = 100;
   static const minValueAge = 5;
   static const maxValueWeight = 150;
   static const minValueWeight = 24;
-
+  static const fontSize = 16.0;
   static const upperFlex = 3;
   static const downFlex = 1;
 
@@ -86,13 +81,27 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
                   ),
                   CustomSliderWidget(
                     onChanged: (value) => setState(() => age = value),
-                    sliderNameAndProperty: sliderAgeTextProperty,
+                    sliderNameAndProperty: Text(
+                      LocaleKeys.age.tr(),
+                      style: Theme.of(context).textTheme.headline3?.copyWith(
+                            color: Theme.of(context).primaryColor,
+                            fontWeight: FontWeight.w500,
+                            fontSize: fontSize,
+                          ),
+                    ),
                     maxValue: maxValueAge,
                     minValue: minValueAge,
                   ),
                   CustomSliderWidget(
                     onChanged: (value) => setState(() => weight = value),
-                    sliderNameAndProperty: sliderWeightTextProperty,
+                    sliderNameAndProperty: Text(
+                      LocaleKeys.weight.tr(),
+                      style: Theme.of(context).textTheme.headline3?.copyWith(
+                            color: Theme.of(context).primaryColor,
+                            fontWeight: FontWeight.w500,
+                            fontSize: fontSize,
+                          ),
+                    ),
                     maxValue: maxValueWeight,
                     minValue: minValueWeight,
                   ),
@@ -106,8 +115,8 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
                             weight: weight,
                           ),
                         ),
-                    buttonColor: CustomTheme.buttonDarkColor,
-                    textButtonColor: CustomTheme.decorationColor,
+                    buttonColor: Theme.of(context).primaryColor,
+                    textButtonColor: Theme.of(context).primaryColorLight,
                   ),
                   spaces,
                 ],

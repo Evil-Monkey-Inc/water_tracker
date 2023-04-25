@@ -66,8 +66,8 @@ class _GoalWidgetState extends State<GoalWidget>
           duration: colorAnimationDuration,
           decoration: BoxDecoration(
             color: isSelected
-                ? CustomTheme.mainColor
-                : CustomTheme.backgroundSexBottomColor,
+                ? Theme.of(context).primaryColor
+                : Theme.of(context).primaryColorLight,
             borderRadius: CustomTheme.goalCirculars,
           ),
           child: Column(
@@ -81,10 +81,11 @@ class _GoalWidgetState extends State<GoalWidget>
                 child: Text(
                   widget.model.title,
                   textAlign: TextAlign.center,
-                  style: CustomTheme().goalWidgetProp.copyWith(
+                  style: Theme.of(context).textTheme.bodyText1?.copyWith(
                         color: isSelected
-                            ? CustomTheme.decorationColor
-                            : CustomTheme.mainColor,
+                            ? Theme.of(context).primaryColorLight
+                            : Theme.of(context).primaryColor,
+                        fontWeight: FontWeight.w500,
                       ),
                 ),
               ),

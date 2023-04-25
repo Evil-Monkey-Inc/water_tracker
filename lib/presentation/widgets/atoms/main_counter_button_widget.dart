@@ -1,7 +1,6 @@
 import 'package:animated_ripple/animated_ripple.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:water_tracker/custom_theme.dart';
 import 'package:water_tracker/generated/assets/assets.gen.dart';
 
 class MainScreenButtonWidget extends StatelessWidget {
@@ -24,8 +23,8 @@ class MainScreenButtonWidget extends StatelessWidget {
           size: _animatedRadius,
           numberOfRipples: _numberOfRipples,
           duration: _duration,
-          color: CustomTheme.mainColor,
-          secondaryColor: CustomTheme.secondaryColor,
+          color: Theme.of(context).primaryColor,
+          secondaryColor: Theme.of(context).backgroundColor,
           rippleEffect: RippleEffect.looped,
           onPressed: onPressed,
           icon: SvgPicture.asset(

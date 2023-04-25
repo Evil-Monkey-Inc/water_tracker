@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:water_tracker/custom_theme.dart';
+import 'package:water_tracker/config/theme/theme_palette/light_palette.dart';
+import 'package:water_tracker/generated/assets/assets.gen.dart';
 
 class TitleSettingWidget extends StatefulWidget {
   const TitleSettingWidget(
@@ -8,6 +9,7 @@ class TitleSettingWidget extends StatefulWidget {
     required this.downFlex,
     required this.upperFlex,
   });
+
   final String firstTitleText;
   final int downFlex;
   final int upperFlex;
@@ -17,6 +19,8 @@ class TitleSettingWidget extends StatefulWidget {
 }
 
 class _TitleSettingWidgetState extends State<TitleSettingWidget> {
+  static const fontSize = 34.0;
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -25,7 +29,12 @@ class _TitleSettingWidgetState extends State<TitleSettingWidget> {
           flex: widget.upperFlex,
           child: Text(
             widget.firstTitleText,
-            style: CustomTheme().titleSettingsProperty,
+            style: Theme.of(context).textTheme.headline1?.copyWith(
+                  fontSize: fontSize,
+                  color: LightPalette.primaryColor,
+                  fontWeight: FontWeight.w500,
+                  fontFamily: Assets.fonts.senBold,
+                ),
           ),
         ),
         Spacer(flex: widget.downFlex),

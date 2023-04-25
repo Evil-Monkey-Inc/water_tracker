@@ -1,7 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:water_tracker/custom_theme.dart';
 import 'package:water_tracker/data/models/goal.dart';
 import 'package:water_tracker/data/models/goal_widget_model.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
@@ -96,8 +95,8 @@ class _GoalLayoutState extends State<GoalLayout> {
                       .read<GoalBloc>()
                       .add(SaveGoalEvent(selectedGoals.toList())),
                   text: LocaleKeys.next.tr(),
-                  buttonColor: CustomTheme.buttonDarkColor,
-                  textButtonColor: CustomTheme.decorationColor,
+                  buttonColor: Theme.of(context).primaryColor,
+                  textButtonColor: Theme.of(context).primaryColorLight,
                 ),
                 spaces,
               ],
