@@ -37,22 +37,6 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
 
   @override
   Widget build(BuildContext context) {
-    final sliderAgeTextProperty = Text(
-      LocaleKeys.age.tr(),
-      style: Theme.of(context).textTheme.headline3?.copyWith(
-            color: Theme.of(context).primaryColor,
-            fontWeight: FontWeight.w500,
-            fontSize: fontSize,
-          ),
-    );
-    final sliderWeightTextProperty = Text(
-      LocaleKeys.weight.tr(),
-      style: Theme.of(context).textTheme.headline3?.copyWith(
-            color: Theme.of(context).primaryColor,
-            fontWeight: FontWeight.w500,
-            fontSize: fontSize,
-          ),
-    );
     return Scaffold(
       body: Padding(
         padding: paddingHorizontal,
@@ -97,13 +81,27 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
                   ),
                   CustomSliderWidget(
                     onChanged: (value) => setState(() => age = value),
-                    sliderNameAndProperty: sliderAgeTextProperty,
+                    sliderNameAndProperty: Text(
+                      LocaleKeys.age.tr(),
+                      style: Theme.of(context).textTheme.headline3?.copyWith(
+                            color: Theme.of(context).primaryColor,
+                            fontWeight: FontWeight.w500,
+                            fontSize: fontSize,
+                          ),
+                    ),
                     maxValue: maxValueAge,
                     minValue: minValueAge,
                   ),
                   CustomSliderWidget(
                     onChanged: (value) => setState(() => weight = value),
-                    sliderNameAndProperty: sliderWeightTextProperty,
+                    sliderNameAndProperty: Text(
+                      LocaleKeys.weight.tr(),
+                      style: Theme.of(context).textTheme.headline3?.copyWith(
+                            color: Theme.of(context).primaryColor,
+                            fontWeight: FontWeight.w500,
+                            fontSize: fontSize,
+                          ),
+                    ),
                     maxValue: maxValueWeight,
                     minValue: minValueWeight,
                   ),
