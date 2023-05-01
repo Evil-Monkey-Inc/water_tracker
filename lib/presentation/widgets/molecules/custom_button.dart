@@ -11,6 +11,8 @@ class CustomButton extends StatelessWidget {
     this.isEnabled = true,
     required this.buttonColor,
     required this.textButtonColor,
+    this.icon,
+    this.image,
   });
 
   final bool isEnabled;
@@ -18,7 +20,16 @@ class CustomButton extends StatelessWidget {
   final VoidCallback? onPressed;
   final Color buttonColor;
   final Color textButtonColor;
+  final IconData? icon;
+  final Widget? image;
   static const paddingAroundButton = EdgeInsets.symmetric(vertical: 12.0);
+  static const paddingIcon = EdgeInsets.only(right: 10);
+  static const paddingImage = EdgeInsets.only(left: 1.0, right: 3.0);
+  static const iconSize = 20.0;
+  static const emptySpace = SizedBox();
+  static const spaces = SizedBox(width: 8.0);
+  static const elevation = 0.0;
+
   @override
   Widget build(BuildContext context) {
     final buttonStyleProp = TextStyle(
@@ -26,12 +37,13 @@ class CustomButton extends StatelessWidget {
       color: Theme.of(context).backgroundColor,
       fontFamily: Assets.fonts.senBold,
     );
-    final a = Theme.of(context).extension<RadiusExtension>()?.buttonBorderRadius;
+    final a =
+        Theme.of(context).extension<RadiusExtension>()?.buttonBorderRadius;
     return ElevatedButton(
       onPressed: isEnabled ? onPressed : null,
       style: ElevatedButton.styleFrom(
         backgroundColor: buttonColor,
-        elevation: 0.0,
+        elevation: elevation,
         shadowColor: Colors.transparent,
         padding: EdgeInsets.all(a!),
         minimumSize: CustomTheme.minimumSizeButton,
@@ -41,9 +53,23 @@ class CustomButton extends StatelessWidget {
       ),
       child: Padding(
         padding: paddingAroundButton,
-        child: Text(
-          text,
-          style: buttonStyleProp.copyWith(color: textButtonColor),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            if (icon != null)
+              Padding(
+                padding: paddingIcon,
+                child: Icon(icon),
+              ),
+            image != null
+                ? Padding(padding: paddingImage, child: image!)
+                : emptySpace,
+            spaces,
+            Text(
+              text,
+              style: buttonStyleProp.copyWith(color: textButtonColor),
+            ),
+          ],
         ),
       ),
     );
