@@ -4,8 +4,8 @@ import 'package:water_tracker/generated/locale_keys.g.dart';
 import 'package:water_tracker/presentation/widgets/molecules/custom_button.dart';
 import 'package:water_tracker/generated/assets/assets.gen.dart';
 
-class SocialSignUpButton extends StatefulWidget {
-  const SocialSignUpButton({
+class AuthenticationWall extends StatefulWidget {
+  const AuthenticationWall({
     super.key,
     required this.onPressedEmail,
     required this.onPressedGoogle,
@@ -15,10 +15,10 @@ class SocialSignUpButton extends StatefulWidget {
   final VoidCallback onPressedGoogle;
 
   @override
-  State<SocialSignUpButton> createState() => _SocialSignUpButtonState();
+  State<AuthenticationWall> createState() => _AuthenticationWallState();
 }
 
-class _SocialSignUpButtonState extends State<SocialSignUpButton> {
+class _AuthenticationWallState extends State<AuthenticationWall> {
   static const space = SizedBox(height: 19.0);
   static const width = 40.0;
   static const height = 19.0;
