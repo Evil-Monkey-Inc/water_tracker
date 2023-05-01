@@ -1,4 +1,7 @@
 {
+  "continue_via_google":"Continue via Google",
+  "continue_via_email":"Continue via Email",
+  "choose_an_authorization_method": "Choose an authorization method.",
   "enter_your_email": "Enter your email",
   "enter_password": "Enter password",
   "sign_in": "Sign In",
