@@ -6,7 +6,6 @@ class SocialSignUpScreen extends StatelessWidget {
 
   static const route = 'auth_screen';
 
-
   @override
   Widget build(BuildContext context) {
     return const SocialSignUpLayout();
