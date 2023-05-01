@@ -82,7 +82,7 @@ class MainScreenCounterWidget extends StatelessWidget {
         spaceBetweenManAndMl,
         Align(
           alignment: Alignment.topRight,
-          child: PersonImageWidget.mainWay(),
+          child: PersonImageWidget.authWomanWay(),
         ),
         spaceBetween,
       ],

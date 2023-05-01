@@ -13,7 +13,7 @@ class PersonImageWidget extends StatelessWidget {
   factory PersonImageWidget.manWay() =>
       PersonImageWidget(Assets.images.manLogin.path);
 
-  factory PersonImageWidget.mainWay() =>
+  factory PersonImageWidget.authWomanWay() =>
       PersonImageWidget(Assets.images.mainScreenPerson.path);
 
   static const imageHeight = 241.0;
