@@ -15,6 +15,9 @@ class CodegenLoader extends AssetLoader{
   }
 
   static const Map<String,dynamic> en = {
+  "continue_via_google": "Continue via Google",
+  "continue_via_email": "Continue via Email",
+  "choose_an_authorization_method": "Choose an authorization method.",
   "enter_your_email": "Enter your email",
   "enter_password": "Enter password",
   "sign_in": "Sign In",
@@ -66,6 +69,9 @@ class CodegenLoader extends AssetLoader{
   "failed_to_increment_count": "Failed to increment water count"
 };
 static const Map<String,dynamic> uk = {
+  "continue_via_google": "Продовжити через Google",
+  "continue_via_email": "Продовжити через пошту",
+  "choose_an_authorization_method": "Виберіть спосіб авторизації.",
   "enter_your_email": "Вкажіть вашу пошту",
   "enter_password": "Вкажіть пароль",
   "sign_in": "Увійти",
