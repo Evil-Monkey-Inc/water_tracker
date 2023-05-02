@@ -20,6 +20,8 @@ class AuthenticationWall extends StatefulWidget {
 
 class _AuthenticationWallState extends State<AuthenticationWall> {
   static const space = SizedBox(height: 19.0);
+  static const paddingIcon = EdgeInsets.only(right: 10);
+
   static const width = 40.0;
   static const height = 19.0;
 
@@ -29,7 +31,10 @@ class _AuthenticationWallState extends State<AuthenticationWall> {
       children: [
         CustomButton(
           onPressed: widget.onPressedEmail,
-          icon: Icons.email_outlined,
+          icon:  const Padding(
+            padding: paddingIcon,
+            child: Icon(Icons.email_outlined),
+          ),
           text: LocaleKeys.continue_via_email.tr(),
           isEnabled: true,
           buttonColor: Theme.of(context).primaryColor,
