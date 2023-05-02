@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:water_tracker/generated/assets/assets.gen.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
+import 'package:water_tracker/presentation/screens/sign_in_screen/sign_in_screen.dart';
 import 'package:water_tracker/presentation/widgets/atoms/logo_widget.dart';
 import 'package:water_tracker/presentation/widgets/atoms/title_settings_widget.dart';
 import 'package:water_tracker/presentation/widgets/molecules/social_sign_up_button.dart';
@@ -17,7 +18,7 @@ class _SocialSignUpLayoutState extends State<SocialSignUpLayout> {
   static const downFlex = 1;
   static const upperFlex = 3;
   static const widthOfImage = 240.0;
-  static const heightOfImage = 399.0;
+  static const heightOfImage = 400.0;
 
   static const spaces = SizedBox(height: 64);
   static const smallSpace = SizedBox(height: 24);
@@ -51,10 +52,11 @@ class _SocialSignUpLayoutState extends State<SocialSignUpLayout> {
           Padding(
             padding: paddingHorizontal,
             child: AuthenticationWall(
-              onPressedEmail: () {
+              onPressedEmail: () =>
+                  Navigator.of(context).pushNamed(SignInScreen.route),
+              onPressedGoogle: () {
                 // TODO(Benik): implement navigation
               },
-              onPressedGoogle: () {},
             ),
           ),
         ],
