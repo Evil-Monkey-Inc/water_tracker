@@ -19,8 +19,8 @@ class AuthenticationWall extends StatefulWidget {
 }
 
 class _AuthenticationWallState extends State<AuthenticationWall> {
-  static const space = SizedBox(height: 19.0);
-  static const paddingIcon = EdgeInsets.only(right: 10);
+  static const space = SizedBox(height: 18.0);
+  static const paddingIcon = EdgeInsets.only(right: 8);
 
   static const width = 40.0;
   static const height = 19.0;
