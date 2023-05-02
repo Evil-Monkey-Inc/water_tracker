@@ -16,7 +16,7 @@ class CustomButton extends StatelessWidget {
 
   final String text;
   final Widget? image;
-  final IconData? icon;
+  final Widget? icon;
   final bool isEnabled;
   final Color buttonColor;
   final Color textButtonColor;
@@ -28,13 +28,11 @@ class CustomButton extends StatelessWidget {
   static const emptySpace = SizedBox();
   static const spaces = SizedBox(width: 8.0);
   static const paddingButton = EdgeInsets.all(8.0);
-  static const paddingIcon = EdgeInsets.only(right: 10);
   static const paddingImage = EdgeInsets.only(left: 1.0, right: 3.0);
   static const paddingAroundButton = EdgeInsets.symmetric(vertical: 12.0);
 
   @override
   Widget build(BuildContext context) {
-    final hasImage = image != null;
     final buttonStyleProp = TextStyle(
       fontSize: CustomTheme.fontSizeButton,
       color: Theme.of(context).backgroundColor,
@@ -57,15 +55,8 @@ class CustomButton extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            if (icon != null)
-              Padding(
-                padding: paddingIcon,
-                child: Icon(icon),
-              ),
-            if (hasImage == true)
-              Padding(padding: paddingImage, child: image!)
-            else
-              emptySpace,
+            icon ?? Container(),
+            image ?? Container(),
             spaces,
             Text(
               text,
