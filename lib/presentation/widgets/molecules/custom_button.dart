@@ -3,7 +3,7 @@ import 'package:water_tracker/custom_theme.dart';
 import 'package:water_tracker/generated/assets/assets.gen.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({
+   CustomButton({
     super.key,
     this.icon,
     this.image,
@@ -25,6 +25,7 @@ class CustomButton extends StatelessWidget {
   static const elevation = 0.0;
   static const iconSize = 20.0;
 
+  final emptyButtonIcon = Container();
   static const emptySpace = SizedBox();
   static const spaces = SizedBox(width: 8.0);
   static const paddingButton = EdgeInsets.all(8.0);
@@ -55,8 +56,8 @@ class CustomButton extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            icon ?? Container(),
-            image ?? Container(),
+            icon ?? emptyButtonIcon,
+            image ?? emptyButtonIcon,
             spaces,
             Text(
               text,
