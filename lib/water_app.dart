@@ -11,6 +11,7 @@ import 'package:water_tracker/presentation/screens/notification_screen/notificat
 import 'package:water_tracker/presentation/screens/personal_settings_screen/personal_settings_screen.dart';
 import 'package:water_tracker/presentation/screens/sign_in_screen/sign_in_screen.dart';
 import 'package:water_tracker/presentation/screens/sign_up_screen/sign_up_screen.dart';
+import 'package:water_tracker/presentation/screens/social_sign_up_screen/social_sign_up_screen.dart';
 
 class WaterApp extends StatefulWidget {
   const WaterApp({super.key});
@@ -34,14 +35,17 @@ class _WaterAppState extends State<WaterApp> {
       supportedLocales: context.supportedLocales,
       locale: context.locale,
       scrollBehavior: const CupertinoScrollBehavior(),
-      theme:  ThemeContainer.lightTheme.copyWith(
-          extensions: themeExtensions),
+      theme: ThemeContainer.lightTheme.copyWith(
+        extensions: themeExtensions,
+      ),
       darkTheme: ThemeContainer.darkTheme.copyWith(
-          extensions: themeExtensions),
-       // TODO(Sanya): implement theme mode solution
-        themeMode: ThemeMode.light,
-      initialRoute: SignInScreen.route,
+        extensions: themeExtensions,
+      ),
+      // TODO(Sanya): implement theme mode solution
+      themeMode: ThemeMode.light,
+      initialRoute: SocialSignUpScreen.route,
       routes: {
+        SocialSignUpScreen.route: (_) => const SocialSignUpScreen(),
         SignInScreen.route: (_) => const SignInScreen(),
         SignUpScreen.route: (_) => const SignUpScreen(),
         PersonalSettingScreen.route: (_) => const PersonalSettingScreen(),
