@@ -4,7 +4,7 @@ import 'package:water_tracker/presentation/screens/social_sign_up_screen/social_
 class SocialSignUpScreen extends StatelessWidget {
   const SocialSignUpScreen({super.key});
 
-  static const route = 'auth_screen';
+  static const route = 'social_sign_up_screen';
 
   @override
   Widget build(BuildContext context) {
