@@ -51,8 +51,9 @@ class _SocialSignUpLayoutState extends State<SocialSignUpLayout> {
           Padding(
             padding: paddingHorizontal,
             child: AuthenticationWall(
-              // TODO(Benik): implement navigation
-              onPressedEmail: () {},
+              onPressedEmail: () {
+                // TODO(Benik): implement navigation
+              },
               onPressedGoogle: () {},
             ),
           ),
