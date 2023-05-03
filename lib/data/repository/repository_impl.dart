@@ -11,12 +11,14 @@ class RepositoryImpl extends Repository {
   final AuthenticationService registrationService;
   final StorageService storageService;
 
+  static const exceptionMessage = 'email could not be null at this point';
+
   final counterCupsDateFormat = DateFormat('dd.MM.yyyy');
 
   String? _userEmail;
 
   String get userEmail {
-    if (_userEmail == null) throw Exception('email coul not be null at this point');
+    if (_userEmail == null) throw Exception(exceptionMessage);
     return _userEmail!;
   }
 
