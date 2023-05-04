@@ -1,22 +1,29 @@
 import 'package:water_tracker/data/models/goal_list.dart';
+import 'package:water_tracker/data/models/responses/sign_up_result.dart';
 import 'package:water_tracker/data/models/user_settings.dart';
 import 'package:water_tracker/data/repository/repository.dart';
 import 'package:water_tracker/data/services/authentication_service/authentication_service.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:water_tracker/data/services/storage_service/secure_storage.dart';
 import 'package:water_tracker/data/services/storage_service/storage_service.dart';
 
 class RepositoryImpl extends Repository {
-  RepositoryImpl(this.registrationService, this.storageService);
+  RepositoryImpl(
+    this.registrationService,
+    this.storageService,
+    this.secureStorage,
+  );
 
   final AuthenticationService registrationService;
   final StorageService storageService;
+  final SecureStorageService secureStorage;
 
   final counterCupsDateFormat = DateFormat('dd.MM.yyyy');
 
   String? _userEmail;
 
   String get userEmail {
-    if (_userEmail == null) throw Exception('email coul not be null at this point');
+    if (_userEmail == null) throw Exception('email could not be null at this point');
     return _userEmail!;
   }
 
@@ -25,11 +32,9 @@ class RepositoryImpl extends Repository {
   }
 
   @override
-  Future<bool> registerUser(String email, String password) async {
+  Future<SignUpResult> registerUser(String email, String password) async {
     final result = await registrationService.registerUser(email, password);
-    final isSuccessful = result.error == null;
-    if (isSuccessful) userEmail = email;
-    return isSuccessful;
+    return result;
   }
 
   @override
@@ -71,4 +76,12 @@ class RepositoryImpl extends Repository {
 
   String getDateKey(DateTime dateTime) =>
       counterCupsDateFormat.format(dateTime);
+
+  @override
+  Future<String?> getAccessToken() async => await secureStorage.getAccessToken();
+
+  @override
+  Future<void> saveAccessToken(String accessToken) async {
+   await secureStorage.saveAccessToken(accessToken);
+  }
 }
