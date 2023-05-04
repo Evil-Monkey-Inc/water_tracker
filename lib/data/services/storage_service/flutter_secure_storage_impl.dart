@@ -3,7 +3,7 @@ import 'package:water_tracker/data/services/storage_service/secure_storage.dart'
 
 class FlutterSecureStorageImpl extends SecureStorageService{
   static const _accessTokenKey = "access_token";
-  final FlutterSecureStorage _secureStorage = const FlutterSecureStorage();
+  final _secureStorage = const FlutterSecureStorage();
 
   @override
   Future<String?> getAccessToken() async {
