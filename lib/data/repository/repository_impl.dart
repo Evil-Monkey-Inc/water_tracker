@@ -1,5 +1,4 @@
 import 'package:water_tracker/data/models/goal_list.dart';
-import 'package:water_tracker/data/models/responses/sign_up_result.dart';
 import 'package:water_tracker/data/models/user_settings.dart';
 import 'package:water_tracker/data/repository/repository.dart';
 import 'package:water_tracker/data/services/authentication_service/authentication_service.dart';
@@ -11,12 +10,12 @@ class RepositoryImpl extends Repository {
   RepositoryImpl(
     this.registrationService,
     this.storageService,
-    this.secureStorage,
+    this.secureStorageService,
   );
 
   final AuthenticationService registrationService;
   final StorageService storageService;
-  final SecureStorageService secureStorage;
+  final SecureStorageService secureStorageService;
 
   final counterCupsDateFormat = DateFormat('dd.MM.yyyy');
 
@@ -32,9 +31,14 @@ class RepositoryImpl extends Repository {
   }
 
   @override
-  Future<SignUpResult> registerUser(String email, String password) async {
+  Future<bool> registerUser(String email, String password) async {
     final result = await registrationService.registerUser(email, password);
-    return result;
+    final isSuccessful = result.error == null;
+    if (isSuccessful) {
+      userEmail = email;
+      await secureStorageService.saveAccessToken(result.token!);
+    }
+    return isSuccessful;
   }
 
   @override
@@ -47,8 +51,7 @@ class RepositoryImpl extends Repository {
 
   @override
   Future<bool> saveGeneralInfo(UserSettings userSettings) async {
-    final result =
-        await storageService.saveUserSetting(userEmail, userSettings);
+    final result = await storageService.saveUserSetting(userEmail, userSettings);
     return result;
   }
 
@@ -78,10 +81,5 @@ class RepositoryImpl extends Repository {
       counterCupsDateFormat.format(dateTime);
 
   @override
-  Future<String?> getAccessToken() async => await secureStorage.getAccessToken();
-
-  @override
-  Future<void> saveAccessToken(String accessToken) async {
-   await secureStorage.saveAccessToken(accessToken);
-  }
+  Future<String?> getAccessToken() async => await secureStorageService.getAccessToken();
 }

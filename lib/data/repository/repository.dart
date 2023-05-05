@@ -3,7 +3,7 @@ import 'package:water_tracker/data/models/responses/sign_up_result.dart';
 import 'package:water_tracker/data/models/user_settings.dart';
 
 abstract class Repository {
-  Future<SignUpResult> registerUser(
+  Future<bool> registerUser(
     String email,
     String password,
   );
@@ -20,8 +20,6 @@ abstract class Repository {
   Future<bool> saveCupCount(int counterCups);
 
   Future<int?> getCupCount(DateTime time);
-
-  Future<void> saveAccessToken(String accessToken);
 
   Future<String?> getAccessToken();
 }
