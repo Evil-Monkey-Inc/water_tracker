@@ -1,9 +1,11 @@
+import 'dart:convert';
 import 'package:water_tracker/data/models/goal_list.dart';
 import 'package:water_tracker/data/models/user_settings.dart';
 import 'package:water_tracker/data/repository/repository.dart';
 import 'package:water_tracker/data/services/authentication_service/authentication_service.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:water_tracker/data/services/storage_service/secure_storage.dart';
+import 'package:water_tracker/data/services/storage_service/shared_preff_storage_service.dart';
 import 'package:water_tracker/data/services/storage_service/storage_service.dart';
 
 class RepositoryImpl extends Repository {
@@ -11,11 +13,13 @@ class RepositoryImpl extends Repository {
     this.registrationService,
     this.storageService,
     this.secureStorageService,
+    this.localeStorage,
   );
 
   final AuthenticationService registrationService;
   final StorageService storageService;
   final SecureStorageService secureStorageService;
+  final SharedPreffStorageService localeStorage;
 
   final counterCupsDateFormat = DateFormat('dd.MM.yyyy');
 
@@ -36,6 +40,7 @@ class RepositoryImpl extends Repository {
     final isSuccessful = result.error == null;
     if (isSuccessful) {
       userEmail = email;
+      await localeStorage.saveUserInfo(userEmail, null);
       await secureStorageService.saveAccessToken(result.token!);
     }
     return isSuccessful;
@@ -64,8 +69,10 @@ class RepositoryImpl extends Repository {
   @override
   Future<bool> saveCupCount(int counterCups) async {
     final time = DateTime.now();
+    final userInfo = await localeStorage.getUserInfo();
+    final savedEmail = jsonDecode(userInfo!) as Map<String, dynamic>;
     final result = await storageService.saveUserCount(
-      userEmail,
+      savedEmail["email"],
       getDateKey(time),
       counterCups,
     );
@@ -74,7 +81,9 @@ class RepositoryImpl extends Repository {
 
   @override
   Future<int?> getCupCount(DateTime time) async {
-    return storageService.getUserCount(userEmail, getDateKey(time));
+    final userInfo = await localeStorage.getUserInfo();
+    final savedEmail = jsonDecode(userInfo!) as Map<String, dynamic>;
+    return storageService.getUserCount(savedEmail["email"], getDateKey(time));
   }
 
   String getDateKey(DateTime dateTime) =>
@@ -82,4 +91,9 @@ class RepositoryImpl extends Repository {
 
   @override
   Future<String?> getAccessToken() async => await secureStorageService.getAccessToken();
+
+  @override
+  Future<String?> getUserInfo() async {
+   return await localeStorage.getUserInfo();
+  }
 }

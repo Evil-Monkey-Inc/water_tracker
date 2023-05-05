@@ -22,4 +22,6 @@ abstract class Repository {
   Future<int?> getCupCount(DateTime time);
 
   Future<String?> getAccessToken();
+
+  Future<String?> getUserInfo();
 }
