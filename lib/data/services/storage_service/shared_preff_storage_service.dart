@@ -11,4 +11,8 @@ abstract class SharedPreffStorageService {
   Future<bool> saveCupCount(String dateKey, int counterCups);
 
   Future<int?> getCupCount(String dateKey);
+
+  Future<void> saveUserInfo(String email, String? username);
+
+  Future<String?> getUserInfo();
 }

@@ -11,18 +11,21 @@ class AuthenticationServiceFirebaseImpl extends AuthenticationService {
   @override
   Future<SignUpResult> registerUser(String email, String password) async {
     SignUpException? error;
+    String? accessToken;
     auth.UserCredential? credential;
     try {
       credential = await firebaseAuth.createUserWithEmailAndPassword(
         email: email,
         password: password,
       );
+      accessToken = await credential.user?.getIdToken();
     } on auth.FirebaseAuthException catch (e) {
       error = SignUpException.fromFirebaseAuth(e);
     }
     User? user;
+
     if (credential != null) user = User(email);
-    final result = SignUpResult(user, error);
+    final result = SignUpResult(user, error, accessToken);
     return result;
   }
 
