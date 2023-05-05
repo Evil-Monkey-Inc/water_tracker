@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
 import 'package:water_tracker/presentation/screens/main_screen/bloc/main_screen_bloc.dart';
-import 'package:water_tracker/presentation/screens/main_screen/main_screen.dart';
-import 'package:water_tracker/presentation/screens/sign_in_screen/sign_in_screen.dart';
 import 'package:water_tracker/presentation/screens/social_sign_up_screen/social_sign_up_screen.dart';
 import 'package:water_tracker/presentation/widgets/atoms/main_counter_button_widget.dart';
 import 'package:water_tracker/presentation/screens/main_screen/bloc/main_screen_event.dart';
