@@ -39,8 +39,8 @@ class _MainLayoutState extends State<MainLayout> {
         padding: paddingHorizontal,
         child: BlocConsumer<MainScreenBloc, MainScreenState>(
             listener: (context, state) {
-              if (state is ProcessingLogOutUser){
-               if(state.isLogOutUser == true) Navigator.of(context).pushNamed(SocialSignUpScreen.route);
+              if (state is ProcessingLogOutUser && state.isLogOutUser == true){
+                 Navigator.of(context).pushNamed(SocialSignUpScreen.route);
               }
               if (state is ErrorMainScreenState) {
                 ScaffoldMessenger.of(context).hideCurrentSnackBar();

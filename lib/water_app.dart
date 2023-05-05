@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:water_tracker/config/theme/theme_container.dart';
 import 'package:water_tracker/config/theme/theme_extension/radius_extension.dart';
-import 'package:water_tracker/data/repository/repository.dart';
-import 'package:water_tracker/get_it.dart';
 import 'package:water_tracker/presentation/screens/goal_screen/goal_screen.dart';
 import 'package:water_tracker/presentation/screens/greeting_screen/greeting_screen.dart';
 import 'package:water_tracker/presentation/screens/main_screen/main_screen.dart';
