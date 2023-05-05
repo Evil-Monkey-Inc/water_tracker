@@ -7,6 +7,7 @@ import 'package:water_tracker/data/services/authentication_service/mocked_authen
 import 'package:water_tracker/data/services/storage_service/firestore_storage_service.dart';
 import 'package:water_tracker/data/services/storage_service/firestore_storage_service_impl.dart';
 import 'package:water_tracker/data/services/storage_service/flutter_secure_storage_impl.dart';
+import 'package:water_tracker/data/services/storage_service/shared_preff_storage_service_impl.dart';
 import 'package:water_tracker/env_variables.dart';
 
 final getIt = GetIt.instance;
@@ -17,9 +18,10 @@ void setupServicesLocator() {
       : AuthenticationServiceFirebaseImpl();
   final firebaseStorage = FireStoreStorageServiceImpl();
   final flutterSecureStorage = FlutterSecureStorageImpl();
+  final localeStorage = SharedPreffStorageImplements();
   getIt.registerSingleton<AuthenticationService>(authService);
   getIt.registerSingleton<FireStoreStorageService>(firebaseStorage);
   getIt.registerSingleton<Repository>(
-    RepositoryImpl(authService, firebaseStorage, flutterSecureStorage),
+    RepositoryImpl(authService, firebaseStorage, flutterSecureStorage, localeStorage),
   );
 }
