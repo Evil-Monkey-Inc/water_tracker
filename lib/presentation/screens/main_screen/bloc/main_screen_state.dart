@@ -8,6 +8,12 @@ class CounterState extends MainScreenState {
   CounterState(super.counter);
 }
 
+class ProcessingLogOutUser extends MainScreenState {
+  ProcessingLogOutUser(super.counter, this.isLogOutUser);
+
+  final bool isLogOutUser;
+}
+
 class ErrorMainScreenState extends MainScreenState {
   ErrorMainScreenState(super.counter);
 }

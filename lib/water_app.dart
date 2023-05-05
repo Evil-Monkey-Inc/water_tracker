@@ -33,13 +33,6 @@ class _WaterAppState extends State<WaterApp> {
   Widget build(BuildContext context) {
     final themeExtensions = <ThemeExtension>[RadiusExtension.instance];
 
-    return FutureBuilder(
-      future: getIt<Repository>().getAccessToken(),
-      builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
-        if (snapshot.connectionState == ConnectionState.waiting) {
-          return const CircularProgressIndicator();
-        }
-       else if (snapshot.connectionState == ConnectionState.done) {
           return MaterialApp(
             localizationsDelegates: context.localizationDelegates,
             supportedLocales: context.supportedLocales,
@@ -53,9 +46,7 @@ class _WaterAppState extends State<WaterApp> {
             ),
             // TODO(Sanya): implement theme mode solution
             themeMode: ThemeMode.light,
-            initialRoute: snapshot.hasData
-                ? MainScreen.route
-                : SocialSignUpScreen.route,
+            initialRoute: MainScreen.route,
             routes: {
               SocialSignUpScreen.route: (_) => const SocialSignUpScreen(),
               SignInScreen.route: (_) => const SignInScreen(),
@@ -69,11 +60,5 @@ class _WaterAppState extends State<WaterApp> {
             builder: (context, widget) =>
                 SafeArea(child: widget ?? const SizedBox()),
           );
-        }
-        else {
-         return Container();
-        }
-      },
-    );
   }
 }

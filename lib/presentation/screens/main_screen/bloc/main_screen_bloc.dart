@@ -27,6 +27,14 @@ class MainScreenBloc extends Bloc<MainScreenEvent, MainScreenState> {
             : CounterState(result),
       );
     });
+    on<CheckAccessToken>((event, emit) async {
+      final result = await repository.getAccessToken();
+      emit(
+        result == null
+            ? ProcessingLogOutUser(state.counter, true)
+            : ProcessingLogOutUser(state.counter, false),
+      );
+    });
   }
 
   static const maxCupCount = 8;
