@@ -21,8 +21,6 @@ class _MainLayoutState extends State<MainLayout> {
   static const singleCupWeight = MainScreenBloc.singleCupWeight;
   static const paddingHorizontal = EdgeInsets.symmetric(horizontal: 28.0);
 
-  Future<bool>? auth;
-
   @override
   void initState() {
     context.read<MainScreenBloc>().add(CheckAccessToken());
