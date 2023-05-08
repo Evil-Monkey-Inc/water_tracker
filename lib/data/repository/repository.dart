@@ -27,7 +27,14 @@ abstract class Repository {
 
   Future<void> initNotification();
 
-  Future<void> showNotification({
+  Future<void> showOneHourNotification({
+    required id,
+    required String title,
+    required String body,
+    required String payload,
+  });
+
+  Future<void> showTwoHoursNotification({
     required id,
     required String title,
     required String body,

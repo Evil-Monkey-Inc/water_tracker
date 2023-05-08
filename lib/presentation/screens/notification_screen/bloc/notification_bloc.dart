@@ -10,24 +10,39 @@ class NotificationScreenBloc
           (event, emit) async => emit(SuccessfullySkipButtonState()),
     );
     on<SetupNotificationEvent>((event, emit) async {
-       try{
-         await repository.initNotification();
-         emit(InitialNotificationState());
-       }
-       catch(e){
-         emit(ErrorNotificationState(e));
-       }
-      },
-    );
-    on<ShowNotificationEvent>((event, emit) async {
       try {
-        await repository.showNotification(
+        await repository.initNotification();
+        emit(InitialNotificationState());
+      }
+      catch (e) {
+        emit(ErrorNotificationState(e));
+      }
+    },
+    );
+    on<ShowEveryHourNotificationEvent>((event, emit) async {
+      try {
+        await repository.showOneHourNotification(
           id: event.id,
           title: event.title,
           body: event.body,
           payload: event.payload,
         );
         emit(SuccessfullyShowNotificationState());
+      } catch (e) {
+        emit(ErrorNotificationState(e));
+      }
+    },
+    );
+    on<ShowEveryTwoHoursNotificationEvent>(
+      (event, emit) async {
+        try {
+          await repository.showOneHourNotification(
+            id: event.id,
+            title: event.title,
+            body: event.body,
+            payload: event.payload,
+          );
+          emit(SuccessfullyShowNotificationState());
         } catch (e) {
           emit(ErrorNotificationState(e));
         }

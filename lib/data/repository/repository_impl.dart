@@ -107,19 +107,28 @@ class RepositoryImpl extends Repository {
   }
 
   @override
-  Future<void> showNotification({
+  Future<void> showOneHourNotification({
     required id,
     required String title,
     required String body,
     required String payload,})
-    async {
-
-    await notificationService.showNotification(
+    async => await notificationService.showNotificationEveryHour(
       id: id,
       title: title,
       body: body,
       payload: payload,
     );
 
-  }
+  @override
+  Future<void> showTwoHoursNotification({
+    required id,
+    required String title,
+    required String body,
+    required String payload,
+  }) async => await notificationService.showNotificationEveryTwoHours(
+      id: id,
+      title: title,
+      body: body,
+      payload: payload,
+    );
 }
