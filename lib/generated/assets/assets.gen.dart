@@ -55,9 +55,6 @@ class $AssetsImagesGen {
   AssetGenImage get dumbbells =>
       const AssetGenImage('assets/images/dumbbells.png');
 
-  /// File path: assets/images/email.png
-  AssetGenImage get email => const AssetGenImage('assets/images/email.png');
-
   /// File path: assets/images/google.png
   AssetGenImage get google => const AssetGenImage('assets/images/google.png');
 
@@ -86,6 +83,10 @@ class $AssetsImagesGen {
   AssetGenImage get notification =>
       const AssetGenImage('assets/images/notification.png');
 
+  /// File path: assets/images/notification_logo.png
+  AssetGenImage get notificationLogo =>
+      const AssetGenImage('assets/images/notification_logo.png');
+
   /// File path: assets/images/setting_icon.png
   AssetGenImage get settingIcon =>
       const AssetGenImage('assets/images/setting_icon.png');
@@ -113,7 +114,6 @@ class $AssetsImagesGen {
         carrot,
         customCloseIcon,
         dumbbells,
-        email,
         google,
         hike,
         launcherLogo,
@@ -122,6 +122,7 @@ class $AssetsImagesGen {
         mainScreenPerson,
         manLogin,
         notification,
+        notificationLogo,
         settingIcon,
         stars,
         waterDrop,
