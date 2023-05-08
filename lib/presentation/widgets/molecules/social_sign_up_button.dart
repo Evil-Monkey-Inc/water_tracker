@@ -12,7 +12,7 @@ class AuthenticationWall extends StatefulWidget {
   });
 
   final VoidCallback onPressedEmail;
-  final VoidCallback onPressedGoogle;
+  final void Function(String email) onPressedGoogle;
 
   @override
   State<AuthenticationWall> createState() => _AuthenticationWallState();
@@ -25,13 +25,22 @@ class _AuthenticationWallState extends State<AuthenticationWall> {
   static const width = 40.0;
   static const height = 19.0;
 
+  final _email = TextEditingController();
+  final formKey = GlobalKey<FormState>();
+
+  @override
+  void dispose() {
+    super.dispose();
+    _email.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         CustomButton(
           onPressed: widget.onPressedEmail,
-          icon:  const Padding(
+          icon: const Padding(
             padding: paddingIcon,
             child: Icon(Icons.email_outlined),
           ),
@@ -42,7 +51,7 @@ class _AuthenticationWallState extends State<AuthenticationWall> {
         ),
         space,
         CustomButton(
-          onPressed: widget.onPressedGoogle,
+          onPressed: () => widget.onPressedGoogle(_email.text),
           image: Image.asset(
             Assets.images.google.path,
             width: width,
