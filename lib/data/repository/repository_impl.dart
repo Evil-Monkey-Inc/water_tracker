@@ -1,4 +1,5 @@
 import 'dart:convert';
+
 import 'package:water_tracker/data/models/goal_list.dart';
 import 'package:water_tracker/data/models/user_settings.dart';
 import 'package:water_tracker/data/repository/repository.dart';
@@ -16,10 +17,10 @@ class RepositoryImpl extends Repository {
     this.localeStorage,
   );
 
-  final AuthenticationService registrationService;
   final StorageService storageService;
-  final SecureStorageService secureStorageService;
   final SharedPreffStorageService localeStorage;
+  final AuthenticationService registrationService;
+  final SecureStorageService secureStorageService;
 
   final counterCupsDateFormat = DateFormat('dd.MM.yyyy');
 
@@ -51,6 +52,18 @@ class RepositoryImpl extends Repository {
     final result = await registrationService.loginUser(email, password);
     final isSuccessful = result.error == null;
     if (isSuccessful) _userEmail = email;
+    return isSuccessful;
+  }
+
+  @override
+  Future<bool> signInWithGoogle(String email) async {
+    final result = await registrationService.signInWithGoogle();
+    final isSuccessful = result.error == null;
+    if (isSuccessful) {
+      userEmail = email;
+      await localeStorage.saveGoogleInfo(userEmail);
+      await secureStorageService.saveAccessToken(result.token!);
+    }
     return isSuccessful;
   }
 
