@@ -1,9 +1,11 @@
 import 'dart:convert';
+import 'package:flutter/cupertino.dart';
 import 'package:water_tracker/data/models/goal_list.dart';
 import 'package:water_tracker/data/models/user_settings.dart';
 import 'package:water_tracker/data/repository/repository.dart';
 import 'package:water_tracker/data/services/authentication_service/authentication_service.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:water_tracker/data/services/notification_service/notification_service.dart';
 import 'package:water_tracker/data/services/storage_service/secure_storage.dart';
 import 'package:water_tracker/data/services/storage_service/shared_preff_storage_service.dart';
 import 'package:water_tracker/data/services/storage_service/storage_service.dart';
@@ -14,9 +16,11 @@ class RepositoryImpl extends Repository {
     this.storageService,
     this.secureStorageService,
     this.localeStorage,
+    this.notificationService,
   );
 
   final AuthenticationService registrationService;
+  final NotificationService notificationService;
   final StorageService storageService;
   final SecureStorageService secureStorageService;
   final SharedPreffStorageService localeStorage;
@@ -95,5 +99,27 @@ class RepositoryImpl extends Repository {
   @override
   Future<String?> getUserInfo() async {
    return await localeStorage.getUserInfo();
+  }
+
+  @override
+  Future<void> initNotification() async {
+   await notificationService.initNotification();
+  }
+
+  @override
+  Future<void> showNotification({
+    required id,
+    required String title,
+    required String body,
+    required String payload,})
+    async {
+
+    await notificationService.showNotification(
+      id: id,
+      title: title,
+      body: body,
+      payload: payload,
+    );
+
   }
 }

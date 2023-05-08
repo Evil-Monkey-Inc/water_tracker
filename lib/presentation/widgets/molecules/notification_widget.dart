@@ -4,24 +4,37 @@ import 'package:water_tracker/generated/assets/assets.gen.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
 import 'package:water_tracker/presentation/widgets/molecules/custom_button.dart';
 
-class NotificationWidget extends StatelessWidget {
-  const NotificationWidget({super.key});
+class NotificationWidget extends StatefulWidget {
+  const NotificationWidget({
+    super.key,
+    required this.everyHour,
+    required this.everyTwoHour,
+  });
 
-  static const largeSpace = SizedBox(height: 140);
-  static const spaces = SizedBox(height: 20);
-  static const radiusCircular = 16;
-  static const widgetRadius = Radius.circular(16);
-  static const heightWidget = 362.0;
-  static const widthWidget = 375.0;
-  static const textPadding = EdgeInsets.symmetric(horizontal: 34);
+  final VoidCallback everyHour;
+  final VoidCallback everyTwoHour;
+
+  @override
+  State<NotificationWidget> createState() => _NotificationWidgetState();
+}
+
+class _NotificationWidgetState extends State<NotificationWidget> {
+
   static const upperFlex = 1;
-  static const downFlex = Spacer(flex: 1);
-  static const spaceBetweenButtons = SizedBox(height: 16);
-  static const paddingInsideButton = EdgeInsets.symmetric(horizontal: 24);
+  static const fontSize = 24.0;
   static const spreadRadius = 3.0;
   static const blurRadius = 12.0;
+  static const heightWidget = 362.0;
+  static const widthWidget = 375.0;
+
+  static const spaces = SizedBox(height: 20);
+  static const widgetRadius = Radius.circular(16);
+  static const textPadding = EdgeInsets.symmetric(horizontal: 34);
+  static const downFlex = Spacer(flex: upperFlex);
+  static const spaceBetweenButtons = SizedBox(height: 16);
+  static const paddingInsideButton = EdgeInsets.symmetric(horizontal: fontSize);
   static const offset = Offset(-4, 2);
-  static const fontSize = 24.0;
+
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +55,7 @@ class NotificationWidget extends StatelessWidget {
       ),
       child: Column(
         children: [
-          spaces,
+         spaces,
           Image.asset(Assets.images.notification.path),
           spaces,
           Padding(
@@ -70,17 +83,17 @@ class NotificationWidget extends StatelessWidget {
             padding: paddingInsideButton,
             child: CustomButton(
               text: LocaleKeys.every_hour.tr(),
-              onPressed: () {},
+              onPressed: widget.everyHour,
               buttonColor: Theme.of(context).dividerColor,
               textButtonColor: Theme.of(context).primaryColor,
             ),
           ),
-          spaceBetweenButtons,
+         spaceBetweenButtons,
           Padding(
             padding: paddingInsideButton,
             child: CustomButton(
               text: LocaleKeys.every_two_hours.tr(),
-              onPressed: () {},
+              onPressed: widget.everyTwoHour,
               buttonColor: Theme.of(context).primaryColor,
               textButtonColor: Theme.of(context).primaryColorLight,
             ),

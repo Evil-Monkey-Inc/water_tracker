@@ -24,4 +24,13 @@ abstract class Repository {
   Future<String?> getAccessToken();
 
   Future<String?> getUserInfo();
+
+  Future<void> initNotification();
+
+  Future<void> showNotification({
+    required id,
+    required String title,
+    required String body,
+    required String payload,
+  });
 }
