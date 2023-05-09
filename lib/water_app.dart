@@ -9,6 +9,7 @@ import 'package:water_tracker/presentation/screens/greeting_screen/greeting_scre
 import 'package:water_tracker/presentation/screens/main_screen/main_screen.dart';
 import 'package:water_tracker/presentation/screens/notification_screen/notification_screen.dart';
 import 'package:water_tracker/presentation/screens/personal_settings_screen/personal_settings_screen.dart';
+import 'package:water_tracker/presentation/screens/reset_password_screen/reset_password_screen.dart';
 import 'package:water_tracker/presentation/screens/sign_in_screen/sign_in_screen.dart';
 import 'package:water_tracker/presentation/screens/sign_up_screen/sign_up_screen.dart';
 import 'package:water_tracker/presentation/screens/social_sign_up_screen/social_sign_up_screen.dart';
@@ -54,6 +55,7 @@ class _WaterAppState extends State<WaterApp> {
               NotificationScreen.route: (_) => const NotificationScreen(),
               GreetingScreen.route: (_) => const GreetingScreen(),
               MainScreen.route: (_) => const MainScreen(),
+              ResetPasswordScreen.route: (_) => const ResetPasswordScreen(),
             },
             builder: (context, widget) =>
                 SafeArea(child: widget ?? const SizedBox()),
