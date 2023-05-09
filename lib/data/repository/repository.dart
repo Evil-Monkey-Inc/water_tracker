@@ -24,4 +24,20 @@ abstract class Repository {
   Future<String?> getAccessToken();
 
   Future<String?> getUserInfo();
+
+  Future<void> initNotification();
+
+  Future<void> showOneHourNotification({
+    required id,
+    required String title,
+    required String body,
+    required String payload,
+  });
+
+  Future<void> showTwoHoursNotification({
+    required id,
+    required String title,
+    required String body,
+    required String payload,
+  });
 }
