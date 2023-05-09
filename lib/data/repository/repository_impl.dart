@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:water_tracker/data/models/goal_list.dart';
+import 'package:water_tracker/data/models/responses/sign_in_result.dart';
 import 'package:water_tracker/data/models/user_settings.dart';
 import 'package:water_tracker/data/repository/repository.dart';
 import 'package:water_tracker/data/services/authentication_service/authentication_service.dart';
@@ -53,6 +54,14 @@ class RepositoryImpl extends Repository {
   @override
   Future<bool> loginUser(String email, String password) async {
     final result = await registrationService.loginUser(email, password);
+    final isSuccessful = result.error == null;
+    if (isSuccessful) _userEmail = email;
+    return isSuccessful;
+  }
+
+  @override
+  Future<bool> resetPassword(String email) async {
+    final result = await registrationService.resetPassword(email);
     final isSuccessful = result.error == null;
     if (isSuccessful) _userEmail = email;
     return isSuccessful;
