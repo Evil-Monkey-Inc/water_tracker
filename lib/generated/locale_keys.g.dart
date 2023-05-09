@@ -56,5 +56,6 @@ abstract class  LocaleKeys {
   static const time_to_drink = 'time_to_drink';
   static const track_water_balance = 'track_water_balance';
   static const payload = 'payload';
+  static const forgot_password = 'forgot_password';
 
 }

@@ -53,6 +53,7 @@
   "failed_to_increment_count": "Failed to increment water count",
   "time_to_drink" : "Time to drink a cup of water!",
   "track_water_balance" : "Track your water balance with the WaterApp.",
-  "payload" : "Go to the app for information."
+  "payload" : "Go to the app for information.",
+  "forgot_password" : "Forgot Password?"
 }
 

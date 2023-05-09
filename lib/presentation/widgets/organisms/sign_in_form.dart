@@ -6,31 +6,35 @@ import 'package:water_tracker/env_variables.dart';
 import 'package:water_tracker/form_validators.dart';
 import 'package:water_tracker/generated/assets/assets.gen.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
+import 'package:water_tracker/presentation/widgets/atoms/custom_text_batton.dart';
 import 'package:water_tracker/presentation/widgets/molecules/custom_button.dart';
 import 'package:water_tracker/presentation/widgets/molecules/input_field_widget.dart';
 
 class SignInForm extends StatefulWidget {
   const SignInForm({
     super.key,
-    required this.onSignInButtonPressed,
     required this.isButtonEnabled,
+    required this.onSignInButtonPressed,
   });
 
-  final void Function(String email, String password) onSignInButtonPressed;
   final bool isButtonEnabled;
+  final void Function(String email, String password) onSignInButtonPressed;
 
   @override
   State<SignInForm> createState() => _MyLogFormWidgetState();
 }
 
 class _MyLogFormWidgetState extends State<SignInForm> {
+  var secureController = true;
+
   final _pass = TextEditingController();
   final _email = TextEditingController();
-  static const spacer = SizedBox(height: 28);
   final formKey = GlobalKey<FormState>();
   final emailNode = FocusNode();
-  var secureController = true;
+
   static const fontSize = 24.0;
+  static const spacer = SizedBox(height: 28);
+  static const forgotPassPadding = EdgeInsets.all(12.0);
 
   static const visibilityOff = Icon(
     Icons.visibility_off,
@@ -72,7 +76,15 @@ class _MyLogFormWidgetState extends State<SignInForm> {
               child: secureController ? visibility : visibilityOff,
             ),
           ),
-          spacer,
+          Padding(
+            padding: forgotPassPadding,
+            child: CustomTextButton(
+              onPressed: () {
+
+              },
+             buttonText: LocaleKeys.forgot_password.tr(),
+            ),
+          ),
           CustomButton(
             onPressed: () {
               if (EnvVariables.disableValidation ||

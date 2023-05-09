@@ -66,7 +66,11 @@ class CodegenLoader extends AssetLoader{
   "you_already_got": "You've already got",
   "cups": "cups",
   "ml": "ml",
-  "failed_to_increment_count": "Failed to increment water count"
+  "failed_to_increment_count": "Failed to increment water count",
+  "time_to_drink": "Time to drink a cup of water!",
+  "track_water_balance": "Track your water balance with the WaterApp.",
+  "payload": "Go to the app for information.",
+  "forgot_password": "Forgot Password?"
 };
 static const Map<String,dynamic> uk = {
   "continue_via_google": "Продовжити через Google",
@@ -120,7 +124,11 @@ static const Map<String,dynamic> uk = {
   "you_already_got": "Ви вже випили",
   "cups": "чашки",
   "ml": "мл",
-  "failed_to_increment_count": "Не вдалося збільшити кількість води"
+  "failed_to_increment_count": "Не вдалося збільшити кількість води",
+  "time_to_drink": "Час випити трохи води!",
+  "track_water_balance": "Відстежуйте водний баланс за допомогою WaterApp.",
+  "payload": "Щоб отримати інформацію, перейдіть до програми.",
+  "forgot_password": "Забули пароль?"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "uk": uk};
 }
