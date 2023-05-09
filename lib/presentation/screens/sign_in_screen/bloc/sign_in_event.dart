@@ -5,3 +5,4 @@ class SignInUserEvent extends SignInEvent {
   final String email;
   final String password;
 }
+

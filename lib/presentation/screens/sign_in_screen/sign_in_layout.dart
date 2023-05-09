@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
 import 'package:water_tracker/presentation/screens/main_screen/main_screen.dart';
+import 'package:water_tracker/presentation/screens/reset_password_screen/reset_password_screen.dart';
 import 'package:water_tracker/presentation/screens/sign_in_screen/bloc/sign_in_bloc.dart';
 import 'package:water_tracker/presentation/screens/sign_in_screen/bloc/sign_in_event.dart';
 import 'package:water_tracker/presentation/screens/sign_in_screen/bloc/sign_in_state.dart';
@@ -57,6 +58,9 @@ class _SignInLayoutState extends State<SignInLayout> {
                     isButtonEnabled: state is! LoadingSignInState,
                     onSignInButtonPressed: (String email, String password) {
                       context.read<SignInBloc>().add(SignInUserEvent(email, password));
+                    },
+                    onResetPasswordPressed: () {
+                      Navigator.of(context).pushNamed(ResetPasswordScreen.route);
                     },
                   ),
                   const PrivacyPolicyAndTermsWidget(),
