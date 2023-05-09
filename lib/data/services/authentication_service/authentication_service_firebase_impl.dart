@@ -46,4 +46,18 @@ class AuthenticationServiceFirebaseImpl extends AuthenticationService {
     final result = SignInResult(user, error);
     return result;
   }
+
+  @override
+  Future<SignInResult> resetPassword(String email) async {
+    SignUpException? error;
+    try{
+      await firebaseAuth.sendPasswordResetEmail(email: email);
+    }
+    on auth.FirebaseAuthException catch (e) {
+      error = SignUpException.fromFirebaseAuth(e);
+    }
+    User? user;
+    final result = SignInResult(user, error);
+    return result;
+  }
 }
