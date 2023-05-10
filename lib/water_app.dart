@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:water_tracker/config/theme/theme_container.dart';
 import 'package:water_tracker/config/theme/theme_extension/radius_extension.dart';
+import 'package:water_tracker/presentation/screens/general_settings_screen/general_settings_screen.dart';
 import 'package:water_tracker/presentation/screens/goal_screen/goal_screen.dart';
 import 'package:water_tracker/presentation/screens/greeting_screen/greeting_screen.dart';
 import 'package:water_tracker/presentation/screens/main_screen/main_screen.dart';
@@ -40,7 +41,7 @@ class _WaterAppState extends State<WaterApp> {
           extensions: themeExtensions),
        // TODO(Sanya): implement theme mode solution
         themeMode: ThemeMode.light,
-      initialRoute: SignInScreen.route,
+      initialRoute: MainScreen.route,
       routes: {
         SignInScreen.route: (_) => const SignInScreen(),
         SignUpScreen.route: (_) => const SignUpScreen(),
@@ -49,6 +50,7 @@ class _WaterAppState extends State<WaterApp> {
         NotificationScreen.route: (_) => const NotificationScreen(),
         GreetingScreen.route: (_) => const GreetingScreen(),
         MainScreen.route: (_) => const MainScreen(),
+        GeneralSettingsScreen.route: (_) => const GeneralSettingsScreen(),
       },
       builder: (context, widget) => SafeArea(child: widget ?? const SizedBox()),
     );
