@@ -1,44 +1,58 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:water_tracker/data/models/gender.dart';
+import 'package:water_tracker/data/models/theme.dart';
 import 'package:water_tracker/generated/assets/assets.gen.dart';
-import 'package:water_tracker/generated/locale_keys.g.dart';
 
 class SelectSexButton extends StatefulWidget {
-  const SelectSexButton({super.key, required this.onChanged});
+  const SelectSexButton({
+    super.key,
+    required this.firstTabTitle,
+    required this.secondTabTitle,
+    required this.aboutTabBar,
+    required this.onChanged,
+    required this.data,
+  });
 
-  final void Function(Gender) onChanged;
+  final Object data;
+  final String aboutTabBar;
+  final String firstTabTitle;
+  final String secondTabTitle;
+  final void Function(dynamic) onChanged;
 
   @override
   State<SelectSexButton> createState() => _SelectSexButtonState();
 }
 
-class _SelectSexButtonState extends State<SelectSexButton>
-    with SingleTickerProviderStateMixin {
-  static const indicatorWeight = 2.0;
-  static const countTabs = 2;
-  static const buttonWeight = 55.0;
-  static const heightButton = 72.0;
-  static const space = SizedBox(height: 14);
-  static const spaceInsideButton = EdgeInsets.all(8);
+class _SelectSexButtonState extends State<SelectSexButton> with SingleTickerProviderStateMixin {
   late final TabController controller;
-  static const fontSize = 16.0;
   final circularRadius = BorderRadius.circular(40.0);
 
+  static const countTabs = 2;
+  static const fontSize = 16.0;
+  static const buttonWeight = 55.0;
+  static const heightButton = 72.0;
+  static const indicatorWeight = 2.0;
+  static const space = SizedBox(height: 14);
+  static const spaceInsideButton = EdgeInsets.all(8);
 
   @override
   void initState() {
     controller = TabController(length: countTabs, vsync: this);
-    controller.addListener(
-      () => widget.onChanged(Gender.values[controller.index]),
-    ); // controller.index
+    controller.addListener(() {
+      if (widget.data == ApplicationTheme.light || widget.data == ApplicationTheme.dark) {
+        return widget.onChanged(ApplicationTheme.values[controller.index]);
+      }
+      if (widget.data == Gender.male || widget.data == Gender.female) {
+        return widget.onChanged(Gender.values[controller.index]);
+      }
+    }); // controller.index
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     final sexTextProperty = Text(
-      LocaleKeys.sex.tr(),
+      widget.aboutTabBar,
       style: Theme.of(context).textTheme.headline4?.copyWith(
             color: Theme.of(context).primaryColor,
             fontWeight: FontWeight.w500,
@@ -77,7 +91,7 @@ class _SelectSexButtonState extends State<SelectSexButton>
                       tabs: [
                         Tab(
                           child: Text(
-                            LocaleKeys.man.tr(),
+                            widget.firstTabTitle,
                             style: TextStyle(
                               fontSize: fontSize,
                               fontFamily: Assets.fonts.senRegular,
@@ -87,7 +101,7 @@ class _SelectSexButtonState extends State<SelectSexButton>
                         ),
                         Tab(
                           child: Text(
-                            LocaleKeys.woman.tr(),
+                            widget.secondTabTitle,
                             style: TextStyle(
                               fontSize: fontSize,
                               fontFamily: Assets.fonts.senRegular,
