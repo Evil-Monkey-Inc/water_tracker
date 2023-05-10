@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:water_tracker/generated/assets/assets.gen.dart';
-import 'package:water_tracker/presentation/screens/general_settings_screen/general_settings_screen.dart';
-import 'package:water_tracker/presentation/widgets/atoms/custom_icon_button_widget.dart';
 
 class AssistantWidget extends StatefulWidget {
-  const AssistantWidget({super.key, required this.test});
+  const AssistantWidget({super.key, required this.title, required this.iconButton,});
 
-  final Widget test;
+  final Widget title;
+  final Widget iconButton;
 
   @override
   State<AssistantWidget> createState() => _AssistantWidgetState();
@@ -18,14 +16,9 @@ class _AssistantWidgetState extends State<AssistantWidget> {
     return Row(
       children: [
         const Spacer(),
-        widget.test,
+        widget.title,
         const Spacer(),
-        CustomIconButtonWidget(
-          onTap: () {
-            Navigator.of(context).pushNamed(GeneralSettingsScreen.route);
-          },
-          image: Image.asset(Assets.images.settingIcon.path),
-        ),
+        widget.iconButton,
       ],
     );
   }
