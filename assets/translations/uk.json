@@ -47,5 +47,20 @@
   "you_already_got" : "Ви вже випили",
   "cups" : "чашки",
   "ml" : "мл",
-  "failed_to_increment_count": "Не вдалося збільшити кількість води"
+  "failed_to_increment_count": "Не вдалося збільшити кількість води",
+  "manage_your_personal_settings": "Керуйте своїми особистими налаштуваннями",
+  "we_do_not_share": "Ми не передаємо цю інформацію іншим користувачам",
+  "enter_your_name": "Вкажіть своє ім'я",
+  "name": "Ім'я:",
+  "theme": "Тема:",
+  "language": "Мова:",
+  "submit": "Застосувати",
+  "light": "Світла",
+  "dark": "Темна",
+  "name_must_contain_at_least_3_letters": "Ім'я повинно мати не менше 3 літер",
+  "please_enter_correct_name": "Будь ласка, введіть корректне ім'я",
+  "name_must_contain_one_uppercase_letter": "Ім'я повинно починатися з великої літери",
+  "english": "Англійська",
+  "spanish": "Іспанська",
+  "ukrainian": "Українська"
 }

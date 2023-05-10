@@ -47,6 +47,21 @@
   "you_already_got" : "You've already got",
   "cups" : "cups",
   "ml" : "ml",
-  "failed_to_increment_count": "Failed to increment water count"
+  "failed_to_increment_count": "Failed to increment water count",
+  "manage_your_personal_settings": "Manage your personal settings",
+  "we_do_not_share": "We do not share this information with other users",
+  "enter_your_name": "Enter your name",
+  "name": "Name:",
+  "theme": "Theme:",
+  "language": "Language:",
+  "submit": "Submit",
+  "light": "Light",
+  "dark": "Dark",
+  "name_must_contain_at_least_3_letters": "Name must contain at least 3 letters",
+  "please_enter_correct_name": "Please, enter correct name",
+  "name_must_contain_one_uppercase_letter": "Name must contain one uppercase letter",
+  "english": "English",
+  "spanish": "Spanish",
+  "ukrainian": "Ukrainian"
 }
 

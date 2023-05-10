@@ -19,12 +19,12 @@ abstract class  LocaleKeys {
   static const re_enter_your_password = 're_enter_your_password';
   static const passwords_do_not_match_try_again = 'passwords_do_not_match_try_again';
   static const already_have_an_account = 'already_have_an_account';
-  static const skip = 'skip';
-  static const tell_more_general_info = 'tell_more_general_info';
   static const password_must_contain_at_least_8_characters = 'password_must_contain_at_least_8_characters';
-  static const setup_profile = 'setup_profile';
   static const password_must_contain_one_uppercase_letter = 'password_must_contain_one_uppercase_letter';
   static const error_try_again = 'error_try_again';
+  static const skip = 'skip';
+  static const tell_more_general_info = 'tell_more_general_info';
+  static const setup_profile = 'setup_profile';
   static const sex = 'sex';
   static const man = 'man';
   static const woman = 'woman';
@@ -42,13 +42,28 @@ abstract class  LocaleKeys {
   static const failed_store = 'failed_store';
   static const manage_water_title = 'manage_water_title';
   static const description = 'description';
-  static const notification_text = 'notification_text';
   static const every_hour = 'every_hour';
   static const every_two_hours = 'every_two_hours';
+  static const notification_text = 'notification_text';
   static const get_started = 'get_started';
   static const you_already_got = 'you_already_got';
   static const cups = 'cups';
   static const ml = 'ml';
   static const failed_to_increment_count = 'failed_to_increment_count';
+  static const manage_your_personal_settings = 'manage_your_personal_settings';
+  static const we_do_not_share = 'we_do_not_share';
+  static const enter_your_name = 'enter_your_name';
+  static const name = 'name';
+  static const theme = 'theme';
+  static const language = 'language';
+  static const submit = 'submit';
+  static const light = 'light';
+  static const dark = 'dark';
+  static const name_must_contain_at_least_3_letters = 'name_must_contain_at_least_3_letters';
+  static const please_enter_correct_name = 'please_enter_correct_name';
+  static const name_must_contain_one_uppercase_letter = 'name_must_contain_one_uppercase_letter';
+  static const english = 'english';
+  static const spanish = 'spanish';
+  static const ukrainian = 'ukrainian';
 
 }
