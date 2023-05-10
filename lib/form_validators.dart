@@ -5,7 +5,7 @@ typedef DoubleValidatorFunction = String? Function(String?, String?);
 typedef SingleRegistrationValidatorFunction = String? Function(String?);
 
 class FormValidators {
-  static final _emailRegexp = RegExp(r'^([\w-]\.)+@([\w-]+\.)+[\w]{2,4}');
+  static final _emailRegexp = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w]{2,4}');
   static final _passwordRegexp = RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z]).{8,}$');
   static final _nameRegexp = RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z]).{3,16}$');
 
