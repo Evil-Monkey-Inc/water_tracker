@@ -65,5 +65,6 @@ abstract class  LocaleKeys {
   static const english = 'english';
   static const spanish = 'spanish';
   static const ukrainian = 'ukrainian';
+  static const profile = 'profile';
 
 }

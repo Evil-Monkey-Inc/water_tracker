@@ -62,5 +62,6 @@
   "name_must_contain_one_uppercase_letter": "El nombre debe contener una letra mayúscula",
   "english": "Inglés",
   "spanish": "Español",
-  "ukrainian": "Ucranio"
+  "ukrainian": "Ucranio",
+  "profile": "Perfil"
 }

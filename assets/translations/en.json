@@ -62,6 +62,7 @@
   "name_must_contain_one_uppercase_letter": "Name must contain one uppercase letter",
   "english": "English",
   "spanish": "Spanish",
-  "ukrainian": "Ukrainian"
+  "ukrainian": "Ukrainian",
+  "profile": "Profile"
 }
 

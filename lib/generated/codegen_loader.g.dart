@@ -78,7 +78,8 @@ class CodegenLoader extends AssetLoader{
   "name_must_contain_one_uppercase_letter": "Name must contain one uppercase letter",
   "english": "English",
   "spanish": "Spanish",
-  "ukrainian": "Ukrainian"
+  "ukrainian": "Ukrainian",
+  "profile": "Profile"
 };
 static const Map<String,dynamic> es = {
   "enter_your_email": "Introduce tu correo electrónico",
@@ -144,7 +145,8 @@ static const Map<String,dynamic> es = {
   "name_must_contain_one_uppercase_letter": "El nombre debe contener una letra mayúscula",
   "english": "Inglés",
   "spanish": "Español",
-  "ukrainian": "Ucranio"
+  "ukrainian": "Ucranio",
+  "profile": "Perfil"
 };
 static const Map<String,dynamic> uk = {
   "enter_your_email": "Вкажіть вашу пошту",
@@ -210,7 +212,8 @@ static const Map<String,dynamic> uk = {
   "name_must_contain_one_uppercase_letter": "Ім'я повинно починатися з великої літери",
   "english": "Англійська",
   "spanish": "Іспанська",
-  "ukrainian": "Українська"
+  "ukrainian": "Українська",
+  "profile": "Профіль"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "es": es, "uk": uk};
 }

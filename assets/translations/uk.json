@@ -62,5 +62,6 @@
   "name_must_contain_one_uppercase_letter": "Ім'я повинно починатися з великої літери",
   "english": "Англійська",
   "spanish": "Іспанська",
-  "ukrainian": "Українська"
+  "ukrainian": "Українська",
+  "profile": "Профіль"
 }
