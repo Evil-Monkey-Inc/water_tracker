@@ -1,1 +1,1 @@
-enum ApplicationTheme {light, dark, system}
+enum ApplicationTheme {light, dark}
