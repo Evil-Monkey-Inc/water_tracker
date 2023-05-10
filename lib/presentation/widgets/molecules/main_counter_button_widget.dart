@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:water_tracker/config/theme/theme_palette/light_palette.dart';
 import 'package:water_tracker/generated/assets/assets.gen.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
+import 'package:water_tracker/presentation/screens/general_settings_screen/general_settings_screen.dart';
 import 'package:water_tracker/presentation/widgets/atoms/calendar_widget.dart';
+import 'package:water_tracker/presentation/widgets/atoms/custom_icon_button_widget.dart';
 import 'package:water_tracker/presentation/widgets/atoms/person_image_widget.dart';
 import 'package:water_tracker/presentation/widgets/molecules/assistant_widget.dart';
 
@@ -37,7 +39,13 @@ class MainScreenCounterWidget extends StatelessWidget {
       children: [
         spaces,
         AssistantWidget(
-          test: CalendarWidget(dateTime: DateFormat(dateFormat).format(dataNow)),
+          title: CalendarWidget(dateTime: DateFormat(dateFormat).format(dataNow)),
+          iconButton: CustomIconButtonWidget(
+            onTap: () {
+              Navigator.of(context).pushNamed(GeneralSettingsScreen.route);
+            },
+            image: Image.asset(Assets.images.settingIcon.path),
+          ),
         ),
         spaceBetween,
         RichText(
