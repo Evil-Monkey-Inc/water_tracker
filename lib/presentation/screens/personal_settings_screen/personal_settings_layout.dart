@@ -34,6 +34,7 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
   static const minValueWeight = 24;
   static const maxValueWeight = 150;
   static const spaces = SizedBox(height: 14);
+  static const longSpaces = SizedBox(height: 48.0);
   static const paddingHorizontal = EdgeInsets.symmetric(horizontal: 24.0);
 
   @override
@@ -73,12 +74,11 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
                     upperFlex: upperFlex,
                     downFlex: downFlex,
                   ),
-                  spaces,
-                  spaces,
+                  longSpaces,
                   SelectSexButton(
                     onChanged: (value) {
                       setState(() {
-                        gender = value;
+                        gender = value as Gender;
                         print(value);
                       });
                     },
