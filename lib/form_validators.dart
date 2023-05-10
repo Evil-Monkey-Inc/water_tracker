@@ -1,12 +1,13 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
 
-typedef SingleRegistrationValidatorFunction = String? Function(String?);
 typedef DoubleValidatorFunction = String? Function(String?, String?);
+typedef SingleRegistrationValidatorFunction = String? Function(String?);
 
 class FormValidators {
-  static final _emailRegexp = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w]{2,4}');
+  static final _emailRegexp = RegExp(r'^([\w-]\.)+@([\w-]+\.)+[\w]{2,4}');
   static final _passwordRegexp = RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z]).{8,}$');
+  static final _nameRegexp = RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z]).{3,16}$');
 
   static SingleRegistrationValidatorFunction emailValidator = (value) {
     if (value == null || value.isEmpty) return LocaleKeys.enter_your_email.tr();
@@ -24,6 +25,17 @@ class FormValidators {
       return LocaleKeys.invalid_password.tr();
     }
 
+    return null;
+  };
+
+  static SingleRegistrationValidatorFunction nameValidator = (value) {
+    if (value == null || value.isEmpty) return LocaleKeys.enter_your_name.tr();
+    if (!_nameRegexp.hasMatch(value)) {
+      return LocaleKeys.name_must_contain_one_uppercase_letter.tr();
+    }
+    if (value.length < 3) {
+      return LocaleKeys.please_enter_correct_name.tr();
+    }
     return null;
   };
 
