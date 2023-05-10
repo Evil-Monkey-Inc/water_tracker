@@ -4,8 +4,9 @@ import 'package:water_tracker/data/models/language.dart';
 import 'package:water_tracker/data/models/theme.dart';
 import 'package:water_tracker/form_validators.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
-import 'package:water_tracker/presentation/widgets/atoms/general_settings_title_widget.dart';
-import 'package:water_tracker/presentation/widgets/atoms/language_radio_button.dart';
+import 'package:water_tracker/presentation/screens/main_screen/main_screen.dart';
+import 'package:water_tracker/presentation/widgets/atoms/calendar_widget.dart';
+import 'package:water_tracker/presentation/widgets/atoms/profile_radio_buttons.dart';
 import 'package:water_tracker/presentation/widgets/atoms/title_settings_widget.dart';
 import 'package:water_tracker/presentation/widgets/molecules/assistant_widget.dart';
 import 'package:water_tracker/presentation/widgets/molecules/custom_button.dart';
@@ -20,8 +21,8 @@ class GeneralSettingsLayout extends StatefulWidget {
 }
 
 class _GeneralSettingsLayoutState extends State<GeneralSettingsLayout> {
-  var language = Language.english;
-  var theme = ApplicationTheme.light;
+  Language language = Language.english;
+  ApplicationTheme theme = ApplicationTheme.light;
 
   final _name = TextEditingController();
   final formKey = GlobalKey<FormState>();
@@ -29,22 +30,9 @@ class _GeneralSettingsLayoutState extends State<GeneralSettingsLayout> {
   static const downFlex = 1;
   static const upperFlex = 3;
   static const fontSize = 16.0;
-  static const title = 'Profile';
-  static const iconColor = Colors.black;
   static const spaces = SizedBox(height: 24.0);
-  static const iconImage = IconData(0xe89b, fontFamily: 'MaterialIcons');
+  static const longSpaces = SizedBox(height: 48.0);
   static const paddingHorizontal = EdgeInsets.symmetric(horizontal: 24.0);
-
-
-  @override
-  void initState() {
-    _name.addListener(() {
-      setState(() {
-        print(_name.text);
-      });
-    });
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -54,9 +42,16 @@ class _GeneralSettingsLayoutState extends State<GeneralSettingsLayout> {
         child: Column(
           children: [
             spaces,
-            const AssistantWidget(
-              test: TitleWidget(
-                title: title,
+            AssistantWidget(
+              title: CalendarWidget(
+                dateTime: LocaleKeys.profile.tr(),
+              ),
+              iconButton: IconButton(
+                onPressed: () {
+                  Navigator.of(context).pushNamed(MainScreen.route);
+                },
+                icon: const Icon(Icons.close),
+                color: Theme.of(context).primaryColor,
               ),
             ),
             spaces,
@@ -85,9 +80,9 @@ class _GeneralSettingsLayoutState extends State<GeneralSettingsLayout> {
                 labelText: LocaleKeys.enter_your_name.tr(),
                 validator: FormValidators.nameValidator,
                 controller: _name,
-                suffixIcon: const Icon(
-                  iconImage,
-                  color: iconColor,
+                suffixIcon: Icon(
+                  const IconData(0xe89b, fontFamily: 'MaterialIcons'),
+                  color: Theme.of(context).primaryColor,
                 ),
               ),
             ),
@@ -96,7 +91,6 @@ class _GeneralSettingsLayoutState extends State<GeneralSettingsLayout> {
               onChanged: (value) {
                 setState(() {
                   theme = value;
-                  print(value);
                 });
               },
               firstTabTitle: LocaleKeys.light.tr(),
@@ -117,16 +111,21 @@ class _GeneralSettingsLayoutState extends State<GeneralSettingsLayout> {
                 ),
               ],
             ),
-            LanguageRadioButton(
-              onChanged: (value) => setState(() => language = value),
+            ProfileRadioButtons(
+              onChanged: (value) {
+                setState(() {
+                  language = value;
+                  print(value);
+                });
+              },
               firstButtonName: LocaleKeys.english.tr(),
               secondButtonName: LocaleKeys.spanish.tr(),
               thirdButtonName: LocaleKeys.ukrainian.tr(),
+              data: language,
             ),
-            spaces,
-            spaces,
+            longSpaces,
             CustomButton(
-                text: 'Submit',
+                text: LocaleKeys.submit.tr(),
                 onPressed: () {
                   if (formKey.currentState!.validate()) {}
                 },
