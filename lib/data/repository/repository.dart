@@ -22,7 +22,7 @@ abstract class Repository {
 
   Future<bool> saveCupCount(int counterCups);
 
-  Future<bool> signInWithGoogle(String email);
+  Future<bool> signInWithGoogle();
 
   Future<bool> saveGeneralInfo(UserSettings userSettings);
 

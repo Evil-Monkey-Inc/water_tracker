@@ -8,7 +8,7 @@ class SocialSignUpBloc extends Bloc<AuthUserEvent, SocialSignUpState> {
     on<LoginWithGooglePressed>((event, emit) async {
       try {
         emit(LoadingAuthState());
-        final isSuccess = await repository.signInWithGoogle(event.email);
+        final isSuccess = await repository.signInWithGoogle();
         emit(
           isSuccess ? SuccessfullyAuthState() : ErrorAuthState(Exception()),
         );

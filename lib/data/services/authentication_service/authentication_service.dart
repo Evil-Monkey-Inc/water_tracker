@@ -12,5 +12,5 @@ abstract class AuthenticationService {
     String password,
   );
 
-  Future<SignUpResult> signInWithGoogle(String email);
+  Future<SignUpResult> signInWithGoogle();
 }

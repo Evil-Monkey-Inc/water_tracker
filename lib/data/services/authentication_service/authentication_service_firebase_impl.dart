@@ -49,7 +49,7 @@ class AuthenticationServiceFirebaseImpl extends AuthenticationService {
   }
 
   @override
-  Future<SignUpResult> signInWithGoogle(String email) async {
+  Future<SignUpResult> signInWithGoogle() async {
     String? accessToken;
     SignUpException? error;
     auth.UserCredential? credential;
