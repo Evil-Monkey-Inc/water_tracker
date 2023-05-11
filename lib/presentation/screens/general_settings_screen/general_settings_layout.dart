@@ -37,103 +37,104 @@ class _GeneralSettingsLayoutState extends State<GeneralSettingsLayout> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: paddingHorizontal,
-        child: Column(
-          children: [
-            spaces,
-            AssistantWidget(
-              title: CalendarWidget(
-                dateTime: LocaleKeys.profile.tr(),
-              ),
-              iconButton: IconButton(
-                onPressed: () {
-                  Navigator.of(context).pushNamed(MainScreen.route);
-                },
-                icon: const Icon(Icons.close),
-                color: Theme.of(context).primaryColor,
-              ),
-            ),
-            spaces,
-            TitleSettingWidget(
-              LocaleKeys.manage_your_personal_settings.tr(),
-              subTitle: LocaleKeys.we_do_not_share.tr(),
-              downFlex: downFlex,
-              upperFlex: upperFlex,
-            ),
-            Row(
-              children: [
-                Text(
-                  LocaleKeys.name.tr(),
-                  style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                        color: Theme.of(context).primaryColor,
-                        fontWeight: FontWeight.w500,
-                        fontSize: fontSize,
+        body: Padding(
+          padding: paddingHorizontal,
+          child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  spaces,
+                        AssistantWidget(
+                          title: CalendarWidget(
+                              dateTime: LocaleKeys.profile.tr(),
+                            ),
+                          iconButton: IconButton(
+                            onPressed: () {
+                              Navigator.of(context).pushNamed(MainScreen.route);
+                            },
+                            icon: const Icon(Icons.close),
+                            color: Theme.of(context).primaryColor,
+                          ),
+                        ),
+                  spaces,
+                  TitleSettingWidget(
+                    LocaleKeys.manage_your_personal_settings.tr(),
+                    subTitle: LocaleKeys.we_do_not_share.tr(),
+                    downFlex: downFlex,
+                    upperFlex: upperFlex,
+                  ),
+                  Row(
+                    children: [
+                      Text(
+                        LocaleKeys.name.tr(),
+                        style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                              color: Theme.of(context).primaryColor,
+                              fontWeight: FontWeight.w500,
+                              fontSize: fontSize,
+                            ),
                       ),
-                ),
-              ],
-            ),
-            spaces,
-            Form(
-              key: formKey,
-              child: InputFieldWidget(
-                labelText: LocaleKeys.enter_your_name.tr(),
-                validator: FormValidators.nameValidator,
-                controller: _name,
-                suffixIcon: Icon(
-                  const IconData(0xe89b, fontFamily: 'MaterialIcons'),
-                  color: Theme.of(context).primaryColor,
-                ),
+                    ],
+                  ),
+                  spaces,
+                  Form(
+                    key: formKey,
+                    child: InputFieldWidget(
+                      labelText: LocaleKeys.enter_your_name.tr(),
+                      validator: FormValidators.nameValidator,
+                      controller: _name,
+                      suffixIcon: Icon(
+                        const IconData(0xe89b, fontFamily: 'MaterialIcons'),
+                        color: Theme.of(context).primaryColor,
+                      ),
+                    ),
+                  ),
+                  spaces,
+                  SelectSexButton(
+                    onChanged: (value) {
+                      setState(() {
+                        theme = value;
+                      });
+                    },
+                    firstTabTitle: LocaleKeys.light.tr(),
+                    secondTabTitle: LocaleKeys.dark.tr(),
+                    aboutTabBar: LocaleKeys.theme.tr(),
+                    data: theme,
+                  ),
+                  spaces,
+                  Row(
+                    children: [
+                      Text(
+                        LocaleKeys.language.tr(),
+                        style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                              color: Theme.of(context).primaryColor,
+                              fontWeight: FontWeight.w500,
+                              fontSize: fontSize,
+                            ),
+                      ),
+                    ],
+                  ),
+                  ProfileRadioButtons(
+                    onChanged: (value) {
+                      setState(() {
+                        language = value;
+                      });
+                    },
+                    firstButtonName: LocaleKeys.english.tr(),
+                    secondButtonName: LocaleKeys.spanish.tr(),
+                    thirdButtonName: LocaleKeys.ukrainian.tr(),
+                    data: language,
+                  ),
+                  longSpaces,
+                  CustomButton(
+                      text: LocaleKeys.submit.tr(),
+                      onPressed: () {
+                        if (formKey.currentState!.validate()) {}
+                      },
+                      buttonColor: Theme.of(context).primaryColor,
+                      textButtonColor: Theme.of(context).dialogBackgroundColor),
+                ],
               ),
             ),
-            spaces,
-            SelectSexButton(
-              onChanged: (value) {
-                setState(() {
-                  theme = value;
-                });
-              },
-              firstTabTitle: LocaleKeys.light.tr(),
-              secondTabTitle: LocaleKeys.dark.tr(),
-              aboutTabBar: LocaleKeys.theme.tr(),
-              data: theme,
-            ),
-            spaces,
-            Row(
-              children: [
-                Text(
-                  LocaleKeys.language.tr(),
-                  style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                        color: Theme.of(context).primaryColor,
-                        fontWeight: FontWeight.w500,
-                        fontSize: fontSize,
-                      ),
-                ),
-              ],
-            ),
-            ProfileRadioButtons(
-              onChanged: (value) {
-                setState(() {
-                  language = value;
-                  print(value);
-                });
-              },
-              firstButtonName: LocaleKeys.english.tr(),
-              secondButtonName: LocaleKeys.spanish.tr(),
-              thirdButtonName: LocaleKeys.ukrainian.tr(),
-              data: language,
-            ),
-            longSpaces,
-            CustomButton(
-                text: LocaleKeys.submit.tr(),
-                onPressed: () {
-                  if (formKey.currentState!.validate()) {}
-                },
-                buttonColor: Theme.of(context).primaryColor,
-                textButtonColor: Theme.of(context).dialogBackgroundColor),
-          ],
         ),
-      ),
     );
   }
 }
