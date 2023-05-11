@@ -79,7 +79,6 @@ class _PersonalSettingsLayoutState extends State<PersonalSettingsLayout> {
                     onChanged: (value) {
                       setState(() {
                         gender = value as Gender;
-                        print(value);
                       });
                     },
                     firstTabTitle: LocaleKeys.man.tr(),
