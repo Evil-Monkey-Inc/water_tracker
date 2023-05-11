@@ -57,11 +57,11 @@ class RepositoryImpl extends Repository {
 
   @override
   Future<bool> signInWithGoogle(String email) async {
-    final result = await registrationService.signInWithGoogle();
+    final result = await registrationService.signInWithGoogle(email);
     final isSuccessful = result.error == null;
     if (isSuccessful) {
       userEmail = email;
-      await localeStorage.saveGoogleInfo(userEmail);
+      await localeStorage.saveUserInfo(userEmail,null);
       await secureStorageService.saveAccessToken(result.token!);
     }
     return isSuccessful;

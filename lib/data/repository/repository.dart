@@ -25,4 +25,5 @@ abstract class Repository {
   Future<bool> signInWithGoogle(String email);
 
   Future<bool> saveGeneralInfo(UserSettings userSettings);
+
 }

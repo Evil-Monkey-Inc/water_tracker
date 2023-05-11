@@ -17,7 +17,6 @@ class SharedPreffStorageImplements extends SharedPreffStorageService {
       userSettingsKey,
       jsonEncode(userSettings.toJson()),
     );
-
     return result;
   }
 
