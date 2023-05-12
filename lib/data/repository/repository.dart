@@ -24,11 +24,8 @@ abstract class Repository {
 
   Future<bool> saveCupCount(int counterCups);
 
-  Future<int?> getCupCount(DateTime time);
+  Future<bool> saveGeneralInfo(UserSettings userSettings);
 
-  Future<String?> getAccessToken();
-
-  Future<String?> getUserInfo();
 
   Future<void> initNotification();
 
