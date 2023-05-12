@@ -71,9 +71,9 @@ class _SocialSignUpLayoutState extends State<SocialSignUpLayout> {
                 child: AuthenticationWall(
                   onPressedEmail: () =>
                       Navigator.of(context).pushNamed(SignUpScreen.route),
-                  onPressedGoogle: (email) => context
+                  onPressedGoogle: () => context
                       .read<SocialSignUpBloc>()
-                      .add(LoginWithGooglePressed(email)),
+                      .add(LoginWithGooglePressed()),
                 ),
               ),
             ],
