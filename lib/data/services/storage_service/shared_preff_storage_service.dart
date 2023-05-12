@@ -10,8 +10,6 @@ abstract class SharedPreffStorageService {
 
   Future<bool> saveGoal(GoalList goalsList);
 
-  Future<void> saveGoogleInfo(String email);
-
   Future<bool> saveGeneralInfo(UserSettings userSettings);
 
   Future<void> saveUserInfo(String email, String? username);
