@@ -27,7 +27,8 @@ class RepositoryImpl extends Repository {
   String? _userEmail;
 
   String get userEmail {
-    if (_userEmail == null) throw Exception('email could not be null at this point');
+    if (_userEmail == null)
+      throw Exception('email could not be null at this point');
     return _userEmail!;
   }
 
@@ -40,7 +41,7 @@ class RepositoryImpl extends Repository {
     final result = await registrationService.registerUser(email, password);
     final isSuccessful = result.error == null;
     if (isSuccessful) {
-      userEmail = email;
+      userEmail = result.user!.email;
       await localeStorage.saveUserInfo(userEmail, null);
       await secureStorageService.saveAccessToken(result.token!);
     }
@@ -69,7 +70,8 @@ class RepositoryImpl extends Repository {
 
   @override
   Future<bool> saveGeneralInfo(UserSettings userSettings) async {
-    final result = await storageService.saveUserSetting(userEmail, userSettings);
+    final result =
+        await storageService.saveUserSetting(userEmail, userSettings);
     return result;
   }
 
@@ -103,10 +105,11 @@ class RepositoryImpl extends Repository {
       counterCupsDateFormat.format(dateTime);
 
   @override
-  Future<String?> getAccessToken() async => await secureStorageService.getAccessToken();
+  Future<String?> getAccessToken() async =>
+      await secureStorageService.getAccessToken();
 
   @override
   Future<String?> getUserInfo() async {
-   return await localeStorage.getUserInfo();
+    return await localeStorage.getUserInfo();
   }
 }

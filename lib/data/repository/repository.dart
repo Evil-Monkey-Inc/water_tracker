@@ -14,6 +14,8 @@ abstract class Repository {
 
   Future<String?> getUserInfo();
 
+  Future<bool> signInWithGoogle();
+
   Future<String?> getAccessToken();
 
   Future<int?> getCupCount(DateTime time);
@@ -22,8 +24,5 @@ abstract class Repository {
 
   Future<bool> saveCupCount(int counterCups);
 
-  Future<bool> signInWithGoogle();
-
   Future<bool> saveGeneralInfo(UserSettings userSettings);
-
 }

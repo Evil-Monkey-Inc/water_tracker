@@ -53,7 +53,6 @@ class AuthenticationServiceFirebaseImpl extends AuthenticationService {
     String? accessToken;
     SignUpException? error;
     auth.UserCredential? credential;
-
     final GoogleSignInAccount? gUser = await GoogleSignIn().signIn();
     try {
       final GoogleSignInAuthentication gAuth = await gUser!.authentication;
@@ -67,7 +66,6 @@ class AuthenticationServiceFirebaseImpl extends AuthenticationService {
     } on auth.FirebaseAuthException catch (e) {
       error = SignUpException.fromFirebaseAuth(e);
     }
-
     User? user = User(gUser!.email);
     if (credential != null) {
       user = User(gUser.email);
