@@ -22,7 +22,6 @@ class RepositoryImpl extends Repository {
   final SharedPreffStorageService localeStorage;
   final AuthenticationService registrationService;
   final NotificationService notificationService;
-  final StorageService storageService;
   final SecureStorageService secureStorageService;
 
   final counterCupsDateFormat = DateFormat('dd.MM.yyyy');
