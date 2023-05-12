@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:water_tracker/generated/assets/assets.gen.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
-import 'package:water_tracker/presentation/screens/main_screen/main_screen.dart';
+import 'package:water_tracker/presentation/screens/personal_settings_screen/personal_settings_screen.dart';
 import 'package:water_tracker/presentation/screens/sign_up_screen/sign_up_screen.dart';
 import 'package:water_tracker/presentation/widgets/atoms/logo_widget.dart';
 import 'package:water_tracker/presentation/widgets/atoms/title_settings_widget.dart';
@@ -40,7 +40,7 @@ class _SocialSignUpLayoutState extends State<SocialSignUpLayout> {
             );
           }
           if (state is SuccessfullyAuthState) {
-            Navigator.of(context).pushNamed(MainScreen.route);
+            Navigator.of(context).pushNamed(PersonalSettingScreen.route);
           }
         },
         builder: (context, state) {
