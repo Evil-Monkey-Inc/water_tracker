@@ -53,5 +53,8 @@ abstract class  LocaleKeys {
   static const cups = 'cups';
   static const ml = 'ml';
   static const failed_to_increment_count = 'failed_to_increment_count';
+  static const time_to_drink = 'time_to_drink';
+  static const track_water_balance = 'track_water_balance';
+  static const payload = 'payload';
 
 }

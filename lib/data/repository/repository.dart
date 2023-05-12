@@ -24,5 +24,25 @@ abstract class Repository {
 
   Future<bool> saveCupCount(int counterCups);
 
-  Future<bool> saveGeneralInfo(UserSettings userSettings);
+  Future<int?> getCupCount(DateTime time);
+
+  Future<String?> getAccessToken();
+
+  Future<String?> getUserInfo();
+
+  Future<void> initNotification();
+
+  Future<void> showOneHourNotification({
+    required id,
+    required String title,
+    required String body,
+    required String payload,
+  });
+
+  Future<void> showTwoHoursNotification({
+    required id,
+    required String title,
+    required String body,
+    required String payload,
+  });
 }
