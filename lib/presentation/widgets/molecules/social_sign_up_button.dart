@@ -12,7 +12,7 @@ class AuthenticationWall extends StatefulWidget {
   });
 
   final VoidCallback onPressedEmail;
-  final void Function() onPressedGoogle;
+  final VoidCallback onPressedGoogle;
 
   @override
   State<AuthenticationWall> createState() => _AuthenticationWallState();
