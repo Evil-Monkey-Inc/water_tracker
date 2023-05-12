@@ -44,7 +44,7 @@ class _WaterAppState extends State<WaterApp> {
             ),
             // TODO(Sanya): implement theme mode solution
             themeMode: ThemeMode.light,
-            initialRoute: NotificationScreen.route,
+            initialRoute: SocialSignUpScreen.route,
             routes: {
               SocialSignUpScreen.route: (_) => const SocialSignUpScreen(),
               SignInScreen.route: (_) => const SignInScreen(),
