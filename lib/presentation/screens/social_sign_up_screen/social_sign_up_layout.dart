@@ -1,11 +1,16 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:water_tracker/generated/assets/assets.gen.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
-import 'package:water_tracker/presentation/screens/sign_in_screen/sign_in_screen.dart';
+import 'package:water_tracker/presentation/screens/main_screen/main_screen.dart';
+import 'package:water_tracker/presentation/screens/sign_up_screen/sign_up_screen.dart';
 import 'package:water_tracker/presentation/widgets/atoms/logo_widget.dart';
 import 'package:water_tracker/presentation/widgets/atoms/title_settings_widget.dart';
 import 'package:water_tracker/presentation/widgets/molecules/social_sign_up_button.dart';
+import 'package:water_tracker/presentation/screens/social_sign_up_screen/bloc/social_sign_up_bloc.dart';
+import 'package:water_tracker/presentation/screens/social_sign_up_screen/bloc/social_sign_up_event.dart';
+import 'package:water_tracker/presentation/screens/social_sign_up_screen/bloc/social_sign_up_state.dart';
 
 class SocialSignUpLayout extends StatefulWidget {
   const SocialSignUpLayout({super.key});
@@ -27,39 +32,53 @@ class _SocialSignUpLayoutState extends State<SocialSignUpLayout> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          smallSpace,
-          const LogoWidget(),
-          spaces,
-          Padding(
-            padding: paddingHorizontal,
-            child: TitleSettingWidget(
-              LocaleKeys.choose_an_authorization_method.tr(),
-              upperFlex: upperFlex,
-              downFlex: downFlex,
-            ),
-          ),
-          Align(
-            alignment: Alignment.bottomRight,
-            child: Image.asset(
-              Assets.images.womanAuth.path,
-              width: widthOfImage,
-              height: heightOfImage,
-              fit: BoxFit.fitHeight,
-            ),
-          ),
-          Padding(
-            padding: paddingHorizontal,
-            child: AuthenticationWall(
-              onPressedEmail: () =>
-                  Navigator.of(context).pushNamed(SignInScreen.route),
-              onPressedGoogle: () {
-                // TODO(Benik): implement navigation
-              },
-            ),
-          ),
-        ],
+      body: BlocConsumer<SocialSignUpBloc, SocialSignUpState>(
+        listener: (context, state) {
+          if (state is ErrorAuthState) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(content: Text(LocaleKeys.error_try_again.tr())),
+            );
+          }
+          if (state is SuccessfullyAuthState) {
+            Navigator.of(context).pushNamed(MainScreen.route);
+          }
+        },
+        builder: (context, state) {
+          return Column(
+            children: [
+              smallSpace,
+              const LogoWidget(),
+              spaces,
+              Padding(
+                padding: paddingHorizontal,
+                child: TitleSettingWidget(
+                  LocaleKeys.choose_an_authorization_method.tr(),
+                  upperFlex: upperFlex,
+                  downFlex: downFlex,
+                ),
+              ),
+              Align(
+                alignment: Alignment.bottomRight,
+                child: Image.asset(
+                  Assets.images.womanAuth.path,
+                  width: widthOfImage,
+                  height: heightOfImage,
+                  fit: BoxFit.fitHeight,
+                ),
+              ),
+              Padding(
+                padding: paddingHorizontal,
+                child: AuthenticationWall(
+                  onPressedEmail: () =>
+                      Navigator.of(context).pushNamed(SignUpScreen.route),
+                  onPressedGoogle: () => context
+                      .read<SocialSignUpBloc>()
+                      .add(LoginWithGoogleEvent()),
+                ),
+              ),
+            ],
+          );
+        },
       ),
     );
   }
