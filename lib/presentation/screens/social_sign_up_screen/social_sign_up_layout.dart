@@ -73,7 +73,7 @@ class _SocialSignUpLayoutState extends State<SocialSignUpLayout> {
                       Navigator.of(context).pushNamed(SignUpScreen.route),
                   onPressedGoogle: () => context
                       .read<SocialSignUpBloc>()
-                      .add(LoginWithGooglePressed()),
+                      .add(LoginWithGoogleEvent()),
                 ),
               ),
             ],

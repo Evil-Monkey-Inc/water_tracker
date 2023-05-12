@@ -5,7 +5,7 @@ import 'package:water_tracker/presentation/screens/social_sign_up_screen/bloc/so
 
 class SocialSignUpBloc extends Bloc<AuthUserEvent, SocialSignUpState> {
   SocialSignUpBloc(this.repository) : super(InitialAuthState()) {
-    on<LoginWithGooglePressed>((event, emit) async {
+    on<LoginWithGoogleEvent>((event, emit) async {
       try {
         emit(LoadingAuthState());
         final isSuccess = await repository.signInWithGoogle();
