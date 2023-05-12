@@ -31,7 +31,7 @@ class _AuthenticationWallState extends State<AuthenticationWall> {
       children: [
         CustomButton(
           onPressed: widget.onPressedEmail,
-          icon:  const Padding(
+          icon: const Padding(
             padding: paddingIcon,
             child: Icon(Icons.email_outlined),
           ),
@@ -42,7 +42,7 @@ class _AuthenticationWallState extends State<AuthenticationWall> {
         ),
         space,
         CustomButton(
-          onPressed: widget.onPressedGoogle,
+          onPressed: () => widget.onPressedGoogle(),
           image: Image.asset(
             Assets.images.google.path,
             width: width,

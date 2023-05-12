@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'package:flutter/cupertino.dart';
 import 'package:water_tracker/data/models/goal_list.dart';
 import 'package:water_tracker/data/models/user_settings.dart';
 import 'package:water_tracker/data/repository/repository.dart';
@@ -19,18 +18,19 @@ class RepositoryImpl extends Repository {
     this.notificationService,
   );
 
+  final StorageService storageService;
+  final SharedPreffStorageService localeStorage;
   final AuthenticationService registrationService;
   final NotificationService notificationService;
-  final StorageService storageService;
   final SecureStorageService secureStorageService;
-  final SharedPreffStorageService localeStorage;
 
   final counterCupsDateFormat = DateFormat('dd.MM.yyyy');
 
   String? _userEmail;
 
   String get userEmail {
-    if (_userEmail == null) throw Exception('email could not be null at this point');
+    if (_userEmail == null)
+      throw Exception('email could not be null at this point');
     return _userEmail!;
   }
 
@@ -43,7 +43,7 @@ class RepositoryImpl extends Repository {
     final result = await registrationService.registerUser(email, password);
     final isSuccessful = result.error == null;
     if (isSuccessful) {
-      userEmail = email;
+      userEmail = result.user!.email;
       await localeStorage.saveUserInfo(userEmail, null);
       await secureStorageService.saveAccessToken(result.token!);
     }
@@ -59,8 +59,21 @@ class RepositoryImpl extends Repository {
   }
 
   @override
+  Future<bool> signInWithGoogle() async {
+    final result = await registrationService.signInWithGoogle();
+    final isSuccessful = result.error == null;
+    if (isSuccessful) {
+      userEmail = result.user!.email;
+      await localeStorage.saveUserInfo(userEmail, null);
+      await secureStorageService.saveAccessToken(result.token!);
+    }
+    return isSuccessful;
+  }
+
+  @override
   Future<bool> saveGeneralInfo(UserSettings userSettings) async {
-    final result = await storageService.saveUserSetting(userEmail, userSettings);
+    final result =
+        await storageService.saveUserSetting(userEmail, userSettings);
     return result;
   }
 
@@ -94,11 +107,12 @@ class RepositoryImpl extends Repository {
       counterCupsDateFormat.format(dateTime);
 
   @override
-  Future<String?> getAccessToken() async => await secureStorageService.getAccessToken();
+  Future<String?> getAccessToken() async =>
+      await secureStorageService.getAccessToken();
 
   @override
   Future<String?> getUserInfo() async {
-   return await localeStorage.getUserInfo();
+    return await localeStorage.getUserInfo();
   }
 
   @override
