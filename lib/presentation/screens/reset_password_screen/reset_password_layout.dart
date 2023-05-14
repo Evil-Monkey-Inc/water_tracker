@@ -43,7 +43,7 @@ class _ResetPasswordLayoutState extends State<ResetPasswordLayout> {
                 space,
                 AssistantWidget(
                   title: CalendarWidget(
-                    dateTime: LocaleKeys.reset_password.tr(),
+                    dateTime: LocaleKeys.forgot_password.tr(),
                   ),
                   iconButton: IconButton(
                     onPressed: () {},
