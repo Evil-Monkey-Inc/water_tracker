@@ -26,7 +26,7 @@ class VenomTheme implements VendorTheme {
       primaryColorDark: LightPalette.blackColor,
       primaryColorLight: LightPalette.whiteColor,
       hoverColor: LightPalette.purpleColor,
-      highlightColor: LightPalette.purpleTextColor,
+      highlightColor: LightPalette.whiteColor,
       cardColor: LightPalette.blueColor,
       splashColor: LightPalette.greyBlueColor,
       appBarTheme: const AppBarTheme(
