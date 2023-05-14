@@ -15,6 +15,10 @@ class CodegenLoader extends AssetLoader{
   }
 
   static const Map<String,dynamic> en = {
+  "reset_password": "Reset password",
+  "enter_the_address": "Don't worry! Please enter the address associated with your account",
+  "forgot_password": "Forgot password",
+  "forgot_your_password": "Forgot your password?",
   "continue_via_google": "Continue via Google",
   "continue_via_email": "Continue via Email",
   "choose_an_authorization_method": "Choose an authorization method.",
@@ -69,10 +73,13 @@ class CodegenLoader extends AssetLoader{
   "failed_to_increment_count": "Failed to increment water count",
   "time_to_drink": "Time to drink a cup of water!",
   "track_water_balance": "Track your water balance with the WaterApp.",
-  "payload": "Go to the app for information.",
-  "forgot_password": "Forgot Password?"
+  "payload": "Go to the app for information."
 };
 static const Map<String,dynamic> uk = {
+  "reset_password": "Скинути пароль",
+  "enter_the_address": "Не хвилюйся! Будь ласка, введіть адресу, пов'язану з вашим обліковим записом",
+  "forgot_password": "Забули пароль",
+  "forgot_your_password": "Забули пароль?",
   "continue_via_google": "Продовжити через Google",
   "continue_via_email": "Продовжити через пошту",
   "choose_an_authorization_method": "Виберіть спосіб авторизації.",
@@ -127,8 +134,7 @@ static const Map<String,dynamic> uk = {
   "failed_to_increment_count": "Не вдалося збільшити кількість води",
   "time_to_drink": "Час випити трохи води!",
   "track_water_balance": "Відстежуйте водний баланс за допомогою WaterApp.",
-  "payload": "Щоб отримати інформацію, перейдіть до програми.",
-  "forgot_password": "Забули пароль?"
+  "payload": "Щоб отримати інформацію, перейдіть до програми."
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "uk": uk};
 }

@@ -1,6 +1,10 @@
 // DO NOT EDIT. This is code generated via package:easy_localization/generate.dart
 
 abstract class  LocaleKeys {
+  static const reset_password = 'reset_password';
+  static const enter_the_address = 'enter_the_address';
+  static const forgot_password = 'forgot_password';
+  static const forgot_your_password = 'forgot_your_password';
   static const continue_via_google = 'continue_via_google';
   static const continue_via_email = 'continue_via_email';
   static const choose_an_authorization_method = 'choose_an_authorization_method';
@@ -56,6 +60,5 @@ abstract class  LocaleKeys {
   static const time_to_drink = 'time_to_drink';
   static const track_water_balance = 'track_water_balance';
   static const payload = 'payload';
-  static const forgot_password = 'forgot_password';
 
 }
