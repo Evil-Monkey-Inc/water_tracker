@@ -11,11 +11,11 @@ import 'package:water_tracker/data/services/storage_service/storage_service.dart
 
 class RepositoryImpl extends Repository {
   RepositoryImpl(
-    this.storageService,
-    this.localeStorage,
-    this.registrationService,
-    this.notificationService,
-    this.secureStorageService,
+      this.registrationService,
+      this.storageService,
+      this.secureStorageService,
+      this.localeStorage,
+      this.notificationService,
   );
 
   final StorageService storageService;
