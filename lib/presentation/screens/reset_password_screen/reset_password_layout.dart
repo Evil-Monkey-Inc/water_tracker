@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
 import 'package:water_tracker/presentation/screens/reset_password_screen/bloc/reset_password_bloc.dart';
+import 'package:water_tracker/presentation/screens/reset_password_screen/bloc/reset_password_event.dart';
 import 'package:water_tracker/presentation/screens/reset_password_screen/bloc/reset_password_state.dart';
+import 'package:water_tracker/presentation/screens/sign_in_screen/sign_in_screen.dart';
 import 'package:water_tracker/presentation/widgets/atoms/calendar_widget.dart';
 import 'package:water_tracker/presentation/widgets/atoms/title_settings_widget.dart';
 import 'package:water_tracker/presentation/widgets/molecules/assistant_widget.dart';
@@ -31,10 +33,14 @@ class _ResetPasswordLayoutState extends State<ResetPasswordLayout> {
         child: BlocConsumer<ResetPasswordBloc, ResetPasswordState>(
           listener: (context, state) {
             if (state is ErrorResetPasswordState) {
-              // TODO(Benik): Implement alert with exception
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(LocaleKeys.failed_to_reset_password.tr()),
+                ),
+              );
             }
             if (state is SuccessfullyResetPasswordState) {
-              // TODO(Benik): Do something if state is SuccessfullyResetPasswordState
+              Navigator.of(context).pushReplacementNamed(SignInScreen.route);
             }
           },
           builder: (context, state) {
@@ -46,7 +52,9 @@ class _ResetPasswordLayoutState extends State<ResetPasswordLayout> {
                     dateTime: LocaleKeys.forgot_password.tr(),
                   ),
                   iconButton: IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(SignInScreen.route);
+                    },
                     icon: const Icon(Icons.close),
                     color: Theme.of(context).primaryColor,
                   ),
@@ -60,7 +68,10 @@ class _ResetPasswordLayoutState extends State<ResetPasswordLayout> {
                 ),
                 space,
                 ResetPasswordForm(
-                  onResetPasswordPressed: () {},
+                  isButtonEnabled: state is! LoadingResetPasswordState,
+                  onResetPasswordPressed: (String email) => context
+                      .read<ResetPasswordBloc>()
+                      .add(ForgotPasswordEvent(email)),
                 ),
               ],
             );
