@@ -27,8 +27,9 @@ class MainScreenCounterWidget extends StatelessWidget {
   static const txtSize = 18.0;
   static const fontSize = 36.0;
   static const dateFormat = 'EEE, d';
+
   static const spaces = SizedBox(height: 24);
-  static const spaceBetween = SizedBox(height: 44);
+  static const spaceBetween = SizedBox(height: 20);
   static const betweenCounters = SizedBox(height: 16);
   static const spaceBetweenManAndMl = SizedBox(height: 42);
 
