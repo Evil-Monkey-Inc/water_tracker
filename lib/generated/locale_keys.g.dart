@@ -1,6 +1,7 @@
 // DO NOT EDIT. This is code generated via package:easy_localization/generate.dart
 
 abstract class  LocaleKeys {
+  static const failed_to_reset_password = 'failed_to_reset_password';
   static const reset_password = 'reset_password';
   static const enter_the_address = 'enter_the_address';
   static const forgot_password = 'forgot_password';

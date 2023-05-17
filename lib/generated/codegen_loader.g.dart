@@ -15,6 +15,7 @@ class CodegenLoader extends AssetLoader{
   }
 
   static const Map<String,dynamic> en = {
+  "failed_to_reset_password": "Failed to reset password",
   "reset_password": "Reset password",
   "enter_the_address": "Don't worry! Please enter the address associated with your account",
   "forgot_password": "Forgot password",
@@ -76,6 +77,7 @@ class CodegenLoader extends AssetLoader{
   "payload": "Go to the app for information."
 };
 static const Map<String,dynamic> uk = {
+  "failed_to_reset_password": "Не вдалося скинути пароль",
   "reset_password": "Скинути пароль",
   "enter_the_address": "Не хвилюйся! Будь ласка, введіть адресу, пов'язану з вашим обліковим записом",
   "forgot_password": "Забули пароль",
