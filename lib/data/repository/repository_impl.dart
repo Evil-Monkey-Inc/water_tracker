@@ -1,7 +1,5 @@
 import 'dart:convert';
-import 'package:flutter/cupertino.dart';
 import 'package:water_tracker/data/models/goal_list.dart';
-import 'package:water_tracker/data/models/responses/sign_in_result.dart';
 import 'package:water_tracker/data/models/user_settings.dart';
 import 'package:water_tracker/data/repository/repository.dart';
 import 'package:water_tracker/data/services/authentication_service/authentication_service.dart';
@@ -13,25 +11,27 @@ import 'package:water_tracker/data/services/storage_service/storage_service.dart
 
 class RepositoryImpl extends Repository {
   RepositoryImpl(
-    this.registrationService,
     this.storageService,
-    this.secureStorageService,
     this.localeStorage,
+    this.registrationService,
     this.notificationService,
+    this.secureStorageService,
   );
 
-  final AuthenticationService registrationService;
-  final NotificationService notificationService;
   final StorageService storageService;
-  final SecureStorageService secureStorageService;
+  final NotificationService notificationService;
   final SharedPreffStorageService localeStorage;
+  final AuthenticationService registrationService;
+  final SecureStorageService secureStorageService;
 
   final counterCupsDateFormat = DateFormat('dd.MM.yyyy');
 
   String? _userEmail;
 
   String get userEmail {
-    if (_userEmail == null) throw Exception('email could not be null at this point');
+    if (_userEmail == null) {
+      throw Exception('email could not be null at this point');
+    }
     return _userEmail!;
   }
 
@@ -69,7 +69,8 @@ class RepositoryImpl extends Repository {
 
   @override
   Future<bool> saveGeneralInfo(UserSettings userSettings) async {
-    final result = await storageService.saveUserSetting(userEmail, userSettings);
+    final result =
+        await storageService.saveUserSetting(userEmail, userSettings);
     return result;
   }
 
@@ -103,16 +104,17 @@ class RepositoryImpl extends Repository {
       counterCupsDateFormat.format(dateTime);
 
   @override
-  Future<String?> getAccessToken() async => await secureStorageService.getAccessToken();
+  Future<String?> getAccessToken() async =>
+      await secureStorageService.getAccessToken();
 
   @override
   Future<String?> getUserInfo() async {
-   return await localeStorage.getUserInfo();
+    return await localeStorage.getUserInfo();
   }
 
   @override
   Future<void> initNotification() async {
-   await notificationService.initNotification();
+    await notificationService.initNotification();
   }
 
   @override
@@ -120,13 +122,14 @@ class RepositoryImpl extends Repository {
     required id,
     required String title,
     required String body,
-    required String payload,})
-    async => await notificationService.showNotificationEveryHour(
-      id: id,
-      title: title,
-      body: body,
-      payload: payload,
-    );
+    required String payload,
+  }) async =>
+      await notificationService.showNotificationEveryHour(
+        id: id,
+        title: title,
+        body: body,
+        payload: payload,
+      );
 
   @override
   Future<void> showTwoHoursNotification({
@@ -134,10 +137,11 @@ class RepositoryImpl extends Repository {
     required String title,
     required String body,
     required String payload,
-  }) async => await notificationService.showNotificationEveryTwoHours(
-      id: id,
-      title: title,
-      body: body,
-      payload: payload,
-    );
+  }) async =>
+      await notificationService.showNotificationEveryTwoHours(
+        id: id,
+        title: title,
+        body: body,
+        payload: payload,
+      );
 }
