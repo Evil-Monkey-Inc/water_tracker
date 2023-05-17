@@ -4,12 +4,12 @@ import 'package:water_tracker/generated/assets/assets.gen.dart';
 
 class TitleSettingWidget extends StatefulWidget {
   const TitleSettingWidget(
-      this.firstTitleText, {
-        super.key,
-        required this.downFlex,
-        required this.upperFlex,
-        this.subTitle,
-      });
+    this.firstTitleText, {
+    super.key,
+    this.subTitle,
+    required this.downFlex,
+    required this.upperFlex,
+  });
 
   final int downFlex;
   final int upperFlex;
@@ -21,28 +21,14 @@ class TitleSettingWidget extends StatefulWidget {
 }
 
 class _TitleSettingWidgetState extends State<TitleSettingWidget> {
+  static const fontSize = 34.0;
+  static const txtSize = 20.0;
+
   static const emptyTitlePadding = EdgeInsets.only(top: 0.0, bottom: 0.0);
   static const fillTitlePadding = EdgeInsets.only(top: 24.0, bottom: 24.0);
 
   @override
   Widget build(BuildContext context) {
-    final screenSize = MediaQuery.of(context).size;
-
-    double fontSize;
-    if (screenSize.width < 410) {
-      fontSize = 30.0;
-    } else {
-      fontSize = 35.0;
-    }
-
-    double descriptionSize;
-    if(screenSize.width < 410){
-      descriptionSize = 16.0;
-    }
-    else {
-      descriptionSize = 20.0;
-    }
-
     return Column(
       children: [
         Row(
@@ -52,25 +38,26 @@ class _TitleSettingWidgetState extends State<TitleSettingWidget> {
               child: Text(
                 widget.firstTitleText,
                 style: Theme.of(context).textTheme.headline1?.copyWith(
-                  fontSize: fontSize,
-                  color: LightPalette.primaryColor,
-                  fontWeight: FontWeight.w500,
-                  fontFamily: Assets.fonts.senBold,
-                ),
+                      fontSize: fontSize,
+                      color: LightPalette.primaryColor,
+                      fontWeight: FontWeight.w500,
+                      fontFamily: Assets.fonts.senBold,
+                    ),
               ),
             ),
             Spacer(flex: widget.downFlex),
           ],
         ),
         Padding(
-          padding: widget.subTitle == null ? emptyTitlePadding : fillTitlePadding,
+          padding:
+              widget.subTitle == null ? emptyTitlePadding : fillTitlePadding,
           child: Text(
             widget.subTitle ?? '',
             style: Theme.of(context).textTheme.headline3?.copyWith(
-              fontWeight: FontWeight.w400,
-              fontSize: descriptionSize,
-              color: Theme.of(context).primaryColor,
-            ),
+                  fontWeight: FontWeight.w400,
+                  fontSize: txtSize,
+                  color: Theme.of(context).primaryColor,
+                ),
           ),
         ),
       ],
