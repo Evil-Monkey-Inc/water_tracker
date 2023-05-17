@@ -27,39 +27,41 @@ class _SocialSignUpLayoutState extends State<SocialSignUpLayout> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          smallSpace,
-          const LogoWidget(),
-          spaces,
-          Padding(
-            padding: paddingHorizontal,
-            child: TitleSettingWidget(
-              LocaleKeys.choose_an_authorization_method.tr(),
-              upperFlex: upperFlex,
-              downFlex: downFlex,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            smallSpace,
+            const LogoWidget(),
+            spaces,
+            Padding(
+              padding: paddingHorizontal,
+              child: TitleSettingWidget(
+                LocaleKeys.choose_an_authorization_method.tr(),
+                upperFlex: upperFlex,
+                downFlex: downFlex,
+              ),
             ),
-          ),
-          Align(
-            alignment: Alignment.bottomRight,
-            child: Image.asset(
-              Assets.images.womanAuth.path,
-              width: widthOfImage,
-              height: heightOfImage,
-              fit: BoxFit.fitHeight,
+            Align(
+              alignment: Alignment.bottomRight,
+              child: Image.asset(
+                Assets.images.womanAuth.path,
+                width: widthOfImage,
+                height: heightOfImage,
+                fit: BoxFit.fitHeight,
+              ),
             ),
-          ),
-          Padding(
-            padding: paddingHorizontal,
-            child: AuthenticationWall(
-              onPressedEmail: () =>
-                  Navigator.of(context).pushNamed(SignInScreen.route),
-              onPressedGoogle: () {
-                // TODO(Benik): implement navigation
-              },
+            Padding(
+              padding: paddingHorizontal,
+              child: AuthenticationWall(
+                onPressedEmail: () =>
+                    Navigator.of(context).pushNamed(SignInScreen.route),
+                onPressedGoogle: () {
+                  // TODO(Benik): implement navigation
+                },
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
