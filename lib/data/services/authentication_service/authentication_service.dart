@@ -13,4 +13,6 @@ abstract class AuthenticationService {
   );
 
   Future<SignInResult> resetPassword(String email);
+
+  Future<SignUpResult> signInWithGoogle();
 }

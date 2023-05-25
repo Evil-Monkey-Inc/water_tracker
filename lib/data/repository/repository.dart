@@ -15,16 +15,20 @@ abstract class Repository {
   Future<bool> resetPassword(String email);
 
   Future<bool> saveGeneralInfo(UserSettings userSettings);
+  Future<String?> getUserInfo();
+
+  Future<bool> signInWithGoogle();
+
+  Future<String?> getAccessToken();
+
+  Future<int?> getCupCount(DateTime time);
 
   Future<bool> saveGoal(GoalList goalsList);
 
   Future<bool> saveCupCount(int counterCups);
 
-  Future<int?> getCupCount(DateTime time);
+  Future<bool> saveGeneralInfo(UserSettings userSettings);
 
-  Future<String?> getAccessToken();
-
-  Future<String?> getUserInfo();
 
   Future<void> initNotification();
 

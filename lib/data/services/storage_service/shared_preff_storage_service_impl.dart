@@ -17,7 +17,6 @@ class SharedPreffStorageImplements extends SharedPreffStorageService {
       userSettingsKey,
       jsonEncode(userSettings.toJson()),
     );
-
     return result;
   }
 
@@ -59,5 +58,12 @@ class SharedPreffStorageImplements extends SharedPreffStorageService {
   Future<String?> getUserInfo() async {
     final prefs = await SharedPreferences.getInstance();
     return prefs.getString(userInfo);
+  }
+
+  @override
+  Future<void> saveGoogleInfo(String email) async {
+    final prefs = await SharedPreferences.getInstance();
+    final user = User(email);
+    await prefs.setString(userInfo, jsonEncode(user.toJson()));
   }
 }

@@ -19,9 +19,9 @@ class RepositoryImpl extends Repository {
   );
 
   final StorageService storageService;
-  final NotificationService notificationService;
   final SharedPreffStorageService localeStorage;
   final AuthenticationService registrationService;
+  final NotificationService notificationService;
   final SecureStorageService secureStorageService;
 
   final counterCupsDateFormat = DateFormat('dd.MM.yyyy');
@@ -29,9 +29,8 @@ class RepositoryImpl extends Repository {
   String? _userEmail;
 
   String get userEmail {
-    if (_userEmail == null) {
+    if (_userEmail == null)
       throw Exception('email could not be null at this point');
-    }
     return _userEmail!;
   }
 
@@ -44,7 +43,7 @@ class RepositoryImpl extends Repository {
     final result = await registrationService.registerUser(email, password);
     final isSuccessful = result.error == null;
     if (isSuccessful) {
-      userEmail = email;
+      userEmail = result.user!.email;
       await localeStorage.saveUserInfo(userEmail, null);
       await secureStorageService.saveAccessToken(result.token!);
     }
@@ -56,6 +55,18 @@ class RepositoryImpl extends Repository {
     final result = await registrationService.loginUser(email, password);
     final isSuccessful = result.error == null;
     if (isSuccessful) _userEmail = email;
+    return isSuccessful;
+  }
+
+  @override
+  Future<bool> signInWithGoogle() async {
+    final result = await registrationService.signInWithGoogle();
+    final isSuccessful = result.error == null;
+    if (isSuccessful) {
+      userEmail = result.user!.email;
+      await localeStorage.saveUserInfo(userEmail, null);
+      await secureStorageService.saveAccessToken(result.token!);
+    }
     return isSuccessful;
   }
 
