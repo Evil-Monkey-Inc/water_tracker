@@ -15,6 +15,7 @@ abstract class Repository {
   Future<bool> resetPassword(String email);
 
   Future<bool> saveGeneralInfo(UserSettings userSettings);
+
   Future<String?> getUserInfo();
 
   Future<bool> signInWithGoogle();
@@ -26,9 +27,6 @@ abstract class Repository {
   Future<bool> saveGoal(GoalList goalsList);
 
   Future<bool> saveCupCount(int counterCups);
-
-  Future<bool> saveGeneralInfo(UserSettings userSettings);
-
 
   Future<void> initNotification();
 
