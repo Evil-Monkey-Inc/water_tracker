@@ -3,12 +3,16 @@ import 'package:flutter/material.dart';
 class AssistantWidget extends StatefulWidget {
   const AssistantWidget({
     super.key,
+    this.iconButton,
     required this.title,
-    required this.iconButton,
+    required this.firstFlex,
+    required this.secondFlex,
   });
 
   final Widget title;
-  final Widget iconButton;
+  final int firstFlex;
+  final int secondFlex;
+  final Widget? iconButton;
 
   @override
   State<AssistantWidget> createState() => _AssistantWidgetState();
@@ -19,14 +23,14 @@ class _AssistantWidgetState extends State<AssistantWidget> {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const Spacer(
-          flex: 5,
+        Spacer(
+          flex: widget.firstFlex,
         ),
         Center(child: widget.title),
-        const Spacer(
-          flex: 3,
+        Spacer(
+          flex: widget.secondFlex,
         ),
-        widget.iconButton,
+        if (widget.iconButton != null) widget.iconButton!,
       ],
     );
   }
