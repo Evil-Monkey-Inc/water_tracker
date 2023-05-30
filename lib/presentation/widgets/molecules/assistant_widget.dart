@@ -20,11 +20,11 @@ class _AssistantWidgetState extends State<AssistantWidget> {
     return Row(
       children: [
         const Spacer(
-          flex: 2,
+          flex: 5,
         ),
         Center(child: widget.title),
         const Spacer(
-          flex: 2,
+          flex: 3,
         ),
         widget.iconButton,
       ],
