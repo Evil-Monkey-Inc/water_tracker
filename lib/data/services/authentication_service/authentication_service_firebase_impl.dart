@@ -34,31 +34,33 @@ class AuthenticationServiceFirebaseImpl extends AuthenticationService {
   Future<SignInResult> loginUser(String email, String password) async {
     auth.UserCredential? credential;
     SignUpException? error;
+    String? accessToken;
+
     try {
       credential = await firebaseAuth.signInWithEmailAndPassword(
         email: email,
         password: password,
       );
+      accessToken = await credential.user?.getIdToken();
     } on auth.FirebaseAuthException catch (e) {
       error = SignUpException.fromFirebaseAuth(e);
     }
     User? user;
     if (credential != null) user = User(email);
-    final result = SignInResult(user, error);
+    final result = SignInResult(user, error, accessToken);
     return result;
   }
 
   @override
   Future<SignInResult> resetPassword(String email) async {
     SignUpException? error;
-    try{
+    try {
       await firebaseAuth.sendPasswordResetEmail(email: email);
-    }
-    on auth.FirebaseAuthException catch (e) {
+    } on auth.FirebaseAuthException catch (e) {
       error = SignUpException.fromFirebaseAuth(e);
     }
     User? user;
-    final result = SignInResult(user, error);
+    final result = SignInResult(user, error, null);
     return result;
   }
 
