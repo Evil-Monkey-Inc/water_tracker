@@ -11,11 +11,11 @@ import 'package:water_tracker/data/services/storage_service/storage_service.dart
 
 class RepositoryImpl extends Repository {
   RepositoryImpl(
-      this.registrationService,
-      this.storageService,
-      this.secureStorageService,
-      this.localeStorage,
-      this.notificationService,
+    this.registrationService,
+    this.storageService,
+    this.secureStorageService,
+    this.localeStorage,
+    this.notificationService,
   );
 
   final StorageService storageService;
@@ -54,7 +54,11 @@ class RepositoryImpl extends Repository {
   Future<bool> loginUser(String email, String password) async {
     final result = await registrationService.loginUser(email, password);
     final isSuccessful = result.error == null;
-    if (isSuccessful) _userEmail = email;
+    if (isSuccessful) {
+      userEmail = result.user!.email;
+      await localeStorage.saveUserInfo(userEmail, null);
+      await secureStorageService.saveAccessToken(result.token!);
+    }
     return isSuccessful;
   }
 
