@@ -4,7 +4,6 @@ import 'package:water_tracker/config/theme/theme_palette/light_palette.dart';
 import 'package:water_tracker/generated/assets/assets.gen.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
 import 'package:water_tracker/presentation/widgets/atoms/calendar_widget.dart';
-import 'package:water_tracker/presentation/widgets/atoms/custom_icon_button_widget.dart';
 import 'package:water_tracker/presentation/widgets/atoms/person_image_widget.dart';
 import 'package:water_tracker/presentation/widgets/molecules/assistant_widget.dart';
 
@@ -24,6 +23,7 @@ class MainScreenCounterWidget extends StatelessWidget {
   final int currentCupWeight;
   final dataNow = DateTime.now();
 
+  static const flex = 2;
   static const txtSize = 18.0;
   static const fontSize = 36.0;
   static const dateFormat = 'EEE, d';
@@ -41,10 +41,8 @@ class MainScreenCounterWidget extends StatelessWidget {
         AssistantWidget(
           title:
               CalendarWidget(dateTime: DateFormat(dateFormat).format(dataNow)),
-          iconButton: CustomIconButtonWidget(
-            onTap: () {},
-            image: Image.asset(Assets.images.settingIcon.path),
-          ),
+          firstFlex: flex,
+          secondFlex: flex,
         ),
         spaceBetween,
         RichText(
