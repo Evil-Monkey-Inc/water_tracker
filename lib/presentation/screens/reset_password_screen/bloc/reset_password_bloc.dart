@@ -10,25 +10,15 @@ class ResetPasswordBloc extends Bloc<ResetPasswordEvent, ResetPasswordState> {
         emit(LoadingResetPasswordState());
         final isSuccess = await repository.resetPassword(event.email);
         emit(
-          isSuccess ? SuccessfullyResetPasswordState() : ErrorResetPasswordState(Exception()),
+          isSuccess
+              ? SuccessfullyResetPasswordState()
+              : ErrorResetPasswordState(Exception()),
         );
       } catch (e) {
         emit(ErrorResetPasswordState(e));
       }
     });
   }
+
   final Repository repository;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
