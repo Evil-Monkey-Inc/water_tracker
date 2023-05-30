@@ -5,7 +5,6 @@ import 'package:water_tracker/data/services/authentication_service/authenticatio
 import 'package:water_tracker/data/services/authentication_service/authentication_service_firebase_impl.dart';
 import 'package:water_tracker/data/services/authentication_service/mocked_authentication_service_impl.dart';
 import 'package:water_tracker/data/services/notification_service/flutter_locale_notification_impl.dart';
-import 'package:water_tracker/data/services/notification_service/notification_service.dart';
 import 'package:water_tracker/data/services/storage_service/firestore_storage_service.dart';
 import 'package:water_tracker/data/services/storage_service/firestore_storage_service_impl.dart';
 import 'package:water_tracker/data/services/storage_service/flutter_secure_storage_impl.dart';

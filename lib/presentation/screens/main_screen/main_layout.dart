@@ -19,6 +19,7 @@ class MainLayout extends StatefulWidget {
 class _MainLayoutState extends State<MainLayout> {
   static const cupsMaxCount = MainScreenBloc.maxCupCount;
   static const singleCupWeight = MainScreenBloc.singleCupWeight;
+
   static const paddingHorizontal = EdgeInsets.symmetric(horizontal: 28.0);
 
   @override
@@ -34,38 +35,38 @@ class _MainLayoutState extends State<MainLayout> {
       body: Padding(
         padding: paddingHorizontal,
         child: BlocConsumer<MainScreenBloc, MainScreenState>(
-            listener: (context, state) {
-              if (state is ProcessingLogOutUser && state.isLogOutUser == true){
-                 Navigator.of(context).pushNamed(SocialSignUpScreen.route);
-              }
-              if (state is ErrorMainScreenState) {
-                ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    behavior: SnackBarBehavior.floating,
-                    content: Text(LocaleKeys.failed_to_increment_count.tr()),
-                  ),
-                );
-              }
-            },
-            builder: (context, state) {
-              return Stack(
-                alignment: Alignment.bottomCenter,
-                children: [
-                  MainScreenButtonWidget(
-                    onPressed: () =>
-                        context.read<MainScreenBloc>().add(
-                            SaveCounterEvent()),
-                  ),
-                  MainScreenCounterWidget(
-                    maxCount: cupsMaxCount,
-                    singleCupWeight: singleCupWeight,
-                    count: state.counter,
-                  ),
-                ],
+          listener: (context, state) {
+            if (state is ProcessingLogOutUser && state.isLogOutUser == true) {
+              Navigator.of(context).pushNamed(SocialSignUpScreen.route);
+            }
+            if (state is ErrorMainScreenState) {
+              ScaffoldMessenger.of(context).hideCurrentSnackBar();
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  behavior: SnackBarBehavior.floating,
+                  content: Text(LocaleKeys.failed_to_increment_count.tr()),
+                ),
               );
-            },
-          ),
+            }
+          },
+          builder: (context, state) {
+            return Stack(
+              alignment: Alignment.bottomCenter,
+              children: [
+                MainScreenButtonWidget(
+                  onPressed: () => context.read<MainScreenBloc>().add(
+                        SaveCounterEvent(),
+                      ),
+                ),
+                MainScreenCounterWidget(
+                  maxCount: cupsMaxCount,
+                  singleCupWeight: singleCupWeight,
+                  count: state.counter,
+                ),
+              ],
+            );
+          },
+        ),
       ),
     );
   }

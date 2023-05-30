@@ -6,13 +6,15 @@ class TitleSettingWidget extends StatefulWidget {
   const TitleSettingWidget(
     this.firstTitleText, {
     super.key,
+    this.subTitle,
     required this.downFlex,
     required this.upperFlex,
   });
 
-  final String firstTitleText;
   final int downFlex;
   final int upperFlex;
+  final String? subTitle;
+  final String firstTitleText;
 
   @override
   State<TitleSettingWidget> createState() => _TitleSettingWidgetState();
@@ -20,24 +22,44 @@ class TitleSettingWidget extends StatefulWidget {
 
 class _TitleSettingWidgetState extends State<TitleSettingWidget> {
   static const fontSize = 34.0;
+  static const txtSize = 20.0;
+
+  static const emptyTitlePadding = EdgeInsets.only(top: 0.0, bottom: 0.0);
+  static const fillTitlePadding = EdgeInsets.only(top: 24.0, bottom: 24.0);
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Column(
       children: [
-        Flexible(
-          flex: widget.upperFlex,
+        Row(
+          children: [
+            Flexible(
+              flex: widget.upperFlex,
+              child: Text(
+                widget.firstTitleText,
+                style: Theme.of(context).textTheme.headline1?.copyWith(
+                      fontSize: fontSize,
+                      color: LightPalette.primaryColor,
+                      fontWeight: FontWeight.w500,
+                      fontFamily: Assets.fonts.senBold,
+                    ),
+              ),
+            ),
+            Spacer(flex: widget.downFlex),
+          ],
+        ),
+        Padding(
+          padding:
+              widget.subTitle == null ? emptyTitlePadding : fillTitlePadding,
           child: Text(
-            widget.firstTitleText,
-            style: Theme.of(context).textTheme.headline1?.copyWith(
-                  fontSize: fontSize,
-                  color: LightPalette.primaryColor,
-                  fontWeight: FontWeight.w500,
-                  fontFamily: Assets.fonts.senBold,
+            widget.subTitle ?? '',
+            style: Theme.of(context).textTheme.headline3?.copyWith(
+                  fontWeight: FontWeight.w400,
+                  fontSize: txtSize,
+                  color: Theme.of(context).primaryColor,
                 ),
           ),
         ),
-        Spacer(flex: widget.downFlex),
       ],
     );
   }

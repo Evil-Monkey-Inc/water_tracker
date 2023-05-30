@@ -16,15 +16,17 @@ abstract class Repository {
 
   Future<bool> saveGeneralInfo(UserSettings userSettings);
 
-  Future<bool> saveGoal(GoalList goalsList);
+  Future<String?> getUserInfo();
 
-  Future<bool> saveCupCount(int counterCups);
-
-  Future<int?> getCupCount(DateTime time);
+  Future<bool> signInWithGoogle();
 
   Future<String?> getAccessToken();
 
-  Future<String?> getUserInfo();
+  Future<int?> getCupCount(DateTime time);
+
+  Future<bool> saveGoal(GoalList goalsList);
+
+  Future<bool> saveCupCount(int counterCups);
 
   Future<void> initNotification();
 

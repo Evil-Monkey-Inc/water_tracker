@@ -10,8 +10,13 @@ class MockedAuthenticationServiceImpl extends AuthenticationService {
 
   @override
   Future<SignInResult> loginUser(String email, String password) async =>
-      SignInResult(User(''), null);
+      SignInResult(User(''), null, null);
 
   @override
-  Future<SignInResult> resetPassword(String email) async => SignInResult(User(''), null);
+  Future<SignInResult> resetPassword(String email) async =>
+      SignInResult(User(''), null, null);
+
+  @override
+  Future<SignUpResult> signInWithGoogle() async =>
+      SignUpResult(User(''), null, null);
 }

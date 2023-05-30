@@ -3,11 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:water_tracker/config/theme/theme_palette/light_palette.dart';
 import 'package:water_tracker/generated/assets/assets.gen.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
+import 'package:water_tracker/presentation/widgets/atoms/calendar_widget.dart';
 import 'package:water_tracker/presentation/widgets/atoms/person_image_widget.dart';
 import 'package:water_tracker/presentation/widgets/molecules/assistant_widget.dart';
 
 class MainScreenCounterWidget extends StatelessWidget {
-  const MainScreenCounterWidget({
+  MainScreenCounterWidget({
     super.key,
     required this.count,
     required this.maxCount,
@@ -17,24 +18,32 @@ class MainScreenCounterWidget extends StatelessWidget {
 
   final int count;
   final int maxCount;
-  final int singleCupWeight;
-
   final int maxWeight;
+  final int singleCupWeight;
   final int currentCupWeight;
+  final dataNow = DateTime.now();
+
+  static const flex = 2;
+  static const txtSize = 18.0;
+  static const fontSize = 36.0;
+  static const dateFormat = 'EEE, d';
 
   static const spaces = SizedBox(height: 24);
+  static const spaceBetween = SizedBox(height: 20);
   static const betweenCounters = SizedBox(height: 16);
-  static const spaceBetween = SizedBox(height: 44);
   static const spaceBetweenManAndMl = SizedBox(height: 42);
-  static const fontSize = 36.0;
-  static const txtSize = 18.0;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         spaces,
-        const AssistantWidget(),
+        AssistantWidget(
+          title:
+              CalendarWidget(dateTime: DateFormat(dateFormat).format(dataNow)),
+          firstFlex: flex,
+          secondFlex: flex,
+        ),
         spaceBetween,
         RichText(
           text: TextSpan(

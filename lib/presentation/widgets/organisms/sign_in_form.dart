@@ -4,7 +4,7 @@ import 'package:water_tracker/config/theme/theme_palette/light_palette.dart';
 import 'package:water_tracker/env_variables.dart';
 import 'package:water_tracker/form_validators.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
-import 'package:water_tracker/presentation/widgets/atoms/custom_text_batton.dart';
+import 'package:water_tracker/presentation/widgets/atoms/custom_text_button.dart';
 import 'package:water_tracker/presentation/widgets/molecules/custom_button.dart';
 import 'package:water_tracker/presentation/widgets/molecules/input_field_widget.dart';
 
