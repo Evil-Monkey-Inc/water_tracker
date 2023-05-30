@@ -20,7 +20,9 @@ class ResetPasswordLayout extends StatefulWidget {
 
 class _ResetPasswordLayoutState extends State<ResetPasswordLayout> {
   static const downFlex = 1;
+  static const firstFlex = 5;
   static const upperFlex = 3;
+  static const secondFlex = 3;
 
   static const space = SizedBox(height: 14);
   static const paddingHorizontal = EdgeInsets.symmetric(horizontal: 24.0);
@@ -58,6 +60,8 @@ class _ResetPasswordLayoutState extends State<ResetPasswordLayout> {
                     icon: const Icon(Icons.close),
                     color: Theme.of(context).primaryColor,
                   ),
+                  firstFlex: firstFlex,
+                  secondFlex: secondFlex,
                 ),
                 space,
                 TitleSettingWidget(
