@@ -32,33 +32,31 @@ class _WaterAppState extends State<WaterApp> {
   Widget build(BuildContext context) {
     final themeExtensions = <ThemeExtension>[RadiusExtension.instance];
 
-          return MaterialApp(
-            localizationsDelegates: context.localizationDelegates,
-            supportedLocales: context.supportedLocales,
-            locale: context.locale,
-            scrollBehavior: const CupertinoScrollBehavior(),
-            theme: ThemeContainer.lightTheme.copyWith(
-              extensions: themeExtensions,
-            ),
-            darkTheme: ThemeContainer.darkTheme.copyWith(
-              extensions: themeExtensions,
-            ),
-            // TODO(Sanya): implement theme mode solution
-            themeMode: ThemeMode.light,
-            initialRoute: SocialSignUpScreen.route,
-            routes: {
-              SocialSignUpScreen.route: (_) => const SocialSignUpScreen(),
-              SignInScreen.route: (_) => const SignInScreen(),
-              SignUpScreen.route: (_) => const SignUpScreen(),
-              PersonalSettingScreen.route: (_) => const PersonalSettingScreen(),
-              GoalScreen.route: (_) => const GoalScreen(),
-              NotificationScreen.route: (_) => const NotificationScreen(),
-              GreetingScreen.route: (_) => const GreetingScreen(),
-              MainScreen.route: (_) => const MainScreen(),
-              ResetPasswordScreen.route: (_) => const ResetPasswordScreen(),
-            },
-            builder: (context, widget) =>
-                SafeArea(child: widget ?? const SizedBox()),
-          );
+    return MaterialApp(
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
+      scrollBehavior: const CupertinoScrollBehavior(),
+      theme: ThemeContainer.lightTheme.copyWith(
+        extensions: themeExtensions,
+      ),
+      darkTheme: ThemeContainer.darkTheme.copyWith(
+        extensions: themeExtensions,
+      ),
+      themeMode: ThemeMode.light,
+      initialRoute: MainScreen.route,
+      routes: {
+        SocialSignUpScreen.route: (_) => const SocialSignUpScreen(),
+        SignInScreen.route: (_) => const SignInScreen(),
+        SignUpScreen.route: (_) => const SignUpScreen(),
+        PersonalSettingScreen.route: (_) => const PersonalSettingScreen(),
+        GoalScreen.route: (_) => const GoalScreen(),
+        NotificationScreen.route: (_) => const NotificationScreen(),
+        GreetingScreen.route: (_) => const GreetingScreen(),
+        MainScreen.route: (_) => const MainScreen(),
+        ResetPasswordScreen.route: (_) => const ResetPasswordScreen(),
+      },
+      builder: (context, widget) => SafeArea(child: widget ?? const SizedBox()),
+    );
   }
 }
