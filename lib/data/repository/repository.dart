@@ -12,11 +12,34 @@ abstract class Repository {
     String password,
   );
 
-  Future<bool> saveGeneralInfo(UserSettings userSettings);
+  Future<String?> getUserInfo();
+
+  Future<bool> signInWithGoogle();
+
+  Future<String?> getAccessToken();
+
+  Future<int?> getCupCount(DateTime time);
 
   Future<bool> saveGoal(GoalList goalsList);
 
   Future<bool> saveCupCount(int counterCups);
 
-  Future<int?> getCupCount(DateTime time);
+  Future<bool> saveGeneralInfo(UserSettings userSettings);
+
+
+  Future<void> initNotification();
+
+  Future<void> showOneHourNotification({
+    required id,
+    required String title,
+    required String body,
+    required String payload,
+  });
+
+  Future<void> showTwoHoursNotification({
+    required id,
+    required String title,
+    required String body,
+    required String payload,
+  });
 }

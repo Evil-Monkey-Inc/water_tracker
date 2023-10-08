@@ -1,4 +1,7 @@
 {
+  "continue_via_google":"Continue via Google",
+  "continue_via_email":"Continue via Email",
+  "choose_an_authorization_method": "Choose an authorization method.",
   "enter_your_email": "Enter your email",
   "enter_password": "Enter password",
   "sign_in": "Sign In",
@@ -47,6 +50,9 @@
   "you_already_got" : "You've already got",
   "cups" : "cups",
   "ml" : "ml",
-  "failed_to_increment_count": "Failed to increment water count"
+  "failed_to_increment_count": "Failed to increment water count",
+  "time_to_drink" : "Time to drink a cup of water!",
+  "track_water_balance" : "Track your water balance with the WaterApp.",
+  "payload" : "Go to the app for information."
 }
 

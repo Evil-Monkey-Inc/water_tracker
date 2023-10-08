@@ -1,6 +1,9 @@
 // DO NOT EDIT. This is code generated via package:easy_localization/generate.dart
 
 abstract class  LocaleKeys {
+  static const continue_via_google = 'continue_via_google';
+  static const continue_via_email = 'continue_via_email';
+  static const choose_an_authorization_method = 'choose_an_authorization_method';
   static const enter_your_email = 'enter_your_email';
   static const enter_password = 'enter_password';
   static const sign_in = 'sign_in';
@@ -19,12 +22,12 @@ abstract class  LocaleKeys {
   static const re_enter_your_password = 're_enter_your_password';
   static const passwords_do_not_match_try_again = 'passwords_do_not_match_try_again';
   static const already_have_an_account = 'already_have_an_account';
-  static const skip = 'skip';
-  static const tell_more_general_info = 'tell_more_general_info';
   static const password_must_contain_at_least_8_characters = 'password_must_contain_at_least_8_characters';
-  static const setup_profile = 'setup_profile';
   static const password_must_contain_one_uppercase_letter = 'password_must_contain_one_uppercase_letter';
   static const error_try_again = 'error_try_again';
+  static const skip = 'skip';
+  static const tell_more_general_info = 'tell_more_general_info';
+  static const setup_profile = 'setup_profile';
   static const sex = 'sex';
   static const man = 'man';
   static const woman = 'woman';
@@ -42,13 +45,16 @@ abstract class  LocaleKeys {
   static const failed_store = 'failed_store';
   static const manage_water_title = 'manage_water_title';
   static const description = 'description';
-  static const notification_text = 'notification_text';
   static const every_hour = 'every_hour';
   static const every_two_hours = 'every_two_hours';
+  static const notification_text = 'notification_text';
   static const get_started = 'get_started';
   static const you_already_got = 'you_already_got';
   static const cups = 'cups';
   static const ml = 'ml';
   static const failed_to_increment_count = 'failed_to_increment_count';
+  static const time_to_drink = 'time_to_drink';
+  static const track_water_balance = 'track_water_balance';
+  static const payload = 'payload';
 
 }

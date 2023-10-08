@@ -24,6 +24,7 @@ class InputFieldWidget extends StatelessWidget {
       validator: validator,
       controller: controller,
       obscureText: obscureText,
+      cursorColor: Theme.of(context).primaryColor,
     );
   }
 }

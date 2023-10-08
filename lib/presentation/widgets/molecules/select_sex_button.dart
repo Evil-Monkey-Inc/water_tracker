@@ -1,11 +1,12 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:water_tracker/custom_theme.dart';
 import 'package:water_tracker/data/models/gender.dart';
+import 'package:water_tracker/generated/assets/assets.gen.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
 
 class SelectSexButton extends StatefulWidget {
   const SelectSexButton({super.key, required this.onChanged});
+
   final void Function(Gender) onChanged;
 
   @override
@@ -20,16 +21,10 @@ class _SelectSexButtonState extends State<SelectSexButton>
   static const heightButton = 72.0;
   static const space = SizedBox(height: 14);
   static const spaceInsideButton = EdgeInsets.all(8);
-  final sexTextProperty =
-      Text(LocaleKeys.sex.tr(), style: CustomTheme.sexStyleProperty);
-  final tabMaleTextProperty =
-      Text(LocaleKeys.man.tr(), style: CustomTheme.tabTextFemaleStyleProperty);
-  final tabFemaleTextProperty = Text(
-    LocaleKeys.woman.tr(),
-    style: CustomTheme.tabTextFemaleStyleProperty,
-  );
-
   late final TabController controller;
+  static const fontSize = 16.0;
+  final circularRadius = BorderRadius.circular(40.0);
+
 
   @override
   void initState() {
@@ -42,6 +37,14 @@ class _SelectSexButtonState extends State<SelectSexButton>
 
   @override
   Widget build(BuildContext context) {
+    final sexTextProperty = Text(
+      LocaleKeys.sex.tr(),
+      style: Theme.of(context).textTheme.headline4?.copyWith(
+            color: Theme.of(context).primaryColor,
+            fontWeight: FontWeight.w500,
+            fontSize: fontSize,
+          ),
+    );
     return Column(
       children: [
         Align(alignment: Alignment.bottomLeft, child: sexTextProperty),
@@ -50,8 +53,8 @@ class _SelectSexButtonState extends State<SelectSexButton>
           height: heightButton,
           width: MediaQuery.of(context).size.height,
           decoration: BoxDecoration(
-            color: CustomTheme.backgroundSexBottomColor,
-            borderRadius: BorderRadius.circular(40),
+            color: Theme.of(context).dividerColor,
+            borderRadius: circularRadius,
           ),
           child: Column(
             children: [
@@ -63,25 +66,33 @@ class _SelectSexButtonState extends State<SelectSexButton>
                     length: countTabs,
                     child: TabBar(
                       controller: controller,
-                      unselectedLabelColor: CustomTheme.mainColor,
-                      labelColor: CustomTheme.sexLabelColor,
-                      indicatorColor: CustomTheme.mainColor,
+                      unselectedLabelColor: Theme.of(context).primaryColor,
+                      labelColor: Theme.of(context).primaryColorLight,
+                      indicatorColor: Theme.of(context).primaryColor,
                       indicatorWeight: indicatorWeight,
                       indicator: BoxDecoration(
-                        color: CustomTheme.mainColor,
-                        borderRadius: BorderRadius.circular(40),
+                        color: Theme.of(context).primaryColor,
+                        borderRadius: circularRadius,
                       ),
                       tabs: [
                         Tab(
                           child: Text(
                             LocaleKeys.man.tr(),
-                            style: CustomTheme().tabMaleTextProperty,
+                            style: TextStyle(
+                              fontSize: fontSize,
+                              fontFamily: Assets.fonts.senRegular,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
                         ),
                         Tab(
                           child: Text(
                             LocaleKeys.woman.tr(),
-                            style: CustomTheme().tabFemaleTextProperty,
+                            style: TextStyle(
+                              fontSize: fontSize,
+                              fontFamily: Assets.fonts.senRegular,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
                         ),
                       ],

@@ -5,7 +5,7 @@
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
-// ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal
+// ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal,deprecated_member_use
 
 import 'package:flutter/widgets.dart';
 
@@ -55,6 +55,9 @@ class $AssetsImagesGen {
   AssetGenImage get dumbbells =>
       const AssetGenImage('assets/images/dumbbells.png');
 
+  /// File path: assets/images/google.png
+  AssetGenImage get google => const AssetGenImage('assets/images/google.png');
+
   /// File path: assets/images/hike.png
   AssetGenImage get hike => const AssetGenImage('assets/images/hike.png');
 
@@ -80,6 +83,10 @@ class $AssetsImagesGen {
   AssetGenImage get notification =>
       const AssetGenImage('assets/images/notification.png');
 
+  /// File path: assets/images/notification_logo.png
+  AssetGenImage get notificationLogo =>
+      const AssetGenImage('assets/images/notification_logo.png');
+
   /// File path: assets/images/setting_icon.png
   AssetGenImage get settingIcon =>
       const AssetGenImage('assets/images/setting_icon.png');
@@ -93,6 +100,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/weight.png
   AssetGenImage get weight => const AssetGenImage('assets/images/weight.png');
 
+  /// File path: assets/images/woman_auth.png
+  AssetGenImage get womanAuth =>
+      const AssetGenImage('assets/images/woman_auth.png');
+
   /// File path: assets/images/woman_login.png
   AssetGenImage get womanLogin =>
       const AssetGenImage('assets/images/woman_login.png');
@@ -103,6 +114,7 @@ class $AssetsImagesGen {
         carrot,
         customCloseIcon,
         dumbbells,
+        google,
         hike,
         launcherLogo,
         logo,
@@ -110,10 +122,12 @@ class $AssetsImagesGen {
         mainScreenPerson,
         manLogin,
         notification,
+        notificationLogo,
         settingIcon,
         stars,
         waterDrop,
         weight,
+        womanAuth,
         womanLogin
       ];
 }
@@ -198,7 +212,16 @@ class AssetGenImage {
     );
   }
 
-  ImageProvider provider() => AssetImage(_assetName);
+  ImageProvider provider({
+    AssetBundle? bundle,
+    String? package,
+  }) {
+    return AssetImage(
+      _assetName,
+      bundle: bundle,
+      package: package,
+    );
+  }
 
   String get path => _assetName;
 

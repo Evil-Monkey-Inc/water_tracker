@@ -1,34 +1,51 @@
 import 'package:flutter/material.dart';
-import 'package:water_tracker/config/theme/theme_extension/radius_extension.dart';
 import 'package:water_tracker/custom_theme.dart';
+import 'package:water_tracker/generated/assets/assets.gen.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({
+   CustomButton({
     super.key,
+    this.icon,
+    this.image,
     required this.text,
-    required this.onPressed,
     this.isEnabled = true,
+    required this.onPressed,
     required this.buttonColor,
     required this.textButtonColor,
   });
 
-  final bool isEnabled;
   final String text;
-  final VoidCallback? onPressed;
+  final Widget? image;
+  final Widget? icon;
+  final bool isEnabled;
   final Color buttonColor;
   final Color textButtonColor;
+  final VoidCallback? onPressed;
+
+  static const elevation = 0.0;
+  static const iconSize = 20.0;
+
+  final emptyButtonIcon = Container();
+  static const emptySpace = SizedBox();
+  static const spaces = SizedBox(width: 8.0);
+  static const paddingButton = EdgeInsets.all(8.0);
+  static const paddingImage = EdgeInsets.only(left: 1.0, right: 3.0);
   static const paddingAroundButton = EdgeInsets.symmetric(vertical: 12.0);
 
   @override
   Widget build(BuildContext context) {
-    final a = Theme.of(context).extension<RadiusExtension>()?.buttonBorderRadius;
+    final buttonStyleProp = TextStyle(
+      fontSize: CustomTheme.fontSizeButton,
+      color: Theme.of(context).backgroundColor,
+      fontFamily: Assets.fonts.senBold,
+    );
     return ElevatedButton(
       onPressed: isEnabled ? onPressed : null,
       style: ElevatedButton.styleFrom(
         backgroundColor: buttonColor,
-        elevation: 0.0,
-        shadowColor: CustomTheme.customButtonShadowColor,
-        padding: EdgeInsets.all(a!),
+        elevation: elevation,
+        shadowColor: Colors.transparent,
+        padding: paddingButton,
         minimumSize: CustomTheme.minimumSizeButton,
         shape: const RoundedRectangleBorder(
           borderRadius: CustomTheme.roundingButton,
@@ -36,9 +53,17 @@ class CustomButton extends StatelessWidget {
       ),
       child: Padding(
         padding: paddingAroundButton,
-        child: Text(
-          text,
-          style: CustomTheme().buttonStyleProp.copyWith(color: textButtonColor),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            icon ?? emptyButtonIcon,
+            image ?? emptyButtonIcon,
+            spaces,
+            Text(
+              text,
+              style: buttonStyleProp.copyWith(color: textButtonColor),
+            ),
+          ],
         ),
       ),
     );

@@ -1,6 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:water_tracker/custom_theme.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
 import 'package:water_tracker/presentation/screens/main_screen/main_screen.dart';
 import 'package:water_tracker/presentation/widgets/molecules/custom_button.dart';
@@ -23,9 +22,10 @@ class GreetingLayout extends StatelessWidget {
             const GreetingWidget(),
             const Spacer(),
             CustomButton(
-              buttonColor: CustomTheme.buttonDarkColor,
-              textButtonColor: CustomTheme.decorationColor,
-              onPressed: () => Navigator.of(context).pushNamedAndRemoveUntil(MainScreen.route, (_) => false),
+              buttonColor: Theme.of(context).primaryColor,
+              textButtonColor: Theme.of(context).primaryColorLight,
+              onPressed: () => Navigator.of(context)
+                  .pushNamedAndRemoveUntil(MainScreen.route, (_) => false),
               text: LocaleKeys.get_started.tr(),
             ),
             spaces,

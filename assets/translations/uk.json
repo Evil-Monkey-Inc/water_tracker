@@ -1,4 +1,7 @@
 {
+  "continue_via_google":"Продовжити через Google",
+  "continue_via_email": "Продовжити через пошту" ,
+  "choose_an_authorization_method": "Виберіть спосіб авторизації.",
   "enter_your_email" : "Вкажіть вашу пошту",
   "enter_password" : "Вкажіть пароль",
   "sign_in" : "Увійти",
@@ -47,5 +50,8 @@
   "you_already_got" : "Ви вже випили",
   "cups" : "чашки",
   "ml" : "мл",
-  "failed_to_increment_count": "Не вдалося збільшити кількість води"
+  "failed_to_increment_count": "Не вдалося збільшити кількість води",
+  "time_to_drink" : "Час випити трохи води!",
+  "track_water_balance" : "Відстежуйте водний баланс за допомогою WaterApp.",
+  "payload" : "Щоб отримати інформацію, перейдіть до програми."
 }

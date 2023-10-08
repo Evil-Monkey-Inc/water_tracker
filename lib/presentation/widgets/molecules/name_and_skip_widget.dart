@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:water_tracker/custom_theme.dart';
+import 'package:water_tracker/config/theme/theme_palette/light_palette.dart';
+import 'package:water_tracker/generated/assets/assets.gen.dart';
 import 'package:water_tracker/generated/locale_keys.g.dart';
 
 class NameAndSkipWidget extends StatelessWidget {
@@ -8,26 +9,38 @@ class NameAndSkipWidget extends StatelessWidget {
 
   final emptySpace = const SizedBox();
   final VoidCallback? onPressed;
+  static const sizeOfElevation = 0.0;
+  static const fontSize = 20.0;
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       automaticallyImplyLeading: false,
-      backgroundColor: CustomTheme.backgroundNameSkipWidgetColor,
-      elevation: 0,
+      backgroundColor: Colors.transparent,
+      elevation: sizeOfElevation,
       centerTitle: true,
       title: Text(
         LocaleKeys.setup_profile.tr(),
-        style: CustomTheme().setupScreenProperty,
+        style: Theme.of(context).textTheme.headline1?.copyWith(
+              fontSize: fontSize,
+              color: LightPalette.primaryColor,
+              fontFamily: Assets.fonts.senBold,
+              fontWeight: FontWeight.w500,
+            ),
       ),
       actions: [
         TextButton(
           onPressed: onPressed,
+          style: ButtonStyle(
+            overlayColor: MaterialStateProperty.all(Colors.white),
+          ),
           child: Text(
             LocaleKeys.skip.tr(),
-            style: CustomTheme().skipButtonsStyle,
+            style: Theme.of(context).textTheme.headline1?.copyWith(
+                  fontWeight: FontWeight.w500,
+                ),
           ),
-        ),
+        )
       ],
     );
   }
